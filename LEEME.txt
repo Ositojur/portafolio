@@ -1,0 +1,34 @@
+PORTAFOLIO — Lautaro Demian Núñez
+Córdoba, Argentina · Lic. Ciberseguridad · +6 años en sitios y sistemas
+Mail: lautarodemiannunez32@gmail.com
+
+CÓMO ABRIRLO
+------------
+En una PC: doble clic en ABRIR.bat. Si no, doble clic en index.html.
+No hay que instalar nada.
+
+En el teléfono se puede abrir index.html, pero un ZIP por WhatsApp
+móvil suele ser incómodo. Para ver videos y fichas con calma,
+mejor una computadora.
+
+QUÉ HAY ACÁ
+-----------
+index.html          la presentación
+servicio.html       landing para una reunión
+propuestas\         landings extra
+assets\             estilos, script y fuentes
+media\         capturas, PDF, favicon
+videos\        clips locales
+ABRIR.bat           abre el portafolio
+ABRIR-SERVICIO.bat  abre la landing de reunión
+LEEME.txt           este archivo
+
+The Happy Ride es el caso central: resumen (26 s), recorrido
+(2 min 11 s), panel (35 s) y un PDF. La confirmación es por
+WhatsApp del local. Los precios dicen “a consultar” a propósito.
+
+Joyería Acacio está en joyeriaacacio.com. OS TigerLab, en
+ostigerlab.com. Aura LV no tiene enlace: el dominio no resolvió
+el 19/09/2026.
+
+Escribime a lautarodemiannunez32@gmail.com

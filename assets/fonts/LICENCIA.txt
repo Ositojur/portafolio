@@ -1,0 +1,6 @@
+Bricolage Grotesque y IBM Plex Sans se incluyen como archivos .woff2
+locales para que el portafolio se lea sin internet.
+
+Ambas familias se publican bajo SIL Open Font License 1.1.
+No se modificó el diseño de las glifos; solo se alojan los recortes
+latin y latin-ext que usa esta página.

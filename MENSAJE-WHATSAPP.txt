@@ -1,0 +1,48 @@
+CORTA
+-----
+Hola, te mando mi portafolio.
+
+Soy Lautaro Demian Núñez, de Córdoba. Lic. Ciberseguridad, más de
+6 años armando sitios y sistemas para negocios.
+
+Vas a encontrar proyectos de desarrollo web, tiendas y sistemas
+para empresas y negocios, con capturas y recorridos de cada trabajo.
+
+En una PC: descomprimí y dale doble clic a ABRIR.bat (o a index.html).
+En el teléfono un ZIP se vuelve más incómodo; si podés, miralo en la
+compu.
+
+Si te sirve algo así, escribime a lautarodemiannunez32@gmail.com
+
+
+COMPLETA
+--------
+Hola, te paso mi portafolio para que lo abras en la computadora.
+
+Soy Lautaro Demian Núñez. Vivo en Córdoba. Soy Lic. en Ciberseguridad
+y llevo más de 6 años desarrollando sitios y sistemas: reservas,
+tiendas, stock y paneles.
+
+La forma más cómoda es copiar la carpeta (o el ZIP) a una PC y dar
+doble clic a ABRIR.bat. Si no, abrí index.html. Los videos van
+adentro; no hace falta internet. Mandarlo por WhatsApp al teléfono
+sirve para tener el archivo, pero revisar las fichas y los videos
+es más claro en una computadora.
+
+En The Happy Ride (Tulum), el cliente arma una
+solicitud de scooter, ATV o e-bike en 4 pasos y recibe un código.
+La confirmación la hace el local por WhatsApp. Los precios del sitio
+dicen “a consultar” a propósito. En la página están el resumen
+(26 s), el recorrido (2 min 11 s), el panel (35 s) y un PDF.
+
+Además hay fichas con captura de:
+
+- Joyería Acacio — tienda y panel (joyeriaacacio.com)
+- Aura LV — e-commerce
+- Dar Automotores — concesionaria
+- SmartGPS — catálogo de equipos
+- AgroStock — stock y carrito
+- Holística — sitio + CMS
+
+Si te encaja para tu marca o para un cliente, escribime a
+lautarodemiannunez32@gmail.com y lo vemos.
