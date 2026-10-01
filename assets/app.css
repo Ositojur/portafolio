@@ -39,6 +39,12 @@ body {
   font-size: 1.0625rem;
   line-height: 1.65;
   min-height: 100vh;
+  overflow-x: clip;
+}
+
+.profile-link {
+  color: inherit;
+  text-underline-offset: 0.18em;
 }
 
 [hidden] {
