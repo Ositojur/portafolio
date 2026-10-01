@@ -899,3 +899,59 @@ dialog::backdrop {
     transition-duration: 0.01ms;
   }
 }
+
+.mast-inner {
+  justify-content: flex-start;
+}
+
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  flex: none;
+  margin-left: auto;
+  padding: 0.15rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--surface) 88%, transparent);
+}
+
+.lang-switch a {
+  min-width: 2.75rem;
+  min-height: 2.25rem;
+  padding: 0 0.55rem;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: var(--mute);
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.lang-switch a[aria-current="true"] {
+  background: var(--ember);
+  color: var(--ember-ink);
+}
+
+.lang-switch a:hover,
+.lang-switch a:focus-visible {
+  color: var(--ink);
+}
+
+.lang-switch a[aria-current="true"]:hover,
+.lang-switch a[aria-current="true"]:focus-visible {
+  color: var(--ember-ink);
+}
+
+@media (min-width: 721px) {
+  .nav-desk {
+    margin-left: auto;
+  }
+
+  .lang-switch {
+    margin-left: 0.85rem;
+  }
+}

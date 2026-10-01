@@ -7,6 +7,42 @@
   const hrVideo = document.querySelector("#hr-video");
   const hrStatus = document.querySelector("#hr-status");
   const email = "lautarodemiannunez32@gmail.com";
+  const english = (document.documentElement.lang || "").toLowerCase().startsWith("en");
+  const ui = english
+    ? {
+        imageError: "This image could not be shown. Check that the file is still in media/.",
+        videoError: "This video could not be played in this browser.",
+        caseFallback: "Project",
+        viewImage: (n) => `View image ${n}`,
+        zoom: "Enlarge image",
+        gallery: "Browse images",
+        prev: "Previous image",
+        next: "Next image",
+        prevLabel: "← Previous",
+        nextLabel: "Next →",
+        back: "Back to the project",
+        selected: "Selected: ",
+        preparing: "Copying the email…",
+        copied: "Email copied.",
+        copyFail: "Select the email and copy it with Ctrl+C or Cmd+C.",
+      }
+    : {
+        imageError: "No se pudo mostrar esta imagen. Revisá que el archivo siga en media/.",
+        videoError: "Este video no se pudo reproducir en este navegador.",
+        caseFallback: "Caso",
+        viewImage: (n) => `Ver imagen ${n}`,
+        zoom: "Ampliar imagen",
+        gallery: "Recorrer imágenes",
+        prev: "Imagen anterior",
+        next: "Imagen siguiente",
+        prevLabel: "← Anterior",
+        nextLabel: "Siguiente →",
+        back: "Volver a la ficha",
+        selected: "Seleccionado: ",
+        preparing: "Preparando el correo…",
+        copied: "Correo copiado.",
+        copyFail: "Seleccioná el correo y copialo con Ctrl+C o Cmd+C.",
+      };
   let lastOpener = null;
   let gallery = [];
   let galleryIndex = 0;
@@ -22,7 +58,7 @@
         note.className = "media-error";
         host.appendChild(note);
       }
-      note.textContent = "No se pudo mostrar esta imagen. Revisá que el archivo siga en media/.";
+      note.textContent = ui.imageError;
     });
   });
 
@@ -37,7 +73,7 @@
         note.className = "media-error";
         host.appendChild(note);
       }
-      note.textContent = "Este video no se pudo reproducir en este navegador.";
+      note.textContent = ui.videoError;
     });
   });
 
@@ -112,7 +148,7 @@
     galleryIndex = 0;
     dialog.classList.remove("is-zoomed");
 
-    const title = full.querySelector("h3")?.textContent || article.querySelector("h3")?.textContent || "Caso";
+    const title = full.querySelector("h3")?.textContent || article.querySelector("h3")?.textContent || ui.caseFallback;
     const copy = full.querySelector(".ficha-copy")?.innerHTML || "";
     const chips = full.querySelector(".chip-row")?.outerHTML || "";
     const video = full.querySelector("[data-case-video]");
@@ -121,7 +157,7 @@
     const thumbs = gallery
       .map(
         (shot, i) => `
-        <button type="button" data-thumb="${i}" aria-label="Ver imagen ${i + 1}" aria-current="${i === 0 ? "true" : "false"}">
+        <button type="button" data-thumb="${i}" aria-label="${ui.viewImage(i + 1)}" aria-current="${i === 0 ? "true" : "false"}">
           <img src="${shot.src}" alt="" width="160" height="100" />
         </button>`
       )
@@ -130,16 +166,16 @@
     const first = gallery[0];
     const stage = first
       ? `<figure class="ficha-stage">
-          <button type="button" class="zoom-open" aria-label="Ampliar imagen">
+          <button type="button" class="zoom-open" aria-label="${ui.zoom}">
             <img src="${first.src}" alt="${first.alt}" width="${first.width}" height="${first.height}" />
           </button>
           <figcaption>${first.caption || ""}</figcaption>
         </figure>
         <div class="thumbs">${thumbs}</div>
-        ${gallery.length > 1 ? `<div class="gallery-controls" aria-label="Recorrer imágenes">
-          <button type="button" class="btn-ghost" data-gallery-step="-1" aria-label="Imagen anterior">← Anterior</button>
+        ${gallery.length > 1 ? `<div class="gallery-controls" aria-label="${ui.gallery}">
+          <button type="button" class="btn-ghost" data-gallery-step="-1" aria-label="${ui.prev}">${ui.prevLabel}</button>
           <span class="gallery-count" role="status" aria-live="polite">1 / ${gallery.length}</span>
-          <button type="button" class="btn-ghost" data-gallery-step="1" aria-label="Imagen siguiente">Siguiente →</button>
+          <button type="button" class="btn-ghost" data-gallery-step="1" aria-label="${ui.next}">${ui.nextLabel}</button>
         </div>` : ""}`
       : "";
 
@@ -147,7 +183,7 @@
       ? `<video class="ficha-video" controls playsinline preload="none" poster="${video.getAttribute("data-poster") || ""}" width="1280" height="720">
           <source src="${video.getAttribute("data-case-video")}" type="${video.getAttribute("data-type") || "video/webm"}" />
         </video>
-        <p class="media-error">Este video no se pudo reproducir en este navegador.</p>`
+        <p class="media-error">${ui.videoError}</p>`
       : "";
 
     dialogBody.innerHTML = `
@@ -158,7 +194,7 @@
       ${chips}
       ${stage}
       ${videoBlock}
-      <button type="button" class="btn-ghost zoom-back" hidden>Volver a la ficha</button>
+      <button type="button" class="btn-ghost zoom-back" hidden>${ui.back}</button>
     `;
 
     dialogBody.querySelector("video")?.addEventListener("error", () => {
@@ -256,14 +292,14 @@
       document.querySelectorAll("[data-hr-src]").forEach((other) => {
         other.setAttribute("aria-pressed", other === btn ? "true" : "false");
       });
-      if (hrStatus) hrStatus.textContent = "Seleccionado: " + label;
+      if (hrStatus) hrStatus.textContent = ui.selected + label;
       hrVideo.play().catch(() => {});
     });
   });
 
   document.querySelector("[data-copy-email]")?.addEventListener("click", async () => {
     const fallback = document.querySelector("#email-fallback");
-    if (live) live.textContent = "Preparando el correo…";
+    if (live) live.textContent = ui.preparing;
     let copied = false;
     if (navigator.clipboard && window.isSecureContext) {
       try {
@@ -285,9 +321,7 @@
       }
     }
     if (live) {
-      live.textContent = copied
-        ? "Correo copiado."
-        : "Seleccioná el correo y copialo con Ctrl+C o Cmd+C.";
+      live.textContent = copied ? ui.copied : ui.copyFail;
     }
   });
 
