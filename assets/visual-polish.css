@@ -12,6 +12,12 @@
   initial-value: 20%;
 }
 
+@property --aurora {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 48%;
+}
+
 ::selection {
   background: color-mix(in srgb, var(--ember) 42%, #1a120c);
   color: var(--ink);
@@ -34,11 +40,13 @@ body {
   overflow: hidden;
   pointer-events: none;
   background:
-    radial-gradient(90% 55% at 50% -10%, color-mix(in srgb, var(--ember) 16%, transparent), transparent 58%),
-    radial-gradient(46% 38% at 12% 18%, color-mix(in srgb, var(--ember-beam) 14%, transparent), transparent 70%),
-    radial-gradient(52% 42% at 88% 72%, rgba(255, 255, 255, 0.06), transparent 68%),
-    radial-gradient(120% 80% at 50% 120%, rgb(7 8 10 / 0.72), transparent 52%),
-    radial-gradient(70% 50% at 80% 10%, color-mix(in srgb, var(--ember) 10%, transparent), transparent 60%);
+    radial-gradient(90% 58% at var(--aurora) -12%, color-mix(in srgb, var(--ember) 22%, transparent), transparent 56%),
+    radial-gradient(42% 34% at 10% 22%, color-mix(in srgb, var(--ember-beam) 18%, transparent), transparent 68%),
+    radial-gradient(38% 30% at 86% 18%, rgba(255, 214, 186, 0.1), transparent 70%),
+    radial-gradient(52% 42% at 88% 78%, rgba(255, 255, 255, 0.05), transparent 68%),
+    radial-gradient(120% 80% at 50% 128%, rgb(5 6 8 / 0.82), transparent 54%),
+    conic-gradient(from 210deg at 70% 18%, transparent 0 62%, rgb(255 154 98 / 0.05) 72%, transparent 82%),
+    radial-gradient(70% 50% at 80% 10%, color-mix(in srgb, var(--ember) 12%, transparent), transparent 60%);
 }
 
 html::after {
@@ -58,9 +66,51 @@ html::after {
 .space-orb,
 .space-dust,
 .space-ring,
-.space-speck {
+.space-speck,
+.space-veil,
+.space-horizon,
+.space-arc {
   position: absolute;
   pointer-events: none;
+}
+
+.space-veil {
+  inset: -10%;
+  opacity: 0.55;
+  background-image:
+    radial-gradient(1px 1px at 12% 18%, rgb(255 255 255 / 0.35), transparent),
+    radial-gradient(1px 1px at 28% 64%, rgb(255 176 137 / 0.28), transparent),
+    radial-gradient(1.5px 1.5px at 47% 22%, rgb(255 255 255 / 0.22), transparent),
+    radial-gradient(1px 1px at 63% 81%, rgb(255 255 255 / 0.3), transparent),
+    radial-gradient(1px 1px at 81% 36%, rgb(255 176 137 / 0.24), transparent),
+    radial-gradient(1.5px 1.5px at 91% 58%, rgb(255 255 255 / 0.2), transparent),
+    radial-gradient(1px 1px at 6% 88%, rgb(255 255 255 / 0.16), transparent),
+    radial-gradient(1px 1px at 39% 8%, rgb(255 176 137 / 0.2), transparent);
+  mask-image: radial-gradient(ellipse at 50% 40%, #000 18%, transparent 78%);
+}
+
+.space-horizon {
+  left: -20%;
+  right: -20%;
+  bottom: -18%;
+  height: 42vh;
+  background:
+    radial-gradient(80% 70% at 50% 100%, color-mix(in srgb, var(--ember) 28%, transparent), transparent 70%),
+    linear-gradient(180deg, transparent, rgb(7 8 10 / 0.35));
+  filter: blur(8px);
+  opacity: 0.7;
+}
+
+.space-arc {
+  top: 8%;
+  right: 4%;
+  width: min(36rem, 52vw);
+  height: min(36rem, 52vw);
+  border-radius: 50%;
+  background: conic-gradient(from 200deg, transparent 0 68%, var(--ember) 76%, transparent 84%);
+  mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #000 calc(100% - 1px));
+  opacity: 0.55;
+  filter: drop-shadow(0 0 12px color-mix(in srgb, var(--ember) 40%, transparent));
 }
 
 .site-aurora::before {
@@ -204,12 +254,22 @@ html::after {
   opacity: 0.72;
 }
 
-.space-ring::before {
+.space-ring::before,
+.space-ring::after {
   content: "";
   position: absolute;
+  border-radius: 50%;
+}
+
+.space-ring::before {
   inset: 18%;
   border: 1px solid rgb(255 255 255 / 0.08);
-  border-radius: 50%;
+}
+
+.space-ring::after {
+  inset: -8%;
+  border: 1px dashed rgb(255 154 98 / 0.12);
+  opacity: 0.7;
 }
 
 .space-speck {
@@ -237,6 +297,16 @@ html::after {
   left: 62%;
   width: 6px;
   height: 6px;
+}
+
+.space-speck-d {
+  top: 16%;
+  left: 4%;
+  width: 3px;
+  height: 3px;
+  box-shadow:
+    0 0 10px color-mix(in srgb, var(--ember) 70%, transparent),
+    18px 8px 14px color-mix(in srgb, var(--ember) 35%, transparent);
 }
 
 main,
@@ -1128,8 +1198,19 @@ dialog.is-zoomed .ficha-stage img {
   .space-orb-c,
   .space-dust-b,
   .space-ring,
-  .space-speck-c {
+  .space-arc,
+  .space-speck-c,
+  .space-speck-d {
     display: none;
+  }
+
+  .space-horizon {
+    opacity: 0.4;
+    height: 28vh;
+  }
+
+  .space-veil {
+    opacity: 0.28;
   }
 
   .space-orb-a,
@@ -1447,6 +1528,75 @@ dialog.is-zoomed .ficha-stage img {
   }
 }
 
+@keyframes aurora-shift {
+  0%,
+  100% {
+    --aurora: 42%;
+  }
+
+  50% {
+    --aurora: 64%;
+  }
+}
+
+@keyframes veil-drift {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-3%, 4%, 0);
+  }
+}
+
+@keyframes horizon-glow {
+  from {
+    opacity: 0.42;
+    transform: translate3d(0, 6%, 0) scale(1);
+  }
+
+  to {
+    opacity: 0.82;
+    transform: translate3d(0, 0, 0) scale(1.06);
+  }
+}
+
+@keyframes arc-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes ring-dash {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes speck-shoot {
+  0% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0;
+  }
+
+  12% {
+    opacity: 0.9;
+  }
+
+  100% {
+    transform: translate3d(72vw, 28vh, 0);
+    opacity: 0;
+  }
+}
+
 .has-js [data-reveal]:not(.is-inview) {
   opacity: 0;
   transform: translate3d(10px, 40px, 0) scale(0.98);
@@ -1510,6 +1660,30 @@ dialog.is-zoomed .ficha-stage img {
 @media (prefers-reduced-motion: no-preference) {
   html {
     scroll-behavior: smooth;
+  }
+
+  .site-aurora {
+    animation: aurora-shift 28s ease-in-out infinite;
+  }
+
+  .space-veil {
+    animation: veil-drift 48s linear alternate infinite;
+  }
+
+  .space-horizon {
+    animation: horizon-glow 14s ease-in-out alternate infinite;
+  }
+
+  .space-arc {
+    animation: arc-spin 48s linear infinite;
+  }
+
+  .space-ring::after {
+    animation: ring-dash 70s linear infinite;
+  }
+
+  .space-speck-d {
+    animation: speck-shoot 9s ease-in infinite 3s;
   }
 
   .site-aurora::before {
@@ -1577,7 +1751,7 @@ dialog.is-zoomed .ficha-stage img {
   .prop-hero .lead,
   .prop-hero .hero-actions,
   .prop-hero .who-line {
-    animation: fade-in-up var(--t-hero) ease both;
+    animation: fade-in-up var(--t-hero) var(--out-expo) both;
   }
 
   .portfolio-intro h1,
