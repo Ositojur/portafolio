@@ -31,7 +31,19 @@ body:has(.meet-layout) .prop-hero h1 {
   font-weight: 500;
   background: rgba(255, 255, 255, 0.03);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
-  transition: color var(--t-ui, 200ms) ease, border-color var(--t-ui, 200ms) ease, background-color var(--t-ui, 200ms) ease;
+  backdrop-filter: blur(8px);
+  transition:
+    color var(--t-ui, 200ms) ease,
+    border-color var(--t-ui, 200ms) ease,
+    background-color var(--t-ui, 200ms) ease,
+    box-shadow var(--t-hover, 320ms) ease;
+}
+
+.meet-nav a:hover,
+.meet-nav a:focus-visible {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.06);
 }
 
 .meet-nav a:is(:target-current, .is-current, [aria-current="true"]) {

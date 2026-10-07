@@ -6,6 +6,18 @@
   padding-block: clamp(4.5rem, 12vw, 8.5rem);
 }
 
+.prop-hero h1 {
+  color: #fbfbfc;
+  text-shadow:
+    0 0 48px color-mix(in srgb, var(--ember) 26%, transparent),
+    0 22px 50px rgb(0 0 0 / 0.5);
+}
+
+.prop-hero .lead {
+  color: #b8b8ba;
+  line-height: 1.7;
+}
+
 .prop-hero .lead {
   max-width: 40rem;
 }

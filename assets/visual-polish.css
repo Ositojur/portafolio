@@ -34,8 +34,22 @@ body {
   overflow: hidden;
   pointer-events: none;
   background:
-    radial-gradient(120% 80% at 50% 120%, rgb(7 8 10 / 0.55), transparent 52%),
-    radial-gradient(70% 50% at 80% 10%, color-mix(in srgb, var(--ember) 8%, transparent), transparent 60%);
+    radial-gradient(90% 55% at 50% -10%, color-mix(in srgb, var(--ember) 16%, transparent), transparent 58%),
+    radial-gradient(46% 38% at 12% 18%, color-mix(in srgb, var(--ember-beam) 14%, transparent), transparent 70%),
+    radial-gradient(52% 42% at 88% 72%, rgba(255, 255, 255, 0.06), transparent 68%),
+    radial-gradient(120% 80% at 50% 120%, rgb(7 8 10 / 0.72), transparent 52%),
+    radial-gradient(70% 50% at 80% 10%, color-mix(in srgb, var(--ember) 10%, transparent), transparent 60%);
+}
+
+html::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 25;
+  pointer-events: none;
+  opacity: 0.045;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.55 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
 }
 
 .site-aurora::before,
@@ -63,7 +77,7 @@ body {
     transparent 82%
   );
   filter: blur(42px);
-  opacity: 0.42;
+  opacity: 0.58;
   transform: rotate(-24deg);
   transform-origin: center;
 }
@@ -81,7 +95,7 @@ body {
     transparent 70%
   );
   filter: blur(56px);
-  opacity: 0.28;
+  opacity: 0.38;
   transform: rotate(16deg);
 }
 
@@ -97,7 +111,7 @@ body {
     transparent 78%
   );
   filter: blur(36px);
-  opacity: 0.28;
+  opacity: 0.4;
   transform: rotate(18deg);
 }
 
@@ -109,27 +123,29 @@ body {
 .space-orb-a {
   top: 12%;
   left: 8%;
-  width: 16rem;
-  height: 16rem;
-  opacity: 0.38;
+  width: 18rem;
+  height: 18rem;
+  opacity: 0.52;
+  filter: blur(2px);
 }
 
 .space-orb-b {
-  top: 58%;
-  right: 6%;
+  top: 62%;
+  right: 4%;
   width: 22rem;
   height: 22rem;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
-  opacity: 0.32;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.12) 0%, transparent 70%);
+  opacity: 0.28;
+  filter: blur(2px);
 }
 
 .space-orb-c {
   bottom: 8%;
   left: 28%;
-  width: 12rem;
-  height: 12rem;
-  background: radial-gradient(circle, color-mix(in srgb, var(--ember-beam) 36%, transparent) 0%, transparent 74%);
-  opacity: 0.3;
+  width: 14rem;
+  height: 14rem;
+  background: radial-gradient(circle, color-mix(in srgb, var(--ember-beam) 46%, transparent) 0%, transparent 74%);
+  opacity: 0.44;
 }
 
 .space-dust,
@@ -176,16 +192,16 @@ body {
 }
 
 .space-ring {
-  top: 18%;
-  right: 8%;
-  width: min(38rem, 58vw);
-  height: min(38rem, 58vw);
+  top: 10%;
+  right: 2%;
+  width: min(34rem, 48vw);
+  height: min(34rem, 48vw);
   border: 1px solid rgb(255 154 98 / 0.14);
   border-radius: 50%;
   box-shadow:
     inset 0 0 40px rgb(255 154 98 / 0.06),
     0 0 48px rgb(255 154 98 / 0.05);
-  opacity: 0.55;
+  opacity: 0.72;
 }
 
 .space-ring::before {
@@ -259,18 +275,25 @@ main,
 
 .mast-inner {
   justify-content: flex-start;
-  border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background: linear-gradient(137deg, rgba(17, 18, 20, 0.75) 4.87%, rgba(12, 13, 15, 0.9) 75.88%);
-  backdrop-filter: blur(8px);
-  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.15);
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: linear-gradient(137deg, rgba(17, 18, 20, 0.62) 4.87%, rgba(12, 13, 15, 0.82) 75.88%);
+  backdrop-filter: blur(16px) saturate(1.15);
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.18),
+    0 10px 40px rgb(0 0 0 / 0.28);
   transition:
     background 300ms ease,
-    box-shadow 300ms ease;
+    box-shadow 300ms ease,
+    border-color 300ms ease;
 }
 
 .mast.is-scrolled .mast-inner {
-  background: linear-gradient(137deg, rgba(17, 18, 20, 0.88) 4.87%, rgba(12, 13, 15, 0.96) 75.88%);
+  background: linear-gradient(137deg, rgba(17, 18, 20, 0.9) 4.87%, rgba(12, 13, 15, 0.97) 75.88%);
+  border-color: rgba(255, 255, 255, 0.16);
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.2),
+    0 16px 48px rgb(0 0 0 / 0.38);
 }
 
 .nav-desk {
@@ -399,6 +422,22 @@ main,
   text-underline-offset: 0.18em;
 }
 
+.site-foot {
+  color: #8f8f92;
+  padding-block: 2.4rem 3rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  background: linear-gradient(180deg, transparent, rgb(7 8 10 / 0.45));
+}
+
+.case-hero {
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--ember) 8%, transparent), transparent 22%),
+    color-mix(in srgb, #101111 82%, transparent);
+  box-shadow:
+    var(--inset),
+    0 20px 50px rgb(0 0 0 / 0.22);
+}
+
 /* —— Hero —— */
 
 .hero.portfolio-intro {
@@ -412,18 +451,48 @@ main,
   padding-bottom: clamp(4.5rem, 12vw, 9rem);
 }
 
+.hero.portfolio-intro::before,
+.prop-hero::before {
+  content: "";
+  position: absolute;
+  inset: 8% 12% 18%;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 50% 42%, rgb(7 8 10 / 0.78), transparent 72%);
+}
+
 .hero.portfolio-intro::after {
   content: "";
   position: absolute;
-  left: 12%;
-  right: 12%;
+  left: 8%;
+  right: 8%;
   bottom: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.12), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    color-mix(in srgb, var(--ember) 55%, transparent),
+    rgba(255, 255, 255, 0.18),
+    color-mix(in srgb, var(--ember) 45%, transparent),
+    transparent
+  );
+  box-shadow: 0 0 18px color-mix(in srgb, var(--ember) 22%, transparent);
+}
+
+.section-head h2 {
+  letter-spacing: -0.04em;
+}
+
+.section-head .section-lead {
+  color: #a7a7a9;
 }
 
 .portfolio-intro h1 {
   max-width: 16ch;
+  color: #fbfbfc;
+  text-shadow:
+    0 0 48px color-mix(in srgb, var(--ember) 28%, transparent),
+    0 22px 50px rgb(0 0 0 / 0.5);
 }
 
 .portfolio-intro .lead {
@@ -431,7 +500,8 @@ main,
   margin-inline: auto;
   font-family: var(--sans);
   font-weight: 400;
-  line-height: 1.65;
+  line-height: 1.7;
+  color: #b8b8ba;
 }
 
 .portfolio-intro .hero-actions {
@@ -509,13 +579,20 @@ summary.btn {
 .btn {
   background: #ff9a62;
   color: #1a120c;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.28);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.36),
+    0 0 0 1px rgb(255 154 98 / 0.15),
+    0 8px 28px color-mix(in srgb, var(--ember) 28%, transparent);
 }
 
 .btn:hover {
   background: #ffd0b5;
   color: #1a120c;
   filter: none;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.45),
+    0 0 0 1px rgb(255 208 181 / 0.2),
+    0 12px 36px color-mix(in srgb, var(--ember) 38%, transparent);
 }
 
 .btn:active,
@@ -539,13 +616,14 @@ summary.btn {
 /* —— Filtros —— */
 
 .filters {
-  padding: 0;
+  padding: 0.28rem;
   width: auto;
   max-width: 100%;
-  background: transparent;
-  border: 0;
-  border-radius: 0;
-  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  gap: 0.35rem;
+  backdrop-filter: blur(10px);
 }
 
 .filters button {
@@ -612,13 +690,31 @@ summary.btn {
 .meet-split article {
   position: relative;
   isolation: isolate;
-  background: color-mix(in srgb, #101111 78%, transparent);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: var(--inset);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent 28%),
+    color-mix(in srgb, #101111 78%, transparent);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow:
+    var(--inset),
+    0 18px 50px rgb(0 0 0 / 0.22);
 }
 
 .card {
   overflow: visible;
+  transition:
+    border-color var(--t-ui) ease,
+    box-shadow var(--t-hover) var(--out-cubic),
+    transform 500ms var(--spring);
+}
+
+.offer-card,
+.recv-card,
+.when-card,
+.case-tile {
+  transition:
+    border-color var(--t-ui) ease,
+    box-shadow var(--t-hover) var(--out-cubic),
+    transform 500ms var(--spring);
 }
 
 .card::after,
@@ -673,10 +769,13 @@ summary.btn {
   margin: 8px 8px 0;
   padding: 0;
   background:
-    radial-gradient(86% 50% at 51% 5%, color-mix(in srgb, var(--ember) 8%, transparent), transparent 55%),
-    rgba(0, 0, 0, 0.44);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 0 40px 12px rgba(255, 255, 255, 0.03), inset 0 0.5px 0 rgba(255, 255, 255, 0.28);
+    radial-gradient(86% 50% at 51% 5%, color-mix(in srgb, var(--ember) 14%, transparent), transparent 55%),
+    rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow:
+    0 0 48px 14px rgba(255, 154, 98, 0.04),
+    0 0 40px 12px rgba(255, 255, 255, 0.03),
+    inset 0 0.5px 0 rgba(255, 255, 255, 0.32);
 }
 
 .project-grid .card-media img {
@@ -788,7 +887,14 @@ summary.btn {
 /* —— Contacto y sobre mí —— */
 
 #contacto .contact {
-  padding: clamp(1.6rem, 4vw, 3.2rem);
+  padding: clamp(1.8rem, 4.4vw, 3.6rem);
+  background:
+    radial-gradient(90% 80% at 50% -10%, color-mix(in srgb, var(--ember) 20%, transparent), transparent 58%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 30%),
+    color-mix(in srgb, #101111 82%, transparent);
+  box-shadow:
+    var(--inset),
+    0 0 80px color-mix(in srgb, var(--ember) 12%, transparent);
 }
 
 #contacto h2 {
@@ -1003,6 +1109,7 @@ dialog.is-zoomed .ficha-stage img {
 
   .filters {
     width: 100%;
+    border-radius: 20px;
   }
 
   .hero.portfolio-intro {
@@ -1061,8 +1168,12 @@ dialog.is-zoomed .ficha-stage img {
   .recv-card:hover,
   .when-card:hover,
   .case-tile:hover {
-    border-color: rgba(255, 255, 255, 0.16);
-    box-shadow: var(--inset), 0 0 18px color-mix(in srgb, var(--ember) 14%, transparent);
+    border-color: rgba(255, 255, 255, 0.22);
+    transform: translate3d(0, -6px, 0);
+    box-shadow:
+      var(--inset),
+      0 22px 50px rgb(0 0 0 / 0.35),
+      0 0 28px color-mix(in srgb, var(--ember) 22%, transparent);
   }
 
   .card:hover::after,
@@ -1074,7 +1185,12 @@ dialog.is-zoomed .ficha-stage img {
   }
 
   .project-grid .card:hover .card-media img {
-    transform: scale(1.025);
+    transform: scale(1.045);
+  }
+
+  .btn:hover,
+  .btn-ghost:hover {
+    transform: translate3d(0, -2px, 0);
   }
 
   .film figure:hover img,
@@ -1254,6 +1370,43 @@ dialog.is-zoomed .ficha-stage img {
   }
 }
 
+@keyframes star-twinkle {
+  0%,
+  100% {
+    opacity: 0.28;
+  }
+
+  40% {
+    opacity: 0.85;
+  }
+
+  70% {
+    opacity: 0.45;
+  }
+}
+
+@keyframes nebula-breathe {
+  from {
+    opacity: 0.34;
+    filter: blur(42px);
+  }
+
+  to {
+    opacity: 0.7;
+    filter: blur(50px);
+  }
+}
+
+@keyframes horizon-pulse {
+  from {
+    opacity: 0.35;
+  }
+
+  to {
+    opacity: 0.7;
+  }
+}
+
 @keyframes speck-float-c {
   from {
     transform: translate3d(0, 0, 0);
@@ -1360,7 +1513,9 @@ dialog.is-zoomed .ficha-stage img {
   }
 
   .site-aurora::before {
-    animation: beam-drift 22s ease-in-out alternate infinite;
+    animation:
+      beam-drift 22s ease-in-out alternate infinite,
+      nebula-breathe 16s ease-in-out alternate infinite;
   }
 
   .site-aurora::after {
@@ -1384,7 +1539,9 @@ dialog.is-zoomed .ficha-stage img {
   }
 
   .space-dust {
-    animation: dust-drift 42s linear alternate infinite;
+    animation:
+      dust-drift 42s linear alternate infinite,
+      star-twinkle 7s ease-in-out infinite;
   }
 
   .space-dust-b {
@@ -1521,7 +1678,8 @@ dialog::backdrop {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .site-aurora {
+  .site-aurora,
+  html::after {
     display: none;
   }
 
