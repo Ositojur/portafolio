@@ -1,19 +1,42 @@
 :root {
-  --bg: #111315;
-  --surface: #1b1e22;
-  --surface-2: #23272c;
-  --line: #2e343b;
-  --ink: #f5f4f0;
-  --mute: #b6bdc5;
+  --void: #07080a;
+  --bg: #0b0c0e;
+  --surface: color-mix(in srgb, #101111 88%, transparent);
+  --surface-2: #141618;
+  --line: rgba(255, 255, 255, 0.08);
+  --ink: #f4f4f6;
+  --mute: #9c9c9d;
   --ember: #ff9a62;
   --ember-ink: #1a120c;
+  --ember-deep: #452318;
+  --ember-beam: #ffb089;
   --danger: #e8b4b4;
   --pad: clamp(1.25rem, 4vw, 2.5rem);
   --wide: 80rem;
-  --head: 4.25rem;
+  --head: 5.25rem;
   --display: "Bricolage Grotesque", "Segoe UI", "Helvetica Neue", sans-serif;
   --sans: "IBM Plex Sans", "Segoe UI", "Helvetica Neue", sans-serif;
   --ease: 180ms ease;
+  --glass: linear-gradient(137deg, rgba(17, 18, 20, 0.75) 5%, rgba(12, 13, 15, 0.9) 76%);
+  --inset: inset 0 1px 1px rgba(255, 255, 255, 0.14);
+  --out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+  --out-quart: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --spring: var(--out-expo);
+  --t-micro: 120ms;
+  --t-ui: 200ms;
+  --t-hover: 320ms;
+  --t-card: 700ms;
+  --t-hero: 1000ms;
+  --t-dialog: 480ms;
+  --enter: 1000ms var(--out-quart);
+  --enter-card: 700ms var(--out-cubic);
+}
+
+@supports (animation-timing-function: linear(0, 1)) {
+  :root {
+    --spring: linear(0 0%, 0.005927 1%, 0.022466 2%, 0.047872 3%, 0.080554 4%, 0.119068 5%, 0.162116 6%, 0.208536 7%, 0.2573 8%, 0.3075 9%, 0.358346 10%, 0.409157 11%, 0.45935 12%, 0.508438 13%, 0.556014 14%, 0.601751 15%, 0.645389 16%, 0.686733 17%, 0.72564 18%, 0.762019 19%, 0.795818 20%, 0.827026 21%, 0.855662 22%, 0.881772 23%, 0.905423 24%, 0.926704 25%, 0.945714 26%, 0.962568 27%, 0.977386 28%, 0.990295 29%, 1.00143 30%, 1.01091 31%, 1.01888 32%, 1.02547 33%, 1.03079 34%, 1.03498 35%, 1.03816 36%, 1.04042 37%, 1.04189 38%, 1.04266 39%, 1.04283 40%, 1.04247 41%, 1.04168 42%, 1.04052 43%, 1.03907 44%, 1.03737 45%, 1.03549 46%, 1.03348 47%, 1.03138 48%, 1.02922 49%, 1.02704 50%, 1.02486 51%, 1.02272 52%, 1.02063 53%, 1.01861 54%, 1.01667 55%, 1.01482 56%, 1.01307 57%, 1.01142 58%, 1.00989 59%, 1.00846 60%, 1.00715 61%, 1.00594 62%, 1.00485 63%, 1.00386 64%, 1.00296 65%, 1.00217 66%, 1.00147 67%, 1.00085 68%, 1.00031 69%, 0.999849 70%, 0.999457 71%, 0.999128 72%, 0.998858 73%, 0.99864 74%, 0.99847 75%, 0.998342 76%, 0.998253 77%, 0.998196 78%, 0.998169 79%, 0.998167 80%, 0.998186 81%, 0.998224 82%, 0.998276 83%, 0.998341 84%, 0.998415 85%, 0.998497 86%, 0.998584 87%, 0.998675 88%, 0.998768 89%, 0.998861 90%, 0.998954 91%, 0.999045 92%, 0.999134 93%, 0.99922 94%, 0.999303 95%, 0.999381 96%, 0.999455 97%, 0.999525 98%, 0.999589 99%, 0.99965 100%);
+  }
 }
 
 *,
@@ -39,12 +62,6 @@ body {
   font-size: 1.0625rem;
   line-height: 1.65;
   min-height: 100vh;
-  overflow-x: clip;
-}
-
-.profile-link {
-  color: inherit;
-  text-underline-offset: 0.18em;
 }
 
 [hidden] {
@@ -101,10 +118,13 @@ a:hover {
   position: sticky;
   top: 0;
   z-index: 20;
-  min-height: 3.5rem;
-  background: color-mix(in srgb, var(--bg) 88%, transparent);
-  border-bottom: 1px solid var(--line);
-  backdrop-filter: blur(14px);
+  padding: 12px 0 0;
+  background: transparent;
+  border: 0;
+}
+
+.wrap.mast-inner {
+  width: min(75.25rem, calc(100% - 24px));
 }
 
 .mast-inner {
@@ -112,7 +132,9 @@ a:hover {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  min-height: 3.5rem;
+  position: relative;
+  min-height: 58px;
+  padding: 8px 16px;
 }
 
 .brand {
@@ -157,6 +179,8 @@ a:hover {
   min-height: 44px;
   display: inline-flex;
   align-items: center;
+  font-size: 0.875rem;
+  font-weight: 500;
 }
 
 .nav-desk a:hover,
@@ -167,6 +191,7 @@ a:hover {
 
 .nav-mob {
   display: none;
+  position: relative;
 }
 
 .nav-mob summary {
@@ -181,13 +206,15 @@ a:hover {
 
 .nav-mob-list {
   position: absolute;
-  right: var(--pad);
-  top: calc(100% + 0.4rem);
+  right: 0;
+  top: calc(100% + 0.5rem);
   flex-direction: column;
   min-width: 14rem;
-  padding: 0.6rem 0.9rem;
-  background: var(--surface);
-  border: 1px solid var(--line);
+  padding: 0.7rem 0.95rem;
+  background: var(--glass);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  box-shadow: var(--inset);
 }
 
 @media (max-width: 720px) {
@@ -226,20 +253,23 @@ h2,
 h3,
 .display {
   font-family: var(--display);
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: -0.035em;
-  line-height: 1.08;
+  line-height: 1.1;
 }
 
 h1 {
   margin: 0 0 1.1rem;
-  font-size: clamp(2.35rem, 6.2vw, 4.35rem);
-  max-width: 14ch;
+  font-size: clamp(2.2rem, 5.6vw, 4rem);
+  max-width: 16ch;
+  text-wrap: balance;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
 }
 
 h2 {
   margin: 0 0 0.7rem;
-  font-size: clamp(1.7rem, 3.4vw, 2.6rem);
+  font-size: clamp(1.35rem, 2.3vw, 2rem);
+  letter-spacing: -0.03em;
 }
 
 h3 {
@@ -251,7 +281,9 @@ h3 {
   margin: 0 0 1.4rem;
   max-width: 38rem;
   color: var(--mute);
-  font-size: 1.08rem;
+  font-size: clamp(1rem, 1.35vw, 1.125rem);
+  letter-spacing: 0.0125em;
+  text-wrap: balance;
 }
 
 .hero-actions {
@@ -325,7 +357,7 @@ summary.btn {
 }
 
 .section {
-  padding: 0 0 clamp(3.5rem, 8vw, 6.5rem);
+  padding: 0 0 clamp(5.5rem, 12vw, 9rem);
 }
 
 .section-head {
@@ -727,10 +759,11 @@ dialog {
   max-height: min(94vh, 58rem);
   margin: auto;
   padding: 0;
-  border: 1px solid var(--line);
-  background: var(--bg);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--void);
   color: var(--ink);
   overflow: auto;
+  box-shadow: var(--inset);
 }
 
 dialog::backdrop {
