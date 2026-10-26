@@ -1,29 +1,18 @@
 <!DOCTYPE html>
-
 <html lang="es-AR">
-
 <head>
-
   <meta charset="utf-8" />
-
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <title>Lautaro Demian Núñez — sitios y sistemas</title>
-
-  <meta name="description" content="Lautaro Demian Núñez, Licenciado en Ciberseguridad. Más de 6 años desarrollando sitios y sistemas para negocios reales. Córdoba, Argentina." />
-
-  <meta name="theme-color" content="#0b0c0e" />
-
+  <title>camusdev — Lautaro Núñez · Full Stack & Ciberseguridad</title>
+  <meta name="description" content="Lautaro Núñez (camusdev): desarrollador full stack y Licenciado en Ciberseguridad. Más de 6 años desarrollando sitios, tiendas y sistemas para negocios reales. Córdoba, Argentina." />
+  <meta name="theme-color" content="#07060d" />
   <meta property="og:type" content="website" />
-
   <meta property="og:locale" content="es_AR" />
-
-  <meta property="og:title" content="Lautaro Demian Núñez — sitios y sistemas" />
-
+  <meta property="og:title" content="camusdev — Lautaro Núñez · Full Stack & Ciberseguridad" />
   <meta property="og:description" content="Desarrollo web y sistemas a medida para resolver problemas y simplificar el día a día de empresas y negocios." />
-
   <meta property="og:url" content="https://ositojur.github.io/portafolio/" />
   <meta property="og:image" content="media/og-portafolio.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
   <link rel="canonical" href="https://ositojur.github.io/portafolio/" />
   <link rel="alternate" hreflang="es" href="index.html" />
   <link rel="alternate" hreflang="en" href="en/index.html" />
@@ -32,950 +21,802 @@
     {
       "@context": "https://schema.org",
       "@type": "Person",
-      "name": "Lautaro Demian Núñez",
-      "jobTitle": "Desarrollador de sitios y sistemas",
+      "name": "Lautaro Núñez",
+      "alternateName": "camusdev",
+      "jobTitle": "Desarrollador Full Stack · Lic. en Ciberseguridad",
       "description": "Desarrollo web y sistemas a medida para empresas y negocios. Córdoba, Argentina.",
       "email": "mailto:lautarodemiannunez32@gmail.com",
       "url": "https://ositojur.github.io/portafolio/",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Córdoba",
-        "addressCountry": "AR"
-      },
+      "sameAs": ["https://github.com/Ositojur"],
+      "address": { "@type": "PostalAddress", "addressLocality": "Córdoba", "addressCountry": "AR" },
       "knowsLanguage": ["es", "en"]
     }
   </script>
-
-  <meta name="twitter:card" content="summary_large_image" />
-
   <link rel="icon" href="media/favicon.svg" type="image/svg+xml" />
-
   <link rel="stylesheet" href="assets/fonts/fonts.css" />
-
-  <link rel="stylesheet" href="assets/app.css" />
-
-  <link rel="stylesheet" href="assets/visual-polish.css" />
-
+  <link rel="stylesheet" href="assets/epic.css" />
+  <script>document.documentElement.classList.add("js");</script>
 </head>
-
 <body>
-
   <a class="skip" href="#contenido">Saltar al contenido</a>
-  <div class="site-aurora" aria-hidden="true">
-    <span class="space-veil"></span>
-    <span class="space-horizon"></span>
-    <span class="space-beam"></span>
-    <span class="space-orb space-orb-a"></span>
-    <span class="space-orb space-orb-b"></span>
-    <span class="space-orb space-orb-c"></span>
-    <span class="space-dust"></span>
-    <span class="space-dust space-dust-b"></span>
-    <span class="space-ring"></span>
-    <span class="space-arc"></span>
-    <span class="space-speck space-speck-a"></span>
-    <span class="space-speck space-speck-b"></span>
-    <span class="space-speck space-speck-c"></span>
-    <span class="space-speck space-speck-d"></span>
+
+
+  <!-- Fondo global: estrellas, auroras y grano -->
+  <div class="cosmos" aria-hidden="true">
+    <canvas id="stars"></canvas>
+    <span class="blob blob-a"></span>
+    <span class="blob blob-b"></span>
+    <span class="blob blob-c"></span>
+    <span class="grain"></span>
   </div>
+  <div class="spot" aria-hidden="true"></div>
+  <div class="progress" aria-hidden="true"><span></span></div>
 
-  <header class="mast">
-
-    <div class="wrap mast-inner">
-
-      <a class="brand" href="#contenido" aria-label="Lautaro Demian Núñez, inicio">
-
-        <img class="personal-logo" src="media/favicon.svg" alt="LN" width="48" height="48" />
-
-      </a>
-
-      <nav class="nav-desk" aria-label="Secciones">
-
-        <a href="#proyectos">Proyectos</a>
-
-        <a href="servicio.html">Servicio</a>
-
-        <a href="propuestas/index.html">Propuestas</a>
-
-        <a href="#sobre-mi">Sobre mí</a>
-
-        <a href="#proceso">Proceso</a>
-
-        <a href="#contacto">Contacto</a>
-
-      </nav>
-      <nav class="lang-switch" aria-label="Idioma">
+  <header class="nav">
+    <a class="nav-brand" href="#top" aria-label="camusdev, inicio">
+      <span class="nav-logo">c<b>/</b></span>
+      <span class="nav-name">camus<em>dev</em></span>
+    </a>
+    <nav class="nav-links" aria-label="Secciones">
+      <a href="#seguridad">Seguridad</a>
+      <a href="#proceso">Proceso</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#stack">Stack</a>
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="servicio.html">Servicio</a>
+    </nav>
+    <div class="nav-end">
+      <nav class="lang" aria-label="Idioma">
         <a href="index.html" hreflang="es" lang="es" aria-current="true">ES</a>
         <a href="en/index.html" hreflang="en" lang="en">EN</a>
       </nav>
-      <details class="nav-mob">
-
-        <summary>Menú</summary>
-
-        <nav class="nav-mob-list" aria-label="Secciones en el teléfono">
-
-          <a href="#proyectos">Proyectos</a>
-
-          <a href="servicio.html">Servicio</a>
-
-          <a href="propuestas/index.html">Propuestas</a>
-
-          <a href="#sobre-mi">Sobre mí</a>
-
-          <a href="#proceso">Proceso</a>
-
-          <a href="#contacto">Contacto</a>
-
-        </nav>
-
-      </details>
-
+      <a class="nav-cta" href="#contacto">Hablemos</a>
+      <button class="burger" type="button" aria-expanded="false" aria-controls="mnav" aria-label="Abrir menú"><span></span><span></span></button>
     </div>
-
   </header>
+
+  <nav class="mnav" id="mnav" aria-label="Menú">
+    <a href="#seguridad"><small>01</small>Seguridad</a>
+    <a href="#proceso"><small>02</small>Proceso</a>
+    <a href="#proyectos"><small>03</small>Proyectos</a>
+    <a href="#stack"><small>04</small>Stack</a>
+    <a href="#sobre-mi"><small>05</small>Sobre mí</a>
+    <a href="servicio.html"><small>06</small>Servicio</a>
+    <a href="#contacto"><small>07</small>Contacto</a>
+  </nav>
 
   <main id="contenido">
 
-    <section class="hero wrap portfolio-intro" aria-labelledby="hero-title">
-
-      <div>
-
-        <p class="announce"><span class="announce-inner">Lautaro Demian Núñez · Córdoba</span></p>
-
-        <h1 id="hero-title">Desarrollo web y sistemas para negocios</h1>
-
-        <p class="lead">Ayudo a empresas, negocios y pequeñas tiendas a resolver problemas y simplificar su día a día digital. Desarrollo sitios web y sistemas a medida para conectar procesos, reducir tareas repetitivas y hacer más fácil la experiencia de sus clientes.</p>
-
-        <div class="hero-actions">
-
-          <a class="btn" href="#proyectos">Ver proyectos</a>
-
-          <a class="btn-ghost" href="servicio.html">Ver el servicio</a>
-
-          <a class="btn-ghost" href="#contacto">Hablemos de tu proyecto</a>
-
+    <!-- ═══════════ HERO ═══════════ -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero-floor" aria-hidden="true"></div>
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="pill rv"><span class="dot"></span> Dev + Ciberseguridad · Córdoba, Argentina</p>
+          <h1 id="hero-title" class="rv">
+            <span class="h-line">Construyo</span>
+            <span class="h-line"><span class="grad">sitios y sistemas</span></span>
+            <span class="h-line">que hacen <span class="rotator" aria-hidden="true"><span>vender</span><span>proteger</span><span>crecer</span><span>escalar</span></span><span class="visually-hidden">crecer</span></span>
+            <span class="h-line">a tu negocio.</span>
+          </h1>
+          <p class="lead rv">Soy <b>Lautaro Núñez</b> — <b>camusdev</b>. Desarrollador <b>full stack</b> y <b>Lic. en Ciberseguridad</b>, especialista en cibercrimen. Hace más de 6 años construyo webs, tiendas y sistemas de punta a punta — frontend, backend, bases de datos y servidores — y audito empresas para que nadie pueda vulnerarlas.</p>
+          <div class="hero-actions rv">
+            <a class="btn btn-glow" href="#proyectos"><span>Ver proyectos</span></a>
+            <a class="btn btn-glass" href="#seguridad">Seguridad ofensiva</a>
+          </div>
+          <ul class="hero-meta rv" aria-label="Datos rápidos">
+            <li><b data-count="6" data-prefix="+">+6</b><span>años creando</span></li>
+            <li><b data-count="14">14</b><span>proyectos</span></li>
+            <li><b data-count="30" data-prefix="+">+30</b><span>tecnologías</span></li>
+          </ul>
         </div>
 
+        <div class="hero-3d" aria-hidden="true">
+          <div class="scene" data-parallax>
+            <div class="orbit orbit-1"><span></span></div>
+            <div class="orbit orbit-2"><span></span></div>
+            <div class="orbit orbit-3"><span></span></div>
+            <div class="cube-wrap">
+              <div class="cube">
+                <div class="face f-front">&lt;/&gt;</div>
+                <div class="face f-back">{ }</div>
+                <div class="face f-right">PHP</div>
+                <div class="face f-left">SEC</div>
+                <div class="face f-top">JS</div>
+                <div class="face f-bottom">CSS</div>
+              </div>
+              <div class="cube-shadow"></div>
+            </div>
+            <div class="editor" data-depth="60">
+              <div class="win-bar"><i></i><i></i><i></i><span>camusdev.js</span></div>
+<pre class="code"><code><span class="tk-k">const</span> <span class="tk-v">negocio</span> = <span class="tk-f">entender</span>(<span class="tk-s">"tu problema"</span>);
+<span class="tk-k">const</span> <span class="tk-v">idea</span> = <span class="tk-f">diseñar</span>(negocio, { <span class="tk-p">simple</span>: <span class="tk-b">true</span> });
+<span class="tk-k">await</span> <span class="tk-f">construir</span>(idea).<span class="tk-f">probar</span>(<span class="tk-s">"mobile + desktop"</span>);
+<span class="tk-f">lanzar</span>(); <span class="tk-c">// online ✓</span><span class="caret"></span></code></pre>
+            </div>
+            <div class="chip chip-a" data-depth="90"><i></i>Tiendas</div>
+            <div class="chip chip-b" data-depth="120"><i></i>Paneles</div>
+            <div class="chip chip-c" data-depth="70"><i></i>Sitios web</div>
+            <div class="chip chip-d" data-depth="100"><i></i>Pentesting</div>
+            <div class="chip chip-e" data-depth="140"><i></i>Hardening</div>
+          </div>
+        </div>
       </div>
-
+      <a class="scroll-hint" href="#marcas" aria-label="Bajar a las marcas"><span></span></a>
     </section>
 
-    <section class="section wrap" id="proyectos" aria-labelledby="proyectos-title">
-
-      <div class="section-head">
-
-        <div>
-
-          <h2 id="proyectos-title">Proyectos</h2>
-
-          <p class="section-lead">
-
-            Cada negocio tiene sus desafíos. Conocé las soluciones que desarrollé para distintos proyectos.
-
-          </p>
-
-        </div>
-
-      </div>
-
-      <search>
-
-        <div class="filters" data-filter-group role="group" aria-label="Filtrar proyectos">
-
-          <button type="button" class="btn-ghost" data-filter="all" aria-pressed="true">Todos</button>
-
-          <button type="button" class="btn-ghost" data-filter="tiendas" aria-pressed="false">Tiendas</button>
-
-          <button type="button" class="btn-ghost" data-filter="sitios" aria-pressed="false">Sitios y catálogos</button>
-
-          <button type="button" class="btn-ghost" data-filter="sistemas" aria-pressed="false">Sistemas y paneles</button>
-
-          <button type="button" class="btn-ghost" data-filter="propuestas" aria-pressed="false">Propuestas</button>
-
-        </div>
-
-      </search>
-
-      <div class="grid project-grid">
-
-        <article class="card" id="happy-ride" data-case="happy-ride" data-cats="sitios sistemas">
-
-          <figure class="card-media">
-
-            <img src="media/opt/happy-ride-inicio.jpg" alt="Sitio de The Happy Ride Tulum." width="1440" height="900" loading="lazy" />
-
-          </figure>
-
-          <div class="card-body">
-
-            <p class="cat">Reservas</p>
-
-            <h3>The Happy Ride Tulum</h3>
-
-            <p class="blurb">Elegir un vehículo y solicitar una reserva, en pocos pasos.</p>
-
-            <button type="button" class="btn" data-open="happy-ride">Ver proyecto</button>
-
-            <details class="case-full">
-
-              <summary class="btn">Ver proyecto</summary>
-
-              <p class="kicker">Reservas</p>
-
-              <h3>The Happy Ride Tulum</h3>
-
-              <div class="ficha-copy">
-
-                <p>Una web en español e inglés para explorar vehículos, elegir fechas y enviar una solicitud de reserva. El cliente recibe un código de seguimiento y el negocio confirma por WhatsApp.</p>
-
-                <p class="case-media-links"><a href="videos/01-happy-ride-recorrido.mp4" target="_blank" rel="noopener">Ver recorrido completo</a> · <a href="videos/03-happy-ride-admin.mp4" target="_blank" rel="noopener">Ver administración</a> · <a href="media/happy-ride-presentacion.pdf" target="_blank" rel="noopener">Presentación PDF</a></p>
-
-              </div>
-
-              <ul class="chip-row"><li>Catálogo de vehículos</li><li>Solicitudes de reserva</li><li>Dos idiomas</li></ul>
-
-              <img data-shot data-caption="Inicio" src="media/opt/happy-ride-inicio.jpg" alt="Portada con buscador de fechas." width="1440" height="900" loading="lazy" />
-
-              <img data-shot data-caption="Flota" src="media/opt/happy-ride-flota.jpg" alt="Catálogo de vehículos." width="960" height="600" loading="lazy" />
-
-              <img data-shot data-caption="Solicitud de reserva" src="media/opt/happy-ride-reserva.jpg" alt="Selección de fechas para la solicitud." width="960" height="600" loading="lazy" />
-
-              <img data-shot data-caption="Seguimiento" src="media/opt/happy-ride-ok.jpg" alt="Solicitud recibida con código de seguimiento." width="960" height="600" loading="lazy" />
-
-              <img data-shot data-caption="Versión móvil" src="media/opt/happy-ride-movil.jpg" alt="Portada en un teléfono." width="780" height="1688" loading="lazy" />
-
-              <span hidden data-case-video="videos/02-happy-ride-resumen.mp4" data-type="video/mp4" data-poster="media/opt/happy-ride-inicio.jpg"></span>
-
-            </details>
-
-          </div>
-
-        </article>
-
-        <article class="card" id="acacio" data-case="acacio" data-cats="tiendas">
-
-          <figure class="card-media">
-
-            <img src="media/joyeria-home.jpg" alt="Inicio de Joyería Acacio con anillo en stock y llamadas a consultar." width="1440" height="860" loading="lazy" />
-
-          </figure>
-
-          <div class="card-body">
-
-            <p class="cat">Tienda online</p>
-
-            <h3>Joyería Acacio</h3>
-
-            <p class="blurb">Una vidriera digital para descubrir joyas y consultar por cada pieza.</p>
-
-            <button type="button" class="btn" data-open="acacio">Ver proyecto</button>
-
-            <details class="case-full">
-
-              <summary class="btn">Ver proyecto</summary>
-
-              <p class="kicker">Tienda online</p>
-
-              <h3>Joyería Acacio</h3>
-
-              <p><a data-ext href="https://joyeriaacacio.com" rel="noopener noreferrer">joyeriaacacio.com</a></p>
-
-              <div class="ficha-copy">
-
-                <p>Una tienda que presenta las joyas con imágenes y detalles para facilitar la consulta. El negocio puede actualizar su catálogo y administrar los productos desde un mismo lugar.</p>
-
-              </div>
-
-              <ul class="chip-row"><li>Catálogo</li><li>Consulta por producto</li><li>Gestión de productos</li></ul>
-
-              <img data-shot data-caption="Inicio" src="media/joyeria-home.jpg" alt="Portada de Joyería Acacio." width="1440" height="860" loading="lazy" />
-
-              <img data-shot data-caption="Foto de pieza" src="media/joyeria-pieza-2.webp" alt="Argollas de oro en caja, foto de producto y no captura de interfaz." width="1200" height="1600" loading="lazy" />
-
-            </details>
-
-          </div>
-
-        </article>
-
-        <article class="card" data-case="aura" data-cats="tiendas">
-
-          <figure class="card-media">
-
-            <img src="media/opt/aura-tienda-detalle.webp" alt="Catálogo de Aura LV Store con remeras y estado de stock." width="1440" height="860" loading="lazy" />
-
-          </figure>
-
-          <div class="card-body">
-
-            <p class="cat">Tienda online</p>
-
-            <h3>Aura LV Store</h3>
-
-            <p class="blurb">Prendas organizadas para explorar, elegir y armar una compra.</p>
-
-            <button type="button" class="btn" data-open="aura">Ver proyecto</button>
-
-            <details class="case-full">
-
-              <summary class="btn">Ver proyecto</summary>
-
-              <p class="kicker">Tienda online</p>
-
-              <h3>Aura LV Store</h3>
-
-              <div class="ficha-copy">
-
-                <p>Una tienda de indumentaria con catálogo y carrito. Los clientes pueden recorrer las prendas, mientras el negocio cuenta con un espacio para cargar y actualizar sus productos.</p>
-
-              </div>
-
-              <ul class="chip-row"><li>Catálogo de prendas</li><li>Carrito</li><li>Gestión de productos</li></ul>
-
-              <img data-shot data-caption="Catálogo" src="media/opt/aura-tienda-detalle.webp" alt="Grilla de prendas de Aura LV Store." width="1440" height="860" loading="lazy" />
-
-              <img data-shot data-caption="Fotos de prendas" src="media/aura-home.jpg" alt="Tres remeras del catálogo sobre fondo negro. Son fotos de producto." width="1440" height="860" loading="lazy" />
-
-            </details>
-
-          </div>
-
-        </article>
-
-        <article class="card" data-case="dar" data-cats="sitios">
-
-          <figure class="card-media">
-
-            <img src="media/dar-home.jpg" alt="Inicio de Dar Automotores con un auto destacado y acceso al catálogo." width="1440" height="860" loading="lazy" />
-
-          </figure>
-
-          <div class="card-body">
-
-            <p class="cat">Catálogo de vehículos</p>
-
-            <h3>Dar Automotores</h3>
-
-            <p class="blurb">Encontrar un auto, conocer sus detalles y contactar a la concesionaria.</p>
-
-            <button type="button" class="btn" data-open="dar">Ver proyecto</button>
-
-            <details class="case-full">
-
-              <summary class="btn">Ver proyecto</summary>
-
-              <p class="kicker">Catálogo de vehículos</p>
-
-              <h3>Dar Automotores</h3>
-
-              <div class="ficha-copy">
-
-                <p>Un sitio que reúne los vehículos disponibles y permite filtrarlos para encontrar opciones de interés. Cada auto tiene su propia presentación y un camino directo para consultar.</p>
-
-              </div>
-
-              <ul class="chip-row"><li>Filtros de búsqueda</li><li>Detalle de vehículos</li><li>Consultas</li></ul>
-
-              <img data-shot data-caption="Inicio" src="media/dar-home.jpg" alt="Portada de Dar Automotores." width="1440" height="860" loading="lazy" />
-
-              <img data-shot data-caption="Catálogo" src="media/opt/dar-catalogo-detalle.webp" alt="Listado de autos con filtros laterales." width="1440" height="860" loading="lazy" />
-
-              <span hidden data-case-video="videos/04-dar-clip.webm" data-type="video/webm" data-poster="media/dar-home.jpg"></span>
-
-            </details>
-
-          </div>
-
-        </article>
-
-        <article class="card" data-case="smartgps" data-cats="sitios">
-
-          <figure class="card-media">
-
-            <img src="media/opt/smartgps-home-1280.webp" alt="Portada de catálogo de rastreadores GPS." width="1440" height="900" loading="lazy" />
-
-          </figure>
-
-          <div class="card-body">
-
-            <p class="cat">Catálogo de productos</p>
-
-            <h3>SmartGPS</h3>
-
-            <p class="blurb">Equipos GPS con información clara y una consulta al alcance.</p>
-
-            <button type="button" class="btn" data-open="smartgps">Ver proyecto</button>
-
-            <details class="case-full">
-
-              <summary class="btn">Ver proyecto</summary>
-
-              <p class="kicker">Catálogo de productos</p>
-
-              <h3>SmartGPS</h3>
-
-              <div class="ficha-copy">
-
-                <p>Un catálogo para explorar rastreadores GPS, conocer sus características y consultar al negocio por WhatsApp. La información está organizada para ayudar al visitante a elegir.</p>
-
-              </div>
-
-              <ul class="chip-row"><li>Catálogo de equipos</li><li>Detalle de productos</li><li>Contacto por WhatsApp</li></ul>
-
-              <img data-shot data-caption="Inicio" src="media/opt/smartgps-home-1280.webp" alt="Portada del catálogo SmartGPS." width="1440" height="900" loading="lazy" />
-
-              <img data-shot data-caption="Equipos" src="media/opt/smartgps-equipos-1280.webp" alt="Listado de equipos GPS." width="1440" height="900" loading="lazy" />
-
-              <img data-shot data-caption="Ficha" src="media/opt/smartgps-ficha-1280.webp" alt="Ficha de un rastreador GPS." width="1440" height="900" loading="lazy" />
-
-              <span hidden data-case-video="videos/08-smartgps-clip.webm" data-type="video/webm" data-poster="media/opt/smartgps-home-1280.webp"></span>
-
-            </details>
-
-          </div>
-
-        </article>
-
-        <article class="card" id="agrostock" data-case="agrostock" data-cats="tiendas sistemas">
-
-          <figure class="card-media">
-
-            <img src="media/agrostock-home.jpg" alt="Catálogo de AgroStock con productos por litro y botón para agregar." width="1440" height="900" loading="lazy" />
-
-          </figure>
-
-          <div class="card-body">
-
-            <p class="cat">Gestión de pedidos</p>
-
-            <h3>AgroStock</h3>
-
-            <p class="blurb">Productos y cantidades por litro, reunidos en un solo pedido.</p>
-
-            <button type="button" class="btn" data-open="agrostock">Ver proyecto</button>
-
-            <details class="case-full">
-
-              <summary class="btn">Ver proyecto</summary>
-
-              <p class="kicker">Gestión de pedidos</p>
-
-              <h3>AgroStock</h3>
-
-              <div class="ficha-copy">
-
-                <p>Una herramienta para seleccionar productos, indicar los litros necesarios y armar un pedido. El depósito cuenta con una vista de gestión para consultar las solicitudes recibidas.</p>
-
-              </div>
-
-              <ul class="chip-row"><li>Catálogo</li><li>Pedidos por litro</li><li>Gestión de pedidos</li></ul>
-
-              <img data-shot data-caption="Catálogo" src="media/agrostock-home.jpg" alt="Catálogo de AgroStock." width="1440" height="900" loading="lazy" />
-
-              <img data-shot data-caption="Carrito" src="media/agrostock-carrito.jpg" alt="Pedido abierto con litros y datos de pago." width="1440" height="900" loading="lazy" />
-
-              <span hidden data-case-video="videos/10-agrostock-clip.webm" data-type="video/webm" data-poster="media/agrostock-home.jpg"></span>
-
-            </details>
-
-          </div>
-
-        </article>
-
-        <article class="card" data-case="holistica" data-cats="sitios sistemas">
-
-          <figure class="card-media">
-
-            <img src="media/holistica-live.jpg" alt="Inicio de Holística con título del método y acceso al admin." width="1440" height="860" loading="lazy" />
-
-          </figure>
-
-          <div class="card-body">
-
-            <p class="cat">Sitio web</p>
-
-            <h3>Holística</h3>
-
-            <p class="blurb">Una presentación de servicios que el negocio puede mantener al día.</p>
-
-            <button type="button" class="btn" data-open="holistica">Ver proyecto</button>
-
-            <details class="case-full">
-
-              <summary class="btn">Ver proyecto</summary>
-
-              <p class="kicker">Sitio web</p>
-
-              <h3>Holística</h3>
-
-              <div class="ficha-copy">
-
-                <p>Un sitio para presentar la propuesta de Holística y acercarla a sus visitantes. Incluye un espacio de administración para actualizar textos e imágenes sin depender de alguien que programe cada cambio.</p>
-
-              </div>
-
-              <ul class="chip-row"><li>Presentación de servicios</li><li>Edición de textos</li><li>Actualización de imágenes</li></ul>
-
-              <img data-shot data-caption="Inicio" src="media/holistica-live.jpg" alt="Página de Holística en el navegador." width="1440" height="860" loading="lazy" />
-
-              <span hidden data-case-video="videos/09-holistica-clip.webm" data-type="video/webm" data-poster="media/holistica-live.jpg"></span>
-
-            </details>
-
-          </div>
-
-        </article>
-
-      
-
-        <article class="card" data-case="alimentos" data-cats="sitios">
-
-          <figure class="card-media">
-
-            <img src="media/alimentos-home.jpg" alt="Landing de Alimentos en Regla con formulario de diagnóstico." width="1440" height="860" loading="lazy" />
-
-          </figure>
-
-          <div class="card-body">
-
-            <p class="cat">Sitio profesional</p>
-
-            <h3>Alimentos en Regla</h3>
-
-            <p class="blurb">Orientación clara para quienes necesitan habilitar sus productos alimenticios.</p>
-
-            <button type="button" class="btn" data-open="alimentos">Ver proyecto</button>
-
-            <details class="case-full">
-
-              <summary class="btn">Ver proyecto</summary>
-
-              <p class="kicker">Sitio profesional</p>
-
-              <h3>Alimentos en Regla</h3>
-
-              <p>Lic. Karina Fernández</p>
-
-              <div class="ficha-copy">
-
-                <p>Una web que presenta los servicios de asesoramiento alimentario y responde dudas frecuentes. Un formulario guía la consulta inicial para que cada persona pueda explicar qué necesita.</p>
-
-              </div>
-
-              <ul class="chip-row"><li>Servicios</li><li>Preguntas frecuentes</li><li>Consulta guiada</li></ul>
-
-              <img data-shot data-caption="Inicio" src="media/alimentos-home.jpg" alt="Portada de Alimentos en Regla." width="1440" height="860" loading="lazy" />
-
-              <img data-shot data-caption="Ayuda y diagnóstico" src="media/alimentos-form.jpg" alt="Bloques de preguntas frecuentes sobre RNE y RNPA." width="1440" height="860" loading="lazy" />
-
-            </details>
-
-          </div>
-
-        </article>
-
-        <article class="card" data-case="selvora" data-cats="sitios">
-
-          <figure class="card-media">
-
-            <img src="media/selvora-home.jpg" alt="Inicio de Selvora Deco con living y acceso al catálogo." width="1440" height="860" loading="lazy" />
-
-          </figure>
-
-          <div class="card-body">
-
-            <p class="cat">Catálogo de decoración</p>
-
-            <h3>Selvora Deco</h3>
-
-            <p class="blurb">Plantas y decoración presentadas para inspirar y facilitar la elección.</p>
-
-            <button type="button" class="btn" data-open="selvora">Ver proyecto</button>
-
-            <details class="case-full">
-
-              <summary class="btn">Ver proyecto</summary>
-
-              <p class="kicker">Catálogo de decoración</p>
-
-              <h3>Selvora Deco</h3>
-
-              <div class="ficha-copy">
-
-                <p>Un catálogo visual que organiza las propuestas de decoración por categorías. Reúne imágenes, información y contacto para acompañar al visitante desde la inspiración hasta la consulta.</p>
-
-              </div>
-
-              <ul class="chip-row"><li>Catálogo visual</li><li>Categorías</li><li>Consultas</li></ul>
-
-              <img data-shot data-caption="Inicio" src="media/selvora-home.jpg" alt="Portada de Selvora Deco." width="1440" height="860" loading="lazy" />
-
-              <img data-shot data-caption="Catálogo" src="media/selvora-catalogo.jpg" alt="Familias del catálogo de Selvora." width="1440" height="860" loading="lazy" />
-
-              <span hidden data-case-video="videos/05-selvora-clip.webm" data-type="video/webm" data-poster="media/selvora-home.jpg"></span>
-
-            </details>
-
-          </div>
-
-        </article>
-
-        <article class="card" data-case="abs" data-cats="tiendas">
-
-          <figure class="card-media">
-
-            <img src="media/abs-home.jpg" alt="Portada de AbSA Perfumería con un frasco y el título de la tienda." width="1440" height="860" loading="lazy" />
-
-          </figure>
-
-          <div class="card-body">
-
-            <p class="cat">Tienda online</p>
-
-            <h3>AbSA / Perfumería</h3>
-
-            <p class="blurb">Fragancias organizadas para descubrir productos y armar un carrito.</p>
-
-            <button type="button" class="btn" data-open="abs">Ver proyecto</button>
-
-            <details class="case-full">
-
-              <summary class="btn">Ver proyecto</summary>
-
-              <p class="kicker">Tienda online</p>
-
-              <h3>AbSA / Perfumería</h3>
-
-              <div class="ficha-copy">
-
-                <p>Una propuesta de tienda de perfumes con categorías, detalles de cada fragancia y carrito. El recorrido permite explorar la colección y reunir los productos elegidos.</p>
-
-              </div>
-
-              <ul class="chip-row"><li>Categorías</li><li>Detalle de fragancias</li><li>Carrito</li></ul>
-
-              <img data-shot data-caption="Inicio" src="media/abs-home.jpg" alt="Portada de AbSA." width="1440" height="860" loading="lazy" />
-
-              <img data-shot data-caption="Categorías" src="media/abs-productos.jpg" alt="Universos de fragancias en AbSA." width="1440" height="860" loading="lazy" />
-
-              <span hidden data-case-video="videos/06-abs-clip.webm" data-type="video/webm" data-poster="media/abs-home.jpg"></span>
-
-            </details>
-
-          </div>
-
-        </article>
-
-        <article class="card" data-case="tiger" data-cats="sitios">
-
-          <figure class="card-media">
-
-            <img src="media/ostiger-home.jpg" alt="Inicio de OS TigerLab, academia de evidencia digital." width="1440" height="860" loading="lazy" />
-
-          </figure>
-
-          <div class="card-body">
-
-            <p class="cat">Sitio educativo</p>
-
-            <h3>OS TigerLab</h3>
-
-            <p class="blurb">La propuesta de una academia, clara desde la primera visita.</p>
-
-            <button type="button" class="btn" data-open="tiger">Ver proyecto</button>
-
-            <details class="case-full">
-
-              <summary class="btn">Ver proyecto</summary>
-
-              <p class="kicker">Sitio educativo</p>
-
-              <h3>OS TigerLab</h3>
-
-              <p><a data-ext href="https://ostigerlab.com" rel="noopener noreferrer">ostigerlab.com</a></p>
-
-              <div class="ficha-copy">
-
-                <p>Un sitio que reúne la presentación de la academia, su metodología y el programa de formación. Los interesados pueden conocer la propuesta y encontrar cómo consultar.</p>
-
-              </div>
-
-              <ul class="chip-row"><li>Presentación institucional</li><li>Programa de formación</li><li>Contacto</li></ul>
-
-              <img data-shot data-caption="Inicio" src="media/ostiger-home.jpg" alt="Portada de OS TigerLab." width="1440" height="860" loading="lazy" />
-
-              <img data-shot data-caption="Academia" src="media/ostiger-cursos.jpg" alt="Bloques de metodología y práctica de OS TigerLab." width="1440" height="860" loading="lazy" />
-
-            </details>
-
-          </div>
-
-        </article>
-
-        <article class="card" data-case="capri" data-cats="sistemas">
-
-          <figure class="card-media">
-
-            <img src="media/capri-publico.jpg" alt="Esquema de un informe interno. Las capturas originales no se publican." width="1440" height="860" loading="lazy" />
-
-          </figure>
-
-          <div class="card-body">
-
-            <p class="cat">Organización de gastos</p>
-
-            <h3>Departamento Capri</h3>
-
-            <p class="blurb">Gastos y préstamos ordenados para consultar la información con claridad.</p>
-
-            <button type="button" class="btn" data-open="capri">Ver proyecto</button>
-
-            <details class="case-full">
-
-              <summary class="btn">Ver proyecto</summary>
-
-              <p class="kicker">Organización de gastos</p>
-
-              <h3>Departamento Capri</h3>
-
-              <div class="ficha-copy">
-
-                <p>Un informe que reúne gastos, préstamos y totales, con vistas por persona. La muestra del portafolio es ilustrativa para resguardar la información privada.</p>
-
-              </div>
-
-              <ul class="chip-row"><li>Resumen de gastos</li><li>Préstamos</li><li>Vistas por persona</li></ul>
-
-              <img data-shot data-caption="Vista pública" src="media/capri-publico.jpg" alt="Esquema sin datos personales ni montos." width="1440" height="860" loading="lazy" />
-
-            </details>
-
-          </div>
-
-        </article>
-
-        <article class="card" data-case="andro" data-cats="sistemas">
-
-          <figure class="card-media">
-
-            <img src="media/andro-home.jpg" alt="Pantalla de acceso al panel de cartelería digital Huevos K." width="1440" height="860" loading="lazy" />
-
-          </figure>
-
-          <div class="card-body">
-
-            <p class="cat">Cartelería digital</p>
-
-            <h3>Andro / cartelería</h3>
-
-            <p class="blurb">Un espacio de administración para el contenido de pantallas comerciales.</p>
-
-            <button type="button" class="btn" data-open="andro">Ver proyecto</button>
-
-            <details class="case-full">
-
-              <summary class="btn">Ver proyecto</summary>
-
-              <p class="kicker">Cartelería digital</p>
-
-              <h3>Andro / cartelería</h3>
-
-              <div class="ficha-copy">
-
-                <p>Un proyecto orientado a gestionar contenido para pantallas de un negocio. La imagen muestra el acceso al espacio de administración.</p>
-
-              </div>
-
-              <ul class="chip-row"><li>Pantallas comerciales</li><li>Administración</li><li>Acceso privado</li></ul>
-
-              <img data-shot data-caption="Acceso al admin" src="media/andro-home.jpg" alt="Formulario de entrada al panel de cartelería." width="1440" height="860" loading="lazy" />
-
-            </details>
-
-          </div>
-
-        </article>
-
-        <article class="card" data-case="tiro" data-cats="propuestas">
-
-          <figure class="card-media">
-
-            <img src="media/tiro-home.jpg" alt="Propuesta comercial navegable para Tiro Federal Córdoba." width="1440" height="860" loading="lazy" />
-
-          </figure>
-
-          <div class="card-body">
-
-            <p class="cat">Propuesta digital</p>
-
-            <h3>Tiro Federal Córdoba</h3>
-
-            <p class="blurb">Un plan por etapas para desarrollar la presencia digital de la institución.</p>
-
-            <button type="button" class="btn" data-open="tiro">Ver proyecto</button>
-
-            <details class="case-full">
-
-              <summary class="btn">Ver proyecto</summary>
-
-              <p class="kicker">Propuesta digital</p>
-
-              <h3>Tiro Federal Córdoba</h3>
-
-              <div class="ficha-copy">
-
-                <p>Una presentación navegable que organiza la propuesta para Tiro Federal Córdoba. Explica el alcance de cada etapa y permite recorrer las ideas de forma clara.</p>
-
-              </div>
-
-              <ul class="chip-row"><li>Propuesta comercial</li><li>Etapas</li><li>Presentación interactiva</li></ul>
-
-              <img data-shot data-caption="Portada" src="media/tiro-home.jpg" alt="Portada de la propuesta para Tiro Federal." width="1440" height="860" loading="lazy" />
-
-              <img data-shot data-caption="Etapas" src="media/tiro-etapas.jpg" alt="Tres fases de la propuesta comercial." width="1440" height="860" loading="lazy" />
-
-            </details>
-
-          </div>
-
-        </article>
-
-      </div>
-
-    </section>
-
-    <section class="section wrap split" id="sobre-mi" aria-labelledby="sobre-title">
-
-      <div>
-
-        <h2 id="sobre-title">Sobre mí</h2>
-
-        <p class="prose">Soy Lautaro Demian Núñez, desarrollador y Licenciado en Ciberseguridad, de Córdoba, Argentina. Hace más de 6 años trabajo en soluciones digitales para empresas, negocios y pequeñas tiendas.</p>
-
-        <p class="prose">Me enfoco en entender dónde aparecen las dificultades: un proceso que lleva demasiado tiempo, herramientas que no se conectan o una web que complica la experiencia. A partir de ahí, diseño y desarrollo una solución a medida.</p>
-
-      </div>
-
-      <div>
-
-        <h3>Cómo puedo ayudarte</h3>
-
-        <ul class="tech">
-
-          <li><b>Sitios web</b><span>Presentá tu negocio y facilitá el contacto con tus clientes.</span></li>
-
-          <li><b>Tiendas y catálogos</b><span>Mostrá tus productos y ayudá a las personas a encontrar lo que buscan.</span></li>
-
-          <li><b>Sistemas a medida</b><span>Organizá pedidos, reservas e información en un mismo lugar.</span></li>
-
-          <li><b>Mejoras en tu negocio</b><span>Simplificá tareas repetitivas y resolvé los pasos que hoy te hacen perder tiempo.</span></li>
-
+    <!-- ═══════════ MARCAS ═══════════ -->
+    <section class="brands" id="marcas" aria-labelledby="marcas-title">
+      <h2 id="marcas-title" class="brands-title rv">Marcas y negocios que confiaron en mi trabajo</h2>
+      <div class="marquee" data-dir="left">
+        <ul class="marquee-track">
+          <li>The Happy Ride Tulum</li>
+          <li>Dar Automotores</li>
+          <li>Joyería Acacio</li>
+          <li>AbSA Perfumes</li>
+          <li>SmartGPS</li>
+          <li>AuraLV Store</li>
+          <li>Selvora Deco</li>
         </ul>
-
       </div>
-
+      <div class="marquee" data-dir="right">
+        <ul class="marquee-track">
+          <li>Grupo Stelle · AgroStock</li>
+          <li>NextScene</li>
+          <li>Alimentos en Regla</li>
+          <li>Holística</li>
+          <li>OS TigerLab</li>
+          <li>Tiro Federal Córdoba</li>
+          <li>Departamento Capri</li>
+        </ul>
+      </div>
     </section>
 
-    <section class="section wrap" id="proceso" aria-labelledby="proceso-title">
+    <div class="tape" aria-hidden="true">
+      <div class="tape-row t-dark"><p>PENTESTING ✦ HARDENING ✦ FORENSE DIGITAL ✦ CIBERCRIMEN ✦ 2FA ✦ CIFRADO ✦ PENTESTING ✦ HARDENING ✦ FORENSE DIGITAL ✦ CIBERCRIMEN ✦ 2FA ✦ CIFRADO ✦ </p></div>
+    </div>
 
-      <h2 id="proceso-title">Proceso</h2>
+    <!-- ═══════════ SEGURIDAD OFENSIVA ═══════════ -->
+    <section class="sec" id="seguridad" aria-labelledby="seguridad-title">
+      <div class="sec-bg" aria-hidden="true">
+        <span class="hex-rain" data-hexrain></span>
+        <span class="scanline"></span>
+      </div>
+      <div class="wrap">
+        <header class="sec-head rv">
+          <p class="eyebrow eyebrow-red">Ciberseguridad ofensiva</p>
+          <h2 id="seguridad-title">Pienso como un atacante <span class="grad grad-red">para que nadie entre</span>.</h2>
+          <p class="sec-lead">Licenciado en Ciberseguridad y especialista en cibercrimen. Reviso empresas con autorización para encontrar las puertas abiertas antes que otro, y modernizo estructuras antiguas para que dejen de ser un riesgo.</p>
+        </header>
 
-      <p class="section-lead">De la necesidad a una solución que puedas usar.</p>
+        <div class="sec-grid">
+          <div class="soc rv" aria-hidden="true">
+            <div class="radar-wrap">
+              <span class="shield-ring"></span>
+              <span class="shield-ring sr-2"></span>
+              <i class="atk" style="--a:20deg;--d:0s"></i>
+              <i class="atk" style="--a:95deg;--d:.7s"></i>
+              <i class="atk" style="--a:160deg;--d:1.5s"></i>
+              <i class="atk" style="--a:215deg;--d:.35s"></i>
+              <i class="atk" style="--a:280deg;--d:1.1s"></i>
+              <i class="atk" style="--a:330deg;--d:1.9s"></i>
+            <div class="radar">
+              <span class="radar-sweep"></span>
+              <span class="radar-ring"></span><span class="radar-ring"></span><span class="radar-ring"></span>
+              <i class="blip" style="--x:28%;--y:34%"></i>
+              <i class="blip" style="--x:66%;--y:24%;--d:.8s"></i>
+              <i class="blip" style="--x:58%;--y:70%;--d:1.6s"></i>
+              <i class="blip blip-ok" style="--x:36%;--y:62%;--d:2.2s"></i>
+              <span class="radar-lock"><span class="lk"></span></span>
+            </div>
+            <span class="radar-tag">Monitoreo activo · 24/7</span>
+            </div>
+            <div class="term">
+              <div class="win-bar"><i></i><i></i><i></i><span>auditoria@camusdev ~ alcance autorizado</span></div>
+              <ol class="term-lines" data-term>
+                <li><b class="t-p">$</b> audit --cliente empresa.com --autorizado</li>
+                <li><b class="t-i">[i]</b> superficie mapeada: 312 endpoints</li>
+                <li><b class="t-w">[!]</b> CMS sin actualizar desde 2019</li>
+                <li><b class="t-w">[!]</b> panel admin con contraseña débil</li>
+                <li><b class="t-w">[!]</b> backups expuestos sin cifrar</li>
+                <li><b class="t-o">[✓]</b> parches + 2FA + WAF aplicados</li>
+                <li><b class="t-o">[✓]</b> backups cifrados y monitoreo 24/7</li>
+                <li><b class="t-s">score</b> 41 → <em>96</em> · informe entregado</li>
+              </ol>
+            </div>
+          </div>
 
-      <ol class="steps">
-
-        <li>
-
-          <b>Entender la necesidad</b>
-
-          Conocer el negocio, sus procesos y las dificultades a resolver.
-
-        </li>
-
-        <li>
-
-          <b>Diseñar la solución</b>
-
-          Organizar la información y definir una experiencia simple.
-
-        </li>
-
-        <li>
-
-          <b>Construir y probar</b>
-
-          Desarrollar la solución y comprobar que sea cómoda de usar en celular y computadora.
-
-        </li>
-
-        <li>
-
-          <b>Entregar y documentar</b>
-
-          Poner la solución en funcionamiento y explicar cómo usarla.
-
-        </li>
-
-      </ol>
-
-    </section>
-
-    <section class="section wrap" id="contacto" aria-labelledby="contacto-title">
-
-      <div class="contact">
-
-        <h2 id="contacto-title">Tu próximo proyecto empieza con una conversación.</h2>
-
-        <p class="prose">
-
-          Una web que represente mejor tu negocio. Una tarea que deje de quitarte tiempo. Contame qué querés mejorar y encontremos una forma de hacerlo.
-
-        </p>
-
-        <a class="mail" href="mailto:lautarodemiannunez32@gmail.com">lautarodemiannunez32@gmail.com</a>
-
-        <div class="contact-actions">
-
-          <button type="button" class="btn" data-copy-email>Copiar correo</button>
-
-          <a class="btn-ghost" href="mailto:lautarodemiannunez32@gmail.com">Abrir el correo</a>
-
-          <a class="btn-ghost" href="servicio.html">Ver el servicio</a>
-
+          <ul class="sec-services">
+            <li class="svc rv"><span class="svc-ico">01</span><div><h3>Pentesting autorizado</h3><p>Pruebas de intrusión controladas sobre webs, redes y aplicaciones, con alcance firmado y un informe claro de qué arreglar primero.</p></div></li>
+            <li class="svc rv"><span class="svc-ico">02</span><div><h3>Hardening</h3><p>Endurezco servidores, sitios y paneles: permisos, cifrado, 2FA, cabeceras, backups y monitoreo.</p></div></li>
+            <li class="svc rv"><span class="svc-ico">03</span><div><h3>Modernización de sistemas antiguos</h3><p>Llevo estructuras viejas a una arquitectura actual sin frenar la operación: migraciones por etapas y sin pérdida de datos.</p></div></li>
+            <li class="svc rv"><span class="svc-ico">04</span><div><h3>Cibercrimen y evidencia digital</h3><p>Investigación de incidentes, análisis de fraudes y preservación de evidencia para actuar con respaldo.</p></div></li>
+            <li class="svc rv"><span class="svc-ico">05</span><div><h3>Concientización de equipos</h3><p>Phishing simulado y capacitaciones para que las personas también sean una barrera.</p></div></li>
+          </ul>
         </div>
 
-        <label class="visually-hidden" for="email-fallback">Correo para copiar</label>
-
-        <input id="email-fallback" type="text" readonly hidden value="lautarodemiannunez32@gmail.com" />
-
-        <p class="sr-live" id="copy-live" aria-live="polite"></p>
-
+        <div class="vault rv" aria-label="Del sistema vulnerable al sistema blindado">
+          <div class="vault-head">
+            <span>Sistema heredado</span>
+            <span class="vault-arrow" aria-hidden="true">→→→</span>
+            <span>Infraestructura blindada</span>
+          </div>
+          <ul class="locks" aria-hidden="true">
+            <li><span class="lk"></span></li><li><span class="lk"></span></li><li><span class="lk"></span></li><li><span class="lk"></span></li><li><span class="lk"></span></li><li><span class="lk"></span></li><li><span class="lk"></span></li><li><span class="lk"></span></li><li><span class="lk"></span></li><li><span class="lk"></span></li><li><span class="lk"></span></li><li><span class="lk"></span></li>
+          </ul>
+          <ul class="frameworks">
+            <li>OWASP Top 10</li><li>MITRE ATT&amp;CK</li><li>ISO/IEC 27001</li><li>NIST CSF</li><li>Hacking ético</li><li>Forense digital</li>
+          </ul>
+        </div>
       </div>
+    </section>
 
+    <!-- ═══════════ PROCESO ═══════════ -->
+    <section class="process" id="proceso" aria-labelledby="proceso-title">
+      <div class="wrap">
+        <header class="sec-head rv">
+          <p class="eyebrow">Mi proceso</p>
+          <h2 id="proceso-title">De “tengo un problema” a <span class="grad">“ya está online”</span>.</h2>
+          <p class="sec-lead">Así trabaja un proyecto conmigo, paso a paso. Bajá y miralo armarse.</p>
+        </header>
+
+        <div class="proc">
+          <div class="proc-stage" aria-hidden="true">
+            <div class="stage">
+              <div class="win-bar"><i></i><i></i><i></i><span class="stage-title">01 · descubrir</span></div>
+              <div class="stage-body">
+
+                <div class="scene-s s-1 is-on" data-scene="1">
+                  <div class="bubble b-them">Pierdo horas armando pedidos por WhatsApp…</div>
+                  <div class="bubble b-me">¿Cuántos por día? ¿Quién los carga? ¿Dónde se traba?</div>
+                  <div class="bubble b-them">Unos 40, y siempre se pierde alguno</div>
+                  <div class="notes">
+                    <span class="note n1">pedidos</span>
+                    <span class="note n2">stock</span>
+                    <span class="note n3">WhatsApp</span>
+                  </div>
+                </div>
+
+                <div class="scene-s s-2" data-scene="2">
+                  <svg class="wire" viewBox="0 0 320 200" role="presentation">
+                    <rect x="10" y="10" width="300" height="26" rx="6" />
+                    <rect x="10" y="48" width="180" height="70" rx="8" />
+                    <rect x="200" y="48" width="110" height="70" rx="8" />
+                    <rect x="10" y="130" width="92" height="60" rx="8" />
+                    <rect x="114" y="130" width="92" height="60" rx="8" />
+                    <rect x="218" y="130" width="92" height="60" rx="8" />
+                    <line x1="24" y1="70" x2="150" y2="70" />
+                    <line x1="24" y1="86" x2="120" y2="86" />
+                  </svg>
+                  <div class="swatches"><i></i><i></i><i></i><i></i><i></i></div>
+                  <div class="type-spec"><b>Aa</b><span>Títulos claros · botones grandes · 2 clics al objetivo</span></div>
+                </div>
+
+                <div class="scene-s s-3" data-scene="3">
+<pre class="code code-live"><code data-type-target></code></pre>
+                </div>
+
+                <div class="scene-s s-4" data-scene="4">
+                  <div class="devices">
+                    <div class="dev dev-desk"><span></span></div>
+                    <div class="dev dev-phone"><span></span></div>
+                  </div>
+                  <ul class="checks">
+                    <li>Celular 390 px</li>
+                    <li>Escritorio 1440 px</li>
+                    <li>Formularios y pedidos</li>
+                    <li>Velocidad de carga</li>
+                    <li>Seguridad y datos</li>
+                  </ul>
+                </div>
+
+                <div class="scene-s s-5" data-scene="5">
+                  <div class="deploy-ring"><span>deploy</span></div>
+                  <ul class="log">
+                    <li><b>✓</b> build optimizado</li>
+                    <li><b>✓</b> dominio + SSL</li>
+                    <li><b>✓</b> imágenes comprimidas</li>
+                    <li><b>✓</b> deploy listo</li>
+                  </ul>
+                  <div class="bar"><span></span></div>
+                  <p class="online">tunegocio.com está online</p>
+                </div>
+
+                <div class="scene-s s-6" data-scene="6">
+                  <svg class="chart" viewBox="0 0 300 120" role="presentation">
+                    <polyline points="0,110 40,96 80,100 120,72 160,78 200,48 240,40 300,12" />
+                  </svg>
+                  <div class="kpis">
+                    <span>Manual de uso</span>
+                    <span>Soporte directo</span>
+                    <span>Mejoras continuas</span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="stage-glow"></div>
+          </div>
+
+          <ol class="proc-steps">
+            <li class="step" data-step="1" data-title="01 · descubrir">
+              <span class="step-emoji">01</span>
+              <h3>Descubrir</h3>
+              <p>Me siento con vos a entender el negocio: qué vendés, cómo trabajás y dónde se pierde tiempo o plata. Sin tecnicismos.</p>
+            </li>
+            <li class="step" data-step="2" data-title="02 · diseñar">
+              <span class="step-emoji">02</span>
+              <h3>Diseñar</h3>
+              <p>Ordeno la información, dibujo la estructura y defino colores y tipografías. Una experiencia simple para tus clientes.</p>
+            </li>
+            <li class="step" data-step="3" data-title="03 · construir">
+              <span class="step-emoji">03</span>
+              <h3>Construir</h3>
+              <p>Programo el sitio o sistema a medida: catálogos, carritos, reservas, paneles de stock, lo que tu negocio necesite.</p>
+            </li>
+            <li class="step" data-step="4" data-title="04 · probar">
+              <span class="step-emoji">04</span>
+              <h3>Probar</h3>
+              <p>Lo pruebo en celular y computadora, reviso formularios, velocidad y seguridad. Mi formación en ciberseguridad suma acá.</p>
+            </li>
+            <li class="step" data-step="5" data-title="05 · lanzar">
+              <span class="step-emoji">05</span>
+              <h3>Lanzar</h3>
+              <p>Lo publico con dominio y certificado, optimizado para que cargue rápido y aparezca en Google.</p>
+            </li>
+            <li class="step" data-step="6" data-title="06 · acompañar">
+              <span class="step-emoji">06</span>
+              <h3>Acompañar</h3>
+              <p>Te explico cómo usarlo, te dejo documentación y sigo cerca para ajustes y nuevas ideas.</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ PROYECTOS ═══════════ -->
+    <section class="projects" id="proyectos" aria-labelledby="proyectos-title">
+      <div class="wrap">
+        <header class="sec-head rv">
+          <p class="eyebrow">Proyectos</p>
+          <h2 id="proyectos-title">Trabajo real, <span class="grad">negocios reales</span>.</h2>
+          <p class="sec-lead">Tiendas, catálogos, sistemas de gestión y propuestas. Tocá cualquiera para ver capturas y videos.</p>
+        </header>
+
+        <div class="filters rv" role="group" aria-label="Filtrar proyectos">
+          <button type="button" data-filter="all" aria-pressed="true">Todos</button>
+          <button type="button" data-filter="tiendas" aria-pressed="false">Tiendas</button>
+          <button type="button" data-filter="sitios" aria-pressed="false">Sitios</button>
+          <button type="button" data-filter="sistemas" aria-pressed="false">Sistemas</button>
+          <button type="button" data-filter="propuestas" aria-pressed="false">Propuestas</button>
+        </div>
+
+        <div class="bento">
+
+          <article class="pj pj-xl rv" data-id="happy-ride" data-cats="sitios sistemas" style="--accent:#ff8a3d">
+            <div class="pj-in">
+              <figure class="pj-media"><img src="media/opt/happy-ride-inicio.jpg" alt="Sitio de The Happy Ride Tulum." width="1440" height="900" loading="lazy" /></figure>
+              <div class="pj-body">
+                <span class="pj-emoji">HR</span>
+                <p class="pj-cat">Producto propio · Reservas</p>
+                <h3>The Happy Ride Tulum</h3>
+                <p class="pj-blurb">Web en español e inglés para elegir scooter, ATV o e-bike, fechas y pedir la reserva en 4 pasos. El cliente recibe un código de seguimiento.</p>
+                <ul class="pj-stack"><li>Web bilingüe</li><li>Reservas</li><li>Panel admin</li></ul>
+                <button type="button" class="pj-open" data-open>Ver proyecto <span aria-hidden="true">→</span></button>
+              </div>
+              <span class="pj-glare" aria-hidden="true"></span>
+            </div>
+            <template class="pj-detail">
+              <p>Una web en español e inglés para explorar vehículos, elegir fechas y enviar una solicitud de reserva. El cliente recibe un código de seguimiento y el negocio confirma por WhatsApp.</p>
+              <p class="links"><a href="videos/01-happy-ride-recorrido.mp4" target="_blank" rel="noopener">Recorrido completo</a><a href="videos/03-happy-ride-admin.mp4" target="_blank" rel="noopener">Administración</a><a href="media/happy-ride-presentacion.pdf" target="_blank" rel="noopener">Presentación PDF</a></p>
+              <img data-shot data-caption="Inicio" src="media/opt/happy-ride-inicio.jpg" alt="Portada con buscador de fechas." width="1440" height="900" />
+              <img data-shot data-caption="Flota" src="media/opt/happy-ride-flota.jpg" alt="Catálogo de vehículos." width="960" height="600" />
+              <img data-shot data-caption="Reserva" src="media/opt/happy-ride-reserva.jpg" alt="Selección de fechas para la solicitud." width="960" height="600" />
+              <img data-shot data-caption="Seguimiento" src="media/opt/happy-ride-ok.jpg" alt="Solicitud recibida con código de seguimiento." width="960" height="600" />
+              <img data-shot data-caption="Móvil" src="media/opt/happy-ride-movil.jpg" alt="Portada en un teléfono." width="780" height="1688" />
+              <video data-video src="videos/02-happy-ride-resumen.mp4" poster="media/opt/happy-ride-inicio.jpg"></video>
+            </template>
+          </article>
+
+          <article class="pj pj-tall rv" data-id="nextscene" data-cats="sistemas" style="--accent:#ff3d7f">
+            <div class="pj-in">
+              <figure class="pj-media pj-art art-nextscene" aria-hidden="true">
+                <span class="ns-live">● EN VIVO</span>
+                <span class="ns-clap">EP. 12</span>
+                <span class="ns-q">¿Qué hace la protagonista?</span>
+                <span class="ns-vote" style="--v:68%"><b>Abre la puerta</b><i></i><em>68%</em></span>
+                <span class="ns-vote" style="--v:32%"><b>Llama a la policía</b><i></i><em>32%</em></span>
+              </figure>
+              <div class="pj-body">
+                <span class="pj-emoji">NS</span>
+                <p class="pj-cat">Sistema en tiempo real</p>
+                <h3>NextScene</h3>
+                <p class="pj-blurb">Novela interactiva en vivo: el público mira, vota y define el próximo capítulo.</p>
+                <ul class="pj-stack"><li>Next.js</li><li>Prisma</li><li>PostgreSQL</li><li>Socket.io</li></ul>
+                <button type="button" class="pj-open" data-open>Ver proyecto <span aria-hidden="true">→</span></button>
+              </div>
+              <span class="pj-glare" aria-hidden="true"></span>
+            </div>
+            <template class="pj-detail">
+              <p>Una plataforma de novela interactiva en vivo. El público sigue la transmisión, vota en tiempo real y el resultado define el próximo capítulo. Incluye casting, ingreso de usuarios y votaciones sincronizadas con WebSockets.</p>
+              <ul class="chips"><li>Votación en tiempo real</li><li>Casting</li><li>Usuarios</li><li>Base de datos relacional</li></ul>
+            </template>
+          </article>
+
+          <article class="pj rv" data-id="acacio" data-cats="tiendas sistemas" style="--accent:#e8c26a">
+            <div class="pj-in">
+              <figure class="pj-media"><img src="media/joyeria-home.jpg" alt="Inicio de Joyería Acacio." width="1440" height="860" loading="lazy" /></figure>
+              <div class="pj-body">
+                <span class="pj-emoji">JA</span>
+                <p class="pj-cat">Tienda + punto de venta</p>
+                <h3>Joyería Acacio</h3>
+                <p class="pj-blurb">Vidriera digital de joyas con consulta por pieza y panel POS para gestionar productos.</p>
+                <ul class="pj-stack"><li>PHP</li><li>MySQL</li><li>JS</li></ul>
+                <button type="button" class="pj-open" data-open>Ver proyecto <span aria-hidden="true">→</span></button>
+              </div>
+              <span class="pj-glare" aria-hidden="true"></span>
+            </div>
+            <template class="pj-detail">
+              <p>Una tienda que presenta las joyas con imágenes y detalles para facilitar la consulta. El negocio actualiza su catálogo y administra los productos desde un panel de punto de venta.</p>
+              <p class="links"><a href="https://joyeriaacacio.com" target="_blank" rel="noopener noreferrer">joyeriaacacio.com</a></p>
+              <img data-shot data-caption="Inicio" src="media/joyeria-home.jpg" alt="Portada de Joyería Acacio." width="1440" height="860" />
+              <img data-shot data-caption="Foto de pieza" src="media/joyeria-pieza-2.webp" alt="Argollas de oro en caja, foto de producto." width="1200" height="1600" />
+            </template>
+          </article>
+
+          <article class="pj rv" data-id="agrostock" data-cats="tiendas sistemas" style="--accent:#7bdc5a">
+            <div class="pj-in">
+              <figure class="pj-media"><img src="media/agrostock-home.jpg" alt="Catálogo de AgroStock con productos por litro." width="1440" height="900" loading="lazy" /></figure>
+              <div class="pj-body">
+                <span class="pj-emoji">AS</span>
+                <p class="pj-cat">Grupo Stelle · Gestión de stock</p>
+                <h3>AgroStock</h3>
+                <p class="pj-blurb">Catálogo de agroquímicos con pedidos por litro y panel privado de stock, ventas y pedidos.</p>
+                <ul class="pj-stack"><li>Node.js</li><li>Express</li><li>JS</li></ul>
+                <button type="button" class="pj-open" data-open>Ver proyecto <span aria-hidden="true">→</span></button>
+              </div>
+              <span class="pj-glare" aria-hidden="true"></span>
+            </div>
+            <template class="pj-detail">
+              <p>Una herramienta para seleccionar productos, indicar los litros necesarios y armar un pedido. El depósito cuenta con un panel privado para controlar stock, ventas y solicitudes recibidas.</p>
+              <img data-shot data-caption="Catálogo" src="media/agrostock-home.jpg" alt="Catálogo de AgroStock." width="1440" height="900" />
+              <img data-shot data-caption="Carrito" src="media/agrostock-carrito.jpg" alt="Pedido abierto con litros y datos de pago." width="1440" height="900" />
+              <video data-video src="videos/10-agrostock-clip.webm" poster="media/agrostock-home.jpg"></video>
+            </template>
+          </article>
+
+          <article class="pj pj-wide rv" data-id="dar" data-cats="sitios" style="--accent:#3da5ff">
+            <div class="pj-in">
+              <figure class="pj-media"><img src="media/dar-home.jpg" alt="Inicio de Dar Automotores con un auto destacado." width="1440" height="860" loading="lazy" /></figure>
+              <div class="pj-body">
+                <span class="pj-emoji">DA</span>
+                <p class="pj-cat">Concesionaria</p>
+                <h3>Dar Automotores</h3>
+                <p class="pj-blurb">Stock de 0 km y usados con filtros, ficha de cada auto, financiación y contacto directo.</p>
+                <ul class="pj-stack"><li>HTML</li><li>CSS</li><li>JS</li></ul>
+                <button type="button" class="pj-open" data-open>Ver proyecto <span aria-hidden="true">→</span></button>
+              </div>
+              <span class="pj-glare" aria-hidden="true"></span>
+            </div>
+            <template class="pj-detail">
+              <p>Un sitio que reúne los vehículos disponibles y permite filtrarlos para encontrar opciones de interés. Cada auto tiene su propia presentación y un camino directo para consultar.</p>
+              <img data-shot data-caption="Inicio" src="media/dar-home.jpg" alt="Portada de Dar Automotores." width="1440" height="860" />
+              <img data-shot data-caption="Catálogo" src="media/opt/dar-catalogo-detalle.webp" alt="Listado de autos con filtros laterales." width="1440" height="860" />
+              <video data-video src="videos/04-dar-clip.webm" poster="media/dar-home.jpg"></video>
+            </template>
+          </article>
+
+          <article class="pj rv" data-id="smartgps" data-cats="tiendas sitios" style="--accent:#22d3ee">
+            <div class="pj-in">
+              <figure class="pj-media"><img src="media/opt/smartgps-home-1280.webp" alt="Portada de SmartGPS." width="1440" height="900" loading="lazy" /></figure>
+              <div class="pj-body">
+                <span class="pj-emoji">SG</span>
+                <p class="pj-cat">Tienda de equipos</p>
+                <h3>SmartGPS</h3>
+                <p class="pj-blurb">Equipos de rastreo con carrito, distribuidores, soporte y consulta por WhatsApp.</p>
+                <ul class="pj-stack"><li>PHP</li><li>CSS</li><li>JS</li></ul>
+                <button type="button" class="pj-open" data-open>Ver proyecto <span aria-hidden="true">→</span></button>
+              </div>
+              <span class="pj-glare" aria-hidden="true"></span>
+            </div>
+            <template class="pj-detail">
+              <p>Un catálogo para explorar rastreadores GPS, conocer sus características y consultar al negocio por WhatsApp. Incluye carrito, sección de distribuidores y soporte.</p>
+              <img data-shot data-caption="Inicio" src="media/opt/smartgps-home-1280.webp" alt="Portada del catálogo SmartGPS." width="1440" height="900" />
+              <img data-shot data-caption="Equipos" src="media/opt/smartgps-equipos-1280.webp" alt="Listado de equipos GPS." width="1440" height="900" />
+              <img data-shot data-caption="Ficha" src="media/opt/smartgps-ficha-1280.webp" alt="Ficha de un rastreador GPS." width="1440" height="900" />
+              <video data-video src="videos/08-smartgps-clip.webm" poster="media/opt/smartgps-home-1280.webp"></video>
+            </template>
+          </article>
+
+          <article class="pj rv" data-id="aura" data-cats="tiendas" style="--accent:#b18cff">
+            <div class="pj-in">
+              <figure class="pj-media"><img src="media/opt/aura-tienda-detalle.webp" alt="Catálogo de AuraLV Store con remeras." width="1440" height="860" loading="lazy" /></figure>
+              <div class="pj-body">
+                <span class="pj-emoji">AV</span>
+                <p class="pj-cat">Tienda de indumentaria</p>
+                <h3>AuraLV Store</h3>
+                <p class="pj-blurb">Catálogo por categorías, carrito y panel de productos con análisis financiero.</p>
+                <ul class="pj-stack"><li>PHP</li><li>MySQL</li></ul>
+                <button type="button" class="pj-open" data-open>Ver proyecto <span aria-hidden="true">→</span></button>
+              </div>
+              <span class="pj-glare" aria-hidden="true"></span>
+            </div>
+            <template class="pj-detail">
+              <p>Una tienda de indumentaria con catálogo y carrito. Los clientes recorren las prendas, mientras el negocio cuenta con un panel para cargar productos y ver su análisis financiero.</p>
+              <img data-shot data-caption="Catálogo" src="media/opt/aura-tienda-detalle.webp" alt="Grilla de prendas de AuraLV Store." width="1440" height="860" />
+              <img data-shot data-caption="Prendas" src="media/aura-home.jpg" alt="Tres remeras del catálogo sobre fondo negro." width="1440" height="860" />
+            </template>
+          </article>
+
+          <article class="pj rv" data-id="abs" data-cats="tiendas" style="--accent:#ff7ac8">
+            <div class="pj-in">
+              <figure class="pj-media"><img src="media/abs-home.jpg" alt="Portada de AbSA Perfumería." width="1440" height="860" loading="lazy" /></figure>
+              <div class="pj-body">
+                <span class="pj-emoji">AB</span>
+                <p class="pj-cat">Tienda de fragancias</p>
+                <h3>AbSA Perfumes</h3>
+                <p class="pj-blurb">Importadas, nacionales y árabes, con carrito, cuotas y checkout.</p>
+                <ul class="pj-stack"><li>HTML</li><li>CSS</li><li>JS</li></ul>
+                <button type="button" class="pj-open" data-open>Ver proyecto <span aria-hidden="true">→</span></button>
+              </div>
+              <span class="pj-glare" aria-hidden="true"></span>
+            </div>
+            <template class="pj-detail">
+              <p>Una tienda de perfumes con categorías, detalle de cada fragancia y carrito. El recorrido permite explorar la colección y reunir los productos elegidos.</p>
+              <img data-shot data-caption="Inicio" src="media/abs-home.jpg" alt="Portada de AbSA." width="1440" height="860" />
+              <img data-shot data-caption="Categorías" src="media/abs-productos.jpg" alt="Universos de fragancias en AbSA." width="1440" height="860" />
+              <video data-video src="videos/06-abs-clip.webm" poster="media/abs-home.jpg"></video>
+            </template>
+          </article>
+
+          <article class="pj rv" data-id="selvora" data-cats="sitios" style="--accent:#5fd39a">
+            <div class="pj-in">
+              <figure class="pj-media"><img src="media/selvora-home.jpg" alt="Inicio de Selvora Deco." width="1440" height="860" loading="lazy" /></figure>
+              <div class="pj-body">
+                <span class="pj-emoji">SD</span>
+                <p class="pj-cat">Catálogo de decoración</p>
+                <h3>Selvora Deco</h3>
+                <p class="pj-blurb">Plantas artificiales con criterio de diseño para hogares, locales y oficinas.</p>
+                <ul class="pj-stack"><li>HTML</li><li>CSS</li><li>JS</li></ul>
+                <button type="button" class="pj-open" data-open>Ver proyecto <span aria-hidden="true">→</span></button>
+              </div>
+              <span class="pj-glare" aria-hidden="true"></span>
+            </div>
+            <template class="pj-detail">
+              <p>Un catálogo visual que organiza las propuestas de decoración por categorías. Reúne imágenes, información y contacto para acompañar al visitante desde la inspiración hasta la consulta.</p>
+              <img data-shot data-caption="Inicio" src="media/selvora-home.jpg" alt="Portada de Selvora Deco." width="1440" height="860" />
+              <img data-shot data-caption="Catálogo" src="media/selvora-catalogo.jpg" alt="Familias del catálogo de Selvora." width="1440" height="860" />
+              <video data-video src="videos/05-selvora-clip.webm" poster="media/selvora-home.jpg"></video>
+            </template>
+          </article>
+
+          <article class="pj pj-wide rv" data-id="tiger" data-cats="sitios" style="--accent:#ffb020">
+            <div class="pj-in">
+              <figure class="pj-media"><img src="media/ostiger-home.jpg" alt="Inicio de OS TigerLab." width="1440" height="860" loading="lazy" /></figure>
+              <div class="pj-body">
+                <span class="pj-emoji">TL</span>
+                <p class="pj-cat">Academia online</p>
+                <h3>OS TigerLab</h3>
+                <p class="pj-blurb">Certificación en investigación de cibercrimen: cursos, eventos, checkout y verificación de certificados.</p>
+                <ul class="pj-stack"><li>HTML</li><li>PHP</li><li>JS</li></ul>
+                <button type="button" class="pj-open" data-open>Ver proyecto <span aria-hidden="true">→</span></button>
+              </div>
+              <span class="pj-glare" aria-hidden="true"></span>
+            </div>
+            <template class="pj-detail">
+              <p>Un sitio que reúne la presentación de la academia, su metodología y el programa de formación, con cursos por módulos, eventos y verificación de certificados.</p>
+              <p class="links"><a href="https://ostigerlab.com" target="_blank" rel="noopener noreferrer">ostigerlab.com</a></p>
+              <img data-shot data-caption="Inicio" src="media/ostiger-home.jpg" alt="Portada de OS TigerLab." width="1440" height="860" />
+              <img data-shot data-caption="Academia" src="media/ostiger-cursos.jpg" alt="Bloques de metodología y práctica." width="1440" height="860" />
+            </template>
+          </article>
+
+          <article class="pj rv" data-id="alimentos" data-cats="sitios" style="--accent:#ffd84d">
+            <div class="pj-in">
+              <figure class="pj-media"><img src="media/alimentos-home.jpg" alt="Landing de Alimentos en Regla." width="1440" height="860" loading="lazy" /></figure>
+              <div class="pj-body">
+                <span class="pj-emoji">AR</span>
+                <p class="pj-cat">Consultoría bromatológica</p>
+                <h3>Alimentos en Regla</h3>
+                <p class="pj-blurb">RNE, RNPA, rótulos y habilitaciones explicados claro, con consulta guiada.</p>
+                <ul class="pj-stack"><li>Next.js</li><li>Tailwind</li></ul>
+                <button type="button" class="pj-open" data-open>Ver proyecto <span aria-hidden="true">→</span></button>
+              </div>
+              <span class="pj-glare" aria-hidden="true"></span>
+            </div>
+            <template class="pj-detail">
+              <p>Una web para la Lic. Karina Fernández que presenta los servicios de asesoramiento alimentario y responde dudas frecuentes. Un formulario guía la consulta inicial.</p>
+              <img data-shot data-caption="Inicio" src="media/alimentos-home.jpg" alt="Portada de Alimentos en Regla." width="1440" height="860" />
+              <img data-shot data-caption="Ayuda y diagnóstico" src="media/alimentos-form.jpg" alt="Preguntas frecuentes sobre RNE y RNPA." width="1440" height="860" />
+            </template>
+          </article>
+
+          <article class="pj rv" data-id="holistica" data-cats="sitios sistemas" style="--accent:#c79bff">
+            <div class="pj-in">
+              <figure class="pj-media"><img src="media/holistica-live.jpg" alt="Inicio de Holística." width="1440" height="860" loading="lazy" /></figure>
+              <div class="pj-body">
+                <span class="pj-emoji">HO</span>
+                <p class="pj-cat">Sitio + panel editable</p>
+                <h3>Holística</h3>
+                <p class="pj-blurb">Tres diseños de home y un panel para que la clienta edite textos e imágenes sola.</p>
+                <ul class="pj-stack"><li>PHP</li><li>JSON</li></ul>
+                <button type="button" class="pj-open" data-open>Ver proyecto <span aria-hidden="true">→</span></button>
+              </div>
+              <span class="pj-glare" aria-hidden="true"></span>
+            </div>
+            <template class="pj-detail">
+              <p>Un sitio para presentar la formación en Mesa Energética Holística. Incluye tres diseños de portada y un panel de administración para actualizar textos e imágenes sin depender de un programador.</p>
+              <img data-shot data-caption="Inicio" src="media/holistica-live.jpg" alt="Página de Holística en el navegador." width="1440" height="860" />
+              <video data-video src="videos/09-holistica-clip.webm" poster="media/holistica-live.jpg"></video>
+            </template>
+          </article>
+
+          <article class="pj rv" data-id="capri" data-cats="sistemas" style="--accent:#60a5fa">
+            <div class="pj-in">
+              <figure class="pj-media"><img src="media/capri-publico.jpg" alt="Esquema ilustrativo de un informe interno." width="1440" height="860" loading="lazy" /></figure>
+              <div class="pj-body">
+                <span class="pj-emoji">DC</span>
+                <p class="pj-cat">Informe interactivo</p>
+                <h3>Departamento Capri</h3>
+                <p class="pj-blurb">Gastos, préstamos y totales con una vista individual para cada propietario.</p>
+                <ul class="pj-stack"><li>HTML</li><li>CSS</li><li>JS</li></ul>
+                <button type="button" class="pj-open" data-open>Ver proyecto <span aria-hidden="true">→</span></button>
+              </div>
+              <span class="pj-glare" aria-hidden="true"></span>
+            </div>
+            <template class="pj-detail">
+              <p>Un informe que reúne gastos, préstamos y totales, con vistas por persona. La muestra del portafolio es ilustrativa para resguardar la información privada.</p>
+              <img data-shot data-caption="Vista pública" src="media/capri-publico.jpg" alt="Esquema sin datos personales ni montos." width="1440" height="860" />
+            </template>
+          </article>
+
+          <article class="pj rv" data-id="tiro" data-cats="propuestas" style="--accent:#ff5a5a">
+            <div class="pj-in">
+              <figure class="pj-media"><img src="media/tiro-home.jpg" alt="Propuesta navegable para Tiro Federal Córdoba." width="1440" height="860" loading="lazy" /></figure>
+              <div class="pj-body">
+                <span class="pj-emoji">TF</span>
+                <p class="pj-cat">Propuesta digital</p>
+                <h3>Tiro Federal Córdoba</h3>
+                <p class="pj-blurb">Plan por etapas: web institucional, armería digital con catálogo y soporte por WhatsApp.</p>
+                <ul class="pj-stack"><li>HTML</li><li>CSS</li></ul>
+                <button type="button" class="pj-open" data-open>Ver proyecto <span aria-hidden="true">→</span></button>
+              </div>
+              <span class="pj-glare" aria-hidden="true"></span>
+            </div>
+            <template class="pj-detail">
+              <p>Una presentación navegable que organiza la propuesta para Tiro Federal Córdoba. Explica el alcance de cada etapa y permite recorrer las ideas de forma clara.</p>
+              <img data-shot data-caption="Portada" src="media/tiro-home.jpg" alt="Portada de la propuesta para Tiro Federal." width="1440" height="860" />
+              <img data-shot data-caption="Etapas" src="media/tiro-etapas.jpg" alt="Tres fases de la propuesta comercial." width="1440" height="860" />
+            </template>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ STACK ═══════════ -->
+    <section class="stack" id="stack" aria-labelledby="stack-title">
+      <div class="wrap">
+        <div class="stack-grid">
+          <header class="sec-head rv">
+            <p class="eyebrow">Stack full stack</p>
+            <h2 id="stack-title">De la interfaz al servidor, <span class="grad">todo el recorrido</span>.</h2>
+            <p class="sec-lead">Trabajo cada capa de un producto: lo que ve tu cliente, la lógica que lo hace funcionar, los datos, el servidor donde vive y la seguridad que lo protege. Elijo la tecnología según el problema, no según la moda.</p>
+          </header>
+          <div class="atom" aria-hidden="true">
+            <div class="atom-core">&lt;/&gt;</div>
+            <div class="ring r1"><span style="--i:0"><b>React</b></span><span style="--i:1"><b>Next.js</b></span><span style="--i:2"><b>TS</b></span><span style="--i:3"><b>Node</b></span></div>
+            <div class="ring r2"><span style="--i:0"><b>SQL</b></span><span style="--i:1"><b>PHP</b></span><span style="--i:2"><b>Linux</b></span><span style="--i:3"><b>Git</b></span></div>
+            <div class="ring r3"><span style="--i:0"><b>SSL</b></span><span style="--i:1"><b>API</b></span><span style="--i:2"><b>UX</b></span><span style="--i:3"><b>CI</b></span></div>
+          </div>
+        </div>
+
+        <div class="layers">
+          <article class="layer rv" style="--accent:#22d3ee">
+            <span class="layer-n">01</span>
+            <h3><span>FE</span> Frontend</h3>
+            <p>Interfaces rápidas, accesibles y que se ven bien en cualquier pantalla.</p>
+            <ul><li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>TypeScript</li><li>React</li><li>Next.js</li><li>Tailwind CSS</li><li>Animaciones</li></ul>
+          </article>
+          <article class="layer rv" style="--accent:#a78bfa">
+            <span class="layer-n">02</span>
+            <h3><span>BE</span> Backend</h3>
+            <p>APIs, lógica de negocio, pagos, reservas y tiempo real.</p>
+            <ul><li>Node.js</li><li>Express</li><li>PHP</li><li>APIs REST</li><li>Socket.io</li><li>Autenticación</li><li>WhatsApp</li></ul>
+          </article>
+          <article class="layer rv" style="--accent:#34f5a1">
+            <span class="layer-n">03</span>
+            <h3><span>DB</span> Datos</h3>
+            <p>Información ordenada, consultas veloces y backups que se pueden restaurar.</p>
+            <ul><li>PostgreSQL</li><li>MySQL</li><li>MariaDB</li><li>Prisma ORM</li><li>JSON</li><li>Modelado de datos</li></ul>
+          </article>
+          <article class="layer rv" style="--accent:#ffb020">
+            <span class="layer-n">04</span>
+            <h3><span>OPS</span> DevOps e infraestructura</h3>
+            <p>Del repositorio a producción, con dominio, SSL y monitoreo.</p>
+            <ul><li>Git</li><li>GitHub</li><li>Linux</li><li>Hostinger</li><li>cPanel</li><li>DNS y SSL</li><li>Playwright</li></ul>
+          </article>
+          <article class="layer layer-sec rv" style="--accent:#ff3d5a">
+            <span class="layer-n">05</span>
+            <h3><span>SEC</span> Ciberseguridad</h3>
+            <p>Pruebas ofensivas autorizadas, hardening y análisis forense.</p>
+            <ul><li>Kali Linux</li><li>Burp Suite</li><li>Nmap</li><li>Wireshark</li><li>Metasploit</li><li>OWASP ZAP</li><li>OWASP Top 10</li><li>Forense digital</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ SOBRE MÍ ═══════════ -->
+    <section class="about" id="sobre-mi" aria-labelledby="sobre-title">
+      <div class="wrap about-grid">
+        <div class="badge-wrap rv" aria-hidden="true">
+          <div class="lanyard"></div>
+          <div class="badge" data-tilt>
+            <div class="badge-top"><span>camus<em>dev</em></span><span>ID · 2026</span></div>
+            <div class="badge-avatar">LN</div>
+            <p class="badge-name">Lautaro Núñez</p>
+            <p class="badge-role">Desarrollador Full Stack · Lic. en Ciberseguridad</p>
+            <div class="badge-row"><span>Córdoba, AR</span><span>ES · EN</span></div>
+            <div class="badge-code">&lt;/&gt; desde hace +6 años</div>
+            <span class="pj-glare"></span>
+          </div>
+        </div>
+        <div class="about-copy rv">
+          <p class="eyebrow">Sobre mí</p>
+          <h2 id="sobre-title">Detrás de cada línea de código hay <span class="grad">un negocio que quiero que funcione</span>.</h2>
+          <p>Soy Lautaro Núñez, desarrollador full stack y Licenciado en Ciberseguridad, de Córdoba, Argentina. Hace más de 6 años trabajo en soluciones digitales para empresas, comercios y pequeñas tiendas.</p>
+          <p>Me enfoco en encontrar dónde se traba el día a día: un proceso que lleva demasiado tiempo, herramientas que no se conectan o una web que complica a tus clientes. Desde ahí diseño y desarrollo una solución a medida, segura y fácil de usar.</p>
+          <p>Del lado de la seguridad, trabajo como especialista en cibercrimen: audito empresas con autorización, busco las vulnerabilidades antes que un atacante y modernizo estructuras antiguas para que sean sólidas, rápidas y fáciles de mantener.</p>
+          <ul class="offer">
+            <li><span>01</span><b>Sitios web</b><small>Presentá tu negocio y facilitá el contacto.</small></li>
+            <li><span>02</span><b>Tiendas y catálogos</b><small>Mostrá productos y ayudá a elegir.</small></li>
+            <li><span>03</span><b>Sistemas a medida</b><small>Pedidos, stock, reservas y datos en un lugar.</small></li>
+            <li><span>04</span><b>Auditorías y pentesting</b><small>Encuentro las fallas antes que otro.</small></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <div class="tape tape-2" aria-hidden="true">
+      <div class="tape-row t-grad"><p>¿HABLAMOS? ✦ SITIOS ✦ TIENDAS ✦ SISTEMAS ✦ SEGURIDAD ✦ ¿HABLAMOS? ✦ SITIOS ✦ TIENDAS ✦ SISTEMAS ✦ SEGURIDAD ✦ </p></div>
+    </div>
+
+    <!-- ═══════════ CONTACTO ═══════════ -->
+    <section class="contact" id="contacto" aria-labelledby="contacto-title">
+      <div class="wrap">
+        <div class="contact-card rv">
+          <p class="eyebrow">Contacto</p>
+          <h2 id="contacto-title">Tu próximo proyecto empieza con <span class="grad">una conversación</span>.</h2>
+          <p class="sec-lead">Una web que represente mejor tu negocio. Una tarea que deje de quitarte tiempo. Contame qué querés mejorar y encontremos la forma.</p>
+          <a class="mail" href="mailto:lautarodemiannunez32@gmail.com">lautarodemiannunez32@gmail.com</a>
+          <div class="hero-actions">
+            <button type="button" class="btn btn-glow" data-copy-email><span>Copiar correo</span></button>
+            <a class="btn btn-glass" href="servicio.html">Ver el servicio <span aria-hidden="true">→</span></a>
+            <a class="btn btn-glass" href="https://github.com/Ositojur" rel="me noopener" target="_blank">GitHub</a>
+          </div>
+          <p class="sr-live" id="copy-live" aria-live="polite"></p>
+        </div>
+      </div>
     </section>
 
   </main>
 
-  <footer class="wrap site-foot">
-
-    Lautaro Demian Núñez · Córdoba, Argentina · <a class="profile-link" rel="me" href="https://github.com/Ositojur">GitHub</a>
-
+  <footer class="foot-big">
+    <p class="wordmark" aria-hidden="true">camus<em>dev</em></p>
+    <div class="foot wrap">
+      <span>© 2026 <b>camus<em>dev</em></b> · Lautaro Núñez · Córdoba, Argentina</span>
+      <span>Hecho a mano con HTML, CSS y JS · <a href="https://github.com/Ositojur" rel="me noopener" target="_blank">GitHub</a></span>
+      <a class="to-top" href="#top" aria-label="Volver arriba">↑</a>
+    </div>
   </footer>
 
-  <dialog id="ficha" closedby="any" aria-labelledby="ficha-title">
-
-    <form method="dialog" class="ficha-bar">
-
-      <button class="btn-ghost close" value="close">Cerrar</button>
-
-    </form>
-
-    <div class="ficha-body" id="ficha-body"></div>
-
+  <dialog id="ficha" aria-labelledby="ficha-title">
+    <div class="ficha">
+      <form method="dialog" class="ficha-close"><button value="close" aria-label="Cerrar">✕</button></form>
+      <div id="ficha-body"></div>
+    </div>
   </dialog>
 
-  <script src="assets/app.js" defer></script>
-
+  <script src="assets/epic.js" defer></script>
 </body>
-
 </html>
-
