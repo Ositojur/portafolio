@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Style tile de los design tokens 2027 de LautaroDev: paletas Abismo y Bruma, tipografía, motion y los cuatro momentos firma.">
+<title>Style tile 2027</title>
+<script>
+  // Solo para el tile: ?theme=light|dark fuerza el tema (el toggle real es del agente 07).
+  try { var t = new URLSearchParams(location.search).get("theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+</script>
+<link rel="stylesheet" href="tokens.css">
+<style>
+  /* Hallmark · custom: "Señal en la galaxia" (pinned by request, MEGA-PROMPT sección 6 + pedido galáctico) · modes: light+dark · posture: committed · hero: type-led over a live signal · nav: floating capsule · footer: one line · signature: el latido verde agua (--beat) que une pulso, bot, precio y CTA */
+  /* Critique: style tile de tokens v2; ningún hex ni font-family literal fuera de tokens.css. Archivo de prueba, se puede borrar. */
+  /* Hallmark · waive 37 · Kalam and IBM Plex Mono · the brief pins four roles: display, body, mono for raw data, Kalam only for blueprint notes */
+  /* Hallmark · waive 29 · cosmic glass on nav and phone · the client asked for cosmic glass on exactly these two surfaces, with a solid fallback */
+  @layer tokens, tile;
+  @layer tile {
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { overflow-x: clip; }
+    html { background: var(--bg); scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track); }
+    body {
+      margin: 0; color: var(--text); background: var(--bg);
+      font: var(--weight-body) var(--fs-base)/var(--lh-body) var(--font-body);
+      -webkit-font-smoothing: antialiased; caret-color: var(--caret);
+    }
+    ::selection { background: var(--selection-bg); color: var(--selection-text); }
+    body::after {
+      content: ""; position: fixed; inset: 0; pointer-events: none; z-index: var(--z-grain);
+      background-image: var(--grain); background-size: var(--grain-size);
+      opacity: var(--grain-opacity); mix-blend-mode: var(--grain-blend);
+    }
+    .wrap { width: min(100% - 2 * var(--gutter), var(--container)); margin-inline: auto; }
+    a { color: var(--link); text-decoration-color: var(--link-underline); text-underline-offset: 0.2em; text-decoration-thickness: 1px; transition: color var(--dur-fast) var(--ease-out-quart); }
+    a:hover { color: var(--link-hover); }
+    :focus-visible { outline: var(--focus-width) solid var(--focus); outline-offset: var(--focus-offset); }
+    h1, h2, h3, .big { overflow-wrap: break-word; min-width: 0; text-wrap: balance; }
+
+    /* ── Nav: vidrio cósmico (único vidrio junto con el teléfono) ── */
+    .nav {
+      position: fixed; top: var(--space-md); left: 50%; translate: -50% 0; z-index: var(--z-nav);
+      display: flex; gap: var(--space-lg); align-items: center; max-width: calc(100% - 2 * var(--gutter));
+      padding: var(--space-xs) var(--space-xs) var(--space-xs) var(--space-lg);
+      border-radius: var(--radius-pill); font-size: var(--fs-sm);
+    }
+    .nav b { font-family: var(--font-display); font-weight: var(--weight-heading); letter-spacing: var(--tracking-heading); white-space: nowrap; }
+    .nav a:not(.btn) { color: var(--text-muted); text-decoration: none; }
+    .nav a:not(.btn):hover { color: var(--text); }
+    .nav .links { display: flex; gap: var(--space-lg); }
+    @media (max-width: 640px) { .nav .links { display: none; } }
+
+    /* ── Botones ── */
+    .actions { display: flex; flex-wrap: wrap; gap: var(--space-sm); }
+    .btn {
+      white-space: nowrap; display: inline-flex; align-items: center; min-height: var(--tap); padding: 0 var(--space-lg);
+      border-radius: var(--radius-pill); font: var(--weight-strong) var(--fs-sm)/1 var(--font-body); text-decoration: none; cursor: pointer;
+      transition: background-color var(--dur-fast) var(--ease-out-quart), border-color var(--dur-fast) var(--ease-out-quart), transform var(--dur-base) var(--ease-spring-soft);
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn:active { transform: scale(0.97); transition-duration: var(--dur-instant); }
+    .btn-1 { background: var(--btn-bg); color: var(--btn-text); border: 0; }
+    .btn-1:hover { background: var(--btn-bg-hover); color: var(--btn-text); }
+    .btn-2 { background: transparent; color: var(--btn2-text); border: var(--border-strong) solid var(--btn2-border); }
+    .btn-2:hover { border-color: var(--btn2-border-hover); color: var(--btn2-text); }
+
+    /* ═══ MOMENTO 1 · HERO ═══ */
+    .hero {
+      position: relative; min-height: 100svh; display: grid; align-content: end;
+      padding-block: calc(var(--nav-h) + var(--space-3xl)) var(--scene-pad-tight);
+      background: var(--aurora); isolation: isolate; overflow: clip;
+    }
+    .hero .neb { /* nebulosa viva: mueve centro y forma con --nebula-x/y/rot */
+      position: absolute; inset: 0; z-index: -3; pointer-events: none; animation: var(--anim-nebula);
+    }
+    .stars { position: absolute; inset: 0; z-index: -2; pointer-events: none; background-image: var(--sf); background-size: var(--ss) var(--ss);
+      opacity: var(--star-opacity); animation: var(--anim-twinkle); animation-duration: calc(var(--dur-twinkle) * var(--k)); }
+    .stars.s1 { --sf: var(--star-field-1); --ss: var(--star-size-1); --k: 1; }
+    .stars.s2 { --sf: var(--star-field-2); --ss: var(--star-size-2); --k: 1.6; animation-delay: -1.3s; }
+    .stars.s3 { --sf: var(--star-field-3); --ss: var(--star-size-3); --k: 2.3; animation-delay: -2.1s; }
+    .comet { position: absolute; left: 6%; top: 10%; width: 9rem; height: 2px; border-radius: var(--radius-pill); background: var(--comet-tail);
+      transform-origin: 0 50%; opacity: 0; animation: var(--anim-comet); animation-delay: 1.2s; pointer-events: none; z-index: -1; }
+    .hero::before { /* retícula del plano: textura fina */
+      content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+      background-image:
+        linear-gradient(var(--grid-line-major) var(--hairline), transparent var(--hairline)),
+        linear-gradient(90deg, var(--grid-line-major) var(--hairline), transparent var(--hairline)),
+        linear-gradient(var(--grid-line) var(--hairline), transparent var(--hairline)),
+        linear-gradient(90deg, var(--grid-line) var(--hairline), transparent var(--hairline));
+      background-size: var(--grid-cell-major) var(--grid-cell-major), var(--grid-cell-major) var(--grid-cell-major), var(--grid-cell) var(--grid-cell), var(--grid-cell) var(--grid-cell);
+      mask-image: radial-gradient(70% 65% at 72% 34%, black, transparent 78%);
+      opacity: 0.5;
+    }
+    /* Stand-in del canvas 3D (agente 05): nodo que emite + anillos al ritmo de --beat */
+    .signal { position: absolute; right: 8%; top: 18%; width: min(46vw, 34rem); aspect-ratio: 1; z-index: -1; pointer-events: none; }
+    .signal::before, .signal::after { /* órbitas fijas: la estructura que el pulso recorre */
+      content: ""; position: absolute; border-radius: 50%; border: var(--hairline) solid var(--pulse-ring); opacity: 0.22;
+    }
+    .signal::before { inset: 18%; }
+    .signal::after { inset: 36%; opacity: 0.35; border-style: dashed; }
+    .signal i {
+      position: absolute; inset: 0; border-radius: 50%; border: var(--border-strong) solid var(--pulse-ring);
+      animation: var(--anim-pulse); opacity: 0;
+    }
+    .signal i:nth-child(2) { animation-delay: calc(var(--beat) / -3); }
+    .signal i:nth-child(3) { animation-delay: calc(var(--beat) / -1.5); }
+    .signal b { /* planeta-nodo con look de render: emite los pulsos */
+      position: absolute; left: 50%; top: 50%; width: 26%; aspect-ratio: 1; translate: -50% -50%;
+    }
+    .signal u { /* satélite en órbita: un mensaje que da la vuelta */
+      position: absolute; left: 50%; top: 50%; width: 0.6rem; aspect-ratio: 1; margin: -0.3rem; border-radius: 50%;
+      background: var(--pulse-core); --orbit-r: min(16vw, 12rem); animation: var(--anim-orbit); transform: translateX(var(--orbit-r));
+    }
+    @media (prefers-reduced-motion: reduce) { .signal i { opacity: 0.35; transform: scale(calc(0.5 + var(--n, 0) * 0.5)); } .signal i:nth-child(2) { --n: 1; } .signal i:nth-child(3) { --n: 2; } }
+    @media (max-width: 640px) { .signal { right: -18%; top: 12%; width: 78vw; } }
+
+    h1 {
+      font-family: var(--font-display); font-weight: var(--weight-display); font-size: var(--fs-display);
+      line-height: var(--lh-display); letter-spacing: var(--tracking-display); margin: 0; max-width: 12ch;
+    }
+    .line { display: block; overflow: clip; padding-bottom: 0.06em; margin-bottom: -0.06em; }
+    .line > span { display: block; transform-origin: 0 100%; animation: var(--anim-mask-up); animation-delay: calc(var(--i) * var(--stagger-lines) + 200ms); }
+    .lead { font-size: var(--fs-md); line-height: var(--lh-snug); color: var(--text-muted); max-width: var(--measure-narrow); margin: var(--space-xl) 0 var(--space-2xl); animation: var(--anim-reveal); animation-delay: 650ms; }
+    .hero .actions { animation: var(--anim-arrive); animation-delay: 800ms; }
+    .sweep { position: absolute; inset: auto 0 0; height: var(--hairline); background: var(--line); overflow: clip; }
+    .sweep::after { content: ""; position: absolute; inset: 0; background: var(--signal-line); animation: var(--anim-sweep); }
+
+    /* ═══ Specimen: motion + tipo + color (lista editorial, sin tarjetas) ═══ */
+    .scene { padding-block: var(--scene-pad); background: var(--bg-2); }
+    .scene h2 { font: var(--weight-heading) var(--fs-3xl)/var(--lh-tight) var(--font-display); letter-spacing: var(--tracking-display); margin: 0 0 var(--space-2xl); max-width: 16ch; }
+    .scene h3 { font: var(--weight-heading) var(--fs-lg)/var(--lh-heading) var(--font-display); letter-spacing: var(--tracking-heading); margin: var(--space-4xl) 0 var(--space-lg); }
+    .rows-spec { border-top: var(--hairline) solid var(--line); }
+    .rows-spec > p { margin: 0; display: grid; grid-template-columns: minmax(0, 11rem) minmax(0, 1fr); gap: var(--space-md); align-items: center; padding-block: var(--space-md); border-bottom: var(--hairline) solid var(--line); }
+    @media (max-width: 640px) { .rows-spec > p { grid-template-columns: minmax(0, 1fr); gap: var(--space-xs); } }
+    code { font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--text-muted); letter-spacing: var(--tracking-mono); }
+    .track { position: relative; height: 1.5rem; container-type: inline-size; }
+    .track::before { content: ""; position: absolute; inset: 50% 0 auto; height: var(--hairline); background: var(--line); }
+    .track span { position: absolute; left: 0; top: 50%; width: 0.75rem; aspect-ratio: 1; margin-top: -0.375rem; border-radius: 50%; background: var(--aqua); animation: tile-run 2.6s var(--e) infinite alternate; }
+    @keyframes tile-run { from { transform: translateX(0); } to { transform: translateX(calc(100cqi - 0.75rem)); } }
+    @media (prefers-reduced-motion: reduce) { .track span { animation: none; transform: translateX(calc(100cqi - 0.75rem)); } }
+    .type-row span { font-family: var(--font-display); font-weight: var(--weight-heading); letter-spacing: var(--tracking-heading); line-height: var(--lh-tight); overflow-wrap: break-word; min-width: 0; }
+    .type-row .body { font-family: var(--font-body); font-weight: var(--weight-body); letter-spacing: 0; line-height: var(--lh-body); max-width: var(--measure); }
+    .note, .type-row .note { font-family: var(--font-note); font-weight: var(--weight-body); color: var(--note); font-size: var(--fs-md); rotate: -2deg; display: inline-block; }
+    .swatches { display: flex; flex-wrap: wrap; margin-top: var(--space-3xl); border: var(--hairline) solid var(--line); }
+    .swatches i { flex: 1 1 6.5rem; min-height: 5rem; padding: var(--space-xs); font: var(--fs-2xs)/1.3 var(--font-mono); font-style: normal; color: var(--text-muted); display: flex; align-items: end; }
+
+    /* ═══ MOMENTO 2 · DEMO DEL BOT ═══ */
+    .bot { position: relative; padding-block: var(--scene-pad); background: var(--aurora-soft), var(--bg); overflow: clip; }
+    .bot-grid { display: grid; gap: var(--space-3xl); grid-template-columns: minmax(0, 1fr); align-items: center; }
+    @media (min-width: 900px) { .bot-grid { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); } }
+    .phone { width: min(100%, 22rem); margin-inline: auto; padding: var(--space-xs); border-radius: var(--radius-xl); }
+    .screen { border-radius: var(--radius-lg); background: var(--bot-screen); overflow: clip; }
+    .screen header { background: var(--bot-header); padding: var(--space-sm) var(--space-md); font-size: var(--fs-sm); display: flex; justify-content: space-between; border-bottom: var(--hairline) solid var(--line); }
+    .screen header small { color: var(--demo-label); font-weight: var(--weight-strong); }
+    .thread { font-family: var(--font-chat); padding: var(--space-md); display: grid; gap: var(--space-xs); font-size: var(--fs-sm); line-height: var(--lh-snug); min-height: 21rem; align-content: start; }
+    .b { max-width: 82%; padding: var(--space-xs) var(--space-sm); border-radius: var(--radius-md); animation: var(--anim-arrive); animation-delay: calc(var(--i) * var(--stagger-rows) * 4 + 300ms); }
+    .b small { display: block; text-align: right; font-size: var(--fs-2xs); font-family: var(--font-data); color: var(--bubble-meta); margin-top: var(--space-3xs); font-variant-numeric: tabular-nums; }
+    .b small em { color: var(--tick-read); font-style: normal; }
+    .in { background: var(--bubble-in); color: var(--bubble-in-text); justify-self: end; border-end-end-radius: var(--radius-xs); transform-origin: 100% 100%; }
+    .out { background: var(--bubble-out); color: var(--bubble-out-text); justify-self: start; border-end-start-radius: var(--radius-xs); transform-origin: 0 100%; }
+    .typing { justify-self: start; display: inline-flex; gap: var(--space-2xs); padding: var(--space-sm); border-radius: var(--radius-md); background: var(--bubble-out); }
+    .typing span { width: 6px; aspect-ratio: 1; border-radius: 50%; background: var(--bubble-meta); animation: var(--anim-typing); animation-delay: calc(var(--d) * var(--beat) / 12); }
+    .handoff { color: var(--handoff); font-size: var(--fs-xs); text-align: center; padding-block: var(--space-xs); animation: var(--anim-reveal); animation-delay: 2100ms; }
+    .chips { display: flex; gap: var(--space-xs); flex-wrap: wrap; margin-top: var(--space-lg); }
+    .chip { min-height: var(--tap); padding: 0 var(--space-md); border-radius: var(--radius-pill); border: var(--hairline) solid var(--chip-border); background: var(--chip-bg); color: var(--chip-text); font: var(--fs-sm) var(--font-chat); cursor: pointer; transition: background-color var(--dur-base) var(--ease-out-quart), transform var(--dur-base) var(--ease-spring); }
+    .chip:active { transform: scale(0.96); }
+    .emo { font-family: var(--emoji-font); font-size: 1.05em; }
+    .chip:disabled, .btn[aria-disabled="true"] { opacity: var(--disabled-opacity); cursor: not-allowed; transform: none; }
+    .chip[aria-pressed="true"] { background: var(--chip-active-bg); color: var(--chip-active-text); border-color: transparent; }
+    .bot h2 { font: var(--weight-display) var(--fs-2xl)/var(--lh-tight) var(--font-display); letter-spacing: var(--tracking-display); margin: 0 0 var(--space-lg); max-width: 14ch; }
+    .bot p { color: var(--text-muted); max-width: var(--measure-narrow); margin: 0; }
+
+    /* ═══ MOMENTO 3 · SHOWROOM ═══ */
+    .act { position: relative; padding-block: var(--scene-pad-tight); isolation: isolate; overflow: clip; }
+    .act-1 { background: var(--shop-1); --glow-intensity: var(--shop-intensity-1); --price-c: var(--shop-price-1); --price-s: var(--shop-scale-1); }
+    .act-2 { background: var(--shop-2); --glow-intensity: var(--shop-intensity-2); --price-c: var(--shop-price-2); --price-s: var(--shop-scale-2); }
+    .act-3 { background: var(--shop-3); --glow-intensity: var(--shop-intensity-3); --price-c: var(--shop-price-3); --price-s: var(--shop-scale-3); }
+    .act-3 .live { position: absolute; inset: -30% -10% -30% 30%; z-index: -1; pointer-events: none; animation: var(--anim-aurora); }
+    .act-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: var(--space-md); margin-bottom: var(--space-xl); }
+    .act-head h3 { font: var(--weight-heading) var(--fs-xl)/var(--lh-heading) var(--font-display); letter-spacing: var(--tracking-heading); margin: 0; }
+    .act-head h3 small { display: block; font: var(--fs-sm)/var(--lh-body) var(--font-body); color: var(--text-muted); letter-spacing: 0; margin-top: var(--space-2xs); }
+    .price { font: var(--weight-display-x) calc(var(--fs-price) * var(--price-s, 1))/0.82 var(--font-price); letter-spacing: var(--tracking-price); color: var(--price-c, var(--shop-price)); font-variant-numeric: var(--numeric-price); }
+    .act-3 .price { animation: var(--anim-breathe); }
+    @media (min-width: 900px) { .act-3 .act-head { flex-direction: row-reverse; justify-content: start; gap: var(--space-3xl); } }
+    .price sup { font: var(--weight-heading) 0.2em/1 var(--font-display); letter-spacing: 0; vertical-align: 2.6em; margin-right: 0.25em; color: var(--text-muted); }
+    .rows { border-top: var(--hairline) solid var(--shop-row-line); }
+    .row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: var(--space-md); padding: var(--space-lg) var(--space-xs); border-bottom: var(--hairline) solid var(--shop-row-line); transition: background-color var(--dur-fast) var(--ease-out-quart); }
+    .row:hover { background: var(--shop-row-hover); }
+    .row b { font: var(--weight-heading) var(--fs-lg)/var(--lh-heading) var(--font-display); letter-spacing: var(--tracking-heading); }
+    .row div > span:not(.badge) { display: block; color: var(--shop-note); font-size: var(--fs-sm); margin-top: var(--space-2xs); }
+    .row data { font: var(--weight-heading) var(--fs-md) var(--font-data); font-variant-numeric: var(--numeric-price); color: var(--text); white-space: nowrap; }
+    .badge { display: inline-block; margin-left: var(--space-xs); padding: var(--space-3xs) var(--space-xs); border-radius: var(--radius-xs); background: var(--badge-bg); color: var(--badge-text); font: var(--weight-strong) var(--fs-2xs)/1.4 var(--font-body); vertical-align: middle; }
+    @media (max-width: 640px) { .row { grid-template-columns: minmax(0, 1fr); } }
+
+    /* ═══ MOMENTO 4 · CTA FINAL ═══ */
+    .cta { position: relative; padding-block: var(--scene-pad) var(--scene-pad-tight); background: var(--cta-bg); color: var(--cta-text); overflow: clip; isolation: isolate; }
+    .cta .live { position: absolute; inset: -40% -20% 10%; z-index: -1; pointer-events: none; --aurora-angle: 40deg; animation: var(--anim-drift); animation-direction: reverse; }
+    .cta .big { font: var(--weight-display-x) var(--fs-colossal)/var(--lh-display) var(--font-display); letter-spacing: var(--tracking-colossal); margin: 0 0 var(--space-2xl); animation: var(--anim-reveal); animation-duration: var(--dur-epic); }
+    .cta .btn-1 { animation: var(--anim-breathe); }
+    .rule { position: relative; height: var(--hairline); background: var(--line); margin-block: var(--space-2xl); border: 0; overflow: clip; }
+    .rule::after { content: ""; position: absolute; inset: 0; background: var(--signal-line); animation: var(--anim-sweep); animation-delay: -1s; }
+    footer { padding-block: var(--space-2xl); color: var(--text-muted); font-size: var(--fs-sm); background: var(--bg); }
+  }
+</style>
+</head>
+<body>
+  <nav class="nav lt-glass-cosmic" aria-label="Principal">
+    <b>LautaroDev</b>
+    <span class="links"><a href="#bot">Chatbots</a><a href="#tienda">Tienda</a><a href="#contacto">Contacto</a></span>
+    <a class="btn btn-1" href="#contacto">Quiero mi chatbot</a>
+  </nav>
+
+  <header class="hero">
+    <div class="neb lt-nebula" aria-hidden="true"></div>
+    <div class="stars s1" aria-hidden="true"></div><div class="stars s2" aria-hidden="true"></div><div class="stars s3" aria-hidden="true"></div>
+    <div class="comet" aria-hidden="true"></div>
+    <div class="signal" aria-hidden="true"><i></i><i></i><i></i><b class="lt-planet"></b><u></u></div>
+    <div class="wrap">
+      <h1><span class="line"><span style="--i:0">Tu negocio responde</span></span><span class="line"><span style="--i:1">por WhatsApp.</span></span><span class="line"><span style="--i:2">Las 24 horas.</span></span></h1>
+      <p class="lead">Chatbots que atienden, venden y agendan solos, con el sistema detrás.</p>
+      <div class="actions">
+        <a class="btn btn-1" href="#contacto">Quiero mi chatbot</a>
+        <a class="btn btn-2" href="#tienda">Ver la tienda</a>
+      </div>
+    </div>
+    <div class="sweep" aria-hidden="true"></div>
+  </header>
+
+  <section class="scene" aria-labelledby="t-spec">
+    <div class="wrap">
+      <h2 id="t-spec">Un solo latido para todo el sitio</h2>
+      <div class="rows-spec">
+        <p><code>--ease-out-expo</code><span class="track" style="--e: var(--ease-out-expo)"><span></span></span></p>
+        <p><code>--ease-spring</code><span class="track" style="--e: var(--ease-spring)"><span></span></span></p>
+        <p><code>--ease-spring-soft</code><span class="track" style="--e: var(--ease-spring-soft)"><span></span></span></p>
+        <p><code>--ease-out-circ</code><span class="track" style="--e: var(--ease-out-circ)"><span></span></span></p>
+        <p><code>--ease-in-out-quint</code><span class="track" style="--e: var(--ease-in-out-quint)"><span></span></span></p>
+      </div>
+      <h3>Escala tipográfica</h3>
+      <div class="rows-spec">
+        <p class="type-row"><code>--fs-3xl</code><span style="font-size: var(--fs-3xl)">Construyo sistemas</span></p>
+        <p class="type-row"><code>--fs-2xl</code><span style="font-size: var(--fs-2xl)">Después trato de romperlos</span></p>
+        <p class="type-row"><code>--fs-xl</code><span style="font-size: var(--fs-xl)">Sistemas backend a medida</span></p>
+        <p class="type-row"><code>--fs-base</code><span class="body">Texto de cuerpo en Atkinson Hyperlegible. Entrenado con la info del negocio, toma pedidos y reservas y deriva a una persona cuando hace falta. <a href="#bot">Ver la demo del bot</a>.</span></p>
+        <p class="type-row"><code>--font-mono</code><span class="body" style="font-family: var(--font-mono); font-size: var(--fs-sm)">POST /api/reservas 201 03:12:44</span></p>
+        <p class="type-row"><code>--font-note</code><span class="body"><span class="note">acá falta validar el input</span></span></p>
+      </div>
+      <div class="swatches" aria-hidden="true">
+        <i style="background: var(--bg)">bg</i><i style="background: var(--surface)">surface</i><i style="background: var(--surface-2)">surface-2</i>
+        <i style="background: var(--ink-blue); color: var(--on-ink)">ink-blue</i><i style="background: var(--aqua-deep); color: var(--on-ink)">aqua-deep</i>
+        <i style="background: var(--aqua); color: var(--on-aqua)">aqua</i><i style="background: var(--aqua-soft); color: var(--on-aqua-soft)">aqua-soft</i>
+        <i style="background: var(--warn); color: var(--bg)">warn</i><i style="background: var(--danger); color: var(--bg)">danger</i><i style="background: var(--ok); color: var(--bg)">ok</i>
+      </div>
+    </div>
+  </section>
+
+  <section class="bot" id="bot" aria-labelledby="t-bot">
+    <div class="wrap bot-grid">
+      <div class="phone lt-glass-cosmic" role="img" aria-label="Demo de conversación: un cliente reserva mesa a las 3 de la mañana y el bot lo deriva a una persona">
+        <div class="screen">
+          <header><span>Tu negocio</span><small>Demo</small></header>
+          <div class="thread">
+            <div class="b in" style="--i:0">Hola 👋 ¿tienen lugar para 4 hoy a las 21?<small>03:12 <em><svg width="16" height="10" viewBox="0 0 16 10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 5.5 4 8.5 10 1.5"/><path d="M7 8.5 13 1.5"/></svg></em></small></div>
+            <div class="b out" style="--i:1">¡Sí! Hay mesa a las 21:00 🍷 ¿A nombre de quién la reservo?<small>03:12</small></div>
+            <div class="b in" style="--i:2">Martina. ¿Se puede pedir sin TACC?<small>03:13 <em><svg width="16" height="10" viewBox="0 0 16 10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 5.5 4 8.5 10 1.5"/><path d="M7 8.5 13 1.5"/></svg></em></small></div>
+            <div class="handoff">Te paso con una persona del equipo</div>
+            <div class="typing" aria-hidden="true"><span style="--d:0"></span><span style="--d:1"></span><span style="--d:2"></span></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h2 id="t-bot">Atiende a las 3 de la mañana. Sin perder el tono.</h2>
+        <p>Las burbujas del bot van en tinta azul: el verde agua queda para la señal (leído, activo, en vivo).</p>
+        <div class="chips">
+          <button class="chip" type="button" aria-pressed="true"><span class="emo" aria-hidden="true">🍝</span> Restaurante</button>
+          <button class="chip" type="button" aria-pressed="false"><span class="emo" aria-hidden="true">🛵</span> Alquiler</button>
+          <button class="chip" type="button" aria-pressed="false"><span class="emo" aria-hidden="true">🛍️</span> Tienda</button>
+          <button class="chip" type="button" aria-pressed="false" disabled>Clínica (pronto)</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="tienda" aria-label="Showroom de precios">
+    <div class="act act-1"><div class="wrap">
+      <div class="act-head"><h3>Accesibles<small>Para entrar rápido</small></h3><div class="price lt-text-glow"><sup>USD</sup>190</div></div>
+      <div class="rows">
+        <div class="row"><div><b>Landing Express</b><span>Landing de 1 página a medida, con botón de WhatsApp y publicación.</span></div><data value="290">USD 290</data></div>
+        <div class="row"><div><b>Chequeo de Seguridad Web</b><span>Revisión externa e informe con fallas priorizadas.</span></div><data value="190">USD 190</data></div>
+      </div>
+    </div></div>
+    <div class="act act-2"><div class="wrap">
+      <div class="act-head"><h3>Intermedios<small>El negocio funcionando</small></h3><div class="price lt-text-glow"><sup>USD</sup>890</div></div>
+      <div class="rows">
+        <div class="row"><div><b>Chatbot WhatsApp IA Pro 24/7 <span class="badge lt-glow">Más elegido</span></b><span>Toma pedidos y reservas, deriva a una persona, panel y reporte mensual.</span></div><data value="890">USD 890 + 79 por mes</data></div>
+      </div>
+    </div></div>
+    <div class="act act-3">
+      <div class="live lt-aurora-live" aria-hidden="true"></div>
+      <div class="wrap">
+        <div class="act-head"><h3>Premium<small>Sistemas a medida</small></h3><div class="price lt-text-glow"><sup>USD</sup>3.500</div></div>
+        <div class="rows">
+          <div class="row"><div><b>Ecosistema WhatsApp + Web + CRM</b><span>Bot IA, sitio, panel e integraciones. Anticipo del 30 % online.</span></div><data value="3500">desde USD 3.500</data></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" id="contacto" aria-labelledby="t-cta">
+    <div class="live lt-aurora-live" aria-hidden="true"></div>
+    <div class="wrap">
+      <h2 class="big lt-wipe" id="t-cta">Hablemos.</h2>
+      <div class="actions"><a class="btn btn-1 lt-glow" href="mailto:lautarodemiannunez32@gmail.com">Quiero mi chatbot</a><a class="btn btn-2" href="#tienda">Ver precios</a></div>
+      <hr class="rule">
+      <p style="color: var(--text-muted); margin: 0">Escribime y te respondo yo, no un formulario.</p>
+    </div>
+  </section>
+  <footer><div class="wrap">Lautaro Núñez. Style tile de tokens 2027, archivo de prueba que se puede borrar.</div></footer>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex" />
+  <meta name="color-scheme" content="dark light" />
+  <title>Gracias por tu pago · LautaroDev</title>
+  <link rel="icon" href="media/favicon.svg" type="image/svg+xml" />
+  <script>(function (d) { d.classList.add("js"); try { var t = localStorage.getItem("ld-theme"); if (t === "dark" || t === "light") d.setAttribute("data-theme", t); } catch (e) {} })(document.documentElement);</script>
+  <link rel="stylesheet" href="assets/2027/tokens.css" />
+  <link rel="stylesheet" href="assets/2027/scenes.css" />
+  <link rel="stylesheet" href="assets/2027/ui.css" />
+  <link rel="stylesheet" href="assets/2027/tienda.css" />
+  <!-- Los bloques [data-pay-if-*] usan hidden; .shop-btn y .pay-summary div fijan display y lo pisarían. -->
+</head>
+<body class="pay-page" data-pay-page="gracias">
+  <header class="pay-top">
+    <a class="pay-brand" href="index.html">LautaroDev</a>
+    <a href="index.html">Volver al sitio</a>
+    <a href="en/gracias.html" hreflang="en" lang="en" data-pay-keep-query>English</a>
+  </header>
+
+  <main class="pay-main">
+    <div class="pay-aurora lt-aurora-live" aria-hidden="true"></div>
+    <div class="pay-signal" aria-hidden="true"><i></i><i></i><i></i><b></b></div>
+
+    <h1 class="pay-title">Gracias por tu pago.</h1>
+    <p class="pay-lead" data-pay-if-generic>Lo que pagaste es el <strong>anticipo para arrancar</strong>. El saldo se abona al terminar, y si el servicio tiene mensualidad, empieza recién con la entrega.</p>
+    <p class="pay-lead" data-pay-if-product hidden>Pagaste el anticipo de <strong data-pay-amount></strong> (<span data-pay-pct></span>) para arrancar <strong data-pay-product></strong>. <span data-pay-saldo></span></p>
+
+    <div class="pay-grid">
+      <dl class="pay-summary">
+        <div data-pay-if-product hidden>
+          <dt>Servicio</dt>
+          <dd data-pay-product></dd>
+        </div>
+        <div data-pay-if-product hidden>
+          <dt>Anticipo</dt>
+          <dd class="pay-amount" data-pay-amount></dd>
+        </div>
+        <div data-pay-if-product hidden>
+          <dt>Precio</dt>
+          <dd data-pay-price></dd>
+        </div>
+        <div data-pay-if-product hidden>
+          <dt>Saldo</dt>
+          <dd data-pay-saldo></dd>
+        </div>
+        <div data-pay-if-generic>
+          <dt>Qué pagaste</dt>
+          <dd>El anticipo del servicio que elegiste en la tienda.</dd>
+        </div>
+        <div data-pay-if-generic>
+          <dt>Saldo</dt>
+          <dd>Se abona al terminar. La mensualidad, si la hay, empieza con la entrega.</dd>
+        </div>
+        <div>
+          <dt>Comprobante</dt>
+          <dd>Stripe te manda el comprobante al mail que usaste.</dd>
+        </div>
+      </dl>
+
+      <div>
+        <h2 class="pay-steps-title">Qué sigue</h2>
+        <ol class="pay-steps">
+          <li><span><strong>Te escribo para coordinar el arranque.</strong> Uso el mail que dejaste en el pago. Si querés adelantarte, escribime vos.</span></li>
+          <li><span><strong>Alcance por escrito.</strong> Antes de empezar dejamos por escrito qué incluye, qué no y cómo lo vamos a trabajar.</span></li>
+          <li><span><strong>Trabajo.</strong> Armo el proyecto y te voy mostrando avances para ajustar a tiempo.</span></li>
+          <li><span><strong>Entrega y saldo.</strong> Cuando está listo y lo aprobás, se abona el saldo. Si hay mensualidad, empieza ahí.</span></li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="pay-actions">
+      <a class="shop-btn shop-btn--pay"
+         href="mailto:lautarodemiannunez32@gmail.com?subject=Anticipo%20pagado&amp;body=Hola%20Lautaro%2C%20acabo%20de%20pagar%20un%20anticipo%20desde%20tu%20portafolio.%20Mi%20nombre%20es%3A"
+         data-pay-contact
+         data-pay-msg="Hola Lautaro, acabo de pagar el anticipo de &quot;{producto}&quot;. Mi nombre es:"
+         data-pay-msg-generic="Hola Lautaro, acabo de pagar un anticipo desde tu portafolio. Mi nombre es:"
+         data-pay-subject="Anticipo pagado · {producto}"><span data-contact-label data-label-mail="Escribime por mail" data-label-whatsapp="Escribime por WhatsApp">Escribime por mail</span></a>
+      <a class="shop-btn shop-btn--ghost" href="index.html#tienda" data-pay-back>Volver a la tienda</a>
+    </div>
+
+    <p class="pay-note">Esta página no puede confirmar el pago por sí sola: la confirmación es el comprobante de Stripe. Si no te llegó o ves algo raro, escribime a <a href="mailto:lautarodemiannunez32@gmail.com">lautarodemiannunez32@gmail.com</a>.</p>
+  </main>
+
+  <footer class="pay-foot">© LautaroDev · Córdoba, Argentina</footer>
+
+  <script src="assets/2027/config.js" defer></script>
+  <script src="assets/2027/productos.js" defer></script>
+  <script src="assets/2027/tienda.js" defer></script>
+</body>
+</html>

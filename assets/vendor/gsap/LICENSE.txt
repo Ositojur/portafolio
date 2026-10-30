@@ -1,0 +1,8 @@
+GSAP 3.15.0 (paquete npm "gsap", https://gsap.com)
+Copyright 2026, GreenSock. All rights reserved.
+Licencia: Standard "no charge" license — https://gsap.com/standard-license
+Desde 2025 todos los plugins de GSAP (incluidos SplitText, DrawSVGPlugin,
+ScrambleTextPlugin, MotionPathPlugin, CustomEase y Flip) son gratuitos bajo esta licencia.
+Los archivos *.min.js de esta carpeta se copiaron sin modificar desde gsap@3.15.0/dist/
+y cada uno conserva su encabezado @license original.
+Vendorizado por el agente 04 (motion) el 2026-10-29.

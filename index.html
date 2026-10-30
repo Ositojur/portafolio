@@ -3,486 +3,1265 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Lautaro Núñez, desarrollador full stack y Lic. en Ciberseguridad</title>
-  <meta name="description" content="Lautaro Núñez construye sitios, tiendas y sistemas para negocios, y audita empresas para encontrar fallas de seguridad antes que un atacante. Córdoba, Argentina." />
-  <meta name="theme-color" content="#0f2b4a" />
+  <meta name="color-scheme" content="dark light" />
+  <meta name="theme-color" content="#05090B" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#F3FAF8" media="(prefers-color-scheme: light)" />
+  <title>Chatbot WhatsApp 24/7, sitios y sistemas · Lautaro Núñez, LautaroDev</title>
+  <meta name="description" content="Chatbot WhatsApp 24/7 que atiende, vende y agenda solo, y los sitios y sistemas que lo sostienen. Lautaro Núñez, Lic. en Ciberseguridad. Córdoba, Argentina." />
+  <link rel="canonical" href="https://ositojur.github.io/portafolio/" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="es_AR" />
-  <meta property="og:title" content="Lautaro Núñez, desarrollador full stack y Lic. en Ciberseguridad" />
-  <meta property="og:description" content="Construyo sistemas. Después trato de romperlos, para que nadie más pueda." />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:site_name" content="LautaroDev" />
+  <meta property="og:title" content="Tu WhatsApp responde las 24 horas." />
+  <meta property="og:description" content="Chatbot WhatsApp 24/7, sitios y sistemas. Y como vengo de ciberseguridad, los pruebo como si fuera a atacarlos." />
   <meta property="og:url" content="https://ositojur.github.io/portafolio/" />
-  <meta property="og:image" content="media/og-portafolio.jpg" />
+  <meta property="og:image" content="https://ositojur.github.io/portafolio/media/og-portafolio-2027.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="LautaroDev: chatbot WhatsApp 24/7. Señal verde agua sobre fondo oscuro." />
   <meta name="twitter:card" content="summary_large_image" />
-  <link rel="canonical" href="https://ositojur.github.io/portafolio/" />
-  <link rel="alternate" hreflang="es" href="index.html" />
-  <link rel="alternate" hreflang="en" href="en/index.html" />
-  <link rel="alternate" hreflang="x-default" href="index.html" />
   <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Lautaro Núñez",
-      "alternateName": "LautaroDev",
-      "jobTitle": "Desarrollador full stack y Licenciado en Ciberseguridad",
-      "email": "mailto:lautarodemiannunez32@gmail.com",
-      "url": "https://ositojur.github.io/portafolio/",
-      "sameAs": ["https://github.com/Ositojur"],
-      "address": { "@type": "PostalAddress", "addressLocality": "Córdoba", "addressCountry": "AR" },
-      "knowsLanguage": ["es", "en"]
-    }
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://ositojur.github.io/portafolio/#persona",
+        "name": "Lautaro Núñez",
+        "alternateName": "LautaroDev",
+        "jobTitle": "Desarrollador full stack y Licenciado en Ciberseguridad",
+        "email": "mailto:lautarodemiannunez32@gmail.com",
+        "url": "https://ositojur.github.io/portafolio/",
+        "sameAs": [
+          "https://github.com/Ositojur"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Córdoba",
+          "addressCountry": "AR"
+        },
+        "knowsLanguage": [
+          "es",
+          "en"
+        ],
+        "worksFor": {
+          "@id": "https://ositojur.github.io/portafolio/#servicio"
+        }
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://ositojur.github.io/portafolio/#servicio",
+        "name": "LautaroDev",
+        "url": "https://ositojur.github.io/portafolio/",
+        "image": "https://ositojur.github.io/portafolio/media/og-portafolio-2027.jpg",
+        "description": "Chatbots de WhatsApp 24/7 para empresas, y los sitios y sistemas backend que los sostienen, probados con mirada de seguridad.",
+        "email": "mailto:lautarodemiannunez32@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Córdoba",
+          "addressCountry": "AR"
+        },
+        "founder": {
+          "@id": "https://ositojur.github.io/portafolio/#persona"
+        },
+        "priceRange": "USD 190–4500+",
+        "knowsAbout": [
+          "Chatbots de WhatsApp",
+          "Desarrollo web",
+          "Sistemas backend",
+          "Seguridad web"
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "@id": "https://ositojur.github.io/portafolio/#tienda",
+          "name": "Servicios",
+          "itemListElement": [
+            {
+              "@type": "OfferCatalog",
+              "name": "Accesibles",
+              "description": "Para entrar rápido.",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "@id": "https://ositojur.github.io/portafolio/#oferta-01",
+                  "url": "https://ositojur.github.io/portafolio/#producto-01",
+                  "priceCurrency": "USD",
+                  "priceSpecification": {
+                    "@type": "UnitPriceSpecification",
+                    "price": 290,
+                    "priceCurrency": "USD",
+                    "name": "Pago único"
+                  },
+                  "description": "Anticipo del 50% online para arrancar; el saldo al terminar.",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Landing Express",
+                    "description": "Una página a medida para que te encuentren y te escriban.",
+                    "provider": {
+                      "@id": "https://ositojur.github.io/portafolio/#servicio"
+                    }
+                  },
+                  "price": 290
+                },
+                {
+                  "@type": "Offer",
+                  "@id": "https://ositojur.github.io/portafolio/#oferta-02",
+                  "url": "https://ositojur.github.io/portafolio/#producto-02",
+                  "priceCurrency": "USD",
+                  "priceSpecification": [
+                    {
+                      "@type": "UnitPriceSpecification",
+                      "price": 350,
+                      "priceCurrency": "USD",
+                      "name": "Setup"
+                    },
+                    {
+                      "@type": "UnitPriceSpecification",
+                      "price": 39,
+                      "priceCurrency": "USD",
+                      "referenceQuantity": {
+                        "@type": "QuantitativeValue",
+                        "value": 1,
+                        "unitCode": "MON"
+                      },
+                      "name": "Mensualidad, empieza con la entrega"
+                    }
+                  ],
+                  "description": "Anticipo del 50% online para arrancar; el saldo al terminar.",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Bot WhatsApp Starter",
+                    "description": "Respuestas automáticas las 24 horas a lo que más te preguntan.",
+                    "provider": {
+                      "@id": "https://ositojur.github.io/portafolio/#servicio"
+                    }
+                  },
+                  "price": 350
+                },
+                {
+                  "@type": "Offer",
+                  "@id": "https://ositojur.github.io/portafolio/#oferta-03",
+                  "url": "https://ositojur.github.io/portafolio/#producto-03",
+                  "priceCurrency": "USD",
+                  "priceSpecification": {
+                    "@type": "UnitPriceSpecification",
+                    "price": 190,
+                    "priceCurrency": "USD",
+                    "name": "Pago único"
+                  },
+                  "description": "Anticipo del 50% online para arrancar; el saldo al terminar.",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Chequeo de Seguridad Web",
+                    "description": "Sabé qué fallas tiene tu sitio y en qué orden arreglarlas.",
+                    "provider": {
+                      "@id": "https://ositojur.github.io/portafolio/#servicio"
+                    }
+                  },
+                  "price": 190
+                }
+              ]
+            },
+            {
+              "@type": "OfferCatalog",
+              "name": "Intermedios",
+              "description": "El negocio funcionando.",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "@id": "https://ositojur.github.io/portafolio/#oferta-04",
+                  "url": "https://ositojur.github.io/portafolio/#producto-04",
+                  "priceCurrency": "USD",
+                  "priceSpecification": [
+                    {
+                      "@type": "UnitPriceSpecification",
+                      "price": 890,
+                      "priceCurrency": "USD",
+                      "name": "Setup"
+                    },
+                    {
+                      "@type": "UnitPriceSpecification",
+                      "price": 79,
+                      "priceCurrency": "USD",
+                      "referenceQuantity": {
+                        "@type": "QuantitativeValue",
+                        "value": 1,
+                        "unitCode": "MON"
+                      },
+                      "name": "Mensualidad, empieza con la entrega"
+                    }
+                  ],
+                  "description": "Anticipo del 50% online para arrancar; el saldo al terminar.",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Chatbot WhatsApp IA Pro 24/7",
+                    "description": "Un asistente con IA que conoce tu negocio, vende y agenda solo.",
+                    "provider": {
+                      "@id": "https://ositojur.github.io/portafolio/#servicio"
+                    }
+                  },
+                  "price": 890
+                },
+                {
+                  "@type": "Offer",
+                  "@id": "https://ositojur.github.io/portafolio/#oferta-05",
+                  "url": "https://ositojur.github.io/portafolio/#producto-05",
+                  "priceCurrency": "USD",
+                  "priceSpecification": {
+                    "@type": "UnitPriceSpecification",
+                    "price": 1200,
+                    "priceCurrency": "USD",
+                    "name": "Pago único"
+                  },
+                  "description": "Anticipo del 50% online para arrancar; el saldo al terminar.",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Sitio Profesional + Reservas",
+                    "description": "Tu sitio completo, en dos idiomas, recibiendo solicitudes con código.",
+                    "provider": {
+                      "@id": "https://ositojur.github.io/portafolio/#servicio"
+                    }
+                  },
+                  "price": 1200
+                },
+                {
+                  "@type": "Offer",
+                  "@id": "https://ositojur.github.io/portafolio/#oferta-06",
+                  "url": "https://ositojur.github.io/portafolio/#producto-06",
+                  "priceCurrency": "USD",
+                  "priceSpecification": {
+                    "@type": "UnitPriceSpecification",
+                    "price": 1600,
+                    "priceCurrency": "USD",
+                    "name": "Pago único"
+                  },
+                  "description": "Anticipo del 50% online para arrancar; el saldo al terminar.",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Tienda Online",
+                    "description": "Vendé online y controlá stock y pedidos desde un panel.",
+                    "provider": {
+                      "@id": "https://ositojur.github.io/portafolio/#servicio"
+                    }
+                  },
+                  "price": 1600
+                }
+              ]
+            },
+            {
+              "@type": "OfferCatalog",
+              "name": "Premium",
+              "description": "Sistemas a medida.",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "@id": "https://ositojur.github.io/portafolio/#oferta-07",
+                  "url": "https://ositojur.github.io/portafolio/#producto-07",
+                  "priceCurrency": "USD",
+                  "priceSpecification": [
+                    {
+                      "@type": "PriceSpecification",
+                      "minPrice": 3500,
+                      "priceCurrency": "USD",
+                      "name": "Precio desde"
+                    },
+                    {
+                      "@type": "UnitPriceSpecification",
+                      "price": 149,
+                      "priceCurrency": "USD",
+                      "referenceQuantity": {
+                        "@type": "QuantitativeValue",
+                        "value": 1,
+                        "unitCode": "MON"
+                      },
+                      "name": "Mensualidad, empieza con la entrega"
+                    }
+                  ],
+                  "description": "Anticipo del 30% online para arrancar; el saldo al terminar.",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Ecosistema WhatsApp + Web + CRM",
+                    "description": "Bot, sitio y panel conectados en un solo sistema.",
+                    "provider": {
+                      "@id": "https://ositojur.github.io/portafolio/#servicio"
+                    }
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "@id": "https://ositojur.github.io/portafolio/#oferta-08",
+                  "url": "https://ositojur.github.io/portafolio/#producto-08",
+                  "priceCurrency": "USD",
+                  "priceSpecification": {
+                    "@type": "PriceSpecification",
+                    "minPrice": 4500,
+                    "priceCurrency": "USD",
+                    "name": "Precio desde"
+                  },
+                  "description": "Anticipo del 30% online para arrancar; el saldo al terminar.",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Sistema Backend a Medida",
+                    "description": "La API, la base de datos y el panel que tu operación necesita.",
+                    "provider": {
+                      "@id": "https://ositojur.github.io/portafolio/#servicio"
+                    }
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "@id": "https://ositojur.github.io/portafolio/#oferta-09",
+                  "url": "https://ositojur.github.io/portafolio/#producto-09",
+                  "priceCurrency": "USD",
+                  "priceSpecification": {
+                    "@type": "PriceSpecification",
+                    "minPrice": 2800,
+                    "priceCurrency": "USD",
+                    "name": "Precio desde"
+                  },
+                  "description": "Anticipo del 30% online para arrancar; el saldo al terminar.",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Pentest + Hardening Empresarial",
+                    "description": "Encontramos las fallas antes que un atacante, y las cerramos.",
+                    "provider": {
+                      "@id": "https://ositojur.github.io/portafolio/#servicio"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  }
   </script>
+  <link rel="alternate" hreflang="es" href="https://ositojur.github.io/portafolio/" />
+  <link rel="alternate" hreflang="en" href="https://ositojur.github.io/portafolio/en/" />
+  <link rel="alternate" hreflang="x-default" href="https://ositojur.github.io/portafolio/" />
   <link rel="icon" href="media/favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="assets/fonts/plano/plano-fonts.css" />
-  <link rel="stylesheet" href="assets/plano.css" />
-  <script>document.documentElement.classList.add("js");</script>
+  <script>(function (d) { d.classList.add("js"); try { var t = localStorage.getItem("ld-theme"); if (t === "dark" || t === "light") d.setAttribute("data-theme", t); } catch (e) {} })(document.documentElement);</script>
+  <link rel="stylesheet" href="assets/2027/tokens.css" />
+  <link rel="stylesheet" href="assets/2027/scenes.css" />
+  <link rel="stylesheet" href="assets/2027/ui.css" />
+  <link rel="stylesheet" href="assets/2027/chatbot-demo.css" />
+  <link rel="stylesheet" href="assets/2027/tienda.css" />
 </head>
-<body>
+<body data-page="home">
   <a class="skip" href="#contenido">Saltar al contenido</a>
+  <div class="scroll-progress" data-scroll-progress aria-hidden="true"></div>
 
-  <header class="top">
-    <div class="wrap top-in">
-      <a class="name" href="#inicio">Lautaro Núñez</a>
-      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu">Menú</button>
+  <header class="top" data-nav>
+    <div class="top-in">
+      <a class="name" href="#inicio" aria-label="LautaroDev, Lautaro Núñez. Volver al inicio">LautaroDev</a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" data-label-open="Menú" data-label-close="Cerrar">Menú</button>
       <nav class="menu" id="menu" aria-label="Secciones">
+        <a href="#chatbots">Chatbots</a>
+        <a href="#web">Web</a>
+        <a href="#sistemas">Sistemas</a>
         <a href="#trabajos">Trabajos</a>
+        <a href="#tienda">Tienda</a>
         <a href="#seguridad">Seguridad</a>
-        <a href="#proceso">Proceso</a>
-        <a href="#sobre-mi">Sobre mí</a>
         <a href="#contacto">Contacto</a>
         <span class="lang"><a href="index.html" hreflang="es" lang="es" aria-current="true">ES</a><a href="en/index.html" hreflang="en" lang="en">EN</a></span>
       </nav>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="true" aria-label="Tema oscuro">
+        <span class="theme-toggle-icon" aria-hidden="true"></span>
+      </button>
     </div>
   </header>
 
-  <main id="contenido">
+  <main id="contenido" tabindex="-1">
 
-    <!-- Portada: la lámina con la linterna UV -->
-    <section class="hero" id="inicio" aria-labelledby="hero-title">
-      <div class="wrap">
-        <div class="sheet-frame">
-          <div class="zones zones-x" aria-hidden="true"><span>A</span><span>B</span><span>C</span><span>D</span><span>E</span><span>F</span></div>
-          <div class="zones zones-y" aria-hidden="true"><span>1</span><span>2</span><span>3</span></div>
-
-          <div class="hero-grid">
-            <div class="hero-copy">
-              <h1 id="hero-title">Construyo sistemas. Después trato de romperlos.</h1>
-              <p class="lead">Soy Lautaro Núñez, desarrollador full stack y Licenciado en Ciberseguridad, en Córdoba. Hago sitios, tiendas y sistemas para negocios, y reviso los de otras empresas para encontrar las fallas antes que un atacante.</p>
-              <p class="actions">
-                <a class="btn btn-solid" href="#trabajos">Ver trabajos</a>
-                <a class="btn" href="#contacto">Escribirme</a>
-              </p>
-            </div>
-
-            <figure class="plan" data-plan>
-              <svg class="plan-base" viewBox="0 0 640 460" role="img" aria-labelledby="plan-t">
-                <title id="plan-t">Plano de un sitio web conectado a un servidor y una base de datos</title>
-                <g class="ln">
-                  <rect x="20" y="20" width="420" height="300" rx="6" />
-                  <line x1="20" y1="44" x2="440" y2="44" />
-                  <circle cx="34" cy="32" r="3.5" /><circle cx="46" cy="32" r="3.5" /><circle cx="58" cy="32" r="3.5" />
-                  <rect x="76" y="25" width="250" height="14" rx="7" />
-                  <rect x="36" y="56" width="388" height="14" rx="2" />
-                  <line x1="36" y1="92" x2="220" y2="92" class="thick" />
-                  <line x1="36" y1="106" x2="190" y2="106" />
-                  <rect x="250" y="82" width="174" height="70" rx="3" />
-                  <line x1="250" y1="82" x2="424" y2="152" class="faint" /><line x1="424" y1="82" x2="250" y2="152" class="faint" />
-                  <rect x="36" y="120" width="150" height="88" rx="3" />
-                  <rect x="48" y="146" width="126" height="13" rx="2" />
-                  <rect x="48" y="165" width="126" height="13" rx="2" />
-                  <rect x="48" y="186" width="58" height="13" rx="2" />
-                  <rect x="36" y="220" width="120" height="80" rx="3" />
-                  <rect x="168" y="220" width="120" height="80" rx="3" />
-                  <rect x="300" y="220" width="124" height="80" rx="3" />
-                  <path d="M440 170 C 460 170, 460 135, 480 135" />
-                  <path d="M474 131 L480 135 L474 139" />
-                  <rect x="480" y="60" width="128" height="150" rx="4" />
-                  <line x1="492" y1="84" x2="596" y2="84" /><line x1="492" y1="104" x2="596" y2="104" /><line x1="492" y1="124" x2="596" y2="124" /><line x1="492" y1="144" x2="596" y2="144" />
-                  <circle cx="586" cy="74" r="3" />
-                  <line x1="544" y1="210" x2="544" y2="252" />
-                  <ellipse cx="544" cy="262" rx="44" ry="11" />
-                  <path d="M500 262 V 322 A 44 11 0 0 0 588 322 V 262" />
-                  <path d="M500 292 A 44 11 0 0 0 588 292" class="faint" />
-                  <path d="M452 352 h 34 l 10 10 v 40 h -44 z M486 352 v 10 h 10" />
-                  <line x1="20" y1="350" x2="440" y2="350" /><line x1="20" y1="344" x2="20" y2="356" /><line x1="440" y1="344" x2="440" y2="356" />
-                </g>
-                <g class="tx">
-                  <text x="86" y="35">http://tunegocio.com</text>
-                  <text x="48" y="138">Ingreso al panel</text>
-                  <text x="56" y="196" class="sm">Entrar</text>
-                  <text x="310" y="240">Complemento</text>
-                  <text x="310" y="256" class="sm">versión 2.3</text>
-                  <text x="492" y="228">servidor</text>
-                  <text x="452" y="160" class="sm">API</text>
-                  <text x="520" y="350">base de datos</text>
-                  <text x="452" y="420">backup.zip</text>
-                  <text x="196" y="366">1440 px</text>
-                  <text x="20" y="446" class="sm">Lámina 1. Sitio de un comercio, como lo recibo para revisar.</text>
-                </g>
-              </svg>
-
-              <div class="uv" aria-hidden="true">
-                <svg viewBox="0 0 640 460">
-                  <g class="pen">
-                    <path d="M70 24 C 110 14, 190 16, 205 31 C 214 44, 120 48, 76 42 C 58 38, 60 28, 84 22" />
-                    <path d="M30 128 C 40 108, 180 106, 196 128 C 206 160, 200 214, 150 218 C 90 222, 28 214, 28 170 C 28 150, 32 136, 44 126" />
-                    <path d="M296 226 C 330 204, 430 210, 432 250 C 434 292, 392 312, 352 310 C 306 308, 290 280, 294 246" />
-                    <path d="M444 344 C 470 334, 512 342, 510 380 C 508 414, 452 418, 440 392 C 432 372, 438 354, 456 344" />
-                    <path d="M206 168 L 196 158" /><path d="M396 330 L 384 312" /><path d="M520 404 L 506 396" />
-                  </g>
-                  <g class="ink">
-                    <text x="214" y="36">sin https</text>
-                    <text x="206" y="182">usuario admin,</text>
-                    <text x="206" y="200">clave admin</text>
-                    <text x="330" y="342">sin actualizar desde 2019</text>
-                    <text x="528" y="420">lo baja cualquiera</text>
-                  </g>
-                  <g class="print" transform="translate(112 182)">
-                    <path d="M0 8 C 0 -2, 18 -2, 18 8" /><path d="M-3 9 C -3 -6, 21 -6, 21 9" /><path d="M-6 11 C -6 -10, 24 -10, 24 11" />
-                    <path d="M3 9 C 3 3, 15 3, 15 9" /><path d="M-8 14 C -10 -14, 28 -14, 26 14" />
-                  </g>
-                </svg>
-              </div>
-              <span class="torch" aria-hidden="true"></span>
-              <figcaption>
-                <span class="hint">Pasá el cursor por el plano para ver lo que encuentra una auditoría.</span>
-                <button type="button" class="reveal-all" aria-pressed="false">Mostrar todas las fallas</button>
-              </figcaption>
-              <ul class="visually-hidden">
-                <li>El sitio no usa https.</li>
-                <li>El panel acepta usuario admin y clave admin.</li>
-                <li>Un complemento no se actualiza desde 2019.</li>
-                <li>La copia de seguridad se puede descargar desde internet.</li>
-              </ul>
-            </figure>
-          </div>
-        </div>
+    <!-- 1 · HERO 3D (momento firma: hero) -->
+    <section class="scene scene--hero" id="inicio" data-scene="hero" data-moment="hero" aria-labelledby="hero-title">
+      <div class="hero-visual" data-3d="hero" aria-hidden="true">
+        <canvas class="hero-canvas" data-3d-canvas></canvas>
+        <picture>
+          <source srcset="media/hero-3d-fallback-light.webp" media="(prefers-color-scheme: light)" />
+          <img class="hero-fallback" data-3d-fallback src="media/hero-3d-fallback.webp" alt="" width="1600" height="1200" decoding="async" />
+        </picture>
       </div>
+      <ul class="hero-signal" aria-hidden="true">
+        <li data-anim="parallax-depth" data-depth="0.5"><time>03:12</time> ¿Abren mañana?</li>
+        <li data-anim="parallax-depth" data-depth="0.8"><time>03:12</time> Mesa para 4, reservada.</li>
+        <li data-anim="parallax-depth" data-depth="0.3"><time>03:14</time> Te paso con una persona.</li>
+      </ul>
+      <div class="scene-inner hero-copy">
+        <p class="eyebrow" data-anim="scramble">LautaroDev · Córdoba → remoto</p>
+        <h1 id="hero-title" data-anim="split-lines">Tu WhatsApp responde <span class="accent">las 24 horas.</span></h1>
+        <p class="lead" data-anim="mask-reveal" data-anim-delay="0.5">Chatbots que atienden, venden y agendan solos, con el sistema detrás.</p>
+        <p class="actions" data-anim="stagger-list" data-anim-delay="0.8">
+          <a class="btn btn-solid" href="#producto-04" data-shop-goto="04" data-anim="magnetic">Quiero mi chatbot</a>
+          <a class="btn" href="#tienda" data-anim="magnetic">Ver la tienda</a>
+        </p>
+        <p class="hero-sign" data-anim="mask-reveal" data-anim-delay="1">Lautaro Núñez · desarrollador full stack y Lic. en Ciberseguridad · más de 6 años haciendo sitios y sistemas</p>
+      </div>
+      <p class="hero-clock" aria-hidden="true"><span data-anim="count" data-count-from="0" data-count-to="24">24</span>/<span data-anim="count" data-count-from="0" data-count-to="7">7</span></p>
+      <a class="scroll-cue" href="#chatbots" data-anim="cue">Mirá cómo atiende</a>
     </section>
 
-    <!-- Trabajos -->
-    <section class="work" id="trabajos" aria-labelledby="trabajos-title">
-      <div class="wrap">
-        <header class="head">
-          <h2 id="trabajos-title">Trabajos</h2>
-          <p>Catorce proyectos entre sitios, tiendas, sistemas y propuestas. Abrí cualquiera para ver capturas y videos.</p>
-        </header>
-
-        <div class="sheets">
-          <article class="sheet sheet-main" data-name="The Happy Ride Tulum" data-cat="Reservas, producto propio" data-stack="HTML, CSS, JavaScript, panel de administración">
-            <figure class="sheet-img"><img src="media/opt/happy-ride-inicio.jpg" alt="Portada del sitio de The Happy Ride Tulum con buscador de fechas." width="1440" height="900" loading="lazy" /></figure>
-            <dl class="rotulo">
-              <div class="r-wide"><dt>Cliente</dt><dd class="r-name">The Happy Ride Tulum</dd></div>
-              <div><dt>Qué resolví</dt><dd>Pedir un scooter, ATV o e-bike en cuatro pasos, en español o inglés, y recibir un código de seguimiento.</dd></div>
-              <div><dt>Hecho con</dt><dd>HTML, CSS, JavaScript y un panel propio</dd></div>
-              <div class="r-act"><button type="button" class="btn btn-sm" data-open>Ver capturas</button></div>
-            </dl>
-            <template>
-              <p>Una web en español e inglés para explorar vehículos, elegir fechas y enviar una solicitud de reserva. El cliente recibe un código de seguimiento y el negocio confirma por WhatsApp.</p>
-              <p class="links"><a href="videos/01-happy-ride-recorrido.mp4" target="_blank" rel="noopener">Recorrido completo en video</a><a href="videos/03-happy-ride-admin.mp4" target="_blank" rel="noopener">Panel de administración</a><a href="media/happy-ride-presentacion.pdf" target="_blank" rel="noopener">Presentación en PDF</a></p>
-              <video data-video src="videos/02-happy-ride-resumen.mp4" poster="media/opt/happy-ride-inicio.jpg"></video>
-              <img data-shot data-caption="Inicio" src="media/opt/happy-ride-inicio.jpg" alt="Portada con buscador de fechas." />
-              <img data-shot data-caption="Flota" src="media/opt/happy-ride-flota.jpg" alt="Catálogo de vehículos." />
-              <img data-shot data-caption="Reserva" src="media/opt/happy-ride-reserva.jpg" alt="Selección de fechas para la solicitud." />
-              <img data-shot data-caption="Seguimiento" src="media/opt/happy-ride-ok.jpg" alt="Solicitud recibida con código de seguimiento." />
-              <img data-shot data-caption="Celular" src="media/opt/happy-ride-movil.jpg" alt="Portada en un teléfono." />
-            </template>
-          </article>
-
-          <article class="sheet" data-name="NextScene" data-cat="Plataforma en tiempo real" data-stack="Next.js, Prisma, PostgreSQL, Socket.io">
-            <figure class="sheet-img sheet-draw" aria-hidden="true">
-              <svg viewBox="0 0 400 250">
-                <rect x="16" y="16" width="368" height="218" rx="6" />
-                <circle cx="36" cy="36" r="5" class="live" /><text x="48" y="40">En vivo, capítulo 12</text>
-                <rect x="36" y="56" width="328" height="70" rx="3" class="faint" />
-                <text x="36" y="150" class="q">¿Qué hace la protagonista?</text>
-                <rect x="36" y="164" width="328" height="24" rx="3" /><rect x="36" y="164" width="223" height="24" rx="3" class="fill" />
-                <text x="46" y="181">Abre la puerta</text><text x="330" y="181">68%</text>
-                <rect x="36" y="196" width="328" height="24" rx="3" /><rect x="36" y="196" width="105" height="24" rx="3" class="fill" />
-                <text x="46" y="213">Llama a la policía</text><text x="330" y="213">32%</text>
-              </svg>
-            </figure>
-            <dl class="rotulo">
-              <div class="r-wide"><dt>Cliente</dt><dd class="r-name">NextScene</dd></div>
-              <div><dt>Qué resolví</dt><dd>Una novela en vivo donde el público vota y decide el próximo capítulo.</dd></div>
-              <div><dt>Hecho con</dt><dd>Next.js, Prisma, PostgreSQL y Socket.io</dd></div>
-              <div class="r-act"><button type="button" class="btn btn-sm" data-open>Ver detalle</button></div>
-            </dl>
-            <template>
-              <p>Una plataforma de novela interactiva en vivo. El público sigue la transmisión, vota en tiempo real y el resultado define el próximo capítulo. Tiene casting, cuentas de usuario y votaciones sincronizadas por WebSockets.</p>
-              <p>Por ahora este proyecto no tiene capturas públicas.</p>
-            </template>
-          </article>
-
-          <article class="sheet" data-name="AgroStock, Grupo Stelle" data-cat="Gestión de stock" data-stack="Node.js, Express, JavaScript">
-            <figure class="sheet-img"><img src="media/agrostock-home.jpg" alt="Catálogo de AgroStock con productos por litro." width="1440" height="900" loading="lazy" /></figure>
-            <dl class="rotulo">
-              <div class="r-wide"><dt>Cliente</dt><dd class="r-name">Grupo Stelle, AgroStock</dd></div>
-              <div><dt>Qué resolví</dt><dd>Pedidos de agroquímicos por litro y un panel privado de stock, ventas y pedidos.</dd></div>
-              <div><dt>Hecho con</dt><dd>Node.js, Express y JavaScript</dd></div>
-              <div class="r-act"><button type="button" class="btn btn-sm" data-open>Ver capturas</button></div>
-            </dl>
-            <template>
-              <p>Una herramienta para elegir productos, indicar los litros y armar un pedido. El depósito tiene un panel privado para controlar stock, ventas y solicitudes.</p>
-              <video data-video src="videos/10-agrostock-clip.webm" poster="media/agrostock-home.jpg"></video>
-              <img data-shot data-caption="Catálogo" src="media/agrostock-home.jpg" alt="Catálogo de AgroStock." />
-              <img data-shot data-caption="Pedido" src="media/agrostock-carrito.jpg" alt="Pedido abierto con litros y datos de pago." />
-            </template>
-          </article>
-        </div>
-
-        <h3 class="index-title">Índice de láminas</h3>
-        <div class="index-wrap">
-          <table class="index">
-            <thead>
-              <tr><th scope="col">Cliente</th><th scope="col">Rubro</th><th scope="col">Qué resolví</th><th scope="col">Hecho con</th><th scope="col"><span class="visually-hidden">Acciones</span></th></tr>
-            </thead>
-            <tbody>
-              <tr data-name="Joyería Acacio" data-cat="Tienda y punto de venta" data-stack="PHP, MySQL, JavaScript" data-thumb="media/joyeria-home.jpg">
-                <th scope="row">Joyería Acacio</th><td>Joyería</td><td>Vidriera de joyas con consulta por pieza y un panel de ventas para el local.</td><td>PHP, MySQL, JS</td>
-                <td><button type="button" class="btn btn-sm" data-open>Ver</button>
-                  <template>
-                    <p>Una tienda que presenta las joyas con fotos y detalles para facilitar la consulta. El negocio carga su catálogo y vende desde un panel de punto de venta.</p>
-                    <p class="links"><a href="https://joyeriaacacio.com" target="_blank" rel="noopener noreferrer">joyeriaacacio.com</a></p>
-                    <img data-shot data-caption="Inicio" src="media/joyeria-home.jpg" alt="Portada de Joyería Acacio." />
-                    <img data-shot data-caption="Foto de producto" src="media/joyeria-pieza-2.webp" alt="Argollas de oro en caja." />
-                  </template></td>
-              </tr>
-              <tr data-name="Dar Automotores" data-cat="Concesionaria" data-stack="HTML, CSS, JavaScript" data-thumb="media/dar-home.jpg">
-                <th scope="row">Dar Automotores</th><td>Concesionaria</td><td>Stock de 0 km y usados con filtros, ficha por auto y financiación.</td><td>HTML, CSS, JS</td>
-                <td><button type="button" class="btn btn-sm" data-open>Ver</button>
-                  <template>
-                    <p>Un sitio que reúne los vehículos disponibles y permite filtrarlos. Cada auto tiene su ficha y un camino directo para consultar.</p>
-                    <video data-video src="videos/04-dar-clip.webm" poster="media/dar-home.jpg"></video>
-                    <img data-shot data-caption="Inicio" src="media/dar-home.jpg" alt="Portada de Dar Automotores." />
-                    <img data-shot data-caption="Catálogo" src="media/opt/dar-catalogo-detalle.webp" alt="Listado de autos con filtros." />
-                  </template></td>
-              </tr>
-              <tr data-name="SmartGPS" data-cat="Tienda de rastreo GPS" data-stack="PHP, CSS, JavaScript" data-thumb="media/opt/smartgps-home-1280.webp">
-                <th scope="row">SmartGPS</th><td>Rastreo GPS</td><td>Catálogo de equipos con carrito, distribuidores y consulta por WhatsApp.</td><td>PHP, CSS, JS</td>
-                <td><button type="button" class="btn btn-sm" data-open>Ver</button>
-                  <template>
-                    <p>Un catálogo para conocer los rastreadores, compararlos y consultar por WhatsApp. Incluye carrito, distribuidores y soporte.</p>
-                    <video data-video src="videos/08-smartgps-clip.webm" poster="media/opt/smartgps-home-1280.webp"></video>
-                    <img data-shot data-caption="Inicio" src="media/opt/smartgps-home-1280.webp" alt="Portada de SmartGPS." />
-                    <img data-shot data-caption="Equipos" src="media/opt/smartgps-equipos-1280.webp" alt="Listado de equipos GPS." />
-                    <img data-shot data-caption="Ficha" src="media/opt/smartgps-ficha-1280.webp" alt="Ficha de un rastreador." />
-                  </template></td>
-              </tr>
-              <tr data-name="AuraLV Store" data-cat="Tienda de ropa" data-stack="PHP, MySQL" data-thumb="media/opt/aura-tienda-detalle.webp">
-                <th scope="row">AuraLV Store</th><td>Indumentaria</td><td>Catálogo por categorías, carrito y un panel con números de venta.</td><td>PHP, MySQL</td>
-                <td><button type="button" class="btn btn-sm" data-open>Ver</button>
-                  <template>
-                    <p>Una tienda de ropa con catálogo y carrito. El negocio carga productos y ve su análisis financiero desde un panel.</p>
-                    <img data-shot data-caption="Catálogo" src="media/opt/aura-tienda-detalle.webp" alt="Grilla de prendas." />
-                    <img data-shot data-caption="Prendas" src="media/aura-home.jpg" alt="Remeras del catálogo." />
-                  </template></td>
-              </tr>
-              <tr data-name="AbSA Perfumes" data-cat="Tienda de perfumes" data-stack="HTML, CSS, JavaScript" data-thumb="media/abs-home.jpg">
-                <th scope="row">AbSA Perfumes</th><td>Perfumería</td><td>Fragancias importadas, nacionales y árabes con carrito y cuotas.</td><td>HTML, CSS, JS</td>
-                <td><button type="button" class="btn btn-sm" data-open>Ver</button>
-                  <template>
-                    <p>Una tienda de perfumes con categorías, detalle de cada fragancia y carrito con cuotas.</p>
-                    <video data-video src="videos/06-abs-clip.webm" poster="media/abs-home.jpg"></video>
-                    <img data-shot data-caption="Inicio" src="media/abs-home.jpg" alt="Portada de AbSA." />
-                    <img data-shot data-caption="Categorías" src="media/abs-productos.jpg" alt="Familias de fragancias." />
-                  </template></td>
-              </tr>
-              <tr data-name="OS TigerLab" data-cat="Academia online" data-stack="HTML, PHP, JavaScript" data-thumb="media/ostiger-home.jpg">
-                <th scope="row">OS TigerLab</th><td>Formación en cibercrimen</td><td>Cursos por módulos, eventos, cobro y verificación de certificados.</td><td>HTML, PHP, JS</td>
-                <td><button type="button" class="btn btn-sm" data-open>Ver</button>
-                  <template>
-                    <p>El sitio de una academia de investigación de cibercrimen: presentación, cursos por módulos, eventos, cobro y verificación pública de certificados.</p>
-                    <p class="links"><a href="https://ostigerlab.com" target="_blank" rel="noopener noreferrer">ostigerlab.com</a></p>
-                    <img data-shot data-caption="Inicio" src="media/ostiger-home.jpg" alt="Portada de OS TigerLab." />
-                    <img data-shot data-caption="Academia" src="media/ostiger-cursos.jpg" alt="Metodología y práctica." />
-                  </template></td>
-              </tr>
-              <tr data-name="Selvora Deco" data-cat="Catálogo de decoración" data-stack="HTML, CSS, JavaScript" data-thumb="media/selvora-home.jpg">
-                <th scope="row">Selvora Deco</th><td>Decoración</td><td>Plantas artificiales ordenadas por ambiente para hogares, locales y oficinas.</td><td>HTML, CSS, JS</td>
-                <td><button type="button" class="btn btn-sm" data-open>Ver</button>
-                  <template>
-                    <p>Un catálogo visual que ordena las propuestas por categoría y lleva al visitante de la inspiración a la consulta.</p>
-                    <video data-video src="videos/05-selvora-clip.webm" poster="media/selvora-home.jpg"></video>
-                    <img data-shot data-caption="Inicio" src="media/selvora-home.jpg" alt="Portada de Selvora Deco." />
-                    <img data-shot data-caption="Catálogo" src="media/selvora-catalogo.jpg" alt="Familias del catálogo." />
-                  </template></td>
-              </tr>
-              <tr data-name="Alimentos en Regla" data-cat="Consultoría bromatológica" data-stack="Next.js, Tailwind" data-thumb="media/alimentos-home.jpg">
-                <th scope="row">Alimentos en Regla</th><td>Consultoría</td><td>RNE, RNPA y rótulos explicados claro, con una consulta guiada.</td><td>Next.js, Tailwind</td>
-                <td><button type="button" class="btn btn-sm" data-open>Ver</button>
-                  <template>
-                    <p>La web de la Lic. Karina Fernández: servicios de asesoramiento alimentario, preguntas frecuentes y un formulario que guía la primera consulta.</p>
-                    <img data-shot data-caption="Inicio" src="media/alimentos-home.jpg" alt="Portada de Alimentos en Regla." />
-                    <img data-shot data-caption="Preguntas" src="media/alimentos-form.jpg" alt="Preguntas frecuentes sobre RNE y RNPA." />
-                  </template></td>
-              </tr>
-              <tr data-name="Holística" data-cat="Sitio con panel editable" data-stack="PHP, JSON" data-thumb="media/holistica-live.jpg">
-                <th scope="row">Holística</th><td>Formación</td><td>Tres diseños de portada y un panel para que la clienta edite todo sola.</td><td>PHP, JSON</td>
-                <td><button type="button" class="btn btn-sm" data-open>Ver</button>
-                  <template>
-                    <p>Un sitio para la formación en Mesa Energética Holística, con tres portadas a elegir y un panel para cambiar textos e imágenes sin depender de un programador.</p>
-                    <video data-video src="videos/09-holistica-clip.webm" poster="media/holistica-live.jpg"></video>
-                    <img data-shot data-caption="Inicio" src="media/holistica-live.jpg" alt="Página de Holística." />
-                  </template></td>
-              </tr>
-              <tr data-name="Departamento Capri" data-cat="Informe interactivo" data-stack="HTML, CSS, JavaScript" data-thumb="media/capri-publico.jpg">
-                <th scope="row">Departamento Capri</th><td>Administración</td><td>Gastos y préstamos ordenados, con una vista para cada propietario.</td><td>HTML, CSS, JS</td>
-                <td><button type="button" class="btn btn-sm" data-open>Ver</button>
-                  <template>
-                    <p>Un informe con gastos, préstamos y totales, y una vista por persona. La imagen es ilustrativa para cuidar los datos privados.</p>
-                    <img data-shot data-caption="Vista pública" src="media/capri-publico.jpg" alt="Esquema sin datos personales." />
-                  </template></td>
-              </tr>
-              <tr data-name="Tiro Federal Córdoba" data-cat="Propuesta digital" data-stack="HTML, CSS" data-thumb="media/tiro-home.jpg">
-                <th scope="row">Tiro Federal Córdoba</th><td>Institución deportiva</td><td>Propuesta por etapas: sitio institucional, armería con catálogo y soporte.</td><td>HTML, CSS</td>
-                <td><button type="button" class="btn btn-sm" data-open>Ver</button>
-                  <template>
-                    <p>Una presentación navegable con la propuesta por etapas para el club: sitio institucional, armería digital con catálogo y atención por WhatsApp.</p>
-                    <img data-shot data-caption="Portada" src="media/tiro-home.jpg" alt="Portada de la propuesta." />
-                    <img data-shot data-caption="Etapas" src="media/tiro-etapas.jpg" alt="Las tres etapas de la propuesta." />
-                  </template></td>
-              </tr>
-            </tbody>
-          </table>
-          <img class="peek" alt="" aria-hidden="true" />
-        </div>
+    <!-- 2 · CINTA DE STACK REAL -->
+    <section class="scene scene--stack" id="stack" data-scene="stack" aria-labelledby="stack-title">
+      <div class="scene-inner">
+        <h2 id="stack-title" class="stack-title" data-anim="mask-reveal">Con qué lo construyo</h2>
       </div>
-    </section>
-
-    <!-- Seguridad -->
-    <section class="sec" id="seguridad" aria-labelledby="seguridad-title">
-      <div class="wrap sec-grid">
-        <div class="sec-copy">
-          <h2 id="seguridad-title">Reviso empresas como lo haría alguien que quiere entrar.</h2>
-          <p>Soy Licenciado en Ciberseguridad y me especializo en cibercrimen. Con una autorización firmada, pruebo los sitios, servidores y redes de una empresa para encontrar las fallas antes que un atacante. Después las corregimos juntos, y si el sistema es viejo, lo modernizo por etapas sin frenar el trabajo de todos los días.</p>
-          <dl class="services">
-            <div><dt>Pruebas de intrusión</dt><dd>Ataques controlados sobre webs, redes y aplicaciones, con el alcance acordado por escrito.</dd></div>
-            <div><dt>Endurecimiento</dt><dd>Permisos, cifrado, doble factor, copias de seguridad y monitoreo en servidores y paneles.</dd></div>
-            <div><dt>Modernización</dt><dd>Paso sistemas antiguos a una base actual, de a partes y sin perder datos.</dd></div>
-            <div><dt>Incidentes</dt><dd>Si ya pasó algo, investigo qué ocurrió y preservo la evidencia digital.</dd></div>
-            <div><dt>Personas</dt><dd>Simulacros de phishing y charlas para que el equipo también sea una barrera.</dd></div>
-          </dl>
-        </div>
-
-        <article class="report" data-report aria-label="Ejemplo de informe de auditoría con datos ficticios">
-          <header class="report-head">
-            <h3>Informe de auditoría</h3>
-            <p>Empresa de ejemplo. Los datos son ficticios.</p>
-            <p>Revisó: Lautaro Núñez</p>
-          </header>
-          <table>
-            <thead><tr><th scope="col">Hallazgo</th><th scope="col">Riesgo</th></tr></thead>
-            <tbody>
-              <tr><td><mark>Copias de seguridad descargables desde internet</mark></td><td>Crítico</td></tr>
-              <tr><td><mark>Panel con usuario y clave de fábrica</mark></td><td>Alto</td></tr>
-              <tr><td>Gestor de contenidos sin actualizar desde 2019</td><td>Alto</td></tr>
-              <tr><td>Formulario sin protección contra envíos automáticos</td><td>Medio</td></tr>
-              <tr><td>Certificado vencido en un subdominio</td><td>Medio</td></tr>
-            </tbody>
-          </table>
-          <p class="note note-1" aria-hidden="true">esto lo ve cualquiera desde el navegador</p>
-          <p class="note note-2" aria-hidden="true">arreglar primero</p>
-          <svg class="scribble" viewBox="0 0 200 120" aria-hidden="true"><path d="M8 100 C 40 90, 70 60, 120 30 M110 26 L 124 28 L 118 40" /></svg>
-          <p class="stamp">Corregido</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- Proceso -->
-    <section class="process" id="proceso" aria-labelledby="proceso-title">
-      <div class="wrap">
-        <header class="head">
-          <h2 id="proceso-title">Cómo trabajamos</h2>
-          <p>Seis pasos, de la primera charla al día que lo usás solo.</p>
-        </header>
-        <ol class="steps">
-          <li><h3>Charla</h3><p>Me contás cómo trabaja tu negocio y qué te está frenando.</p></li>
-          <li><h3>Plano</h3><p>Te muestro la estructura y el diseño antes de escribir código.</p></li>
-          <li><h3>Construcción</h3><p>Programo el sitio o el sistema, y ves los avances mientras tanto.</p></li>
-          <li><h3>Pruebas</h3><p>Lo pruebo en celular y computadora, y le hago una revisión de seguridad.</p></li>
-          <li><h3>Publicación</h3><p>Lo pongo online con dominio, certificado y copias de seguridad.</p></li>
-          <li><h3>Seguimiento</h3><p>Te enseño a usarlo y sigo disponible para cambios.</p></li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- Materiales -->
-    <section class="bom" aria-labelledby="bom-title">
-      <div class="wrap bom-grid">
-        <header class="head">
-          <h2 id="bom-title">Lista de materiales</h2>
-          <p>Trabajo todas las capas de un proyecto. Elijo con qué según lo que haga falta, no según la moda.</p>
-        </header>
-        <table class="bom-table">
-          <tbody>
-            <tr><th scope="row">Lo que ve tu cliente</th><td>HTML, CSS, JavaScript, TypeScript, React, Next.js y Tailwind</td></tr>
-            <tr><th scope="row">La lógica</th><td>Node.js, Express, PHP, APIs REST y Socket.io para tiempo real</td></tr>
-            <tr><th scope="row">Los datos</th><td>PostgreSQL, MySQL, MariaDB y Prisma</td></tr>
-            <tr><th scope="row">Dónde vive</th><td>Linux, Git y GitHub, Hostinger, cPanel, DNS y certificados SSL</td></tr>
-            <tr><th scope="row">La seguridad</th><td>Kali Linux, Burp Suite, Nmap, Wireshark, Metasploit y OWASP ZAP</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <!-- Clientes -->
-    <section class="clients" aria-labelledby="clientes-title">
-      <div class="wrap">
-        <h2 id="clientes-title">Negocios para los que trabajé</h2>
-        <ul class="names">
-          <li>The Happy Ride Tulum</li><li>Dar Automotores</li><li>Joyería Acacio</li><li>AbSA Perfumes</li><li>SmartGPS</li><li>AuraLV Store</li><li>Selvora Deco</li><li>Grupo Stelle</li><li>NextScene</li><li>Alimentos en Regla</li><li>Holística</li><li>OS TigerLab</li><li>Tiro Federal Córdoba</li><li>Departamento Capri</li>
+      <div class="marquee" data-marquee data-anim="marquee">
+        <ul class="marquee-track" data-marquee-track>
+          <li class="stack-group" data-layer="frente"><span class="stack-layer">Lo que ve tu cliente</span>
+            <ul><li>HTML</li><li>CSS</li><li>JavaScript</li><li>TypeScript</li><li>React</li><li>Next.js</li><li>Tailwind</li></ul></li>
+          <li class="stack-group" data-layer="logica"><span class="stack-layer">La lógica</span>
+            <ul><li>Node.js</li><li>Express</li><li>PHP</li><li>APIs REST</li><li>Socket.io</li></ul></li>
+          <li class="stack-group" data-layer="datos"><span class="stack-layer">Los datos</span>
+            <ul><li>PostgreSQL</li><li>MySQL</li><li>MariaDB</li><li>Prisma</li></ul></li>
+          <li class="stack-group" data-layer="infra"><span class="stack-layer">Dónde vive</span>
+            <ul><li>Linux</li><li>Git y GitHub</li><li>Hostinger</li><li>cPanel</li><li>DNS</li><li>Certificados SSL</li></ul></li>
+          <li class="stack-group" data-layer="seguridad"><span class="stack-layer">La seguridad</span>
+            <ul><li>Kali Linux</li><li>Burp Suite</li><li>Nmap</li><li>Wireshark</li><li>Metasploit</li><li>OWASP ZAP</li></ul></li>
         </ul>
       </div>
     </section>
 
-    <!-- Sobre mí -->
-    <section class="about" id="sobre-mi" aria-labelledby="sobre-title">
-      <div class="wrap about-grid">
-        <div>
-          <h2 id="sobre-title">Sobre mí</h2>
-          <p>Hace más de seis años que hago sitios y sistemas para negocios. Hoy armo proyectos completos: la parte que ve el cliente, la que procesa los pedidos y el servidor donde todo vive.</p>
-          <p>Además soy Licenciado en Ciberseguridad y trabajo del lado ofensivo. Esa mirada cambia cómo construyo: cada cosa que entrego ya pasó por la pregunta de cómo la atacaría alguien.</p>
+    <!-- 3 · CHATBOTS 24/7 (servicio principal · momento firma: demo bot) -->
+    <section class="scene scene--chatbots" id="chatbots" data-scene="chatbots" data-moment="bot" aria-labelledby="chatbots-title">
+      <div class="scene-bg" data-anim="parallax-depth" data-depth="-0.3" aria-hidden="true"></div>
+      <div class="scene-render" data-render="chatbots" aria-hidden="true"><picture><source media="(prefers-color-scheme: light)" srcset="media/renders/chatbots-light.webp" /><img src="media/renders/chatbots.webp" alt="" width="1200" height="900" loading="lazy" decoding="async" /></picture></div>
+      <div class="scene-inner">
+        <header class="scene-head">
+          <h2 id="chatbots-title" data-anim="split-lines">Contesta a las 3 de la mañana igual que a las 3 de la tarde.</h2>
+          <p class="lead" data-anim="mask-reveal">Un chatbot de WhatsApp entrenado con la información de tu negocio. Responde, toma pedidos y reservas, detecta quién quiere comprar y te pasa la charla cuando hace falta una persona.</p>
+        </header>
+        <p class="giant-clock" aria-hidden="true" data-anim="scramble">03:12</p>
+      </div>
+
+      <div class="scene-pin" data-anim="pin" data-pin-length="160%">
+        <figure class="bot-demo" data-bot-demo aria-labelledby="bot-demo-cap">
+          <figcaption class="bot-demo-cap" id="bot-demo-cap"><span class="bot-badge" data-bot-badge>Demo</span> Así atiende un bot. Negocios y datos ficticios: esta demo no se conecta a ninguna API.</figcaption>
+
+          <div class="bot-scenarios" data-bot-scenarios role="group" aria-label="Elegí un ejemplo" hidden>
+            <button type="button" data-bot-scenario="restaurante" aria-pressed="true">Restaurante</button>
+            <button type="button" data-bot-scenario="alquiler" aria-pressed="false">Alquiler</button>
+            <button type="button" data-bot-scenario="tienda" aria-pressed="false">Tienda</button>
+          </div>
+
+          <div class="phone" data-bot-phone>
+            <div class="phone-bar" data-bot-header>
+              <span class="phone-name" data-bot-name>Restaurante · demo</span>
+              <span class="phone-status" data-bot-status data-label-typing="escribiendo…">en línea</span>
+              <span class="phone-clock" data-bot-clock aria-label="Atiende las 24 horas, los 7 días">24/7</span>
+            </div>
+
+            <ol class="thread" data-bot-thread="restaurante" data-bot-title="Restaurante · demo" aria-label="Conversación de ejemplo con un restaurante">
+              <li data-msg="in" data-time="03:12" data-status="read"><span class="visually-hidden">Cliente:</span> <p>Hola, ¿mañana abren al mediodía? Seríamos 4.</p> <time>03:12</time></li>
+              <li data-msg="out" data-time="03:12"><span class="visually-hidden">Bot:</span> <p>¡Hola! Sí, mañana abrimos de 12 a 16. El menú del mediodía sale $14.000 por persona (precio de ejemplo). ¿Te reservo una mesa para 4? Decime el horario.</p> <time>03:12</time></li>
+              <li data-msg="in" data-time="03:13" data-status="read"><span class="visually-hidden">Cliente:</span> <p>A las 13:30.</p> <time>03:13</time></li>
+              <li data-msg="out" data-time="03:13"><span class="visually-hidden">Bot:</span> <p>Listo: mesa para 4, mañana a las 13:30. ¿A nombre de quién la dejo?</p> <time>03:13</time></li>
+              <li data-msg="in" data-time="03:13" data-status="read"><span class="visually-hidden">Cliente:</span> <p>Martina.</p> <time>03:13</time></li>
+              <li data-msg="out" data-time="03:13"><span class="visually-hidden">Bot:</span> <p>Reservada, Martina. Si querés cambiar algo, escribime por acá.</p> <time>03:13</time></li>
+              <li data-msg="in" data-time="03:14" data-status="read"><span class="visually-hidden">Cliente:</span> <p>¿Puedo encargar una torta para un cumpleaños?</p> <time>03:14</time></li>
+              <li data-msg="out" data-time="03:14"><span class="visually-hidden">Bot:</span> <p>Eso lo arregla el equipo. Te paso con una persona y te responde apenas abra.</p> <time>03:14</time></li>
+              <li data-msg="system" data-handoff>Derivada a una persona. La reserva quedó cargada en el panel.</li>
+            </ol>
+
+            <ol class="thread" data-bot-thread="alquiler" data-bot-title="Alquiler de vehículos · demo" aria-label="Conversación de ejemplo con un alquiler de vehículos" hidden>
+              <li data-msg="in" data-time="03:12" data-status="read"><span class="visually-hidden">Cliente:</span> <p>Hola, ¿tienen scooters para el sábado y el domingo?</p> <time>03:12</time></li>
+              <li data-msg="out" data-time="03:12"><span class="visually-hidden">Bot:</span> <p>¡Hola! Para esas fechas hay scooters y e-bikes. ¿Cuántas personas son y dónde se alojan?</p> <time>03:12</time></li>
+              <li data-msg="in" data-time="03:13" data-status="read"><span class="visually-hidden">Cliente:</span> <p>Dos personas, en el centro.</p> <time>03:13</time></li>
+              <li data-msg="out" data-time="03:13"><span class="visually-hidden">Bot:</span> <p>Perfecto. Te dejo la solicitud: 2 scooters, sábado y domingo, entrega en el centro. Tu código es DEMO-4821.</p> <time>03:13</time></li>
+              <li data-msg="in" data-time="03:14" data-status="read"><span class="visually-hidden">Cliente:</span> <p>¿Cuánto sale?</p> <time>03:14</time></li>
+              <li data-msg="out" data-time="03:14"><span class="visually-hidden">Bot:</span> <p>La tarifa te la confirma una persona del equipo junto con la disponibilidad. Te paso con ellos.</p> <time>03:14</time></li>
+              <li data-msg="system" data-handoff>Derivada a una persona. La solicitud DEMO-4821 quedó en el panel.</li>
+            </ol>
+
+            <ol class="thread" data-bot-thread="tienda" data-bot-title="Tienda de ropa · demo" aria-label="Conversación de ejemplo con una tienda de ropa" hidden>
+              <li data-msg="in" data-time="03:12" data-status="read"><span class="visually-hidden">Cliente:</span> <p>¿Tienen la campera negra en talle M?</p> <time>03:12</time></li>
+              <li data-msg="out" data-time="03:12"><span class="visually-hidden">Bot:</span> <p>Sí, la campera negra talle M está en stock. ¿Querés que te arme el pedido?</p> <time>03:12</time></li>
+              <li data-msg="in" data-time="03:13" data-status="read"><span class="visually-hidden">Cliente:</span> <p>Dale.</p> <time>03:13</time></li>
+              <li data-msg="out" data-time="03:13"><span class="visually-hidden">Bot:</span> <p>Listo: campera negra, talle M. ¿Me pasás tu código postal para calcular el envío?</p> <time>03:13</time></li>
+              <li data-msg="in" data-time="03:13" data-status="read"><span class="visually-hidden">Cliente:</span> <p>5000.</p> <time>03:13</time></li>
+              <li data-msg="out" data-time="03:14"><span class="visually-hidden">Bot:</span> <p>Gracias. Te paso con una persona para coordinar el pago y el envío.</p> <time>03:14</time></li>
+              <li data-msg="system" data-handoff>Derivada a una persona. El pedido quedó cargado en el panel.</li>
+            </ol>
+          </div>
+
+          <div class="bot-controls" data-bot-controls hidden>
+            <button type="button" data-bot-control="pause" data-label-pause="Pausar" data-label-play="Seguir">Pausar</button>
+            <button type="button" data-bot-control="replay">Repetir</button>
+          </div>
+          <p class="visually-hidden" data-bot-live aria-live="polite"></p>
+
+          <ol class="bot-flow" data-bot-flow aria-label="Qué pasa con cada mensaje">
+            <li data-flow-step="mensaje"><strong>Llega el mensaje.</strong> A cualquier hora, desde el WhatsApp de tu negocio.</li>
+            <li data-flow-step="ia"><strong>La IA lo entiende.</strong> Responde con la información que cargamos: precios, horarios, catálogo y reglas.</li>
+            <li data-flow-step="accion"><strong>Actúa o deriva.</strong> Toma la reserva o el pedido, o te pasa la charla a vos.</li>
+            <li data-flow-step="panel"><strong>Queda en el panel.</strong> Ves cada conversación y lo que hizo el bot.</li>
+          </ol>
+        </figure>
+
+        <dl class="feature-list" data-anim="stagger-list">
+          <div><dt>Atiende</dt><dd>Precios, horarios, catálogo y preguntas frecuentes, a cualquier hora.</dd></div>
+          <div><dt>Vende y agenda</dt><dd>Toma pedidos y reservas sin que estés mirando el teléfono.</dd></div>
+          <div><dt>Filtra</dt><dd>Hace las preguntas justas para saber quién está listo para comprar.</dd></div>
+          <div><dt>Deriva</dt><dd>Si la consulta necesita a una persona, te pasa la conversación.</dd></div>
+          <div><dt>Ordena</dt><dd>Un panel con todas las conversaciones, conectado a tus planillas, CRM, turnos o stock.</dd></div>
+        </dl>
+      </div>
+
+      <div class="scene-inner">
+        <aside class="own-bot" aria-labelledby="own-bot-title" data-anim="mask-reveal">
+          <h3 id="own-bot-title">Lo uso yo</h3>
+          <p>Opero mi propio bot de WhatsApp con IA y un panel de conversaciones.</p>
+          <p class="fine-print">Para tu negocio trabajo solo con lo oficial: la plataforma WhatsApp Business de Meta (Cloud API), con tu número verificado y plantillas de mensaje aprobadas. Antes de arrancar revisamos juntos qué permite tu caso según las políticas de Meta.</p>
+        </aside>
+
+        <p class="actions">
+          <a class="btn btn-solid" href="#producto-04" data-shop-goto="04" data-anim="magnetic">Quiero mi chatbot</a>
+          <a class="btn" href="#tienda">Ver planes y precios</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- 4 · WEB -->
+    <section class="scene scene--web" id="web" data-scene="web" aria-labelledby="web-title">
+      <div class="scene-render" data-render="web" aria-hidden="true"><picture><source media="(prefers-color-scheme: light)" srcset="media/renders/web-light.webp" /><img src="media/renders/web.webp" alt="" width="1200" height="900" loading="lazy" decoding="async" /></picture></div>
+      <div class="scene-inner">
+        <header class="scene-head">
+          <h2 id="web-title" data-anim="split-lines">Sitios y tiendas que terminan en una consulta.</h2>
+          <p class="lead" data-anim="mask-reveal">Landings, sitios, tiendas y reservas. Pensados primero para el celular, rápidos y con un camino claro para escribirte o comprar.</p>
+        </header>
+
+        <div class="web-stack" data-web-stack data-anim="stack-3d">
+          <figure class="web-shot" data-web-shot data-depth="0">
+            <img src="media/opt/happy-ride-inicio.jpg" alt="Portada del sitio de The Happy Ride Tulum con buscador de fechas." width="1440" height="900" loading="lazy" decoding="async" />
+            <figcaption><a href="#trabajo-happy-ride">The Happy Ride Tulum</a> · reservas en dos idiomas</figcaption>
+          </figure>
+          <figure class="web-shot" data-web-shot data-depth="1">
+            <img src="media/joyeria-home.jpg" alt="Portada de Joyería Acacio." width="1440" height="860" loading="lazy" decoding="async" />
+            <figcaption><a href="#trabajo-joyeria-acacio">Joyería Acacio</a> · tienda y punto de venta</figcaption>
+          </figure>
+          <figure class="web-shot" data-web-shot data-depth="2">
+            <img src="media/dar-home.jpg" alt="Portada de Dar Automotores." width="1440" height="860" loading="lazy" decoding="async" />
+            <figcaption><a href="#trabajo-dar-automotores">Dar Automotores</a> · stock con filtros</figcaption>
+          </figure>
+          <figure class="web-shot" data-web-shot data-depth="3">
+            <img src="media/opt/smartgps-home-1280.webp" alt="Portada de SmartGPS." width="1280" height="800" loading="lazy" decoding="async" />
+            <figcaption><a href="#trabajo-smartgps">SmartGPS</a> · catálogo con carrito</figcaption>
+          </figure>
         </div>
-        <dl class="ficha">
-          <div><dt>Hago</dt><dd>Desarrollo full stack</dd></div>
+
+        <ul class="kind-list" data-anim="stagger-list">
+          <li><strong>Landings</strong> Una página que explica lo que hacés y lleva a WhatsApp o a un formulario.</li>
+          <li><strong>Sitios</strong> Tu negocio completo, en uno o dos idiomas, fácil de actualizar.</li>
+          <li><strong>Tiendas</strong> Catálogo, carrito, pagos online y un panel de stock y pedidos.</li>
+          <li><strong>Reservas</strong> Solicitudes con código de seguimiento que confirmás desde un panel.</li>
+        </ul>
+
+        <p class="actions">
+          <a class="btn" href="#producto-05" data-shop-goto="05" data-anim="magnetic">Quiero mi sitio</a>
+          <a class="btn btn-quiet" href="#trabajos">Ver los trabajos</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- 5 · SISTEMAS BACKEND (diagrama: agente 04) -->
+    <section class="scene scene--sistemas" id="sistemas" data-scene="sistemas" aria-labelledby="sistemas-title">
+      <div class="scene-bg" data-anim="parallax-depth" data-depth="-0.2" aria-hidden="true"></div>
+      <div class="scene-render" data-render="sistemas" aria-hidden="true"><picture><source media="(prefers-color-scheme: light)" srcset="media/renders/sistemas-light.webp" /><img src="media/renders/sistemas.webp" alt="" width="1200" height="900" loading="lazy" decoding="async" /></picture></div>
+      <div class="scene-inner">
+        <header class="scene-head">
+          <h2 id="sistemas-title" data-anim="split-lines">Y lo que no se ve: el sistema que ordena todo.</h2>
+          <p class="lead" data-anim="mask-reveal">APIs, paneles, stock, bases de datos y tiempo real. Lo que hace que un pedido llegue, se guarde y alguien lo pueda gestionar.</p>
+        </header>
+
+        <figure class="diagram" data-diagram="sistemas" data-anim="draw pin" data-pin-length="120%">
+          <svg class="diagram-svg" data-diagram-svg viewBox="0 0 970 420" role="img" aria-labelledby="diagram-t diagram-d">
+            <title id="diagram-t">Cómo viaja un pedido por un sistema</title>
+            <desc id="diagram-d">El cliente envía un pedido a una API en Node o PHP. La API usa Prisma para guardar en PostgreSQL o MySQL, y el panel muestra los datos. Desde la API salen dos ramas: el bot de WhatsApp y los webhooks hacia otros servicios.</desc>
+            <g class="diagram-links">
+              <path id="link-cliente-api" data-link="cliente-api" d="M170 210 H215" />
+              <path id="link-api-prisma" data-link="api-prisma" d="M365 210 H410" />
+              <path id="link-prisma-db" data-link="prisma-db" d="M560 210 H605" />
+              <path id="link-db-panel" data-link="db-panel" d="M755 210 H800" />
+              <path id="link-api-bot" data-link="api-bot" d="M290 180 V90" />
+              <path id="link-api-webhooks" data-link="api-webhooks" d="M290 240 V330" />
+            </g>
+            <g class="diagram-nodes" text-anchor="middle">
+              <g data-node="cliente" data-step="1"><rect x="20" y="180" width="150" height="60" rx="8" /><text x="95" y="215">Cliente</text></g>
+              <g data-node="api" data-step="2"><rect x="215" y="180" width="150" height="60" rx="8" /><text x="290" y="215">API Node / PHP</text></g>
+              <g data-node="prisma" data-step="3"><rect x="410" y="180" width="150" height="60" rx="8" /><text x="485" y="215">Prisma</text></g>
+              <g data-node="db" data-step="4"><rect x="605" y="180" width="150" height="60" rx="8" /><text x="680" y="215">PostgreSQL / MySQL</text></g>
+              <g data-node="panel" data-step="5"><rect x="800" y="180" width="150" height="60" rx="8" /><text x="875" y="215">Panel</text></g>
+              <g data-node="bot" data-step="3"><rect x="215" y="30" width="150" height="60" rx="8" /><text x="290" y="65">Bot de WhatsApp</text></g>
+              <g data-node="webhooks" data-step="3"><rect x="215" y="330" width="150" height="60" rx="8" /><text x="290" y="365">Webhooks</text></g>
+            </g>
+            <g class="diagram-packets" data-diagram-packets aria-hidden="true"></g>
+          </svg>
+          <figcaption>Un pedido, de punta a punta: entra por la web o por WhatsApp, pasa por la API, se guarda y aparece en el panel.</figcaption>
+        </figure>
+
+        <dl class="feature-list" data-anim="stagger-list">
+          <div><dt>APIs</dt><dd>Node.js, Express y PHP para conectar tu sitio, tu bot y tus herramientas.</dd></div>
+          <div><dt>Paneles</dt><dd>Administración con roles, para que cada persona vea lo suyo.</dd></div>
+          <div><dt>Stock y pedidos</dt><dd>Lo que entra, lo que sale y lo que falta, en un solo lugar.</dd></div>
+          <div><dt>Datos</dt><dd>PostgreSQL, MySQL y Prisma, con copias de seguridad.</dd></div>
+          <div><dt>Tiempo real</dt><dd>Socket.io para que todos vean lo mismo al mismo tiempo.</dd></div>
+        </dl>
+
+        <p class="proof">Ya lo hice en <a href="#trabajo-agrostock">AgroStock</a> (stock y pedidos por litro), <a href="#trabajo-nextscene">NextScene</a> (votaciones en vivo) y <a href="#trabajo-joyeria-acacio">Joyería Acacio</a> (punto de venta).</p>
+
+        <p class="actions">
+          <a class="btn" href="#producto-08" data-shop-goto="08" data-anim="magnetic">Quiero mi sistema</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- 6 · TRABAJOS (los 14, Happy Ride primero) -->
+    <section class="scene scene--trabajos" id="trabajos" data-scene="trabajos" aria-labelledby="trabajos-title">
+      <div class="scene-inner">
+        <header class="scene-head">
+          <h2 id="trabajos-title" data-anim="split-lines">Sitios y sistemas que ya hice.</h2>
+          <p data-anim="mask-reveal">Sitios, tiendas, sistemas y propuestas. Abrí cualquiera para ver capturas y videos.</p>
+        </header>
+
+        <div class="work-filter" data-work-filter role="group" aria-label="Filtrar trabajos" hidden>
+          <button type="button" data-filter="all" aria-pressed="true">Todos</button>
+          <button type="button" data-filter="sistema" aria-pressed="false">Sistemas</button>
+          <button type="button" data-filter="tienda" aria-pressed="false">Tiendas</button>
+          <button type="button" data-filter="sitio" aria-pressed="false">Sitios</button>
+          <button type="button" data-filter="propuesta" aria-pressed="false">Propuestas</button>
+        </div>
+        <p class="visually-hidden" data-work-live aria-live="polite" data-label-one="{filtro}: 1 trabajo." data-label-many="{filtro}: {n} trabajos."></p>
+      </div>
+
+      <div class="work-track" data-work-track data-anim="pin horizontal">
+        <ol class="work-list" data-work-list>
+          <li class="work-item work-item--main" id="trabajo-happy-ride" data-name="The Happy Ride Tulum" data-cat="Reservas, producto propio" data-stack="HTML, CSS, JavaScript, panel de administración" data-thumb="media/opt/happy-ride-inicio.jpg" data-kind="sitio sistema">
+            <article class="work-entry" aria-labelledby="w-happy-ride">
+              <figure class="work-media" data-work-media data-anim="mask-reveal"><img src="media/opt/happy-ride-inicio.jpg" alt="Portada del sitio de The Happy Ride Tulum con buscador de fechas." width="1440" height="900" loading="lazy" decoding="async" /></figure>
+              <div class="work-text">
+                <p class="work-n" aria-hidden="true">01</p>
+                <h3 id="w-happy-ride">The Happy Ride Tulum</h3>
+                <p class="work-cat">Reservas · producto propio</p>
+                <p class="work-what">Pedir un scooter, ATV o e-bike en cuatro pasos, en español o inglés, y recibir un código de seguimiento. El local confirma cada solicitud por WhatsApp. Las tarifas dicen “precio a consultar” y no hay cobro online.</p>
+                <p class="work-stack">HTML, CSS, JavaScript y un panel propio</p>
+                <p class="work-links"><a href="videos/01-happy-ride-recorrido.mp4" target="_blank" rel="noopener">Recorrido en video</a> <a href="videos/03-happy-ride-admin.mp4" target="_blank" rel="noopener">Panel</a> <a href="media/happy-ride-presentacion.pdf" target="_blank" rel="noopener">Presentación en PDF</a></p>
+                <button type="button" class="btn btn-sm" data-open>Ver capturas</button>
+              </div>
+              <template>
+                <p>Una web en español e inglés para explorar vehículos, elegir fechas y enviar una solicitud de reserva. El cliente recibe un código de seguimiento y el negocio confirma por WhatsApp.</p>
+                <p class="links"><a href="videos/01-happy-ride-recorrido.mp4" target="_blank" rel="noopener">Recorrido completo en video</a><a href="videos/03-happy-ride-admin.mp4" target="_blank" rel="noopener">Panel de administración</a><a href="media/happy-ride-presentacion.pdf" target="_blank" rel="noopener">Presentación en PDF</a></p>
+                <video data-video src="videos/02-happy-ride-resumen.mp4" poster="media/opt/happy-ride-inicio.jpg"></video>
+                <img data-shot data-caption="Inicio" src="media/opt/happy-ride-inicio.jpg" alt="Portada con buscador de fechas." />
+                <img data-shot data-caption="Flota" src="media/opt/happy-ride-flota.jpg" alt="Catálogo de vehículos." />
+                <img data-shot data-caption="Reserva" src="media/opt/happy-ride-reserva.jpg" alt="Selección de fechas para la solicitud." />
+                <img data-shot data-caption="Seguimiento" src="media/opt/happy-ride-ok.jpg" alt="Solicitud recibida con código de seguimiento." />
+                <img data-shot data-caption="Celular" src="media/opt/happy-ride-movil.jpg" alt="Portada en un teléfono." />
+              </template>
+            </article>
+          </li>
+
+          <li class="work-item" id="trabajo-time2trip" data-name="Time2Trip" data-cat="Excursiones y traslados en la Riviera Maya" data-stack="PHP, MySQL, JavaScript, Stripe" data-thumb="media/time2trip.webp" data-kind="sitio tienda sistema">
+            <article class="work-entry" aria-labelledby="w-time2trip">
+              <figure class="work-media" data-work-media data-anim="mask-reveal"><img src="media/time2trip.webp" alt="Portada de Time2Trip con buscador de experiencias sobre una foto de la costa de Tulum." width="1440" height="900" loading="lazy" decoding="async" /></figure>
+              <div class="work-text">
+                <p class="work-n" aria-hidden="true">02</p>
+                <h3 id="w-time2trip">Time2Trip</h3>
+                <p class="work-cat">Turismo · sitio, reservas y panel</p>
+                <p class="work-what">Excursiones, traslados y barcos privados en Tulum y la Riviera Maya. Sitio en español, inglés y francés con cotizaciones, carrito y pago con Stripe, y un panel para leads, reservas, pagos y conductores.</p>
+                <p class="work-stack">PHP sin framework, MySQL y JavaScript</p>
+                <p class="work-links"><a href="https://time2trip.mx" target="_blank" rel="noopener noreferrer">time2trip.mx</a></p>
+                <button type="button" class="btn btn-sm" data-open>Ver captura</button>
+              </div>
+              <template>
+                <p>La plataforma de una agencia de experiencias en la Riviera Maya. El sitio público reúne excursiones, traslados, barcos privados y concierge, con un asistente para planear el viaje, cotizaciones, carrito y checkout con Stripe.</p>
+                <p>Detrás hay un panel para el equipo: leads en tablero, cotizaciones, reservas, pagos, calendario, asignación de conductores y afiliados con comisiones.</p>
+                <p class="links"><a href="https://time2trip.mx" target="_blank" rel="noopener noreferrer">time2trip.mx</a></p>
+                <img data-shot data-caption="Inicio" src="media/time2trip.webp" alt="Portada de Time2Trip con buscador de experiencias." />
+              </template>
+            </article>
+          </li>
+
+          <li class="work-item" id="trabajo-joyeria-acacio" data-name="Joyería Acacio" data-cat="Tienda y punto de venta" data-stack="PHP, MySQL, JavaScript" data-thumb="media/joyeria-home.jpg" data-kind="tienda sistema">
+            <article class="work-entry" aria-labelledby="w-joyeria">
+              <figure class="work-media" data-work-media data-anim="mask-reveal"><img src="media/joyeria-home.jpg" alt="Portada de Joyería Acacio." width="1440" height="860" loading="lazy" decoding="async" /></figure>
+              <div class="work-text">
+                <p class="work-n" aria-hidden="true">03</p>
+                <h3 id="w-joyeria">Joyería Acacio</h3>
+                <p class="work-cat">Tienda y punto de venta</p>
+                <p class="work-what">Vidriera de joyas con consulta por pieza y un panel de ventas para el local.</p>
+                <p class="work-stack">PHP, MySQL y JavaScript</p>
+                <p class="work-links"><a href="https://joyeriaacacio.com" target="_blank" rel="noopener noreferrer">joyeriaacacio.com</a></p>
+                <button type="button" class="btn btn-sm" data-open>Ver capturas</button>
+              </div>
+              <template>
+                <p>Una tienda que presenta las joyas con fotos y detalles para facilitar la consulta. El negocio carga su catálogo y vende desde un panel de punto de venta.</p>
+                <p class="links"><a href="https://joyeriaacacio.com" target="_blank" rel="noopener noreferrer">joyeriaacacio.com</a></p>
+                <img data-shot data-caption="Inicio" src="media/joyeria-home.jpg" alt="Portada de Joyería Acacio." />
+                <img data-shot data-caption="Foto de producto" src="media/joyeria-pieza-2.webp" alt="Argollas de oro en caja." />
+              </template>
+            </article>
+          </li>
+
+          <li class="work-item" id="trabajo-nextscene" data-name="NextScene" data-cat="Plataforma en tiempo real" data-stack="Next.js, Prisma, PostgreSQL, Socket.io" data-kind="sistema">
+            <article class="work-entry" aria-labelledby="w-nextscene">
+              <figure class="work-media work-media--draw" data-work-media data-anim="draw" aria-hidden="true">
+                <svg viewBox="0 0 400 250">
+                  <rect x="16" y="16" width="368" height="218" rx="6" />
+                  <circle cx="36" cy="36" r="5" class="live" /><text x="48" y="40">En vivo, capítulo 12</text>
+                  <rect x="36" y="56" width="328" height="70" rx="3" class="faint" />
+                  <text x="36" y="150" class="q">¿Qué hace la protagonista?</text>
+                  <rect x="36" y="164" width="328" height="24" rx="3" /><rect x="36" y="164" width="223" height="24" rx="3" class="fill" />
+                  <text x="46" y="181">Abre la puerta</text><text x="330" y="181">68%</text>
+                  <rect x="36" y="196" width="328" height="24" rx="3" /><rect x="36" y="196" width="105" height="24" rx="3" class="fill" />
+                  <text x="46" y="213">Llama a la policía</text><text x="330" y="213">32%</text>
+                </svg>
+              </figure>
+              <div class="work-text">
+                <p class="work-n" aria-hidden="true">04</p>
+                <h3 id="w-nextscene">NextScene</h3>
+                <p class="work-cat">Plataforma en tiempo real</p>
+                <p class="work-what">Una novela en vivo donde el público vota y decide el próximo capítulo.</p>
+                <p class="work-stack">Next.js, Prisma, PostgreSQL y Socket.io</p>
+                <button type="button" class="btn btn-sm" data-open>Ver detalle</button>
+              </div>
+              <template>
+                <p>Una plataforma de novela interactiva en vivo. El público sigue la transmisión, vota en tiempo real y el resultado define el próximo capítulo. Tiene casting, cuentas de usuario y votaciones sincronizadas por WebSockets.</p>
+                <p>Por ahora este proyecto no tiene capturas públicas.</p>
+              </template>
+            </article>
+          </li>
+
+          <li class="work-item" id="trabajo-agrostock" data-name="AgroStock, Grupo Stelle" data-cat="Gestión de stock" data-stack="Node.js, Express, JavaScript" data-thumb="media/agrostock-home.jpg" data-kind="sistema">
+            <article class="work-entry" aria-labelledby="w-agrostock">
+              <figure class="work-media" data-work-media data-anim="mask-reveal"><img src="media/agrostock-home.jpg" alt="Catálogo de AgroStock con productos por litro." width="1440" height="900" loading="lazy" decoding="async" /></figure>
+              <div class="work-text">
+                <p class="work-n" aria-hidden="true">05</p>
+                <h3 id="w-agrostock">Grupo Stelle, AgroStock</h3>
+                <p class="work-cat">Gestión de stock</p>
+                <p class="work-what">Pedidos de agroquímicos por litro y un panel privado de stock, ventas y pedidos.</p>
+                <p class="work-stack">Node.js, Express y JavaScript</p>
+                <button type="button" class="btn btn-sm" data-open>Ver capturas</button>
+              </div>
+              <template>
+                <p>Una herramienta para elegir productos, indicar los litros y armar un pedido. El depósito tiene un panel privado para controlar stock, ventas y solicitudes.</p>
+                <video data-video src="videos/10-agrostock-clip.webm" poster="media/agrostock-home.jpg"></video>
+                <img data-shot data-caption="Catálogo" src="media/agrostock-home.jpg" alt="Catálogo de AgroStock." />
+                <img data-shot data-caption="Pedido" src="media/agrostock-carrito.jpg" alt="Pedido abierto con litros y datos de pago." />
+              </template>
+            </article>
+          </li>
+
+          <li class="work-item" id="trabajo-auralv" data-name="AuraLV Store" data-cat="Tienda de ropa" data-stack="PHP, MySQL" data-thumb="media/opt/aura-tienda-detalle.webp" data-kind="tienda">
+            <article class="work-entry" aria-labelledby="w-aura">
+              <figure class="work-media" data-work-media data-anim="mask-reveal"><img src="media/opt/aura-tienda-detalle.webp" alt="Grilla de prendas de AuraLV Store." width="1280" height="764" loading="lazy" decoding="async" /></figure>
+              <div class="work-text">
+                <p class="work-n" aria-hidden="true">06</p>
+                <h3 id="w-aura">AuraLV Store</h3>
+                <p class="work-cat">Indumentaria</p>
+                <p class="work-what">Catálogo por categorías, carrito y un panel con números de venta.</p>
+                <p class="work-stack">PHP y MySQL</p>
+                <button type="button" class="btn btn-sm" data-open>Ver capturas</button>
+              </div>
+              <template>
+                <p>Una tienda de ropa con catálogo y carrito. El negocio carga productos y ve su análisis financiero desde un panel.</p>
+                <img data-shot data-caption="Catálogo" src="media/opt/aura-tienda-detalle.webp" alt="Grilla de prendas." />
+                <img data-shot data-caption="Prendas" src="media/aura-home.jpg" alt="Remeras del catálogo." />
+              </template>
+            </article>
+          </li>
+
+          <li class="work-item" id="trabajo-smartgps" data-name="SmartGPS" data-cat="Tienda de rastreo GPS" data-stack="PHP, CSS, JavaScript" data-thumb="media/opt/smartgps-home-1280.webp" data-kind="tienda">
+            <article class="work-entry" aria-labelledby="w-smartgps">
+              <figure class="work-media" data-work-media data-anim="mask-reveal"><img src="media/opt/smartgps-home-1280.webp" alt="Portada de SmartGPS." width="1280" height="800" loading="lazy" decoding="async" /></figure>
+              <div class="work-text">
+                <p class="work-n" aria-hidden="true">07</p>
+                <h3 id="w-smartgps">SmartGPS</h3>
+                <p class="work-cat">Rastreo GPS</p>
+                <p class="work-what">Catálogo de equipos con carrito, distribuidores y consulta por WhatsApp.</p>
+                <p class="work-stack">PHP, CSS y JavaScript</p>
+                <button type="button" class="btn btn-sm" data-open>Ver capturas</button>
+              </div>
+              <template>
+                <p>Un catálogo para conocer los rastreadores, compararlos y consultar por WhatsApp. Incluye carrito, distribuidores y soporte.</p>
+                <video data-video src="videos/08-smartgps-clip.webm" poster="media/opt/smartgps-home-1280.webp"></video>
+                <img data-shot data-caption="Inicio" src="media/opt/smartgps-home-1280.webp" alt="Portada de SmartGPS." />
+                <img data-shot data-caption="Equipos" src="media/opt/smartgps-equipos-1280.webp" alt="Listado de equipos GPS." />
+                <img data-shot data-caption="Ficha" src="media/opt/smartgps-ficha-1280.webp" alt="Ficha de un rastreador." />
+              </template>
+            </article>
+          </li>
+
+          <li class="work-item" id="trabajo-dar-automotores" data-name="Dar Automotores" data-cat="Concesionaria" data-stack="HTML, CSS, JavaScript" data-thumb="media/dar-home.jpg" data-kind="sitio">
+            <article class="work-entry" aria-labelledby="w-dar">
+              <figure class="work-media" data-work-media data-anim="mask-reveal"><img src="media/dar-home.jpg" alt="Portada de Dar Automotores." width="1440" height="860" loading="lazy" decoding="async" /></figure>
+              <div class="work-text">
+                <p class="work-n" aria-hidden="true">08</p>
+                <h3 id="w-dar">Dar Automotores</h3>
+                <p class="work-cat">Concesionaria</p>
+                <p class="work-what">Stock de 0 km y usados con filtros, ficha por auto y financiación.</p>
+                <p class="work-stack">HTML, CSS y JavaScript</p>
+                <button type="button" class="btn btn-sm" data-open>Ver capturas</button>
+              </div>
+              <template>
+                <p>Un sitio que reúne los vehículos disponibles y permite filtrarlos. Cada auto tiene su ficha y un camino directo para consultar.</p>
+                <video data-video src="videos/04-dar-clip.webm" poster="media/dar-home.jpg"></video>
+                <img data-shot data-caption="Inicio" src="media/dar-home.jpg" alt="Portada de Dar Automotores." />
+                <img data-shot data-caption="Catálogo" src="media/opt/dar-catalogo-detalle.webp" alt="Listado de autos con filtros." />
+              </template>
+            </article>
+          </li>
+
+          <li class="work-item" id="trabajo-absa" data-name="AbSA Perfumes" data-cat="Tienda de perfumes" data-stack="HTML, CSS, JavaScript" data-thumb="media/abs-home.jpg" data-kind="tienda">
+            <article class="work-entry" aria-labelledby="w-absa">
+              <figure class="work-media" data-work-media data-anim="mask-reveal"><img src="media/abs-home.jpg" alt="Portada de AbSA Perfumes." width="1440" height="860" loading="lazy" decoding="async" /></figure>
+              <div class="work-text">
+                <p class="work-n" aria-hidden="true">09</p>
+                <h3 id="w-absa">AbSA Perfumes</h3>
+                <p class="work-cat">Perfumería</p>
+                <p class="work-what">Fragancias importadas, nacionales y árabes con carrito y cuotas.</p>
+                <p class="work-stack">HTML, CSS y JavaScript</p>
+                <button type="button" class="btn btn-sm" data-open>Ver capturas</button>
+              </div>
+              <template>
+                <p>Una tienda de perfumes con categorías, detalle de cada fragancia y carrito con cuotas.</p>
+                <video data-video src="videos/06-abs-clip.webm" poster="media/abs-home.jpg"></video>
+                <img data-shot data-caption="Inicio" src="media/abs-home.jpg" alt="Portada de AbSA." />
+                <img data-shot data-caption="Categorías" src="media/abs-productos.jpg" alt="Familias de fragancias." />
+              </template>
+            </article>
+          </li>
+
+          <li class="work-item" id="trabajo-alimentos-en-regla" data-name="Alimentos en Regla" data-cat="Consultoría bromatológica" data-stack="Next.js, Tailwind" data-thumb="media/alimentos-home.jpg" data-kind="sitio">
+            <article class="work-entry" aria-labelledby="w-alimentos">
+              <figure class="work-media" data-work-media data-anim="mask-reveal"><img src="media/alimentos-home.jpg" alt="Portada de Alimentos en Regla." width="1440" height="860" loading="lazy" decoding="async" /></figure>
+              <div class="work-text">
+                <p class="work-n" aria-hidden="true">10</p>
+                <h3 id="w-alimentos">Alimentos en Regla</h3>
+                <p class="work-cat">Consultoría</p>
+                <p class="work-what">RNE, RNPA y rótulos explicados claro, con una consulta guiada.</p>
+                <p class="work-stack">Next.js y Tailwind</p>
+                <button type="button" class="btn btn-sm" data-open>Ver capturas</button>
+              </div>
+              <template>
+                <p>La web de la Lic. Karina Fernández: servicios de asesoramiento alimentario, preguntas frecuentes y un formulario que guía la primera consulta.</p>
+                <img data-shot data-caption="Inicio" src="media/alimentos-home.jpg" alt="Portada de Alimentos en Regla." />
+                <img data-shot data-caption="Preguntas" src="media/alimentos-form.jpg" alt="Preguntas frecuentes sobre RNE y RNPA." />
+              </template>
+            </article>
+          </li>
+
+          <li class="work-item" id="trabajo-os-tigerlab" data-name="OS TigerLab" data-cat="Academia online" data-stack="HTML, PHP, JavaScript" data-thumb="media/ostiger-home.jpg" data-kind="sitio">
+            <article class="work-entry" aria-labelledby="w-ostiger">
+              <figure class="work-media" data-work-media data-anim="mask-reveal"><img src="media/ostiger-home.jpg" alt="Portada de OS TigerLab." width="1440" height="860" loading="lazy" decoding="async" /></figure>
+              <div class="work-text">
+                <p class="work-n" aria-hidden="true">11</p>
+                <h3 id="w-ostiger">OS TigerLab</h3>
+                <p class="work-cat">Formación en cibercrimen</p>
+                <p class="work-what">Cursos por módulos, eventos, cobro y verificación de certificados.</p>
+                <p class="work-stack">HTML, PHP y JavaScript</p>
+                <p class="work-links"><a href="https://ostigerlab.com" target="_blank" rel="noopener noreferrer">ostigerlab.com</a></p>
+                <button type="button" class="btn btn-sm" data-open>Ver capturas</button>
+              </div>
+              <template>
+                <p>El sitio de una academia de investigación de cibercrimen: presentación, cursos por módulos, eventos, cobro y verificación pública de certificados.</p>
+                <p class="links"><a href="https://ostigerlab.com" target="_blank" rel="noopener noreferrer">ostigerlab.com</a></p>
+                <img data-shot data-caption="Inicio" src="media/ostiger-home.jpg" alt="Portada de OS TigerLab." />
+                <img data-shot data-caption="Academia" src="media/ostiger-cursos.jpg" alt="Metodología y práctica." />
+              </template>
+            </article>
+          </li>
+
+          <li class="work-item" id="trabajo-selvora" data-name="Selvora Deco" data-cat="Catálogo de decoración" data-stack="HTML, CSS, JavaScript" data-thumb="media/selvora-home.jpg" data-kind="sitio">
+            <article class="work-entry" aria-labelledby="w-selvora">
+              <figure class="work-media" data-work-media data-anim="mask-reveal"><img src="media/selvora-home.jpg" alt="Portada de Selvora Deco." width="1440" height="860" loading="lazy" decoding="async" /></figure>
+              <div class="work-text">
+                <p class="work-n" aria-hidden="true">12</p>
+                <h3 id="w-selvora">Selvora Deco</h3>
+                <p class="work-cat">Decoración</p>
+                <p class="work-what">Plantas artificiales ordenadas por ambiente para hogares, locales y oficinas.</p>
+                <p class="work-stack">HTML, CSS y JavaScript</p>
+                <button type="button" class="btn btn-sm" data-open>Ver capturas</button>
+              </div>
+              <template>
+                <p>Un catálogo visual que ordena las propuestas por categoría y lleva al visitante de la inspiración a la consulta.</p>
+                <video data-video src="videos/05-selvora-clip.webm" poster="media/selvora-home.jpg"></video>
+                <img data-shot data-caption="Inicio" src="media/selvora-home.jpg" alt="Portada de Selvora Deco." />
+                <img data-shot data-caption="Catálogo" src="media/selvora-catalogo.jpg" alt="Familias del catálogo." />
+              </template>
+            </article>
+          </li>
+
+          <li class="work-item" id="trabajo-holistica" data-name="Holística" data-cat="Sitio con panel editable" data-stack="PHP, JSON" data-thumb="media/holistica-live.jpg" data-kind="sitio">
+            <article class="work-entry" aria-labelledby="w-holistica">
+              <figure class="work-media" data-work-media data-anim="mask-reveal"><img src="media/holistica-live.jpg" alt="Página de Holística." width="1440" height="860" loading="lazy" decoding="async" /></figure>
+              <div class="work-text">
+                <p class="work-n" aria-hidden="true">13</p>
+                <h3 id="w-holistica">Holística</h3>
+                <p class="work-cat">Formación</p>
+                <p class="work-what">Tres diseños de portada y un panel para que la clienta edite todo sola.</p>
+                <p class="work-stack">PHP y JSON</p>
+                <button type="button" class="btn btn-sm" data-open>Ver capturas</button>
+              </div>
+              <template>
+                <p>Un sitio para la formación en Mesa Energética Holística, con tres portadas a elegir y un panel para cambiar textos e imágenes sin depender de un programador.</p>
+                <video data-video src="videos/09-holistica-clip.webm" poster="media/holistica-live.jpg"></video>
+                <img data-shot data-caption="Inicio" src="media/holistica-live.jpg" alt="Página de Holística." />
+              </template>
+            </article>
+          </li>
+
+          <li class="work-item" id="trabajo-departamento-capri" data-name="Departamento Capri" data-cat="Informe interactivo" data-stack="HTML, CSS, JavaScript" data-thumb="media/capri-publico.svg" data-kind="propuesta">
+            <article class="work-entry" aria-labelledby="w-capri">
+              <figure class="work-media" data-work-media data-anim="mask-reveal"><img src="media/capri-publico.svg" alt="Esquema del informe de Departamento Capri, sin datos personales." width="1440" height="860" loading="lazy" decoding="async" /></figure>
+              <div class="work-text">
+                <p class="work-n" aria-hidden="true">14</p>
+                <h3 id="w-capri">Departamento Capri</h3>
+                <p class="work-cat">Administración</p>
+                <p class="work-what">Gastos y préstamos ordenados, con una vista para cada propietario. La imagen es ilustrativa para cuidar los datos privados.</p>
+                <p class="work-stack">HTML, CSS y JavaScript</p>
+                <button type="button" class="btn btn-sm" data-open>Ver detalle</button>
+              </div>
+              <template>
+                <p>Un informe con gastos, préstamos y totales, y una vista por persona. La imagen es ilustrativa para cuidar los datos privados.</p>
+                <img data-shot data-caption="Vista pública" src="media/capri-publico.svg" alt="Esquema sin datos personales." />
+              </template>
+            </article>
+          </li>
+
+          <li class="work-item" id="trabajo-tiro-federal" data-name="Tiro Federal Córdoba" data-cat="Propuesta digital" data-stack="HTML, CSS" data-thumb="media/tiro-home.jpg" data-kind="propuesta">
+            <article class="work-entry" aria-labelledby="w-tiro">
+              <figure class="work-media" data-work-media data-anim="mask-reveal"><img src="media/tiro-home.jpg" alt="Portada de la propuesta para Tiro Federal Córdoba." width="1440" height="860" loading="lazy" decoding="async" /></figure>
+              <div class="work-text">
+                <p class="work-n" aria-hidden="true">15</p>
+                <h3 id="w-tiro">Tiro Federal Córdoba</h3>
+                <p class="work-cat">Institución deportiva</p>
+                <p class="work-what">Propuesta por etapas: sitio institucional, armería con catálogo y soporte.</p>
+                <p class="work-stack">HTML y CSS</p>
+                <button type="button" class="btn btn-sm" data-open>Ver capturas</button>
+              </div>
+              <template>
+                <p>Una presentación navegable con la propuesta por etapas para el club: sitio institucional, armería digital con catálogo y atención por WhatsApp.</p>
+                <img data-shot data-caption="Portada" src="media/tiro-home.jpg" alt="Portada de la propuesta." />
+                <img data-shot data-caption="Etapas" src="media/tiro-etapas.jpg" alt="Las tres etapas de la propuesta." />
+              </template>
+            </article>
+          </li>
+
+        </ol>
+      </div>
+      <img class="work-peek" data-work-peek alt="" aria-hidden="true" hidden />
+    </section>
+
+    <!-- 7 · TIENDA (momento firma: showroom · render: tienda.js del agente 08 desde assets/2027/productos.js) -->
+    <section class="scene scene--tienda" id="tienda" data-scene="tienda" data-moment="showroom" aria-labelledby="tienda-title">
+      <div class="scene-render" data-render="tienda" aria-hidden="true"><picture><source media="(prefers-color-scheme: light)" srcset="media/renders/tienda-light.webp" /><img src="media/renders/tienda.webp" alt="" width="1200" height="900" loading="lazy" decoding="async" /></picture></div>
+      <div class="scene-inner">
+        <header class="scene-head">
+          <h2 id="tienda-title" data-anim="split-lines">Elegí por dónde empezar.</h2>
+          <p class="lead" data-anim="mask-reveal">Nueve servicios en tres niveles, con el precio a la vista. Online pagás solo un anticipo para arrancar: el 50%, o el 30% en los que dicen “desde”, que se cotizan según el alcance.</p>
+          <p class="fine-print">El saldo se abona al entregar, y la mensualidad, si hay, empieza con la entrega. Precios en dólares estadounidenses. El alcance queda por escrito antes de empezar y los plazos se coordinan en cada caso.</p>
+        </header>
+      </div>
+
+      <div class="shop" data-shop data-shop-lang="es" data-shop-currency="USD">
+        <div class="shop-3d" data-3d="shop" aria-hidden="true"></div>
+        <div class="shop-stage" data-shop-stage></div>
+        <noscript>
+          <div class="shop-static">
+            <section class="shop-level" aria-labelledby="nivel-1">
+              <h3 id="nivel-1">Accesibles <span>Para entrar rápido.</span></h3>
+              <ul class="shop-rows">
+                <li class="shop-row" id="producto-01">
+                  <h4>Landing Express</h4>
+                  <p>Una página a medida para que te encuentren y te escriban.</p>
+                  <ul><li>Landing de 1 página a medida</li><li>Responsive</li><li>Botón de WhatsApp</li><li>Formulario</li><li>SSL y publicación</li></ul>
+                  <p class="shop-price">USD 290 · pago único · anticipo del 50% para arrancar</p>
+                  <p><a href="mailto:lautarodemiannunez32@gmail.com?subject=Consulta%20por%20Landing%20Express">Consultar por mail</a></p>
+                </li>
+                <li class="shop-row" id="producto-02">
+                  <h4>Bot WhatsApp Starter</h4>
+                  <p>Respuestas automáticas las 24 horas a lo que más te preguntan.</p>
+                  <ul><li>Respuestas automáticas 24/7</li><li>Horarios, precios, catálogo y preguntas frecuentes</li><li>1 número</li></ul>
+                  <p class="shop-price">USD 350 de setup + USD 39 por mes · anticipo del 50% para arrancar</p>
+                  <p><a href="mailto:lautarodemiannunez32@gmail.com?subject=Consulta%20por%20Bot%20WhatsApp%20Starter">Consultar por mail</a></p>
+                </li>
+                <li class="shop-row" id="producto-03">
+                  <h4>Chequeo de Seguridad Web</h4>
+                  <p>Sabé qué fallas tiene tu sitio y en qué orden arreglarlas.</p>
+                  <ul><li>Revisión externa de tu sitio: HTTPS, cabeceras, plugins, accesos por defecto y backups expuestos</li><li>Informe con fallas priorizadas y cómo arreglarlas</li><li>Sin ataques invasivos</li><li>Alcance por escrito</li></ul>
+                  <p class="shop-price">USD 190 · pago único · anticipo del 50% para arrancar</p>
+                  <p><a href="mailto:lautarodemiannunez32@gmail.com?subject=Consulta%20por%20Chequeo%20de%20Seguridad%20Web">Consultar por mail</a></p>
+                </li>
+              </ul>
+            </section>
+            <section class="shop-level" aria-labelledby="nivel-2">
+              <h3 id="nivel-2">Intermedios <span>El negocio funcionando.</span></h3>
+              <ul class="shop-rows">
+                <li class="shop-row shop-row--featured" id="producto-04">
+                  <h4>Chatbot WhatsApp IA Pro 24/7 <em>Recomendado</em></h4>
+                  <p>Un asistente con IA que conoce tu negocio, vende y agenda solo.</p>
+                  <ul><li>IA entrenada con la info del negocio</li><li>Toma pedidos y reservas</li><li>Deriva a una persona</li><li>Panel de conversaciones</li><li>Reporte mensual</li></ul>
+                  <p class="shop-price">USD 890 de setup + USD 79 por mes · anticipo del 50% para arrancar</p>
+                  <p><a href="mailto:lautarodemiannunez32@gmail.com?subject=Consulta%20por%20Chatbot%20WhatsApp%20IA%20Pro%2024%2F7">Consultar por mail</a></p>
+                </li>
+                <li class="shop-row" id="producto-05">
+                  <h4>Sitio Profesional + Reservas</h4>
+                  <p>Tu sitio completo, en dos idiomas, recibiendo solicitudes con código.</p>
+                  <ul><li>Hasta 6 secciones</li><li>Bilingüe</li><li>Sistema de solicitudes con código</li><li>Panel (estilo Happy Ride)</li></ul>
+                  <p class="shop-price">USD 1.200 · pago único · anticipo del 50% para arrancar</p>
+                  <p><a href="mailto:lautarodemiannunez32@gmail.com?subject=Consulta%20por%20Sitio%20Profesional%20%2B%20Reservas">Consultar por mail</a></p>
+                </li>
+                <li class="shop-row" id="producto-06">
+                  <h4>Tienda Online</h4>
+                  <p>Vendé online y controlá stock y pedidos desde un panel.</p>
+                  <ul><li>Catálogo</li><li>Carrito</li><li>Pagos online</li><li>Panel de stock y pedidos (estilo Acacio / AuraLV)</li></ul>
+                  <p class="shop-price">USD 1.600 · pago único · anticipo del 50% para arrancar</p>
+                  <p><a href="mailto:lautarodemiannunez32@gmail.com?subject=Consulta%20por%20Tienda%20Online">Consultar por mail</a></p>
+                </li>
+              </ul>
+            </section>
+            <section class="shop-level" aria-labelledby="nivel-3">
+              <h3 id="nivel-3">Premium <span>Sistemas a medida.</span></h3>
+              <ul class="shop-rows">
+                <li class="shop-row" id="producto-07">
+                  <h4>Ecosistema WhatsApp + Web + CRM</h4>
+                  <p>Bot, sitio y panel conectados en un solo sistema.</p>
+                  <ul><li>Bot IA</li><li>Sitio</li><li>Panel</li><li>Integraciones: planillas, CRM, turnos y stock</li><li>Todo en un solo sistema</li></ul>
+                  <p class="shop-price">Desde USD 3.500 + USD 149 por mes · anticipo del 30% para arrancar</p>
+                  <p><a href="mailto:lautarodemiannunez32@gmail.com?subject=Consulta%20por%20Ecosistema%20WhatsApp%20%2B%20Web%20%2B%20CRM">Consultar por mail</a></p>
+                </li>
+                <li class="shop-row" id="producto-08">
+                  <h4>Sistema Backend a Medida</h4>
+                  <p>La API, la base de datos y el panel que tu operación necesita.</p>
+                  <ul><li>API</li><li>Base de datos</li><li>Panel admin con roles</li><li>Tiempo real</li><li>Informes (estilo AgroStock / NextScene)</li></ul>
+                  <p class="shop-price">Desde USD 4.500 · anticipo del 30% para arrancar</p>
+                  <p><a href="mailto:lautarodemiannunez32@gmail.com?subject=Consulta%20por%20Sistema%20Backend%20a%20Medida">Consultar por mail</a></p>
+                </li>
+                <li class="shop-row" id="producto-09">
+                  <h4>Pentest + Hardening Empresarial</h4>
+                  <p>Encontramos las fallas antes que un atacante, y las cerramos.</p>
+                  <ul><li>Prueba de intrusión web/red con alcance firmado</li><li>Informe ejecutivo y técnico</li><li>Corrección</li><li>Re-test</li></ul>
+                  <p class="shop-price">Desde USD 2.800 · anticipo del 30% para arrancar</p>
+                  <p><a href="mailto:lautarodemiannunez32@gmail.com?subject=Consulta%20por%20Pentest%20%2B%20Hardening%20Empresarial">Consultar por mail</a></p>
+                </li>
+              </ul>
+            </section>
+            <p class="shop-static-note">El pago online necesita JavaScript. Escribime a <a href="mailto:lautarodemiannunez32@gmail.com">lautarodemiannunez32@gmail.com</a> y te paso el link de pago.</p>
+          </div>
+        </noscript>
+      </div>
+      <p class="visually-hidden" data-shop-live aria-live="polite"></p>
+    </section>
+
+    <!-- 8 · SEGURIDAD COMO SELLO (plano interactivo: clases e IDs que usa assets/plano.js) -->
+    <section class="scene scene--seguridad sec" id="seguridad" data-scene="seguridad" aria-labelledby="seguridad-title">
+      <div class="scene-bg scene-bg--grid" data-anim="parallax-depth" data-depth="-0.15" aria-hidden="true"></div>
+      <div class="scene-render" data-render="seguridad" aria-hidden="true"><picture><source media="(prefers-color-scheme: light)" srcset="media/renders/seguridad-light.webp" /><img src="media/renders/seguridad.webp" alt="" width="1200" height="900" loading="lazy" decoding="async" /></picture></div>
+      <div class="scene-inner">
+        <header class="scene-head">
+          <h2 id="seguridad-title" data-anim="split-lines">Construyo sistemas. Después trato de romperlos.</h2>
+          <p class="lead" data-anim="mask-reveal">Todo lo que entrego pasa por la pregunta de cómo lo atacaría alguien. Y si ya tenés un sitio o un sistema, lo reviso con esa misma mirada.</p>
+        </header>
+
+        <figure class="plan" data-plan>
+          <svg class="plan-base" viewBox="0 0 640 460" role="img" aria-labelledby="plan-t">
+            <title id="plan-t">Plano de un sitio web conectado a un servidor y una base de datos</title>
+            <g class="ln">
+              <rect x="20" y="20" width="420" height="300" rx="6" />
+              <line x1="20" y1="44" x2="440" y2="44" />
+              <circle cx="34" cy="32" r="3.5" /><circle cx="46" cy="32" r="3.5" /><circle cx="58" cy="32" r="3.5" />
+              <rect x="76" y="25" width="250" height="14" rx="7" />
+              <rect x="36" y="56" width="388" height="14" rx="2" />
+              <line x1="36" y1="92" x2="220" y2="92" class="thick" />
+              <line x1="36" y1="106" x2="190" y2="106" />
+              <rect x="250" y="82" width="174" height="70" rx="3" />
+              <line x1="250" y1="82" x2="424" y2="152" class="faint" /><line x1="424" y1="82" x2="250" y2="152" class="faint" />
+              <rect x="36" y="120" width="150" height="88" rx="3" />
+              <rect x="48" y="146" width="126" height="13" rx="2" />
+              <rect x="48" y="165" width="126" height="13" rx="2" />
+              <rect x="48" y="186" width="58" height="13" rx="2" />
+              <rect x="36" y="220" width="120" height="80" rx="3" />
+              <rect x="168" y="220" width="120" height="80" rx="3" />
+              <rect x="300" y="220" width="124" height="80" rx="3" />
+              <path d="M440 170 C 460 170, 460 135, 480 135" />
+              <path d="M474 131 L480 135 L474 139" />
+              <rect x="480" y="60" width="128" height="150" rx="4" />
+              <line x1="492" y1="84" x2="596" y2="84" /><line x1="492" y1="104" x2="596" y2="104" /><line x1="492" y1="124" x2="596" y2="124" /><line x1="492" y1="144" x2="596" y2="144" />
+              <circle cx="586" cy="74" r="3" />
+              <line x1="544" y1="210" x2="544" y2="252" />
+              <ellipse cx="544" cy="262" rx="44" ry="11" />
+              <path d="M500 262 V 322 A 44 11 0 0 0 588 322 V 262" />
+              <path d="M500 292 A 44 11 0 0 0 588 292" class="faint" />
+              <path d="M452 352 h 34 l 10 10 v 40 h -44 z M486 352 v 10 h 10" />
+              <line x1="20" y1="350" x2="440" y2="350" /><line x1="20" y1="344" x2="20" y2="356" /><line x1="440" y1="344" x2="440" y2="356" />
+            </g>
+            <g class="tx">
+              <text x="86" y="35">http://tunegocio.com</text>
+              <text x="48" y="138">Ingreso al panel</text>
+              <text x="56" y="196" class="sm">Entrar</text>
+              <text x="310" y="240">Complemento</text>
+              <text x="310" y="256" class="sm">versión 2.3</text>
+              <text x="492" y="228">servidor</text>
+              <text x="452" y="160" class="sm">API</text>
+              <text x="520" y="350">base de datos</text>
+              <text x="452" y="420">backup.zip</text>
+              <text x="196" y="366">1440 px</text>
+              <text x="20" y="446" class="sm">Lámina 1. Sitio de un comercio, como lo recibo para revisar.</text>
+            </g>
+          </svg>
+
+          <div class="uv" aria-hidden="true">
+            <svg viewBox="0 0 640 460">
+              <g class="pen">
+                <path d="M70 24 C 110 14, 190 16, 205 31 C 214 44, 120 48, 76 42 C 58 38, 60 28, 84 22" />
+                <path d="M30 128 C 40 108, 180 106, 196 128 C 206 160, 200 214, 150 218 C 90 222, 28 214, 28 170 C 28 150, 32 136, 44 126" />
+                <path d="M296 226 C 330 204, 430 210, 432 250 C 434 292, 392 312, 352 310 C 306 308, 290 280, 294 246" />
+                <path d="M444 344 C 470 334, 512 342, 510 380 C 508 414, 452 418, 440 392 C 432 372, 438 354, 456 344" />
+                <path d="M206 168 L 196 158" /><path d="M396 330 L 384 312" /><path d="M520 404 L 506 396" />
+              </g>
+              <g class="ink">
+                <text x="214" y="36">sin https</text>
+                <text x="206" y="182">usuario admin,</text>
+                <text x="206" y="200">clave admin</text>
+                <text x="330" y="342">sin actualizar desde 2019</text>
+                <text x="528" y="420">lo bajan todos</text>
+              </g>
+              <g class="print" transform="translate(112 182)">
+                <path d="M0 8 C 0 -2, 18 -2, 18 8" /><path d="M-3 9 C -3 -6, 21 -6, 21 9" /><path d="M-6 11 C -6 -10, 24 -10, 24 11" />
+                <path d="M3 9 C 3 3, 15 3, 15 9" /><path d="M-8 14 C -10 -14, 28 -14, 26 14" />
+              </g>
+            </svg>
+          </div>
+          <span class="torch" aria-hidden="true"></span>
+          <figcaption>
+            <span class="hint">Pasá el cursor por el plano para ver lo que encuentra una auditoría.</span>
+            <button type="button" class="reveal-all" aria-pressed="false" data-label-show="Mostrar todas las fallas" data-label-hide="Ocultar las fallas">Mostrar todas las fallas</button>
+          </figcaption>
+          <ul class="visually-hidden">
+            <li>El sitio no usa https.</li>
+            <li>El panel acepta usuario admin y clave admin.</li>
+            <li>Un complemento no se actualiza desde 2019.</li>
+            <li>La copia de seguridad se puede descargar desde internet.</li>
+          </ul>
+        </figure>
+
+        <div class="sec-grid">
+          <div class="sec-copy">
+            <h3 data-anim="mask-reveal">Reviso empresas como lo haría alguien que quiere entrar.</h3>
+            <p>Soy Licenciado en Ciberseguridad y me especializo en cibercrimen. Con una autorización firmada, pruebo los sitios, servidores y redes de una empresa para encontrar las fallas antes que un atacante. Después las corregimos juntos. Y si el sistema es viejo, lo modernizo por etapas sin frenar el trabajo de todos los días.</p>
+            <dl class="services" data-anim="stagger-list">
+              <div><dt>Pruebas de intrusión</dt><dd>Ataques controlados sobre webs, redes y aplicaciones, con el alcance acordado por escrito.</dd></div>
+              <div><dt>Endurecimiento</dt><dd>Permisos, cifrado, doble factor, copias de seguridad y monitoreo en servidores y paneles.</dd></div>
+              <div><dt>Modernización</dt><dd>Paso sistemas antiguos a una base actual, de a partes y sin perder datos.</dd></div>
+              <div><dt>Incidentes</dt><dd>Si ya pasó algo, investigo qué ocurrió y preservo la evidencia digital.</dd></div>
+              <div><dt>Personas</dt><dd>Simulacros de phishing y charlas para que el equipo también sea una barrera.</dd></div>
+            </dl>
+            <p class="actions">
+              <a class="btn" href="#producto-03" data-shop-goto="03" data-anim="magnetic">Revisar mi sitio</a>
+            </p>
+          </div>
+
+          <article class="report" data-report aria-labelledby="report-title">
+            <header class="report-head">
+              <h3 id="report-title">Informe de auditoría</h3>
+              <p>Empresa de ejemplo. Los datos son ficticios.</p>
+              <p>Revisó: Lautaro Núñez</p>
+            </header>
+            <table>
+              <thead><tr><th scope="col">Hallazgo</th><th scope="col">Riesgo</th></tr></thead>
+              <tbody>
+                <tr><td><mark>Copias de seguridad descargables desde internet</mark></td><td>Crítico</td></tr>
+                <tr><td><mark>Panel con usuario y clave de fábrica</mark></td><td>Alto</td></tr>
+                <tr><td>Gestor de contenidos sin actualizar desde 2019</td><td>Alto</td></tr>
+                <tr><td>Formulario sin protección contra envíos automáticos</td><td>Medio</td></tr>
+                <tr><td>Certificado vencido en un subdominio</td><td>Medio</td></tr>
+              </tbody>
+            </table>
+            <p class="note note-1" aria-hidden="true">esto lo ve cualquiera desde el navegador</p>
+            <p class="note note-2" aria-hidden="true">arreglar primero</p>
+            <svg class="scribble" viewBox="0 0 200 120" aria-hidden="true"><path d="M8 100 C 40 90, 70 60, 120 30 M110 26 L 124 28 L 118 40" /></svg>
+            <p class="stamp">Corregido</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9 · PROCESO (6 pasos) -->
+    <section class="scene scene--proceso process" id="proceso" data-scene="proceso" aria-labelledby="proceso-title">
+      <div class="scene-inner">
+        <header class="scene-head">
+          <h2 id="proceso-title" data-anim="split-lines">Cómo trabajamos</h2>
+          <p data-anim="mask-reveal">Seis pasos, de la primera charla al día que lo usás solo.</p>
+        </header>
+        <div class="steps-wrap">
+          <svg class="process-line" data-process-line data-anim="draw" viewBox="0 0 10 600" preserveAspectRatio="none" aria-hidden="true"><path d="M5 0 V600" /></svg>
+          <ol class="steps" data-anim="stagger-list">
+            <li data-step="1"><span class="step-n" aria-hidden="true" data-anim="count" data-count-to="1" data-count-pad="2">01</span><h3>Charla</h3><p>Me contás cómo trabaja tu negocio y qué te está frenando.</p></li>
+            <li data-step="2"><span class="step-n" aria-hidden="true" data-anim="count" data-count-to="2" data-count-pad="2">02</span><h3>Plano</h3><p>Te muestro la estructura, el diseño o el guion del bot antes de programar.</p></li>
+            <li data-step="3"><span class="step-n" aria-hidden="true" data-anim="count" data-count-to="3" data-count-pad="2">03</span><h3>Construcción</h3><p>Programo el sitio, el bot o el sistema, y ves los avances mientras tanto.</p></li>
+            <li data-step="4"><span class="step-n" aria-hidden="true" data-anim="count" data-count-to="4" data-count-pad="2">04</span><h3>Pruebas</h3><p>Lo pruebo en celular y computadora, y le hago una revisión de seguridad.</p></li>
+            <li data-step="5"><span class="step-n" aria-hidden="true" data-anim="count" data-count-to="5" data-count-pad="2">05</span><h3>Publicación</h3><p>Lo pongo online con dominio, certificado y copias de seguridad.</p></li>
+            <li data-step="6"><span class="step-n" aria-hidden="true" data-anim="count" data-count-to="6" data-count-pad="2">06</span><h3>Seguimiento</h3><p>Te enseño a usarlo y sigo disponible para cambios.</p></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10 · SOBRE MÍ -->
+    <section class="scene scene--sobre about" id="sobre-mi" data-scene="sobre" aria-labelledby="sobre-title">
+      <div class="scene-inner about-grid">
+        <div class="about-copy">
+          <h2 id="sobre-title" data-anim="split-lines">Sobre mí</h2>
+          <p data-anim="mask-reveal">Soy Lautaro Núñez. Hace más de seis años que hago sitios y sistemas para negocios. Hoy armo proyectos completos: la parte que ve el cliente, la que procesa los pedidos, el bot que atiende y el servidor donde todo vive.</p>
+          <p data-anim="mask-reveal">Además soy Licenciado en Ciberseguridad y trabajo del lado ofensivo. Esa mirada cambia cómo construyo: cada cosa que entrego ya pasó por la pregunta de cómo la atacaría alguien.</p>
+          <p data-anim="mask-reveal">Firmo mis trabajos como LautaroDev.</p>
+        </div>
+        <dl class="ficha" data-anim="stagger-list">
+          <div><dt>Hago</dt><dd>Chatbots de WhatsApp, sitios y sistemas</dd></div>
           <div><dt>Estudié</dt><dd>Licenciatura en Ciberseguridad</dd></div>
           <div><dt>Especialidad</dt><dd>Cibercrimen y pruebas de intrusión</dd></div>
           <div><dt>Experiencia</dt><dd>Más de 6 años</dd></div>
-          <div><dt>Base</dt><dd>Córdoba, Argentina</dd></div>
+          <div><dt>Base</dt><dd>Córdoba, Argentina. También trabajo desde Tulum, México</dd></div>
           <div><dt>Idiomas</dt><dd>Español e inglés</dd></div>
         </dl>
       </div>
     </section>
 
-    <!-- Contacto: el rótulo -->
-    <section class="contact" id="contacto" aria-labelledby="contacto-title">
-      <div class="wrap">
-        <h2 id="contacto-title">Contacto</h2>
-        <p class="contact-lead">Contame qué querés resolver. Te respondo yo.</p>
-        <dl class="titleblock">
+    <!-- 11 · CTA FINAL GIGANTE + CONTACTO (momento firma: cta) -->
+    <section class="scene scene--cta contact" id="contacto" data-scene="cta" data-moment="cta" aria-labelledby="contacto-title">
+      <div class="scene-bg" data-anim="parallax-depth" data-depth="-0.4" aria-hidden="true"></div>
+      <div class="scene-render" data-render="cta" aria-hidden="true"><picture><source media="(prefers-color-scheme: light)" srcset="media/renders/cta-light.webp" /><img src="media/renders/cta.webp" alt="" width="1200" height="900" loading="lazy" decoding="async" /></picture></div>
+      <div class="scene-inner">
+        <h2 id="contacto-title" class="cta-giant" data-anim="scale-text split-chars">Que tu negocio conteste siempre.</h2>
+        <p class="contact-lead" data-anim="mask-reveal">Elegí tu plan y arrancá con el anticipo. Si tenés dudas, te respondo yo, no un bot.</p>
+        <p class="actions">
+          <a class="btn btn-solid btn-xl" href="#producto-04" data-shop-goto="04" data-anim="magnetic">Quiero mi chatbot</a>
+        </p>
+        <p class="contact-alt">¿Preferís hablar antes? <a href="mailto:lautarodemiannunez32@gmail.com" data-contact="general"><span data-contact-label data-label-whatsapp="Escribime por WhatsApp" data-label-mail="Escribime">Escribime</span></a> <button type="button" class="btn btn-quiet btn-sm" data-copy-email data-label-copy="Copiar correo" data-label-copied="Correo copiado">Copiar correo</button></p>
+        <dl class="titleblock" data-anim="stagger-list">
           <div class="tb-proj"><dt>Proyecto</dt><dd>El tuyo, cuando quieras empezarlo</dd></div>
           <div><dt>Dibujó</dt><dd>Lautaro Núñez</dd></div>
           <div><dt>Revisó la seguridad</dt><dd>Lautaro Núñez</dd></div>
           <div class="tb-mail"><dt>Correo</dt><dd><a href="mailto:lautarodemiannunez32@gmail.com">lautarodemiannunez32@gmail.com</a></dd></div>
-          <div><dt>Lugar</dt><dd>Córdoba, Argentina</dd></div>
-          <div><dt>Escala</dt><dd>1:1</dd></div>
+          <div><dt>Código</dt><dd><a href="https://github.com/Ositojur" rel="me noopener" target="_blank">github.com/Ositojur</a></dd></div>
+          <div><dt>Lugar</dt><dd>Córdoba, Argentina · remoto</dd></div>
           <div><dt>Hoja</dt><dd>1 de 1</dd></div>
         </dl>
-        <p class="actions">
-          <a class="btn btn-solid" href="mailto:lautarodemiannunez32@gmail.com">Escribirme</a>
-          <button type="button" class="btn" data-copy-email>Copiar correo</button>
-          <a class="btn" href="https://github.com/Ositojur" rel="me noopener" target="_blank">GitHub</a>
-          <a class="btn" href="servicio.html">Cómo es el servicio</a>
-        </p>
+        <p class="contact-more"><a href="servicio.html">Cómo es el servicio, para ver en una reunión</a></p>
         <p class="visually-hidden" id="copy-live" aria-live="polite"></p>
       </div>
     </section>
   </main>
 
   <footer class="foot">
-    <div class="wrap foot-in">
-      <p>Lautaro Núñez, Córdoba. Firmo mis trabajos como LautaroDev.</p>
+    <div class="foot-in">
+      <p>Lautaro Núñez · LautaroDev · Córdoba, Argentina.</p>
       <p>Este sitio también lo hice yo, sin plantillas.</p>
+      <p><a href="en/index.html" hreflang="en" lang="en">English version</a></p>
+      <p class="foot-alt">¿Preferís hablar antes? <a href="mailto:lautarodemiannunez32@gmail.com" data-contact="general">Escribime</a></p>
     </div>
   </footer>
 
@@ -493,6 +1272,22 @@
     </div>
   </dialog>
 
+  <script src="assets/2027/config.js" defer></script>
+  <script src="assets/2027/productos.js" defer></script>
+  <script src="assets/vendor/gsap/gsap.min.js" defer></script>
+  <script src="assets/vendor/gsap/ScrollTrigger.min.js" defer></script>
+  <script src="assets/vendor/gsap/SplitText.min.js" defer></script>
+  <script src="assets/vendor/gsap/Flip.min.js" defer></script>
+  <script src="assets/vendor/gsap/DrawSVGPlugin.min.js" defer></script>
+  <script src="assets/vendor/gsap/MotionPathPlugin.min.js" defer></script>
+  <script src="assets/vendor/gsap/CustomEase.min.js" defer></script>
+  <script src="assets/vendor/gsap/ScrambleTextPlugin.min.js" defer></script>
+  <script src="assets/2027/motion.js" defer></script>
+  <script src="assets/2027/hero3d.js" defer></script>
+  <script src="assets/2027/chatbot-guiones.js" defer></script>
+  <script src="assets/2027/chatbot-demo.js" defer></script>
+  <script src="assets/2027/ui.js" defer></script>
+  <script src="assets/2027/tienda.js" defer></script>
   <script src="assets/plano.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex" />
+  <meta name="color-scheme" content="dark light" />
+  <title>Payment not completed · LautaroDev</title>
+  <link rel="icon" href="../media/favicon.svg" type="image/svg+xml" />
+  <script>(function (d) { d.classList.add("js"); try { var t = localStorage.getItem("ld-theme"); if (t === "dark" || t === "light") d.setAttribute("data-theme", t); } catch (e) {} })(document.documentElement);</script>
+  <link rel="stylesheet" href="../assets/2027/tokens.css" />
+  <link rel="stylesheet" href="../assets/2027/scenes.css" />
+  <link rel="stylesheet" href="../assets/2027/ui.css" />
+  <link rel="stylesheet" href="../assets/2027/tienda.css" />
+  <!-- [data-pay-if-*] blocks use hidden; .shop-btn and .pay-summary div set display and would override it. -->
+</head>
+<body class="pay-page" data-pay-page="cancelado">
+  <header class="pay-top">
+    <a class="pay-brand" href="index.html">LautaroDev</a>
+    <a href="index.html">Back to the site</a>
+    <a href="../pago-cancelado.html" hreflang="es" lang="es" data-pay-keep-query>Español</a>
+  </header>
+
+  <main class="pay-main">
+    <div class="pay-aurora lt-aurora-live" aria-hidden="true"></div>
+    <div class="pay-signal" aria-hidden="true"><i></i><i></i><i></i><b></b></div>
+
+    <h1 class="pay-title">The payment didn't go through.</h1>
+    <p class="pay-lead" data-pay-if-generic><strong>You haven't been charged.</strong> You can try again from the pricing page, or email me if something went wrong.</p>
+    <p class="pay-lead" data-pay-if-product hidden><strong>You haven't been charged.</strong> The deposit for <strong data-pay-product></strong> is still pending. You can try again, or email me if something went wrong.</p>
+
+    <div class="pay-grid">
+      <dl class="pay-summary">
+        <div data-pay-if-product hidden>
+          <dt>Service</dt>
+          <dd data-pay-product></dd>
+        </div>
+        <div data-pay-if-product hidden>
+          <dt>Deposit</dt>
+          <dd class="pay-amount" data-pay-amount></dd>
+        </div>
+        <div data-pay-if-product hidden>
+          <dt>Price</dt>
+          <dd data-pay-price></dd>
+        </div>
+        <div>
+          <dt>Charge</dt>
+          <dd>None. The payment wasn’t completed.</dd>
+        </div>
+      </dl>
+
+      <div>
+        <h2 class="pay-steps-title">How to continue</h2>
+        <ol class="pay-steps">
+          <li><span><strong>Try again.</strong> Double-check your card details. If your bank declines it, try another card or ask your bank to enable payments in US dollars.</span></li>
+          <li><span><strong>Ask me.</strong> Questions about the service or the payment? Email me and we’ll sort it out before you pay.</span></li>
+          <li><span><strong>Take your time.</strong> Compare the other services on the pricing page before you decide.</span></li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="pay-actions">
+      <a class="shop-btn shop-btn--pay" href="index.html#tienda" data-pay-retry><span data-pay-if-product hidden>Try the payment again</span><span data-pay-if-generic>Go to pricing</span></a>
+      <a class="shop-btn shop-btn--ghost"
+         href="mailto:lautarodemiannunez32@gmail.com?subject=Payment%20not%20completed&amp;body=Hi%20Lautaro%2C%20I%20tried%20to%20pay%20a%20deposit%20from%20your%20portfolio%20and%20the%20payment%20did%20not%20go%20through.%20Here%20is%20what%20happened%3A"
+         data-pay-contact
+         data-pay-msg="Hi Lautaro, I tried to pay the deposit for &quot;{producto}&quot; and the payment didn't go through. Here's what happened:"
+         data-pay-msg-generic="Hi Lautaro, I tried to pay a deposit from your portfolio and the payment didn't go through. Here's what happened:"
+         data-pay-subject="Payment not completed · {producto}"><span data-contact-label data-label-mail="Ask by email" data-label-whatsapp="Ask on WhatsApp">Ask by email</span></a>
+      <a class="shop-btn shop-btn--ghost" href="index.html#tienda" data-pay-back data-pay-if-product hidden>Back to pricing</a>
+    </div>
+
+    <p class="pay-note">Got a Stripe receipt anyway? Email me and we’ll look into it together.</p>
+  </main>
+
+  <footer class="pay-foot">© LautaroDev · Córdoba, Argentina</footer>
+
+  <script src="../assets/2027/config.js" defer></script>
+  <script src="../assets/2027/productos.js" defer></script>
+  <script src="../assets/2027/tienda.js" defer></script>
+</body>
+</html>

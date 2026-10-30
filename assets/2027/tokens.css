@@ -1,0 +1,1187 @@
+/* LautaroDev · Portafolio 2027 · tokens.css · v2 · dueño: agente 01 (arte & tokens)
+   v3 · Concepto: "Señal en la galaxia". Espacio profundo azul noche con nebulosas en capas (verde agua,
+   tinta azul y un toque de índigo frío). El verde agua sigue siendo la SEÑAL (mensajes, datos, pulso):
+   la nebulosa es atmósfera, la señal es lo vivo. Temas: "Galaxia" (oscuro, default) y "Amanecer orbital" (claro).
+   Todo el sitio late a un solo ritmo: --beat (2.8 s). Pulsos, "escribiendo…", respiración del glow y
+   el 3D usan múltiplos de ese latido, así nada se mueve "porque sí".
+   Reglas: ningún otro archivo escribe un hex, rgb(), hsl() ni font-family. Todo color y familia sale de acá.
+   Ningún otro archivo declara @keyframes lt-* ni registra @property --glow-intensity/--aurora-angle/--reveal/--nebula-*.
+   Ver TOKENS.md (convención de nombres, tabla AA, momentos firma, recetas de motion).
+   AA verificado por _demo-build/check-tokens-2027.mjs  (node _demo-build/check-tokens-2027.mjs --md) */
+
+/* ─────────────────────────────────────────────────────────────
+   FUENTES (archivos locales verificados con fontTools; no se descarga nada)
+   bricolage-*.woff2 = Bricolage Grotesque VARIABLE: ejes opsz 12–96 y wght 200–800, trae tnum.
+   plano/atkinson-*  = Atkinson Hyperlegible estática 400 / 400 italic / 700, trae tnum.
+   plano/kalam-*     = Kalam 400 / 700 (solo anotaciones del plano).
+   IBM Plex Mono     = NO existe archivo local (plex-*.woff2 son IBM Plex SANS). Ver --font-mono.
+   ───────────────────────────────────────────────────────────── */
+
+/* Bricolage Grotesque: variable real. font-optical-sizing:auto lleva opsz a 96 en los titulares grandes. */
+@font-face {
+  font-family: "Bricolage Grotesque";
+  font-style: normal;
+  font-weight: 200 800;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("../fonts/bricolage-3.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Bricolage Grotesque";
+  font-style: normal;
+  font-weight: 200 800;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("../fonts/bricolage-2.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* Atkinson Hyperlegible: 400, 400 italic, 700 (estática). */
+@font-face {
+  font-family: "Atkinson Hyperlegible";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/plano/atkinson-hyperlegible-400-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Atkinson Hyperlegible";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/plano/atkinson-hyperlegible-400-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Atkinson Hyperlegible";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/plano/atkinson-hyperlegible-400i-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Atkinson Hyperlegible";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/plano/atkinson-hyperlegible-400i-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Atkinson Hyperlegible";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/plano/atkinson-hyperlegible-700-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Atkinson Hyperlegible";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/plano/atkinson-hyperlegible-700-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* IBM Plex Mono: sin archivo local. Se usa si está instalada; si no, cae al mono del sistema (--font-mono).
+   Por eso los PRECIOS NO van en mono: van en Bricolage con cifras tabulares (--font-price), que sí es local
+   y se ve igual en todos los equipos. Mono queda solo para lo que ES código o dato crudo (logs, rutas, horas). */
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("IBM Plex Mono"), local("IBMPlexMono"), local("IBMPlexMono-Regular");
+}
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: local("IBM Plex Mono SemiBold"), local("IBMPlexMono-SemiBold");
+}
+
+/* Kalam: solo anotaciones del plano de seguridad (birome). */
+@font-face {
+  font-family: "Kalam";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/plano/kalam-400-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Kalam";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/plano/kalam-400-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Kalam";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/plano/kalam-700-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Kalam";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/plano/kalam-700-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   PROPIEDADES REGISTRADAS (@property) · se pueden animar con CSS, WAAPI o GSAP
+   Los valores iniciales dejan TODO visible: sin JS o con reduced-motion nada queda escondido.
+   ───────────────────────────────────────────────────────────── */
+
+/* Intensidad de la señal (0 = apagada, 1 = máxima). Hereda: un acto del showroom la sube y su precio,
+   su badge y su línea responden juntos. Animala en el contenedor MÁS CHICO posible (recalcula el subárbol). */
+@property --glow-intensity {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0.6;
+}
+/* Ángulo de la aurora viva (conic-gradient). No hereda: se anima en el elemento que la pinta. */
+@property --aurora-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+/* Progreso de un reveal por máscara (clip-path). 100% = visible. No hereda. */
+@property --reveal {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+/* Nebulosa viva (.lt-nebula): centro (x, y) y giro de la forma. No heredan: se animan en la capa que pinta. */
+@property --nebula-x {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 22%;
+}
+@property --nebula-y {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 18%;
+}
+@property --nebula-rot {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   KEYFRAMES BASE (prefijo lt-). NO se usan directo: se usan vía los tokens --anim-*, que valen "none"
+   con prefers-reduced-motion. Así ningún agente puede olvidarse del reduced-motion.
+   Composite-only (transform/opacity) salvo donde se indica "pinta".
+   ───────────────────────────────────────────────────────────── */
+
+/* Pulso de señal: un anillo que nace en el nodo y se disuelve. Escalonar 3 anillos con --beat / 3. */
+@keyframes lt-signal-pulse {
+  0%   { transform: scale(0.35); opacity: 0; }
+  12%  { opacity: 0.85; }
+  100% { transform: scale(2.6); opacity: 0; }
+}
+/* Barrido de luz: un brillo que cruza (pseudo-elemento con background: var(--signal-line), padre overflow: clip). */
+@keyframes lt-sweep {
+  0%   { transform: translateX(-110%); }
+  100% { transform: translateX(110%); }
+}
+/* Respiración del glow (pinta: box-shadow / text-shadow leen --glow-intensity). Máx. 2 a la vez en pantalla. */
+@keyframes lt-breathe {
+  0%   { --glow-intensity: 0.32; }
+  100% { --glow-intensity: 1; }
+}
+/* Respiración barata (composite): opacidad de una capa de glow ya pintada. Para superficies grandes. */
+@keyframes lt-breathe-soft {
+  0%   { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+/* Aurora viva: gira la luz (pinta). Para tweens por scroll o loops lentos en áreas acotadas. */
+@keyframes lt-aurora-spin {
+  0%   { --aurora-angle: 0deg; }
+  100% { --aurora-angle: 360deg; }
+}
+/* Deriva de la aurora (composite): mueve una capa sobredimensionada. Preferila para fondos a pantalla completa. */
+@keyframes lt-drift {
+  0%, 100% { transform: translate3d(-3%, -2%, 0) rotate(0deg) scale(1.08); }
+  50%      { transform: translate3d(3%, 2.5%, 0) rotate(6deg) scale(1.16); }
+}
+/* Reveal por máscara: anima --reveal; el elemento usa .lt-wipe o .lt-curtain (clip-path). */
+@keyframes lt-reveal {
+  0%   { --reveal: 0%; }
+  100% { --reveal: 100%; }
+}
+/* Línea que sube desde su máscara (fallback CSS del SplitText de 04: span con overflow: clip > span animado). */
+@keyframes lt-mask-up {
+  0%   { transform: translate3d(0, 108%, 0) rotate(2.5deg); }
+  100% { transform: none; }
+}
+/* Mensaje que llega (burbujas del bot, filas del showroom). Usar con --ease-spring-soft. */
+@keyframes lt-arrive {
+  0%   { transform: translate3d(0, var(--reveal-y-sm), 0) scale(0.94); opacity: 0; }
+  100% { transform: none; opacity: 1; }
+}
+/* "escribiendo…": cada punto con delay = n × (--beat / 12). */
+@keyframes lt-typing {
+  0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+  30%           { transform: translateY(-40%); opacity: 1; }
+}
+/* Línea que se dibuja (pinta, SVG): path con pathLength="1" y stroke-dasharray: 1. */
+@keyframes lt-draw {
+  0%   { stroke-dashoffset: 1; }
+  100% { stroke-dashoffset: 0; }
+}
+/* Escáner del plano de seguridad: una franja que baja leyendo el sistema. */
+@keyframes lt-scan {
+  0%   { transform: translate3d(0, -100%, 0); }
+  100% { transform: translate3d(0, 100%, 0); }
+}
+/* Cursor de texto (terminal / input del bot). */
+@keyframes lt-caret {
+  50% { opacity: 0; }
+}
+/* Titileo de una CAPA de estrellas (composite). Cada capa con su duración: --dur-twinkle × 1 / 1.6 / 2.3. */
+@keyframes lt-twinkle {
+  0%, 100% { opacity: 1; }
+  45%      { opacity: 0.45; }
+  70%      { opacity: 0.8; }
+}
+/* Deriva de nebulosa (pinta): mueve el centro y gira la forma de .lt-nebula. Una sola capa por pantalla. */
+@keyframes lt-nebula-drift {
+  0%   { --nebula-x: 18%; --nebula-y: 14%; --nebula-rot: 0deg; }
+  50%  { --nebula-x: 30%; --nebula-y: 24%; --nebula-rot: 160deg; }
+  100% { --nebula-x: 22%; --nebula-y: 32%; --nebula-rot: 320deg; }
+}
+/* Órbita (composite): gira alrededor de su transform-origin a radio --orbit-r sin rotar sobre sí. */
+@keyframes lt-orbit {
+  0%   { transform: rotate(0deg) translateX(var(--orbit-r)) rotate(0deg); }
+  100% { transform: rotate(360deg) translateX(var(--orbit-r)) rotate(-360deg); }
+}
+/* Cometa (composite): cruza una vez y descansa el resto del ciclo. Elemento con background: var(--comet-tail). */
+@keyframes lt-comet {
+  0%   { transform: rotate(var(--comet-angle)) translateX(0); opacity: 0; }
+  4%   { opacity: 1; }
+  22%, 100% { transform: rotate(var(--comet-angle)) translateX(var(--comet-dist)); opacity: 0; }
+}
+
+/* Orden de capas para todo el sitio (declararlo igual, primero, en scenes.css):
+   @layer tokens, reset, scenes, components, motion, ui, shop, utilities; */
+@layer tokens {
+
+  /* ═══════════════════════════════════════════════════════════
+     1 · TOKENS QUE NO CAMBIAN CON EL TEMA
+     ═══════════════════════════════════════════════════════════ */
+  :root {
+    /* Familias */
+    --font-display: "Bricolage Grotesque", "Atkinson Hyperlegible", system-ui, sans-serif;
+    --font-body: "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --font-price: "Bricolage Grotesque", "Atkinson Hyperlegible", system-ui, sans-serif;  /* + --numeric-price */
+    --font-mono: "IBM Plex Mono", ui-monospace, "Cascadia Mono", "SF Mono", Consolas, "Liberation Mono", monospace;
+    --font-note: "Kalam", "Segoe Print", "Comic Neue", cursive;
+    --emoji-font: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Segoe UI Symbol", "Twemoji Mozilla";
+    --font-chat: "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji";  /* burbujas y chips: texto + emoji */
+    --font-data: var(--font-price);  /* montos, horas, contadores chicos: Atkinson tiene cero barrado (Ø) */
+    --numeric-price: tabular-nums lining-nums;  /* font-variant-numeric de precios y contadores */
+
+    /* Pesos (Bricolage es variable: cualquier valor 200–800 es válido y animable) */
+    --weight-display: 720;     /* titulares monumentales */
+    --weight-display-x: 800;   /* CTA final, precio gigante */
+    --weight-display-thin: 260;/* estado inicial de un titular que "se carga" (tween de peso en el hero) */
+    --weight-heading: 640;     /* h2/h3 */
+    --weight-body: 400;
+    --weight-strong: 700;      /* Atkinson solo tiene 400 y 700 */
+
+    /* Escala tipográfica fluida (viewport 390 → 1440). Base 16 → 18 px.
+       Ratio ~1.25 en texto; saltos amplios en display. Los clamp() suman rem para respetar el zoom. */
+    --fs-2xs: clamp(0.8125rem, 0.79rem + 0.1vw, 0.875rem);   /* 13→14  · notas legales, cotas */
+    --fs-xs: clamp(0.875rem, 0.85rem + 0.12vw, 0.9375rem);   /* 14→15  · meta, chips */
+    --fs-sm: clamp(0.9375rem, 0.9rem + 0.15vw, 1rem);        /* 15→16  · texto secundario */
+    --fs-base: clamp(1rem, 0.95rem + 0.19vw, 1.125rem);      /* 16→18  · cuerpo */
+    --fs-md: clamp(1.125rem, 1.05rem + 0.3vw, 1.3125rem);    /* 18→21  · lead */
+    --fs-lg: clamp(1.3125rem, 1.15rem + 0.65vw, 1.75rem);    /* 21→28  · h4 / bajada de escena */
+    --fs-xl: clamp(1.625rem, 1.3rem + 1.35vw, 2.5rem);       /* 26→40  · h3 */
+    --fs-2xl: clamp(2.125rem, 1.5rem + 2.6vw, 3.75rem);      /* 34→60  · h2 de escena */
+    --fs-3xl: clamp(2.75rem, 1.6rem + 4.8vw, 5.75rem);       /* 44→92  · titular de escena grande */
+    --fs-display: clamp(3.25rem, 1.2rem + 8.4vw, 9rem);      /* 52→144 · hero H1 */
+    --fs-colossal: clamp(3.75rem, 0.6rem + 13vw, 12.5rem);   /* 60→200 · SOLO CTA final (1 vez en el sitio) */
+    --fs-price: clamp(4rem, 1.4rem + 10.6vw, 11rem);         /* 64→176 · número del showroom */
+
+    /* Interlineado */
+    --lh-display: 0.9;
+    --lh-tight: 1.04;
+    --lh-heading: 1.14;
+    --lh-snug: 1.32;
+    --lh-body: 1.58;
+    --lh-relaxed: 1.72;
+
+    /* Tracking (piso -0.04em) */
+    --tracking-display: -0.03em;   /* a 720 + opsz 96 más cerrado hace chocar "ne", "go" */
+    --tracking-colossal: -0.026em; /* peso 800 a 200 px (CTA final, precio) */
+    --tracking-heading: -0.022em;
+    --tracking-body: 0;
+    --tracking-price: -0.045em;
+    --tracking-mono: -0.01em;
+
+    /* Medidas de lectura */
+    --measure: 66ch;
+    --measure-narrow: 44ch;
+    --measure-display: 14ch;
+
+    /* Espaciado · base 4 px. Escala fija para componentes. */
+    --space-3xs: 0.125rem;  /* 2  */
+    --space-2xs: 0.25rem;   /* 4  */
+    --space-xs: 0.5rem;     /* 8  */
+    --space-sm: 0.75rem;    /* 12 */
+    --space-md: 1rem;       /* 16 */
+    --space-lg: 1.5rem;     /* 24 */
+    --space-xl: 2rem;       /* 32 */
+    --space-2xl: 3rem;      /* 48 */
+    --space-3xl: 4rem;      /* 64 */
+    --space-4xl: 6rem;      /* 96 */
+    --space-5xl: 9rem;      /* 144 · aire entre actos del showroom */
+
+    /* Espaciado fluido de layout (escenas) */
+    --gutter: clamp(1rem, 0.55rem + 1.85vw, 2.25rem);           /* 16 → 36 · margen lateral */
+    --grid-gap: clamp(1rem, 0.6rem + 1.2vw, 1.75rem);            /* gap de la grilla de 12 col */
+    --stack-flow: clamp(1rem, 0.8rem + 0.8vw, 1.5rem);           /* entre párrafos/bloques */
+    --stack-heading: clamp(1.5rem, 1rem + 2vw, 3rem);            /* arriba de un heading */
+    --scene-pad: clamp(5rem, 2.5rem + 10vw, 13rem);              /* padding vertical de escena */
+    --scene-pad-tight: clamp(3.5rem, 2rem + 6vw, 8rem);
+    --scene-pin: 300svh;         /* largo de scroll de una escena pinneada de 3 actos (showroom, chatbots) */
+    --container: 88rem;          /* 1408 px: tope; a 1920 crecen los márgenes, no la grilla */
+    --container-text: 46rem;
+    --nav-h: 4.25rem;
+    --tap: 44px;                 /* target táctil mínimo */
+    --disabled-opacity: 0.45;    /* controles deshabilitados / "Pago online próximamente" (con texto, no solo opacidad) */
+
+    /* Radios: preciso, de instrumento. Uno por nivel de anidado. */
+    --radius-0: 0;
+    --radius-xs: 2px;      /* cotas, chips de dato */
+    --radius-sm: 6px;      /* inputs, botones chicos */
+    --radius-md: 12px;     /* media, burbujas del bot */
+    --radius-lg: 22px;     /* pantalla del teléfono, diálogo */
+    --radius-xl: 36px;     /* marco del teléfono */
+    --radius-pill: 999px;  /* nav cápsula, botones primarios, toggle */
+
+    /* Bordes */
+    --hairline: 1px;
+    --border-strong: 1.5px;
+    --focus-width: 2px;
+    --focus-offset: 3px;
+
+    /* ── MOTION · curvas ──────────────────────────────────────
+       Regla: todo lo que responde al usuario sale con ease-out (arranca rápido). ease-in solo para algo
+       que se VA de la pantalla mientras el usuario mira otra cosa (salida de escena con scrub). */
+    --ease-linear: linear;
+    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);        /* reveals, entradas: la firma del sitio */
+    --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);        /* hovers, UI chica */
+    --ease-out-circ: cubic-bezier(0, 0.55, 0.45, 1);        /* contadores de precio (frena "con peso") */
+    --ease-in-out-quint: cubic-bezier(0.83, 0, 0.17, 1);    /* cambios de acto, transición de tema */
+    --ease-in-out-sine: cubic-bezier(0.37, 0, 0.63, 1);     /* loops: respiración, deriva, typing */
+    --ease-exit: cubic-bezier(0.7, 0, 0.84, 0);             /* SOLO salidas de escena fuera de foco */
+    /* Spring: fallback cubic-bezier; abajo se reemplaza por linear() donde hay soporte. */
+    --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+    --ease-spring-soft: cubic-bezier(0.22, 1.2, 0.36, 1);
+    /* Puntos de control como texto, para GSAP: CustomEase.create("outExpo", css('--ease-out-expo-pts')) */
+    --ease-out-expo-pts: "0.16,1,0.3,1";
+    --ease-out-quart-pts: "0.25,1,0.5,1";
+    --ease-out-circ-pts: "0,0.55,0.45,1";
+    --ease-in-out-quint-pts: "0.83,0,0.17,1";
+
+    /* ── MOTION · duraciones ─────────────────────────────────── */
+    --dur-instant: 90ms;     /* feedback de press, focus */
+    --dur-fast: 160ms;       /* hover, color */
+    --dur-base: 240ms;       /* toggles, chips, menús (UI < 300 ms) */
+    --dur-slow: 520ms;       /* expandir fila de producto, diálogos, burbuja que llega */
+    --dur-slower: 900ms;     /* reveals de escena, línea de titular */
+    --dur-cinematic: 1400ms; /* intro del hero completa (1.2–1.6 s) */
+    --dur-epic: 2200ms;      /* contador del precio, línea del proceso que se dibuja, CTA final */
+    --dur-theme: 700ms;      /* View Transition del toggle de tema */
+    /* Loops: múltiplos del latido. Un solo ritmo para todo el sitio. */
+    --beat: 2.8s;            /* pulso de señal del hero = pulsos del 3D = typing ×2 */
+    --dur-sweep: 4.2s;       /* barrido de luz (1.5 latidos) */
+    --dur-breathe: 5.6s;     /* respiración del glow (2 latidos, alternate) */
+    --dur-drift: 28s;        /* deriva de la aurora (10 latidos) */
+    --dur-aurora: 56s;       /* vuelta completa de la aurora viva (20 latidos) */
+    --dur-twinkle: 4.2s;     /* titileo de estrellas (1.5 latidos); capas a ×1, ×1.6, ×2.3 */
+    --dur-nebula: 42s;       /* deriva de nebulosa (15 latidos) */
+    --dur-orbit: 22.4s;      /* órbita completa (8 latidos) */
+    --dur-comet: 14s;        /* ciclo de cometa (5 latidos; cruza en el primer 22 %) */
+
+    /* ── MOTION · escalonado (stagger) ─────────────────────────
+       Más chico el ítem, más corto el escalón. Tope de cadena: 8 ítems; desde el 9 van juntos. */
+    --stagger-chars: 18ms;   /* letras (scramble, CTA final) */
+    --stagger-words: 45ms;   /* palabras */
+    --stagger-lines: 90ms;   /* líneas del titular (SplitText) */
+    --stagger-rows: 120ms;   /* filas del showroom, mensajes del bot, pasos del proceso */
+    --stagger-blocks: 180ms; /* bloques grandes de una escena */
+    --stagger: var(--stagger-lines);  /* alias del borrador v1 */
+
+    /* ── MOTION · distancias y profundidad ─────────────────── */
+    --reveal-y-sm: 0.75rem;  /* UI, chips, burbujas */
+    --reveal-y-md: 2rem;     /* filas, párrafos */
+    --reveal-y-lg: 6rem;     /* bloques de escena (solo con scrub) */
+    --reveal-x-lg: 12vw;     /* entradas laterales del scroll horizontal de Trabajos */
+    --reveal-scale: 0.94;    /* escala de partida de media enmascarada */
+    --reveal-blur: 10px;     /* desenfoque de partida (solo elementos chicos: blur cuesta) */
+    --reveal-rotate: 2.5deg; /* inclinación de partida de líneas de titular */
+    --perspective: 1400px;   /* escena Web: capturas apiladas en 3D */
+    --depth-step: -140px;    /* translateZ entre capturas apiladas */
+    --depth-tilt: 14deg;     /* rotateX de la pila */
+    --parallax-near: 0.18;   /* factor de desplazamiento de capas cercanas */
+    --parallax-far: 0.42;    /* factor de capas lejanas (aurora, retícula) */
+    --scrub: 0.8;            /* suavizado de ScrollTrigger scrub (segundos, número) */
+    --magnet: 0.28;          /* fuerza de botones magnéticos (fracción del desplazamiento del puntero) */
+    --spotlight-size: 38rem; /* radio del spotlight que sigue al cursor (--mx / --my de 07) */
+    --orbit-r: 9rem;         /* radio de órbita (satélites alrededor del planeta/nodo) */
+    --comet-angle: 24deg;    /* dirección del cometa */
+    --comet-dist: 70vw;      /* recorrido del cometa */
+    --glass-blur: 18px;      /* backdrop-filter del vidrio cósmico (solo nav y teléfono) */
+
+    /* Intensidad de señal por acto del showroom (se asigna a --glow-intensity) */
+    --shop-intensity-1: 0.22;
+    --shop-intensity-2: 0.55;
+    --shop-intensity-3: 1;
+    /* Escala del precio gigante por acto (multiplica --fs-price): el número crece con el nivel */
+    --shop-scale-1: 0.62;
+    --shop-scale-2: 0.8;
+    --shop-scale-3: 1;
+    --glow-reach: 64px;      /* alcance máximo del glow a intensidad 1 */
+
+    /* Z-index */
+    --z-below: -1;
+    --z-base: 0;
+    --z-canvas: 1;          /* canvas WebGL del hero */
+    --z-raised: 10;
+    --z-scene-fg: 20;       /* texto sobre el canvas 3D */
+    --z-preview: 50;        /* media que sigue al cursor en Trabajos */
+    --z-sticky: 100;        /* sticky de escenas */
+    --z-progress: 150;      /* barra de progreso de scroll */
+    --z-nav: 200;
+    --z-overlay: 300;
+    --z-dialog: 400;
+    --z-toast: 500;
+    --z-grain: 900;         /* overlay de grano, pointer-events: none */
+
+    /* Retícula del plano (textura fina, no protagonista) */
+    --grid-cell: 24px;
+    --grid-cell-major: 120px;
+
+    /* Grano SVG: specks discretos (feColorMatrix), sin animar. Dos versiones según el fondo. */
+    --grain-light-specks: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 9 -4.2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+    --grain-dark-specks: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 9 -4.2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+    --grain-size: 220px;
+    /* Campos de estrellas (3 capas, densidad decreciente, tamaños distintos para parallax).
+       Generados determinísticamente (semilla 20271030). Cada tema elige su juego en --star-field-1/2/3. */
+    --stars-dark-1: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Ccircle cx='77.5' cy='5.6' r='0.61' fill='%23E8F4F1' opacity='0.44'/%3E%3Ccircle cx='9.6' cy='229.5' r='0.63' fill='%23E8F4F1' opacity='0.33'/%3E%3Ccircle cx='6.3' cy='186.0' r='0.37' fill='%23E8F4F1' opacity='0.41'/%3E%3Ccircle cx='189.2' cy='81.5' r='0.45' fill='%23CFE9F2' opacity='0.57'/%3E%3Ccircle cx='124.7' cy='188.5' r='0.49' fill='%23E8F4F1' opacity='0.60'/%3E%3Ccircle cx='14.7' cy='117.1' r='0.54' fill='%23CFE9F2' opacity='0.44'/%3E%3Ccircle cx='208.7' cy='6.0' r='0.47' fill='%23E8F4F1' opacity='0.59'/%3E%3Ccircle cx='54.9' cy='161.7' r='0.50' fill='%23CFE9F2' opacity='0.55'/%3E%3Ccircle cx='9.7' cy='50.0' r='0.63' fill='%23E8F4F1' opacity='0.50'/%3E%3Ccircle cx='108.2' cy='157.5' r='0.68' fill='%23CFE9F2' opacity='0.42'/%3E%3Ccircle cx='154.4' cy='231.7' r='0.42' fill='%23CFE9F2' opacity='0.32'/%3E%3Ccircle cx='96.3' cy='105.2' r='0.61' fill='%23E8F4F1' opacity='0.53'/%3E%3Ccircle cx='123.1' cy='21.9' r='0.38' fill='%23E8F4F1' opacity='0.51'/%3E%3Ccircle cx='2.2' cy='196.9' r='0.38' fill='%23CFE9F2' opacity='0.28'/%3E%3Ccircle cx='168.7' cy='132.2' r='0.41' fill='%23CFE9F2' opacity='0.26'/%3E%3Ccircle cx='13.3' cy='40.7' r='0.40' fill='%23E8F4F1' opacity='0.41'/%3E%3Ccircle cx='181.9' cy='45.7' r='0.47' fill='%23CFE9F2' opacity='0.41'/%3E%3Ccircle cx='108.1' cy='239.3' r='0.63' fill='%23E8F4F1' opacity='0.25'/%3E%3Ccircle cx='161.9' cy='174.0' r='0.66' fill='%23E8F4F1' opacity='0.55'/%3E%3Ccircle cx='229.7' cy='185.3' r='0.39' fill='%23CFE9F2' opacity='0.48'/%3E%3Ccircle cx='82.5' cy='207.5' r='0.41' fill='%23E8F4F1' opacity='0.27'/%3E%3Ccircle cx='88.7' cy='6.0' r='0.48' fill='%23CFE9F2' opacity='0.55'/%3E%3Ccircle cx='119.2' cy='46.6' r='0.65' fill='%23E8F4F1' opacity='0.36'/%3E%3Ccircle cx='119.0' cy='171.8' r='0.65' fill='%23CFE9F2' opacity='0.56'/%3E%3Ccircle cx='213.3' cy='236.0' r='0.39' fill='%23E8F4F1' opacity='0.41'/%3E%3Ccircle cx='12.0' cy='37.8' r='0.57' fill='%23E8F4F1' opacity='0.29'/%3E%3Ccircle cx='158.4' cy='60.8' r='0.56' fill='%23CFE9F2' opacity='0.59'/%3E%3Ccircle cx='129.6' cy='11.1' r='0.41' fill='%23CFE9F2' opacity='0.59'/%3E%3Ccircle cx='16.2' cy='117.2' r='0.66' fill='%23CFE9F2' opacity='0.52'/%3E%3Ccircle cx='180.5' cy='99.6' r='0.39' fill='%23CFE9F2' opacity='0.36'/%3E%3Ccircle cx='53.1' cy='44.0' r='0.58' fill='%23E8F4F1' opacity='0.25'/%3E%3Ccircle cx='76.5' cy='38.6' r='0.43' fill='%23E8F4F1' opacity='0.52'/%3E%3Ccircle cx='126.2' cy='59.7' r='0.46' fill='%23E8F4F1' opacity='0.32'/%3E%3Ccircle cx='90.1' cy='65.9' r='0.46' fill='%23CFE9F2' opacity='0.40'/%3E%3Ccircle cx='100.5' cy='233.8' r='0.47' fill='%23E8F4F1' opacity='0.53'/%3E%3Ccircle cx='81.1' cy='133.2' r='0.39' fill='%23E8F4F1' opacity='0.37'/%3E%3Ccircle cx='37.3' cy='24.7' r='0.61' fill='%23E8F4F1' opacity='0.36'/%3E%3Ccircle cx='151.5' cy='125.8' r='0.52' fill='%23CFE9F2' opacity='0.48'/%3E%3Ccircle cx='232.6' cy='96.9' r='0.56' fill='%23CFE9F2' opacity='0.57'/%3E%3Ccircle cx='142.8' cy='238.2' r='0.54' fill='%23CFE9F2' opacity='0.53'/%3E%3Ccircle cx='103.7' cy='53.2' r='0.54' fill='%23E8F4F1' opacity='0.30'/%3E%3Ccircle cx='29.1' cy='86.3' r='0.38' fill='%23CFE9F2' opacity='0.53'/%3E%3Ccircle cx='89.3' cy='174.3' r='0.46' fill='%23E8F4F1' opacity='0.40'/%3E%3Ccircle cx='147.9' cy='191.7' r='0.59' fill='%23CFE9F2' opacity='0.37'/%3E%3Ccircle cx='185.0' cy='45.6' r='0.41' fill='%23E8F4F1' opacity='0.42'/%3E%3Ccircle cx='230.0' cy='13.0' r='0.47' fill='%23E8F4F1' opacity='0.55'/%3E%3C/svg%3E");
+    --stars-dark-2: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='520' height='520'%3E%3Ccircle cx='418.6' cy='256.2' r='0.97' fill='%23E8F4F1' opacity='0.68'/%3E%3Ccircle cx='37.9' cy='123.5' r='0.82' fill='%239FC3E6' opacity='0.75'/%3E%3Ccircle cx='51.5' cy='231.5' r='0.81' fill='%237FFFE1' opacity='0.49'/%3E%3Ccircle cx='427.0' cy='403.7' r='1.07' fill='%237FFFE1' opacity='0.47'/%3E%3Ccircle cx='222.3' cy='138.2' r='0.75' fill='%237FFFE1' opacity='0.66'/%3E%3Ccircle cx='519.3' cy='86.1' r='0.61' fill='%237FFFE1' opacity='0.66'/%3E%3Ccircle cx='55.2' cy='499.9' r='0.86' fill='%23E8F4F1' opacity='0.45'/%3E%3Ccircle cx='304.8' cy='200.3' r='0.65' fill='%237FFFE1' opacity='0.82'/%3E%3Ccircle cx='95.7' cy='128.5' r='0.80' fill='%237FFFE1' opacity='0.54'/%3E%3Ccircle cx='452.1' cy='221.3' r='0.83' fill='%237FFFE1' opacity='0.56'/%3E%3Ccircle cx='449.9' cy='166.8' r='0.90' fill='%239FC3E6' opacity='0.47'/%3E%3Ccircle cx='480.6' cy='146.7' r='1.09' fill='%23E8F4F1' opacity='0.84'/%3E%3Ccircle cx='221.3' cy='41.5' r='0.77' fill='%237FFFE1' opacity='0.49'/%3E%3Ccircle cx='33.5' cy='351.7' r='0.79' fill='%239FC3E6' opacity='0.55'/%3E%3Ccircle cx='408.5' cy='294.4' r='1.02' fill='%23E8F4F1' opacity='0.51'/%3E%3Ccircle cx='261.9' cy='336.1' r='0.79' fill='%23E8F4F1' opacity='0.47'/%3E%3Ccircle cx='483.5' cy='179.2' r='0.87' fill='%239FC3E6' opacity='0.71'/%3E%3Ccircle cx='245.2' cy='319.5' r='0.77' fill='%239FC3E6' opacity='0.50'/%3E%3Ccircle cx='51.0' cy='243.8' r='0.91' fill='%23E8F4F1' opacity='0.53'/%3E%3Ccircle cx='359.0' cy='328.4' r='0.84' fill='%237FFFE1' opacity='0.59'/%3E%3Ccircle cx='78.5' cy='266.9' r='0.77' fill='%237FFFE1' opacity='0.77'/%3E%3Ccircle cx='132.8' cy='411.5' r='0.84' fill='%239FC3E6' opacity='0.47'/%3E%3Ccircle cx='169.0' cy='56.4' r='0.63' fill='%239FC3E6' opacity='0.68'/%3E%3Ccircle cx='460.8' cy='183.4' r='0.84' fill='%237FFFE1' opacity='0.82'/%3E%3Ccircle cx='402.7' cy='195.8' r='0.74' fill='%23E8F4F1' opacity='0.76'/%3E%3Ccircle cx='26.2' cy='248.2' r='0.67' fill='%237FFFE1' opacity='0.50'/%3E%3C/svg%3E");
+    --stars-dark-3: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='960' height='960'%3E%3Ccircle cx='420.6' cy='866.3' r='1.14' fill='%23FBFEFD' opacity='0.80'/%3E%3Ccircle cx='858.8' cy='712.4' r='1.61' fill='%237FFFE1' opacity='0.98'/%3E%3Ccircle cx='867.8' cy='201.2' r='1.57' fill='%23FBFEFD' opacity='0.81'/%3E%3Ccircle cx='93.4' cy='267.1' r='1.66' fill='%237FFFE1' opacity='0.84'/%3E%3Ccircle cx='633.1' cy='456.9' r='1.54' fill='%237FFFE1' opacity='0.94'/%3E%3Ccircle cx='917.9' cy='576.4' r='1.59' fill='%23FBFEFD' opacity='0.70'/%3E%3Ccircle cx='444.6' cy='186.6' r='1.29' fill='%237FFFE1' opacity='0.70'/%3E%3Ccircle cx='84.6' cy='435.7' r='1.26' fill='%23FBFEFD' opacity='0.84'/%3E%3Ccircle cx='101.4' cy='13.2' r='1.38' fill='%237FFFE1' opacity='0.84'/%3E%3C/svg%3E");
+    --stars-light-1: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Ccircle cx='82.5' cy='101.5' r='0.43' fill='%230F2B4A' opacity='0.15'/%3E%3Ccircle cx='152.4' cy='206.7' r='0.54' fill='%230F2B4A' opacity='0.14'/%3E%3Ccircle cx='175.9' cy='34.9' r='0.46' fill='%230F2B4A' opacity='0.13'/%3E%3Ccircle cx='175.3' cy='236.1' r='0.52' fill='%230F2B4A' opacity='0.16'/%3E%3Ccircle cx='157.6' cy='198.8' r='0.66' fill='%230F2B4A' opacity='0.20'/%3E%3Ccircle cx='100.8' cy='136.0' r='0.51' fill='%230F2B4A' opacity='0.16'/%3E%3Ccircle cx='76.4' cy='231.0' r='0.40' fill='%230F2B4A' opacity='0.18'/%3E%3Ccircle cx='64.7' cy='89.7' r='0.55' fill='%230F2B4A' opacity='0.19'/%3E%3Ccircle cx='49.8' cy='160.0' r='0.42' fill='%230F2B4A' opacity='0.15'/%3E%3Ccircle cx='154.1' cy='65.9' r='0.59' fill='%230F2B4A' opacity='0.08'/%3E%3Ccircle cx='184.3' cy='152.2' r='0.38' fill='%230F2B4A' opacity='0.14'/%3E%3Ccircle cx='32.7' cy='199.1' r='0.65' fill='%230F2B4A' opacity='0.11'/%3E%3Ccircle cx='33.3' cy='33.4' r='0.48' fill='%230F2B4A' opacity='0.11'/%3E%3Ccircle cx='234.4' cy='36.3' r='0.45' fill='%230F2B4A' opacity='0.17'/%3E%3Ccircle cx='234.5' cy='162.2' r='0.67' fill='%230F2B4A' opacity='0.16'/%3E%3Ccircle cx='115.0' cy='82.0' r='0.49' fill='%230F2B4A' opacity='0.16'/%3E%3Ccircle cx='38.8' cy='120.3' r='0.66' fill='%230F2B4A' opacity='0.15'/%3E%3Ccircle cx='199.6' cy='179.4' r='0.47' fill='%230F2B4A' opacity='0.11'/%3E%3Ccircle cx='102.9' cy='66.5' r='0.46' fill='%230F2B4A' opacity='0.09'/%3E%3Ccircle cx='202.8' cy='86.4' r='0.62' fill='%230F2B4A' opacity='0.09'/%3E%3Ccircle cx='14.1' cy='44.1' r='0.60' fill='%230F2B4A' opacity='0.12'/%3E%3Ccircle cx='38.9' cy='186.4' r='0.67' fill='%230F2B4A' opacity='0.11'/%3E%3Ccircle cx='88.2' cy='206.4' r='0.60' fill='%230F2B4A' opacity='0.16'/%3E%3Ccircle cx='38.1' cy='117.8' r='0.59' fill='%230F2B4A' opacity='0.17'/%3E%3Ccircle cx='81.7' cy='97.6' r='0.52' fill='%230F2B4A' opacity='0.10'/%3E%3Ccircle cx='129.3' cy='181.9' r='0.62' fill='%230F2B4A' opacity='0.18'/%3E%3Ccircle cx='8.0' cy='3.9' r='0.44' fill='%230F2B4A' opacity='0.08'/%3E%3Ccircle cx='232.5' cy='36.6' r='0.58' fill='%230F2B4A' opacity='0.20'/%3E%3Ccircle cx='166.0' cy='146.6' r='0.66' fill='%230F2B4A' opacity='0.15'/%3E%3Ccircle cx='13.9' cy='9.5' r='0.55' fill='%230F2B4A' opacity='0.09'/%3E%3Ccircle cx='176.8' cy='185.4' r='0.67' fill='%230F2B4A' opacity='0.10'/%3E%3Ccircle cx='39.1' cy='202.5' r='0.35' fill='%230F2B4A' opacity='0.15'/%3E%3Ccircle cx='25.9' cy='70.6' r='0.61' fill='%230F2B4A' opacity='0.12'/%3E%3Ccircle cx='219.3' cy='232.1' r='0.45' fill='%230F2B4A' opacity='0.17'/%3E%3Ccircle cx='185.9' cy='92.5' r='0.59' fill='%230F2B4A' opacity='0.17'/%3E%3Ccircle cx='145.0' cy='217.3' r='0.69' fill='%230F2B4A' opacity='0.11'/%3E%3Ccircle cx='204.7' cy='17.5' r='0.53' fill='%230F2B4A' opacity='0.18'/%3E%3Ccircle cx='171.3' cy='51.0' r='0.52' fill='%230F2B4A' opacity='0.14'/%3E%3Ccircle cx='111.9' cy='30.5' r='0.44' fill='%230F2B4A' opacity='0.12'/%3E%3Ccircle cx='95.4' cy='221.0' r='0.48' fill='%230F2B4A' opacity='0.16'/%3E%3C/svg%3E");
+    --stars-light-2: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='520' height='520'%3E%3Ccircle cx='330.0' cy='24.5' r='0.70' fill='%2316406B' opacity='0.23'/%3E%3Ccircle cx='451.4' cy='276.6' r='0.74' fill='%2316406B' opacity='0.30'/%3E%3Ccircle cx='424.3' cy='392.0' r='0.64' fill='%230B9E86' opacity='0.15'/%3E%3Ccircle cx='379.9' cy='75.7' r='0.76' fill='%2316406B' opacity='0.21'/%3E%3Ccircle cx='330.6' cy='417.3' r='0.75' fill='%230B9E86' opacity='0.14'/%3E%3Ccircle cx='324.9' cy='241.0' r='0.91' fill='%230B9E86' opacity='0.25'/%3E%3Ccircle cx='297.7' cy='321.9' r='0.77' fill='%230B9E86' opacity='0.17'/%3E%3Ccircle cx='260.1' cy='313.8' r='0.77' fill='%2316406B' opacity='0.28'/%3E%3Ccircle cx='152.0' cy='324.0' r='0.85' fill='%2316406B' opacity='0.21'/%3E%3Ccircle cx='304.4' cy='381.6' r='0.93' fill='%230B9E86' opacity='0.26'/%3E%3Ccircle cx='363.7' cy='328.7' r='0.85' fill='%230B9E86' opacity='0.24'/%3E%3Ccircle cx='90.0' cy='387.5' r='0.84' fill='%2316406B' opacity='0.25'/%3E%3Ccircle cx='499.1' cy='386.9' r='0.63' fill='%2316406B' opacity='0.29'/%3E%3Ccircle cx='402.6' cy='202.9' r='0.76' fill='%2316406B' opacity='0.14'/%3E%3Ccircle cx='271.4' cy='266.0' r='0.99' fill='%2316406B' opacity='0.26'/%3E%3Ccircle cx='303.9' cy='418.7' r='0.69' fill='%230B9E86' opacity='0.24'/%3E%3Ccircle cx='446.1' cy='375.4' r='0.68' fill='%2316406B' opacity='0.19'/%3E%3Ccircle cx='308.3' cy='477.2' r='0.63' fill='%2316406B' opacity='0.29'/%3E%3Ccircle cx='34.6' cy='22.3' r='1.00' fill='%230B9E86' opacity='0.22'/%3E%3Ccircle cx='327.1' cy='130.3' r='0.79' fill='%2316406B' opacity='0.16'/%3E%3Ccircle cx='485.2' cy='131.3' r='0.67' fill='%230B9E86' opacity='0.19'/%3E%3Ccircle cx='122.6' cy='450.3' r='0.62' fill='%2316406B' opacity='0.18'/%3E%3C/svg%3E");
+    --stars-light-3: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='960' height='960'%3E%3Ccircle cx='343.7' cy='276.2' r='1.30' fill='%230B9E86' opacity='0.28'/%3E%3Ccircle cx='44.8' cy='921.7' r='1.28' fill='%230B9E86' opacity='0.36'/%3E%3Ccircle cx='510.7' cy='11.9' r='1.02' fill='%2316406B' opacity='0.45'/%3E%3Ccircle cx='380.3' cy='713.4' r='1.12' fill='%2316406B' opacity='0.28'/%3E%3Ccircle cx='663.7' cy='913.6' r='1.47' fill='%230B9E86' opacity='0.43'/%3E%3Ccircle cx='725.1' cy='25.3' r='1.01' fill='%2316406B' opacity='0.35'/%3E%3Ccircle cx='23.6' cy='338.7' r='1.24' fill='%230B9E86' opacity='0.33'/%3E%3Ccircle cx='326.6' cy='189.5' r='1.17' fill='%2316406B' opacity='0.43'/%3E%3C/svg%3E");
+    --star-size-1: 240px;   /* capa lejana: polvo denso, se mueve con --parallax-far */
+    --star-size-2: 520px;   /* capa media */
+    --star-size-3: 960px;   /* capa cercana: pocas estrellas grandes, se mueve con --parallax-near */
+    --star-sizes: var(--star-size-3) var(--star-size-3), var(--star-size-2) var(--star-size-2), var(--star-size-1) var(--star-size-1);
+
+    /* ── MOTION · animaciones listas (usar SIEMPRE estas, nunca el keyframe directo) ──
+       Ej.: .anillo { animation: var(--anim-pulse); animation-delay: calc(var(--beat) / -3); }
+       Con reduced-motion todas valen none (ver abajo). */
+    --anim-pulse: lt-signal-pulse var(--beat) var(--ease-out-expo) infinite;
+    --anim-sweep: lt-sweep var(--dur-sweep) var(--ease-in-out-sine) infinite;
+    --anim-breathe: lt-breathe var(--dur-breathe) var(--ease-in-out-sine) infinite alternate;
+    --anim-breathe-soft: lt-breathe-soft var(--dur-breathe) var(--ease-in-out-sine) infinite alternate;
+    --anim-aurora: lt-aurora-spin var(--dur-aurora) linear infinite;
+    --anim-drift: lt-drift var(--dur-drift) var(--ease-in-out-sine) infinite;
+    --anim-reveal: lt-reveal var(--dur-slower) var(--ease-out-expo) both;
+    --anim-mask-up: lt-mask-up var(--dur-slower) var(--ease-out-expo) both;
+    --anim-arrive: lt-arrive var(--dur-slow) var(--ease-spring-soft) both;
+    --anim-typing: lt-typing calc(var(--beat) / 2) var(--ease-in-out-sine) infinite;
+    --anim-draw: lt-draw var(--dur-epic) var(--ease-in-out-quint) both;
+    --anim-scan: lt-scan calc(var(--beat) * 2) var(--ease-in-out-sine) infinite alternate;
+    --anim-caret: lt-caret 1.1s steps(1) infinite;
+    --anim-twinkle: lt-twinkle var(--dur-twinkle) var(--ease-in-out-sine) infinite;
+    --anim-nebula: lt-nebula-drift var(--dur-nebula) var(--ease-in-out-sine) infinite alternate;
+    --anim-orbit: lt-orbit var(--dur-orbit) linear infinite;
+    --anim-comet: lt-comet var(--dur-comet) var(--ease-out-quart) infinite;
+
+    /* Interruptor de movimiento para CSS (1 = ok, 0 = reduced). JS: usar matchMedia. */
+    --motion: 1;
+  }
+
+  @supports (transition-timing-function: linear(0, 1)) {
+    :root {
+      /* Spring con ~12 % de sobrepaso que asienta en 1. Para chips, toggle, badge "Más elegido". */
+      --ease-spring: linear(0, 0.0341, 0.1219, 0.2437, 0.3828, 0.5256, 0.6619, 0.7845, 0.8891, 0.9736, 1.0377, 1.0827, 1.1106, 1.124, 1.1258, 1.1191, 1.1063, 1.09, 1.0722, 1.0543, 1.0375, 1.0227, 1.0103, 1.0005, 0.9932, 0.9882, 0.9853, 0.9841, 0.9843, 0.9854, 0.9872, 0.9893, 0.9916, 0.9938, 0.9959, 0.9977, 0.9991, 1);
+      /* Spring suave (~1.5 %): botones magnéticos, burbujas del bot que "llegan". */
+      --ease-spring-soft: linear(0, 0.0694, 0.2212, 0.3965, 0.5618, 0.7015, 0.8104, 0.8901, 0.9447, 0.9796, 1.0001, 1.0106, 1.0147, 1.0149, 1.0132, 1.0107, 1.008, 1.0057, 1.0038, 1.0023, 1.0013, 1.0006, 1);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    :root {
+      --motion: 0;
+      --dur-slow: 1ms;
+      --dur-slower: 1ms;
+      --dur-cinematic: 1ms;
+      --dur-epic: 1ms;
+      --dur-theme: 1ms;
+      --stagger-chars: 0ms;
+      --stagger-words: 0ms;
+      --stagger-lines: 0ms;
+      --stagger-rows: 0ms;
+      --stagger-blocks: 0ms;
+      --reveal-y-sm: 0px;
+      --reveal-y-md: 0px;
+      --reveal-y-lg: 0px;
+      --reveal-x-lg: 0px;
+      --reveal-scale: 1;
+      --reveal-blur: 0px;
+      --reveal-rotate: 0deg;
+      --parallax-near: 0;
+      --parallax-far: 0;
+      --magnet: 0;
+      --ease-spring: var(--ease-out-quart);
+      --ease-spring-soft: var(--ease-out-quart);
+      /* Toda animación lista se apaga; el contenido queda en su estado final (visible). */
+      --anim-pulse: none;
+      --anim-sweep: none;
+      --anim-breathe: none;
+      --anim-breathe-soft: none;
+      --anim-aurora: none;
+      --anim-drift: none;
+      --anim-reveal: none;
+      --anim-mask-up: none;
+      --anim-arrive: none;
+      --anim-typing: none;
+      --anim-draw: none;
+      --anim-scan: none;
+      --anim-caret: none;
+      --anim-twinkle: none;
+      --anim-nebula: none;
+      --anim-orbit: none;
+      --anim-comet: none;
+      /* --dur-instant / --dur-fast / --dur-base se conservan: cambios de color y opacidad cortos son seguros. */
+    }
+  }
+
+  /* ═══════════════════════════════════════════════════════════
+     2 · PALETA "ABISMO" (oscura · default)
+     Se aplica: sin data-theme y sin preferencia clara, o con data-theme="dark".
+     ═══════════════════════════════════════════════════════════ */
+  :root,
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+
+    /* — Base (sección 6 del documento maestro, sin cambios) — */
+    --bg: #040812;
+    --bg-2: #070D1A;
+    --surface: #0B1422;
+    --surface-2: #0F1C2C;
+    --line: #1A2A3C;            /* hairline decorativa (retícula, separadores) */
+    --line-strong: #5A7E8A;     /* bordes de controles: ≥ 3:1 sobre todos los fondos */
+    --text: #E8F4F1;
+    --text-muted: #A0B8BF;     /* doc: #8EA9A3 → aclarado para pasar 4.5:1 sobre el pico de la aurora */
+    --text-faint: #5F7A85;      /* SOLO cotas/decoración; nunca info necesaria (≥ 3:1 en bg) */
+    --aqua: #2EE6C5;
+    --aqua-soft: #7FFFE1;
+    --aqua-deep: #0E7C6B;
+    --aqua-text: #2EE6C5;       /* verde agua usable como texto/link */
+    --aqua-fill: #27C9AD;       /* relleno de controles (botón, chip activo, badge): un paso bajo la señal pura */
+    --ink-blue: #0F2B4A;
+    --ink-blue-2: #16406B;
+    --indigo: #2C58A6;          /* tercer color de nebulosa: índigo-cobalto frío (hue OKLCH ≈ 261, bajo el umbral violeta de 265), SOLO atmósfera y con alfa baja */
+    --indigo-deep: #162C5E;
+    --warn: #FFB547;
+    --danger: #FF5C7A;
+    --ok: #3BE38B;
+    --note: #FF8FA3;            /* birome de las anotaciones del plano (Kalam) */
+    /* — Informe de seguridad (papel impreso sobre el plano): el papel es papel en los dos temas — */
+    --paper: #E4EEEB;           /* hoja, un punto más apagada en oscuro para no encandilar */
+    --paper-rule: #B7C8CC;      /* filas de la tabla (decorativo) */
+    --ink: #0F2B4A;             /* tinta de imprenta */
+    --ink-muted: #4A5F72;       /* texto secundario del informe */
+    --pen: #B0213F;             /* birome roja de las correcciones */
+    --highlight: #A8F2E0;       /* resaltador verde agua */
+
+    /* — Roles semánticos — */
+    --link: var(--aqua-text);
+    --link-hover: var(--aqua-soft);
+    --link-underline: var(--aqua-deep);
+    --focus: var(--aqua);
+    --caret: var(--aqua);
+    --selection-bg: #123E52;
+    --selection-text: #F2FFFB;
+
+    /* Botón primario (pill, relleno de señal) */
+    --btn-bg: var(--aqua-fill);
+    --btn-bg-hover: var(--aqua-soft);
+    --btn-text: #031412;
+    /* Botón secundario (contorno) */
+    --btn2-text: var(--text);
+    --btn2-border: #7A9F98;     /* más claro que --line-strong: el contorno vive sobre la aurora */
+    --btn2-border-hover: var(--aqua);
+    /* Texto sobre un relleno aqua (badges) */
+    --on-aqua: #031412;
+    --on-aqua-soft: #031412;
+    /* Texto sobre superficies de tinta (ink-blue, aqua-deep): claro en los dos temas */
+    --on-ink: #E8F4F1;
+
+    /* Nav cápsula (vidrio con fallback sólido). Es el ÚNICO vidrio del sitio. */
+    --nav-bg: var(--surface-glass-cosmic);        /* surface @ 85 % */
+    --nav-bg-solid: var(--surface);
+    --nav-border: #22384C;
+    --scrim: #02040AB8;         /* detrás de diálogos */
+
+    /* Scrollbar */
+    --scrollbar-thumb: #22364A;
+    --scrollbar-track: var(--bg);
+
+    /* — Señal: glows (solo en elementos que "transmiten": pulsos, foco fuerte, precio, CTA final) — */
+    --glow-solid: #2EE6C5;      /* color base de las recetas .lt-glow / .lt-text-glow (escala con --glow-intensity) */
+    --glow-color: #2EE6C559;    /* aqua @ 35 % */
+    --glow-sm: 0 1px 2px #00000066, 0 0 12px #2EE6C540;
+    --glow-md: 0 6px 18px -6px #00000080, 0 0 32px -4px #2EE6C559;
+    --glow-lg: 0 24px 60px -20px #000000A6, 0 0 90px -10px #2EE6C566;
+    --glow-text: 0 0 24px #2EE6C54D;          /* text-shadow para un dato vivo, nunca en titulares */
+    --glow-filter: drop-shadow(0 0 10px #2EE6C573);
+    --shadow-1: 0 1px 0 #FFFFFF0A inset, 0 10px 30px -18px #000000CC;   /* elevación mínima */
+    --shadow-2: 0 1px 0 #FFFFFF0F inset, 0 30px 80px -30px #000000E6;   /* diálogo / teléfono */
+
+    /* — Motion: colores de los efectos — */
+    --pulse-ring: #2EE6C5;      /* anillo de lt-signal-pulse (borde 1px) */
+    --pulse-core: #7FFFE1;      /* nodo que emite */
+    --sweep: linear-gradient(90deg, #7FFFE100 0%, #7FFFE11F 42%, #7FFFE166 50%, #7FFFE11F 58%, #7FFFE100 100%);
+    --scan-line: linear-gradient(180deg, #2EE6C500 0%, #2EE6C514 70%, #2EE6C559 98%, #2EE6C500 100%);
+    --spotlight: #2EE6C51A;     /* centro del spotlight que sigue al cursor */
+
+    /* — Aurora verde agua → ink-blue (fondos de escena, nunca en texto) — */
+    --aurora: 
+      var(--nebula-1),
+      var(--nebula-2),
+      var(--nebula-3),
+      linear-gradient(180deg, #040812 0%, #081226 55%, #040812 100%);
+    --aurora-soft: 
+      radial-gradient(55% 45% at 80% 0%, #2EE6C51A 0%, #2EE6C500 70%),
+      radial-gradient(60% 55% at 10% 90%, #0F2B4A99 0%, #0F2B4A00 70%),
+      radial-gradient(45% 40% at 40% 50%, #2C58A61F 0%, #2C58A600 70%);
+    --aurora-cta: 
+      radial-gradient(55% 70% at 50% 100%, #2EE6C538 0%, #2EE6C500 70%),
+      radial-gradient(80% 60% at 15% 20%, #16406B99 0%, #16406B00 70%),
+      radial-gradient(60% 50% at 88% 12%, #2C58A640 0%, #2C58A600 70%),
+      #040812;
+    /* Aurora viva (.lt-aurora-live): 3 paradas del conic que gira con --aurora-angle */
+    --aurora-c1: #2EE6C538;
+    --aurora-c2: #16406B8C;
+    --aurora-c3: #2C58A61F;
+    --signal-line: linear-gradient(90deg, #2EE6C500 0%, #2EE6C5 45%, #7FFFE1 50%, #2EE6C5 55%, #2EE6C500 100%);
+
+    /* Retícula del plano */
+    --grid-line: #1A2A3C80;
+    --grid-line-major: #1A2A3C;
+    /* — Galaxia: nebulosas (gradientes en capas; .lt-nebula las vuelve animables) — */
+    --nebula-c1: #2EE6C524;     /* verde agua: la nebulosa de la señal */
+    --nebula-c2: #16406B8C;     /* tinta azul: el cuerpo */
+    --nebula-c3: #2C58A633;     /* índigo: el toque frío */
+    --nebula-1: radial-gradient(48% 42% at 22% 18%, #2EE6C524 0%, #2EE6C500 70%);
+    --nebula-2: radial-gradient(62% 56% at 86% 26%, #16406B8C 0%, #16406B00 72%);
+    --nebula-3: radial-gradient(50% 44% at 62% 80%, #2C58A633 0%, #2C58A600 70%);
+    --galaxy: var(--aurora);    /* alias: fondo de espacio completo (nebulosas + base) */
+    --star-field-1: var(--stars-dark-1);
+    --star-field-2: var(--stars-dark-2);
+    --star-field-3: var(--stars-dark-3);
+    --star-field: var(--star-field-3), var(--star-field-2), var(--star-field-1);
+    --star-opacity: 0.9;
+    --comet-tail: linear-gradient(90deg, #7FFFE100 0%, #7FFFE14D 70%, #E8F4F1 100%);
+    /* — Objetos que parecen render (planeta, nodo, esfera del fallback 3D) — */
+    --planet-fill: radial-gradient(circle at 32% 28%, #7FFFE1 0%, #2EE6C5 14%, #0E7C6B 38%, #0F2B4A 70%, #040812 100%);
+    --glow-planet: 0 0 50px -8px #2EE6C566, 0 0 140px -24px #2C58A659;
+    --rim-light: inset -14px -18px 36px -14px #7FFFE170, inset 8px 10px 22px -12px #E8F4F133;
+    /* — Vidrio cósmico: SOLO nav cápsula y teléfono de la demo — */
+    --surface-glass-cosmic: linear-gradient(160deg, #0F1C2CD9 0%, #0A1220CC 100%);
+    --glass-solid: #0B1422;     /* fallback sin backdrop-filter */
+    --glass-border: #2A4152;
+    --glass-highlight: inset 0 1px 0 #E8F4F11A;
+
+    /* Grano */
+    --grain: var(--grain-light-specks);
+    --grain-opacity: 0.05;
+    --grain-blend: overlay;
+
+    /* — Momento firma 1 · Hero 3D (Three.js lee estos valores con getComputedStyle) — */
+    --gl-bg: #040812;
+    --gl-particle: #2EE6C5;
+    --gl-pulse: #7FFFE1;
+    --gl-core: #16406B;
+    --gl-dim: #0E7C6B;
+    --gl-nebula: #2C58A6;
+    --gl-additive: 1;           /* blending aditivo en oscuro */
+    --gl-particle-alpha: 0.85;
+    --gl-bloom: 1;              /* fuerza del glow del shader */
+
+    /* — Momento firma 2 · Demo del bot — */
+    --bot-device: #0A1220;
+    --bot-device-edge: #2A4152;
+    --bot-screen: #060C16;
+    --bot-header: #0C1624;
+    --bubble-in: #12302C;       /* lo que escribe el cliente */
+    --bubble-in-text: #E8F4F1;
+    --bubble-out: #0E2036;      /* lo que responde el bot: tinta azul, no verde, para leerse distinto */
+    --bubble-out-text: #E8F4F1;
+    --bubble-meta: #9FB5BE;     /* hora, "escribiendo…" */
+    --tick-sent: #9FB5BE;
+    --tick-read: var(--aqua);
+    --handoff: var(--warn);     /* "Te paso con una persona" */
+    --chip-bg: var(--surface-2);
+    --chip-text: var(--text);
+    --chip-border: var(--line-strong);
+    --chip-active-bg: var(--aqua-fill);
+    --chip-active-text: var(--on-aqua);
+    --demo-label: var(--warn);  /* rótulo "Demo" */
+
+    /* — Momento firma 3 · Showroom de precios (intensidad sube por acto) — */
+    --shop-1: #060C18;          /* Accesibles */
+    --shop-2: #081822;          /* Intermedios */
+    --shop-3: #0B2629;          /* Premium */
+    --shop-price-1: #3FA898;    /* la señal crece por acto: apagada → aqua → aqua-soft con glow */
+    --shop-price-2: var(--aqua);
+    --shop-price-3: var(--aqua-soft);
+    --shop-price: var(--shop-price-2);          /* alias v1 */
+    --shop-price-premium: var(--shop-price-3);  /* alias v1 */
+    --shop-row-line: #1C3040;
+    --shop-row-hover: #0E1C28;
+    --badge-bg: var(--aqua-fill);
+    --badge-text: var(--on-aqua);
+    --shop-note: var(--text-muted);
+
+    /* — Momento firma 4 · CTA final — */
+    --cta-bg: var(--aurora-cta);
+    --cta-text: var(--text);
+    --cta-glow: var(--glow-lg);
+  }
+
+  /* ═══════════════════════════════════════════════════════════
+     3 · PALETA "AMANECER ORBITAL" (clara)
+     Bloque duplicado a propósito: data-theme="light" y preferencia del sistema sin data-theme
+     (sin JS también funciona). El script de AA verifica que los dos bloques sean idénticos.
+     ═══════════════════════════════════════════════════════════ */
+  :root[data-theme="light"] {
+    color-scheme: light;
+
+    /* --aqua: el #0B9E86 del documento da 2.89:1 sobre surface-2 y 2.69:1 sobre shop-3 (no llega a 3:1
+       para gráficos). Se oscurece a #0A8F79 (mismo tono). #0B9E86 queda como --glow-solid (solo luz). */
+    --bg: #F2F9FA;
+    --bg-2: #E7F3F6;
+    --surface: #FBFEFD;   /* doc: #FFFFFF → blanco con tinte verde agua (nada de blanco puro) */
+    --surface-2: #E1F0F3;
+    --line: #C8DEE3;
+    --line-strong: #5B7E84;
+    --text: #06201C;
+    --text-muted: #3D5A5E;
+    --text-faint: #688489;
+    --aqua: #0A8F79;
+    --aqua-soft: #2EE6C5;
+    --aqua-deep: #054D42;
+    --aqua-text: #066656;
+    --aqua-fill: #066656;      /* relleno de botón: en claro el aqua de texto, con texto claro */
+    --ink-blue: #0F2B4A;
+    --ink-blue-2: #16406B;
+    --indigo: #2C58A6;
+    --indigo-deep: #162C5E;
+    --warn: #8A5300;
+    --danger: #B3243F;
+    --ok: #12703F;
+    --note: #B3243F;
+    --paper: #F7FBF9;
+    --paper-rule: #B7C8CC;
+    --ink: #0F2B4A;
+    --ink-muted: #4A5F72;
+    --pen: #B0213F;
+    --highlight: #B5F5E6;
+
+    --link: var(--aqua-text);
+    --link-hover: var(--aqua-deep);
+    --link-underline: #7CC9BA;
+    --focus: var(--aqua-text);
+    --caret: var(--aqua-text);
+    --selection-bg: #BFEDE2;
+    --selection-text: #06201C;
+
+    /* Botón primario en verde agua de texto (#066656), no casi-negro: sigue leyéndose como "señal". */
+    --btn-bg: var(--aqua-fill);
+    --btn-bg-hover: var(--aqua-deep);
+    --btn-text: #F3FAF8;
+    --btn2-text: var(--text);
+    --btn2-border: #4E6F69;
+    --btn2-border-hover: var(--aqua-text);
+    --on-aqua: #021010;          /* texto sobre --aqua (#0A8F79): oscuro, el claro no llega a 4.5 */
+    --on-aqua-soft: #031412;
+    --on-ink: #F3FAF8;
+
+    --nav-bg: var(--surface-glass-cosmic);
+    --nav-bg-solid: var(--surface);
+    --nav-border: #C8DEE3;
+    --scrim: #06201C8C;
+
+    --scrollbar-thumb: #A7C7CF;
+    --scrollbar-track: var(--bg);
+
+    --glow-solid: #0B9E86;
+    --glow-color: #0B9E8640;
+    --glow-sm: 0 1px 2px #06201C1F, 0 0 10px #0B9E8626;
+    --glow-md: 0 8px 20px -10px #06201C33, 0 0 28px -6px #0B9E8640;
+    --glow-lg: 0 30px 60px -30px #06201C40, 0 0 80px -16px #0B9E864D;
+    --glow-text: none;
+    --glow-filter: drop-shadow(0 4px 10px #0B9E8633);
+    --shadow-1: 0 1px 0 #FBFEFD inset, 0 12px 30px -20px #06201C40;
+    --shadow-2: 0 1px 0 #FBFEFD inset, 0 30px 70px -36px #06201C59;
+
+    --pulse-ring: #0A8F79;
+    --pulse-core: #066656;
+    --sweep: linear-gradient(90deg, #FFFFFF00 0%, #FFFFFF59 42%, #FFFFFFCC 50%, #FFFFFF59 58%, #FFFFFF00 100%);
+    --scan-line: linear-gradient(180deg, #0B9E8600 0%, #0B9E8612 70%, #0B9E864D 98%, #0B9E8600 100%);
+    --spotlight: #0B9E8614;
+
+    --aurora: 
+  var(--nebula-1),
+  var(--nebula-2),
+  var(--nebula-3),
+  linear-gradient(180deg, #EAF6FA 0%, #E5F4F3 55%, #F2F9FA 100%);
+    --aurora-soft: 
+  radial-gradient(55% 45% at 80% 0%, #2EE6C51F 0%, #2EE6C500 70%),
+  radial-gradient(60% 55% at 10% 90%, #9FC3E64D 0%, #9FC3E600 70%),
+  radial-gradient(45% 40% at 40% 50%, #A9C6F033 0%, #A9C6F000 70%);
+    --aurora-cta: 
+  radial-gradient(55% 70% at 50% 100%, #2EE6C533 0%, #2EE6C500 70%),
+  radial-gradient(80% 60% at 15% 20%, #9FC3E659 0%, #9FC3E600 70%),
+  radial-gradient(60% 50% at 88% 12%, #A9C6F04D 0%, #A9C6F000 70%),
+  #E7F3F6;
+    --aurora-c1: #2EE6C540;
+    --aurora-c2: #9FC3E673;
+    --aurora-c3: #A9C6F033;
+    --signal-line: linear-gradient(90deg, #0B9E8600 0%, #0B9E86 45%, #066656 50%, #0B9E86 55%, #0B9E8600 100%);
+
+    --grid-line: #C8DEE399;
+    --grid-line-major: #B2D0D8;
+    /* — Amanecer orbital: nebulosas de luz (celeste, verde agua, un velo azul cobalto claro) — */
+    --nebula-c1: #2EE6C52E;
+    --nebula-c2: #9FC3E666;
+    --nebula-c3: #A9C6F04D;
+    --nebula-1: radial-gradient(48% 42% at 22% 18%, #2EE6C52E 0%, #2EE6C500 70%);
+    --nebula-2: radial-gradient(62% 56% at 86% 26%, #9FC3E666 0%, #9FC3E600 72%);
+    --nebula-3: radial-gradient(50% 44% at 62% 80%, #A9C6F04D 0%, #A9C6F000 70%);
+    --galaxy: var(--aurora);
+    --star-field-1: var(--stars-light-1);
+    --star-field-2: var(--stars-light-2);
+    --star-field-3: var(--stars-light-3);
+    --star-field: var(--star-field-3), var(--star-field-2), var(--star-field-1);
+    --star-opacity: 0.7;
+    --comet-tail: linear-gradient(90deg, #0B9E8600 0%, #0B9E8633 70%, #066656 100%);
+    --planet-fill: radial-gradient(circle at 32% 28%, #FBFEFD 0%, #7FFFE1 16%, #0A8F79 44%, #16406B 78%, #0F2B4A 100%);
+    --glow-planet: 0 24px 50px -24px #06201C40, 0 0 90px -20px #0B9E864D;
+    --rim-light: inset -12px -16px 30px -12px #0B9E8659, inset 8px 10px 18px -10px #FBFEFD;
+    --surface-glass-cosmic: linear-gradient(160deg, #FBFEFDE0 0%, #EEF7F9CC 100%);
+    --glass-solid: #FBFEFD;
+    --glass-border: #86ABB6;
+    --glass-highlight: inset 0 1px 0 #FBFEFD;
+
+    --grain: var(--grain-dark-specks);
+    --grain-opacity: 0.035;
+    --grain-blend: multiply;
+
+    --gl-bg: #F2F9FA;
+    --gl-particle: #0B9E86;
+    --gl-pulse: #066656;
+    --gl-core: #9FC3E6;
+    --gl-dim: #7CC9BA;
+    --gl-nebula: #A9C6F0;
+    --gl-additive: 0;
+    --gl-particle-alpha: 0.9;
+    --gl-bloom: 0.35;
+
+    --bot-device: #FBFEFD;
+    --bot-device-edge: #B2D0D8;
+    --bot-screen: #E7F3F6;
+    --bot-header: #FBFEFD;
+    --bubble-in: #FBFEFD;
+    --bubble-in-text: #06201C;
+    --bubble-out: #DCEBF7;
+    --bubble-out-text: #06201C;
+    --bubble-meta: #4A6661;
+    --tick-sent: #4A6661;
+    --tick-read: var(--aqua-text);
+    --handoff: var(--warn);
+    --chip-bg: var(--surface);
+    --chip-text: var(--text);
+    --chip-border: var(--line-strong);
+    --chip-active-bg: var(--aqua-text);
+    --chip-active-text: #FBFEFD;
+    --demo-label: var(--warn);
+
+    --shop-1: #F2F9FA;
+    --shop-2: #E0F3F0;
+    --shop-3: #CCECE6;
+    --shop-price-1: #46766F;
+    --shop-price-2: var(--aqua-text);
+    --shop-price-3: var(--aqua);
+    --shop-price: var(--shop-price-2);
+    --shop-price-premium: var(--shop-price-3);
+    --shop-row-line: #B2D0D8;
+    --shop-row-hover: #FBFEFD;
+    --badge-bg: var(--aqua);
+    --badge-text: var(--on-aqua);
+    --shop-note: var(--text-muted);
+
+    --cta-bg: var(--aurora-cta);
+    --cta-text: var(--text);
+    --cta-glow: var(--glow-lg);
+  }
+
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme]) {
+      color-scheme: light;
+
+      /* --aqua: el #0B9E86 del documento da 2.89:1 sobre surface-2 y 2.69:1 sobre shop-3 (no llega a 3:1
+         para gráficos). Se oscurece a #0A8F79 (mismo tono). #0B9E86 queda como --glow-solid (solo luz). */
+      --bg: #F2F9FA;
+      --bg-2: #E7F3F6;
+      --surface: #FBFEFD;   /* doc: #FFFFFF → blanco con tinte verde agua (nada de blanco puro) */
+      --surface-2: #E1F0F3;
+      --line: #C8DEE3;
+      --line-strong: #5B7E84;
+      --text: #06201C;
+      --text-muted: #3D5A5E;
+      --text-faint: #688489;
+      --aqua: #0A8F79;
+      --aqua-soft: #2EE6C5;
+      --aqua-deep: #054D42;
+      --aqua-text: #066656;
+      --aqua-fill: #066656;      /* relleno de botón: en claro el aqua de texto, con texto claro */
+      --ink-blue: #0F2B4A;
+      --ink-blue-2: #16406B;
+      --indigo: #2C58A6;
+      --indigo-deep: #162C5E;
+      --warn: #8A5300;
+      --danger: #B3243F;
+      --ok: #12703F;
+      --note: #B3243F;
+      --paper: #F7FBF9;
+      --paper-rule: #B7C8CC;
+      --ink: #0F2B4A;
+      --ink-muted: #4A5F72;
+      --pen: #B0213F;
+      --highlight: #B5F5E6;
+
+      --link: var(--aqua-text);
+      --link-hover: var(--aqua-deep);
+      --link-underline: #7CC9BA;
+      --focus: var(--aqua-text);
+      --caret: var(--aqua-text);
+      --selection-bg: #BFEDE2;
+      --selection-text: #06201C;
+
+      /* Botón primario en verde agua de texto (#066656), no casi-negro: sigue leyéndose como "señal". */
+      --btn-bg: var(--aqua-fill);
+      --btn-bg-hover: var(--aqua-deep);
+      --btn-text: #F3FAF8;
+      --btn2-text: var(--text);
+      --btn2-border: #4E6F69;
+      --btn2-border-hover: var(--aqua-text);
+      --on-aqua: #021010;          /* texto sobre --aqua (#0A8F79): oscuro, el claro no llega a 4.5 */
+      --on-aqua-soft: #031412;
+      --on-ink: #F3FAF8;
+
+      --nav-bg: var(--surface-glass-cosmic);
+      --nav-bg-solid: var(--surface);
+      --nav-border: #C8DEE3;
+      --scrim: #06201C8C;
+
+      --scrollbar-thumb: #A7C7CF;
+      --scrollbar-track: var(--bg);
+
+      --glow-solid: #0B9E86;
+      --glow-color: #0B9E8640;
+      --glow-sm: 0 1px 2px #06201C1F, 0 0 10px #0B9E8626;
+      --glow-md: 0 8px 20px -10px #06201C33, 0 0 28px -6px #0B9E8640;
+      --glow-lg: 0 30px 60px -30px #06201C40, 0 0 80px -16px #0B9E864D;
+      --glow-text: none;
+      --glow-filter: drop-shadow(0 4px 10px #0B9E8633);
+      --shadow-1: 0 1px 0 #FBFEFD inset, 0 12px 30px -20px #06201C40;
+      --shadow-2: 0 1px 0 #FBFEFD inset, 0 30px 70px -36px #06201C59;
+
+      --pulse-ring: #0A8F79;
+      --pulse-core: #066656;
+      --sweep: linear-gradient(90deg, #FFFFFF00 0%, #FFFFFF59 42%, #FFFFFFCC 50%, #FFFFFF59 58%, #FFFFFF00 100%);
+      --scan-line: linear-gradient(180deg, #0B9E8600 0%, #0B9E8612 70%, #0B9E864D 98%, #0B9E8600 100%);
+      --spotlight: #0B9E8614;
+
+      --aurora: 
+    var(--nebula-1),
+    var(--nebula-2),
+    var(--nebula-3),
+    linear-gradient(180deg, #EAF6FA 0%, #E5F4F3 55%, #F2F9FA 100%);
+      --aurora-soft: 
+    radial-gradient(55% 45% at 80% 0%, #2EE6C51F 0%, #2EE6C500 70%),
+    radial-gradient(60% 55% at 10% 90%, #9FC3E64D 0%, #9FC3E600 70%),
+    radial-gradient(45% 40% at 40% 50%, #A9C6F033 0%, #A9C6F000 70%);
+      --aurora-cta: 
+    radial-gradient(55% 70% at 50% 100%, #2EE6C533 0%, #2EE6C500 70%),
+    radial-gradient(80% 60% at 15% 20%, #9FC3E659 0%, #9FC3E600 70%),
+    radial-gradient(60% 50% at 88% 12%, #A9C6F04D 0%, #A9C6F000 70%),
+    #E7F3F6;
+      --aurora-c1: #2EE6C540;
+      --aurora-c2: #9FC3E673;
+      --aurora-c3: #A9C6F033;
+      --signal-line: linear-gradient(90deg, #0B9E8600 0%, #0B9E86 45%, #066656 50%, #0B9E86 55%, #0B9E8600 100%);
+
+      --grid-line: #C8DEE399;
+      --grid-line-major: #B2D0D8;
+      /* — Amanecer orbital: nebulosas de luz (celeste, verde agua, un velo azul cobalto claro) — */
+      --nebula-c1: #2EE6C52E;
+      --nebula-c2: #9FC3E666;
+      --nebula-c3: #A9C6F04D;
+      --nebula-1: radial-gradient(48% 42% at 22% 18%, #2EE6C52E 0%, #2EE6C500 70%);
+      --nebula-2: radial-gradient(62% 56% at 86% 26%, #9FC3E666 0%, #9FC3E600 72%);
+      --nebula-3: radial-gradient(50% 44% at 62% 80%, #A9C6F04D 0%, #A9C6F000 70%);
+      --galaxy: var(--aurora);
+      --star-field-1: var(--stars-light-1);
+      --star-field-2: var(--stars-light-2);
+      --star-field-3: var(--stars-light-3);
+      --star-field: var(--star-field-3), var(--star-field-2), var(--star-field-1);
+      --star-opacity: 0.7;
+      --comet-tail: linear-gradient(90deg, #0B9E8600 0%, #0B9E8633 70%, #066656 100%);
+      --planet-fill: radial-gradient(circle at 32% 28%, #FBFEFD 0%, #7FFFE1 16%, #0A8F79 44%, #16406B 78%, #0F2B4A 100%);
+      --glow-planet: 0 24px 50px -24px #06201C40, 0 0 90px -20px #0B9E864D;
+      --rim-light: inset -12px -16px 30px -12px #0B9E8659, inset 8px 10px 18px -10px #FBFEFD;
+      --surface-glass-cosmic: linear-gradient(160deg, #FBFEFDE0 0%, #EEF7F9CC 100%);
+      --glass-solid: #FBFEFD;
+      --glass-border: #86ABB6;
+      --glass-highlight: inset 0 1px 0 #FBFEFD;
+
+      --grain: var(--grain-dark-specks);
+      --grain-opacity: 0.035;
+      --grain-blend: multiply;
+
+      --gl-bg: #F2F9FA;
+      --gl-particle: #0B9E86;
+      --gl-pulse: #066656;
+      --gl-core: #9FC3E6;
+      --gl-dim: #7CC9BA;
+      --gl-nebula: #A9C6F0;
+      --gl-additive: 0;
+      --gl-particle-alpha: 0.9;
+      --gl-bloom: 0.35;
+
+      --bot-device: #FBFEFD;
+      --bot-device-edge: #B2D0D8;
+      --bot-screen: #E7F3F6;
+      --bot-header: #FBFEFD;
+      --bubble-in: #FBFEFD;
+      --bubble-in-text: #06201C;
+      --bubble-out: #DCEBF7;
+      --bubble-out-text: #06201C;
+      --bubble-meta: #4A6661;
+      --tick-sent: #4A6661;
+      --tick-read: var(--aqua-text);
+      --handoff: var(--warn);
+      --chip-bg: var(--surface);
+      --chip-text: var(--text);
+      --chip-border: var(--line-strong);
+      --chip-active-bg: var(--aqua-text);
+      --chip-active-text: #FBFEFD;
+      --demo-label: var(--warn);
+
+      --shop-1: #F2F9FA;
+      --shop-2: #E0F3F0;
+      --shop-3: #CCECE6;
+      --shop-price-1: #46766F;
+      --shop-price-2: var(--aqua-text);
+      --shop-price-3: var(--aqua);
+      --shop-price: var(--shop-price-2);
+      --shop-price-premium: var(--shop-price-3);
+      --shop-row-line: #B2D0D8;
+      --shop-row-hover: #FBFEFD;
+      --badge-bg: var(--aqua);
+      --badge-text: var(--on-aqua);
+      --shop-note: var(--text-muted);
+
+      --cta-bg: var(--aurora-cta);
+      --cta-text: var(--text);
+      --cta-glow: var(--glow-lg);
+    }
+  }
+
+  /* ═══════════════════════════════════════════════════════════
+     4 · RECETAS (.lt-*) · consumen las @property en el MISMO elemento
+     Existen porque una custom property que usa var(--glow-intensity) en :root se resuelve en :root y no
+     "ve" la animación del hijo. Estas clases escriben la fórmula en el elemento animado.
+     Están en @layer tokens: cualquier capa posterior las pisa sin pelear especificidad.
+     ═══════════════════════════════════════════════════════════ */
+
+  /* Glow de señal que escala con --glow-intensity (0–1). Para nodos, badge, botón del CTA final. */
+  .lt-glow {
+    box-shadow:
+      0 0 0 var(--hairline) color-mix(in oklab, var(--glow-solid) calc(var(--glow-intensity) * 45%), transparent),
+      0 calc(var(--glow-intensity) * 10px) calc(var(--glow-intensity) * var(--glow-reach)) calc(var(--glow-intensity) * -8px)
+        color-mix(in oklab, var(--glow-solid) calc(var(--glow-intensity) * 55%), transparent);
+  }
+  /* Glow de dato vivo (precio gigante, reloj 24/7). Nunca en titulares ni párrafos. */
+  .lt-text-glow {
+    text-shadow: 0 0 calc(var(--glow-intensity) * 0.35em)
+      color-mix(in oklab, var(--glow-solid) calc(var(--glow-intensity) * 40%), transparent);
+  }
+  :root[data-theme="light"] .lt-text-glow { text-shadow: none; }
+  @media (prefers-color-scheme: light) { :root:not([data-theme]) .lt-text-glow { text-shadow: none; } }
+
+  /* Aurora viva: luz que gira con --aurora-angle. Ponerla en una capa absoluta detrás del contenido. */
+  .lt-aurora-live {
+    background: conic-gradient(from var(--aurora-angle) at 50% 115%,  /* centro fuera de la máscara: sin costura visible */
+      var(--aurora-c1), var(--aurora-c2) 25%, var(--aurora-c3) 50%, var(--aurora-c2) 75%, var(--aurora-c1));
+    mask-image: radial-gradient(closest-side, #000 35%, transparent);
+  }
+
+  /* Reveals por máscara: animar --reveal (0% → 100%) con var(--anim-reveal), GSAP o scroll-timeline. */
+  .lt-wipe { clip-path: inset(0 calc(100% - var(--reveal)) 0 0); }      /* izquierda → derecha: la señal viaja */
+  .lt-curtain { clip-path: inset(calc(100% - var(--reveal)) 0 0 0); }   /* de abajo hacia arriba: algo que emerge */
+
+  /* Nebulosa viva: re-declara --nebula-1/2/3 en el elemento para que sigan a --nebula-x/y/rot.
+     Animar con var(--anim-nebula) o atar --nebula-x/y al scroll. Pinta: una sola capa por pantalla. */
+  .lt-nebula {
+    --nebula-1: radial-gradient(48% 42% at var(--nebula-x) var(--nebula-y), var(--nebula-c1), transparent 70%);
+    --nebula-2: radial-gradient(62% 56% at calc(108% - var(--nebula-x)) calc(8% + var(--nebula-y)), var(--nebula-c2), transparent 72%);
+    --nebula-3: radial-gradient(calc(42% + 10% * cos(var(--nebula-rot))) calc(38% + 10% * sin(var(--nebula-rot))) at 62% 80%, var(--nebula-c3), transparent 70%);
+    background: var(--nebula-1), var(--nebula-2), var(--nebula-3);
+  }
+  /* Campo de estrellas: 3 capas. Para parallax real, una capa por elemento movida con transform. */
+  .lt-starfield {
+    background-image: var(--star-field);
+    background-size: var(--star-sizes);
+    opacity: var(--star-opacity);
+  }
+  /* Objeto con look de render: esfera con luz clave arriba a la izquierda, borde iluminado y atmósfera. */
+  .lt-planet {
+    border-radius: 50%;
+    background: var(--planet-fill);
+    box-shadow: var(--rim-light), var(--glow-planet);
+  }
+  /* Vidrio cósmico: SOLO nav cápsula y teléfono de la demo. Fallback sólido sin backdrop-filter. */
+  .lt-glass-cosmic {
+    background: var(--glass-solid);
+    border: var(--hairline) solid var(--glass-border);
+    box-shadow: var(--glass-highlight), var(--shadow-2);
+  }
+  @supports (backdrop-filter: blur(1px)) {
+    .lt-glass-cosmic { background: var(--surface-glass-cosmic); backdrop-filter: blur(var(--glass-blur)) saturate(1.3); }
+  }
+}

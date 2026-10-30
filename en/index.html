@@ -3,531 +3,1291 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Lautaro Demian Núñez — websites and systems</title>
-  <meta name="description" content="Lautaro Demian Núñez, cybersecurity graduate. More than six years building websites and systems for real businesses. Córdoba, Argentina." />
-  <meta name="theme-color" content="#0b0c0e" />
+  <meta name="color-scheme" content="dark light" />
+  <meta name="theme-color" content="#05090B" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#F3FAF8" media="(prefers-color-scheme: light)" />
+  <title>24/7 WhatsApp Chatbot, Websites &amp; Systems · Lautaro Núñez, LautaroDev</title>
+  <meta name="description" content="A 24/7 WhatsApp chatbot that answers, sells and books on its own, plus the websites and systems behind it. Lautaro Núñez, cybersecurity graduate. Córdoba, Argentina." />
+  <link rel="canonical" href="https://ositojur.github.io/portafolio/en/" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="en_US" />
-  <meta property="og:title" content="Lautaro Demian Núñez — websites and systems" />
-  <meta property="og:description" content="Custom websites and systems that solve everyday problems for companies and small businesses." />
+  <meta property="og:locale:alternate" content="es_AR" />
+  <meta property="og:site_name" content="LautaroDev" />
+  <meta property="og:title" content="Your WhatsApp answers around the clock." />
+  <meta property="og:description" content="24/7 WhatsApp chatbot, websites and systems. I come from cybersecurity, so I test everything the way an attacker would." />
   <meta property="og:url" content="https://ositojur.github.io/portafolio/en/" />
-  <meta property="og:image" content="../media/og-portafolio.jpg" />
-  <link rel="canonical" href="https://ositojur.github.io/portafolio/en/" />
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Lautaro Demian Núñez",
-      "jobTitle": "Web and systems developer",
-      "description": "Custom websites and systems for companies and small businesses. Córdoba, Argentina.",
-      "email": "mailto:lautarodemiannunez32@gmail.com",
-      "url": "https://ositojur.github.io/portafolio/en/",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Córdoba",
-        "addressCountry": "AR"
-      },
-      "knowsLanguage": ["es", "en"]
-    }
-  </script>
+  <meta property="og:image" content="https://ositojur.github.io/portafolio/media/og-portafolio-2027.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="LautaroDev: 24/7 WhatsApp chatbot. Aqua signal on a dark background." />
   <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://ositojur.github.io/portafolio/#persona",
+        "name": "Lautaro Núñez",
+        "alternateName": "LautaroDev",
+        "jobTitle": "Full-stack developer and cybersecurity graduate",
+        "email": "mailto:lautarodemiannunez32@gmail.com",
+        "url": "https://ositojur.github.io/portafolio/en/",
+        "sameAs": [
+          "https://github.com/Ositojur"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Córdoba",
+          "addressCountry": "AR"
+        },
+        "knowsLanguage": [
+          "es",
+          "en"
+        ],
+        "worksFor": {
+          "@id": "https://ositojur.github.io/portafolio/#servicio"
+        }
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://ositojur.github.io/portafolio/#servicio",
+        "name": "LautaroDev",
+        "url": "https://ositojur.github.io/portafolio/en/",
+        "image": "https://ositojur.github.io/portafolio/media/og-portafolio-2027.jpg",
+        "description": "24/7 WhatsApp chatbots for businesses, plus the websites and backend systems behind them, tested with a security mindset.",
+        "email": "mailto:lautarodemiannunez32@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Córdoba",
+          "addressCountry": "AR"
+        },
+        "founder": {
+          "@id": "https://ositojur.github.io/portafolio/#persona"
+        },
+        "priceRange": "USD 190–4500+",
+        "knowsAbout": [
+          "WhatsApp chatbots",
+          "Web development",
+          "Backend systems",
+          "Web security"
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "@id": "https://ositojur.github.io/portafolio/en/#tienda",
+          "name": "Services",
+          "itemListElement": [
+            {
+              "@type": "OfferCatalog",
+              "name": "Starter",
+              "description": "Get started fast.",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "@id": "https://ositojur.github.io/portafolio/en/#oferta-01",
+                  "url": "https://ositojur.github.io/portafolio/en/#producto-01",
+                  "priceCurrency": "USD",
+                  "priceSpecification": {
+                    "@type": "UnitPriceSpecification",
+                    "price": 290,
+                    "priceCurrency": "USD",
+                    "name": "One-time payment"
+                  },
+                  "description": "50% deposit online to start; balance on completion.",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Express Landing Page",
+                    "description": "A custom one-page site so people find you and get in touch.",
+                    "provider": {
+                      "@id": "https://ositojur.github.io/portafolio/#servicio"
+                    }
+                  },
+                  "price": 290
+                },
+                {
+                  "@type": "Offer",
+                  "@id": "https://ositojur.github.io/portafolio/en/#oferta-02",
+                  "url": "https://ositojur.github.io/portafolio/en/#producto-02",
+                  "priceCurrency": "USD",
+                  "priceSpecification": [
+                    {
+                      "@type": "UnitPriceSpecification",
+                      "price": 350,
+                      "priceCurrency": "USD",
+                      "name": "Setup"
+                    },
+                    {
+                      "@type": "UnitPriceSpecification",
+                      "price": 39,
+                      "priceCurrency": "USD",
+                      "referenceQuantity": {
+                        "@type": "QuantitativeValue",
+                        "value": 1,
+                        "unitCode": "MON"
+                      },
+                      "name": "Monthly fee, starts on delivery"
+                    }
+                  ],
+                  "description": "50% deposit online to start; balance on completion.",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "WhatsApp Bot Starter",
+                    "description": "Automatic 24/7 replies to the questions you get asked most.",
+                    "provider": {
+                      "@id": "https://ositojur.github.io/portafolio/#servicio"
+                    }
+                  },
+                  "price": 350
+                },
+                {
+                  "@type": "Offer",
+                  "@id": "https://ositojur.github.io/portafolio/en/#oferta-03",
+                  "url": "https://ositojur.github.io/portafolio/en/#producto-03",
+                  "priceCurrency": "USD",
+                  "priceSpecification": {
+                    "@type": "UnitPriceSpecification",
+                    "price": 190,
+                    "priceCurrency": "USD",
+                    "name": "One-time payment"
+                  },
+                  "description": "50% deposit online to start; balance on completion.",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Website Security Check",
+                    "description": "Find out what's wrong with your site and what to fix first.",
+                    "provider": {
+                      "@id": "https://ositojur.github.io/portafolio/#servicio"
+                    }
+                  },
+                  "price": 190
+                }
+              ]
+            },
+            {
+              "@type": "OfferCatalog",
+              "name": "Growth",
+              "description": "Your business, up and running.",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "@id": "https://ositojur.github.io/portafolio/en/#oferta-04",
+                  "url": "https://ositojur.github.io/portafolio/en/#producto-04",
+                  "priceCurrency": "USD",
+                  "priceSpecification": [
+                    {
+                      "@type": "UnitPriceSpecification",
+                      "price": 890,
+                      "priceCurrency": "USD",
+                      "name": "Setup"
+                    },
+                    {
+                      "@type": "UnitPriceSpecification",
+                      "price": 79,
+                      "priceCurrency": "USD",
+                      "referenceQuantity": {
+                        "@type": "QuantitativeValue",
+                        "value": 1,
+                        "unitCode": "MON"
+                      },
+                      "name": "Monthly fee, starts on delivery"
+                    }
+                  ],
+                  "description": "50% deposit online to start; balance on completion.",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "AI WhatsApp Chatbot Pro 24/7",
+                    "description": "An AI assistant that knows your business and sells and books on its own.",
+                    "provider": {
+                      "@id": "https://ositojur.github.io/portafolio/#servicio"
+                    }
+                  },
+                  "price": 890
+                },
+                {
+                  "@type": "Offer",
+                  "@id": "https://ositojur.github.io/portafolio/en/#oferta-05",
+                  "url": "https://ositojur.github.io/portafolio/en/#producto-05",
+                  "priceCurrency": "USD",
+                  "priceSpecification": {
+                    "@type": "UnitPriceSpecification",
+                    "price": 1200,
+                    "priceCurrency": "USD",
+                    "name": "One-time payment"
+                  },
+                  "description": "50% deposit online to start; balance on completion.",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Professional Website + Bookings",
+                    "description": "Your full site, in two languages, taking requests with a tracking code.",
+                    "provider": {
+                      "@id": "https://ositojur.github.io/portafolio/#servicio"
+                    }
+                  },
+                  "price": 1200
+                },
+                {
+                  "@type": "Offer",
+                  "@id": "https://ositojur.github.io/portafolio/en/#oferta-06",
+                  "url": "https://ositojur.github.io/portafolio/en/#producto-06",
+                  "priceCurrency": "USD",
+                  "priceSpecification": {
+                    "@type": "UnitPriceSpecification",
+                    "price": 1600,
+                    "priceCurrency": "USD",
+                    "name": "One-time payment"
+                  },
+                  "description": "50% deposit online to start; balance on completion.",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Online Store",
+                    "description": "Sell online and manage stock and orders from one dashboard.",
+                    "provider": {
+                      "@id": "https://ositojur.github.io/portafolio/#servicio"
+                    }
+                  },
+                  "price": 1600
+                }
+              ]
+            },
+            {
+              "@type": "OfferCatalog",
+              "name": "Premium",
+              "description": "Custom-built systems.",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "@id": "https://ositojur.github.io/portafolio/en/#oferta-07",
+                  "url": "https://ositojur.github.io/portafolio/en/#producto-07",
+                  "priceCurrency": "USD",
+                  "priceSpecification": [
+                    {
+                      "@type": "PriceSpecification",
+                      "minPrice": 3500,
+                      "priceCurrency": "USD",
+                      "name": "Starting price"
+                    },
+                    {
+                      "@type": "UnitPriceSpecification",
+                      "price": 149,
+                      "priceCurrency": "USD",
+                      "referenceQuantity": {
+                        "@type": "QuantitativeValue",
+                        "value": 1,
+                        "unitCode": "MON"
+                      },
+                      "name": "Monthly fee, starts on delivery"
+                    }
+                  ],
+                  "description": "30% deposit online to start; balance on completion.",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "WhatsApp + Web + CRM Ecosystem",
+                    "description": "Bot, website and dashboard, connected in one system.",
+                    "provider": {
+                      "@id": "https://ositojur.github.io/portafolio/#servicio"
+                    }
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "@id": "https://ositojur.github.io/portafolio/en/#oferta-08",
+                  "url": "https://ositojur.github.io/portafolio/en/#producto-08",
+                  "priceCurrency": "USD",
+                  "priceSpecification": {
+                    "@type": "PriceSpecification",
+                    "minPrice": 4500,
+                    "priceCurrency": "USD",
+                    "name": "Starting price"
+                  },
+                  "description": "30% deposit online to start; balance on completion.",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Custom Backend System",
+                    "description": "The API, database and dashboard your operation needs.",
+                    "provider": {
+                      "@id": "https://ositojur.github.io/portafolio/#servicio"
+                    }
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "@id": "https://ositojur.github.io/portafolio/en/#oferta-09",
+                  "url": "https://ositojur.github.io/portafolio/en/#producto-09",
+                  "priceCurrency": "USD",
+                  "priceSpecification": {
+                    "@type": "PriceSpecification",
+                    "minPrice": 2800,
+                    "priceCurrency": "USD",
+                    "name": "Starting price"
+                  },
+                  "description": "30% deposit online to start; balance on completion.",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Enterprise Pentest + Hardening",
+                    "description": "We find the gaps before an attacker does, and close them.",
+                    "provider": {
+                      "@id": "https://ositojur.github.io/portafolio/#servicio"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  }
+  </script>
+  <link rel="alternate" hreflang="es" href="https://ositojur.github.io/portafolio/" />
+  <link rel="alternate" hreflang="en" href="https://ositojur.github.io/portafolio/en/" />
+  <link rel="alternate" hreflang="x-default" href="https://ositojur.github.io/portafolio/" />
   <link rel="icon" href="../media/favicon.svg" type="image/svg+xml" />
-  <link rel="alternate" hreflang="es" href="../index.html" />
-  <link rel="alternate" hreflang="en" href="index.html" />
-  <link rel="alternate" hreflang="x-default" href="../index.html" />
-  <link rel="stylesheet" href="../assets/fonts/fonts.css" />
-  <link rel="stylesheet" href="../assets/app.css" />
-  <link rel="stylesheet" href="../assets/visual-polish.css" />
+  <script>(function (d) { d.classList.add("js"); try { var t = localStorage.getItem("ld-theme"); if (t === "dark" || t === "light") d.setAttribute("data-theme", t); } catch (e) {} })(document.documentElement);</script>
+  <link rel="stylesheet" href="../assets/2027/tokens.css" />
+  <link rel="stylesheet" href="../assets/2027/scenes.css" />
+  <link rel="stylesheet" href="../assets/2027/ui.css" />
+  <link rel="stylesheet" href="../assets/2027/chatbot-demo.css" />
+  <link rel="stylesheet" href="../assets/2027/tienda.css" />
 </head>
-<body>
+<body data-page="home">
   <a class="skip" href="#contenido">Skip to content</a>
-  <div class="site-aurora" aria-hidden="true">
-    <span class="space-veil"></span>
-    <span class="space-horizon"></span>
-    <span class="space-beam"></span>
-    <span class="space-orb space-orb-a"></span>
-    <span class="space-orb space-orb-b"></span>
-    <span class="space-orb space-orb-c"></span>
-    <span class="space-dust"></span>
-    <span class="space-dust space-dust-b"></span>
-    <span class="space-ring"></span>
-    <span class="space-arc"></span>
-    <span class="space-speck space-speck-a"></span>
-    <span class="space-speck space-speck-b"></span>
-    <span class="space-speck space-speck-c"></span>
-    <span class="space-speck space-speck-d"></span>
-  </div>
+  <div class="scroll-progress" data-scroll-progress aria-hidden="true"></div>
 
-  <header class="mast">
-    <div class="wrap mast-inner">
-      <a class="brand" href="#contenido" aria-label="Lautaro Demian Núñez, home">
-        <img class="personal-logo" src="../media/favicon.svg" alt="LN" width="48" height="48" />
-      </a>
-      <nav class="nav-desk" aria-label="Sections">
-        <a href="#proyectos">Projects</a>
-        <a href="servicio.html">Service</a>
-        <a href="propuestas/index.html">Proposals</a>
-        <a href="#sobre-mi">About</a>
-        <a href="#proceso">Process</a>
+  <header class="top" data-nav>
+    <div class="top-in">
+      <a class="name" href="#inicio" aria-label="LautaroDev, Lautaro Núñez. Back to top">LautaroDev</a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" data-label-open="Menu" data-label-close="Close">Menu</button>
+      <nav class="menu" id="menu" aria-label="Sections">
+        <a href="#chatbots">Chatbots</a>
+        <a href="#web">Web</a>
+        <a href="#sistemas">Systems</a>
+        <a href="#trabajos">Work</a>
+        <a href="#tienda">Pricing</a>
+        <a href="#seguridad">Security</a>
         <a href="#contacto">Contact</a>
+        <span class="lang"><a href="../index.html" hreflang="es" lang="es">ES</a><a href="index.html" hreflang="en" lang="en" aria-current="true">EN</a></span>
       </nav>
-      <nav class="lang-switch" aria-label="Language">
-        <a href="../index.html" hreflang="es" lang="es">ES</a>
-        <a href="index.html" hreflang="en" lang="en" aria-current="true">EN</a>
-      </nav>
-      <details class="nav-mob">
-        <summary>Menu</summary>
-        <nav class="nav-mob-list" aria-label="Sections on a phone">
-          <a href="#proyectos">Projects</a>
-          <a href="servicio.html">Service</a>
-          <a href="propuestas/index.html">Proposals</a>
-          <a href="#sobre-mi">About</a>
-          <a href="#proceso">Process</a>
-          <a href="#contacto">Contact</a>
-        </nav>
-      </details>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="true" aria-label="Dark theme">
+        <span class="theme-toggle-icon" aria-hidden="true"></span>
+      </button>
     </div>
   </header>
 
-  <main id="contenido">
-    <section class="hero wrap portfolio-intro" aria-labelledby="hero-title">
-      <div>
-        <p class="kicker">Lautaro Demian Núñez · Córdoba</p>
-        <h1 id="hero-title">Websites and systems for businesses</h1>
-        <p class="lead">I help companies, shops, and small businesses solve problems and simplify their day-to-day online. I build websites and custom systems that connect processes, cut repetitive work, and make things easier for their customers.</p>
-        <div class="hero-actions">
-          <a class="btn" href="#proyectos">View projects</a>
-          <a class="btn-ghost" href="servicio.html">See the service</a>
-          <a class="btn-ghost" href="#contacto">Let’s talk about your project</a>
-        </div>
+  <main id="contenido" tabindex="-1">
+
+    <!-- 1 · HERO 3D (signature moment: hero) -->
+    <section class="scene scene--hero" id="inicio" data-scene="hero" data-moment="hero" aria-labelledby="hero-title">
+      <div class="hero-visual" data-3d="hero" aria-hidden="true">
+        <canvas class="hero-canvas" data-3d-canvas></canvas>
+        <picture>
+          <source srcset="../media/hero-3d-fallback-light.webp" media="(prefers-color-scheme: light)" />
+          <img class="hero-fallback" data-3d-fallback src="../media/hero-3d-fallback.webp" alt="" width="1600" height="1200" decoding="async" />
+        </picture>
       </div>
-      <figure class="hero-work">
-        <img src="../media/opt/happy-ride-inicio.jpg" alt="The Happy Ride Tulum website: a visitor chooses a vehicle and sends a request." width="1440" height="900" fetchpriority="high" />
-        <figcaption><span>The Happy Ride</span><span>Tulum</span></figcaption>
-      </figure>
+      <ul class="hero-signal" aria-hidden="true">
+        <li data-anim="parallax-depth" data-depth="0.5"><time>03:12</time> Are you open tomorrow?</li>
+        <li data-anim="parallax-depth" data-depth="0.8"><time>03:12</time> Table for 4: booked.</li>
+        <li data-anim="parallax-depth" data-depth="0.3"><time>03:14</time> Connecting you with a person.</li>
+      </ul>
+      <div class="scene-inner hero-copy">
+        <p class="eyebrow" data-anim="scramble">LautaroDev · Córdoba → remote</p>
+        <h1 id="hero-title" data-anim="split-lines">Your WhatsApp answers <span class="accent">around the clock.</span></h1>
+        <p class="lead" data-anim="mask-reveal" data-anim-delay="0.5">Chatbots that answer, sell and take bookings on their own, with the system behind them.</p>
+        <p class="actions" data-anim="stagger-list" data-anim-delay="0.8">
+          <a class="btn btn-solid" href="#producto-04" data-shop-goto="04" data-anim="magnetic">I want my chatbot</a>
+          <a class="btn" href="#tienda" data-anim="magnetic">See pricing</a>
+        </p>
+        <p class="hero-sign" data-anim="mask-reveal" data-anim-delay="1">Lautaro Núñez · full-stack developer with a degree in cybersecurity · 6+ years building websites and systems</p>
+      </div>
+      <p class="hero-clock" aria-hidden="true"><span data-anim="count" data-count-from="0" data-count-to="24">24</span>/<span data-anim="count" data-count-from="0" data-count-to="7">7</span></p>
+      <a class="scroll-cue" href="#chatbots" data-anim="cue">Watch it answer</a>
     </section>
 
-    <section class="section wrap" id="proyectos" aria-labelledby="proyectos-title">
-      <div class="section-head">
-        <div>
-          <h2 id="proyectos-title">Projects</h2>
-          <p class="section-lead">Every business has its own constraints. These are solutions I built for different kinds of work.</p>
-        </div>
+    <!-- 2 · REAL STACK STRIP -->
+    <section class="scene scene--stack" id="stack" data-scene="stack" aria-labelledby="stack-title">
+      <div class="scene-inner">
+        <h2 id="stack-title" class="stack-title" data-anim="mask-reveal">What I build it with</h2>
       </div>
-
-      <search>
-        <div class="filters" data-filter-group role="group" aria-label="Filter projects">
-          <button type="button" class="btn-ghost" data-filter="all" aria-pressed="true">All</button>
-          <button type="button" class="btn-ghost" data-filter="tiendas" aria-pressed="false">Shops</button>
-          <button type="button" class="btn-ghost" data-filter="sitios" aria-pressed="false">Sites and catalogs</button>
-          <button type="button" class="btn-ghost" data-filter="sistemas" aria-pressed="false">Systems and dashboards</button>
-          <button type="button" class="btn-ghost" data-filter="propuestas" aria-pressed="false">Proposals</button>
-        </div>
-      </search>
-
-      <div class="grid project-grid">
-        <article class="card" id="happy-ride" data-case="happy-ride" data-cats="sitios sistemas">
-          <figure class="card-media">
-            <img src="../media/opt/happy-ride-inicio.jpg" alt="The Happy Ride Tulum website." width="1440" height="900" loading="lazy" />
-          </figure>
-          <div class="card-body">
-            <p class="cat">Bookings</p>
-            <h3>The Happy Ride Tulum</h3>
-            <p class="blurb">Choose a vehicle and send a booking request, in a few steps.</p>
-            <button type="button" class="btn" data-open="happy-ride">View project</button>
-            <details class="case-full">
-              <summary class="btn">View project</summary>
-              <p class="kicker">Bookings</p>
-              <h3>The Happy Ride Tulum</h3>
-              <div class="ficha-copy">
-                <p>A website in Spanish and English for browsing vehicles, choosing dates, and sending a booking request. The guest receives a tracking code, and the shop confirms by WhatsApp.</p>
-                <p class="case-media-links"><a href="../videos/01-happy-ride-recorrido.mp4" target="_blank" rel="noopener">Watch the full walkthrough</a> · <a href="../videos/03-happy-ride-admin.mp4" target="_blank" rel="noopener">Watch the admin</a> · <a href="../media/happy-ride-presentacion.pdf" target="_blank" rel="noopener">PDF presentation</a></p>
-              </div>
-              <ul class="chip-row"><li>Vehicle catalog</li><li>Booking requests</li><li>Two languages</li></ul>
-              <img data-shot data-caption="Home" src="../media/opt/happy-ride-inicio.jpg" alt="Cover page with a date search." width="1440" height="900" loading="lazy" />
-              <img data-shot data-caption="Fleet" src="../media/opt/happy-ride-flota.jpg" alt="Vehicle catalog." width="960" height="600" loading="lazy" />
-              <img data-shot data-caption="Booking request" src="../media/opt/happy-ride-reserva.jpg" alt="Date selection for the request." width="960" height="600" loading="lazy" />
-              <img data-shot data-caption="Tracking" src="../media/opt/happy-ride-ok.jpg" alt="Request received, with a tracking code." width="960" height="600" loading="lazy" />
-              <img data-shot data-caption="Mobile" src="../media/opt/happy-ride-movil.jpg" alt="Cover page on a phone." width="780" height="1688" loading="lazy" />
-              <span hidden data-case-video="../videos/02-happy-ride-resumen.mp4" data-type="video/mp4" data-poster="../media/opt/happy-ride-inicio.jpg"></span>
-            </details>
-          </div>
-        </article>
-
-        <article class="card" id="acacio" data-case="acacio" data-cats="tiendas">
-          <figure class="card-media">
-            <img src="../media/joyeria-home.jpg" alt="Joyería Acacio home page, with a ring in stock and calls to inquire." width="1440" height="860" loading="lazy" />
-          </figure>
-          <div class="card-body">
-            <p class="cat">Online shop</p>
-            <h3>Joyería Acacio</h3>
-            <p class="blurb">A digital storefront for discovering jewelry and asking about each piece.</p>
-            <button type="button" class="btn" data-open="acacio">View project</button>
-            <details class="case-full">
-              <summary class="btn">View project</summary>
-              <p class="kicker">Online shop</p>
-              <h3>Joyería Acacio</h3>
-              <p><a data-ext href="https://joyeriaacacio.com" rel="noopener noreferrer">joyeriaacacio.com</a></p>
-              <div class="ficha-copy">
-                <p>A shop that presents jewelry with images and details, so asking about a piece is straightforward. The business can update the catalog and manage products from one place.</p>
-              </div>
-              <ul class="chip-row"><li>Catalog</li><li>Inquiry per piece</li><li>Product management</li></ul>
-              <img data-shot data-caption="Home" src="../media/joyeria-home.jpg" alt="Joyería Acacio cover page." width="1440" height="860" loading="lazy" />
-              <img data-shot data-caption="Piece photo" src="../media/joyeria-pieza-2.webp" alt="Gold hoops in a box. A product photo, not an interface screenshot." width="1200" height="1600" loading="lazy" />
-            </details>
-          </div>
-        </article>
-
-        <article class="card" data-case="aura" data-cats="tiendas">
-          <figure class="card-media">
-            <img src="../media/opt/aura-tienda-detalle.webp" alt="Aura LV Store catalog with t-shirts and stock status." width="1440" height="860" loading="lazy" />
-          </figure>
-          <div class="card-body">
-            <p class="cat">Online shop</p>
-            <h3>Aura LV Store</h3>
-            <p class="blurb">Clothing organized so people can browse, choose, and build an order.</p>
-            <button type="button" class="btn" data-open="aura">View project</button>
-            <details class="case-full">
-              <summary class="btn">View project</summary>
-              <p class="kicker">Online shop</p>
-              <h3>Aura LV Store</h3>
-              <div class="ficha-copy">
-                <p>A clothing shop with a catalog and a cart. Customers can browse the pieces, and the business has a place to add and update products.</p>
-              </div>
-              <ul class="chip-row"><li>Clothing catalog</li><li>Cart</li><li>Product management</li></ul>
-              <img data-shot data-caption="Catalog" src="../media/opt/aura-tienda-detalle.webp" alt="Grid of Aura LV Store pieces." width="1440" height="860" loading="lazy" />
-              <img data-shot data-caption="Product photos" src="../media/aura-home.jpg" alt="Three catalog t-shirts on a black background. Product photos." width="1440" height="860" loading="lazy" />
-            </details>
-          </div>
-        </article>
-
-        <article class="card" data-case="dar" data-cats="sitios">
-          <figure class="card-media">
-            <img src="../media/dar-home.jpg" alt="Dar Automotores home page, with a featured car and a link to the catalog." width="1440" height="860" loading="lazy" />
-          </figure>
-          <div class="card-body">
-            <p class="cat">Vehicle catalog</p>
-            <h3>Dar Automotores</h3>
-            <p class="blurb">Find a car, read the details, and contact the dealership.</p>
-            <button type="button" class="btn" data-open="dar">View project</button>
-            <details class="case-full">
-              <summary class="btn">View project</summary>
-              <p class="kicker">Vehicle catalog</p>
-              <h3>Dar Automotores</h3>
-              <div class="ficha-copy">
-                <p>A site that gathers the available vehicles and lets people filter them. Each car has its own page and a direct way to inquire.</p>
-              </div>
-              <ul class="chip-row"><li>Search filters</li><li>Vehicle details</li><li>Inquiries</li></ul>
-              <img data-shot data-caption="Home" src="../media/dar-home.jpg" alt="Dar Automotores cover page." width="1440" height="860" loading="lazy" />
-              <img data-shot data-caption="Catalog" src="../media/opt/dar-catalogo-detalle.webp" alt="Car listing with side filters." width="1440" height="860" loading="lazy" />
-              <span hidden data-case-video="../videos/04-dar-clip.webm" data-type="video/webm" data-poster="../media/dar-home.jpg"></span>
-            </details>
-          </div>
-        </article>
-
-        <article class="card" data-case="smartgps" data-cats="sitios">
-          <figure class="card-media">
-            <img src="../media/opt/smartgps-home-1280.webp" alt="Cover of a GPS tracker catalog." width="1440" height="900" loading="lazy" />
-          </figure>
-          <div class="card-body">
-            <p class="cat">Product catalog</p>
-            <h3>SmartGPS</h3>
-            <p class="blurb">GPS devices with clear information and an inquiry within reach.</p>
-            <button type="button" class="btn" data-open="smartgps">View project</button>
-            <details class="case-full">
-              <summary class="btn">View project</summary>
-              <p class="kicker">Product catalog</p>
-              <h3>SmartGPS</h3>
-              <div class="ficha-copy">
-                <p>A catalog for browsing GPS trackers, reading their features, and contacting the business on WhatsApp. The information is organized to help the visitor choose.</p>
-              </div>
-              <ul class="chip-row"><li>Device catalog</li><li>Product details</li><li>WhatsApp contact</li></ul>
-              <img data-shot data-caption="Home" src="../media/opt/smartgps-home-1280.webp" alt="SmartGPS catalog cover." width="1440" height="900" loading="lazy" />
-              <img data-shot data-caption="Devices" src="../media/opt/smartgps-equipos-1280.webp" alt="List of GPS devices." width="1440" height="900" loading="lazy" />
-              <img data-shot data-caption="Spec sheet" src="../media/opt/smartgps-ficha-1280.webp" alt="Detail page for a GPS tracker." width="1440" height="900" loading="lazy" />
-              <span hidden data-case-video="../videos/08-smartgps-clip.webm" data-type="video/webm" data-poster="../media/opt/smartgps-home-1280.webp"></span>
-            </details>
-          </div>
-        </article>
-
-        <article class="card" id="agrostock" data-case="agrostock" data-cats="tiendas sistemas">
-          <figure class="card-media">
-            <img src="../media/agrostock-home.jpg" alt="AgroStock catalog with products by the liter and an add button." width="1440" height="900" loading="lazy" />
-          </figure>
-          <div class="card-body">
-            <p class="cat">Order management</p>
-            <h3>AgroStock</h3>
-            <p class="blurb">Products and quantities by the liter, gathered into a single order.</p>
-            <button type="button" class="btn" data-open="agrostock">View project</button>
-            <details class="case-full">
-              <summary class="btn">View project</summary>
-              <p class="kicker">Order management</p>
-              <h3>AgroStock</h3>
-              <div class="ficha-copy">
-                <p>A tool for selecting products, entering the liters needed, and building an order. The warehouse has a management view for the requests that come in.</p>
-              </div>
-              <ul class="chip-row"><li>Catalog</li><li>Orders by the liter</li><li>Order management</li></ul>
-              <img data-shot data-caption="Catalog" src="../media/agrostock-home.jpg" alt="AgroStock catalog." width="1440" height="900" loading="lazy" />
-              <img data-shot data-caption="Cart" src="../media/agrostock-carrito.jpg" alt="Open order with liters and payment details." width="1440" height="900" loading="lazy" />
-              <span hidden data-case-video="../videos/10-agrostock-clip.webm" data-type="video/webm" data-poster="../media/agrostock-home.jpg"></span>
-            </details>
-          </div>
-        </article>
-
-        <article class="card" data-case="holistica" data-cats="sitios sistemas">
-          <figure class="card-media">
-            <img src="../media/holistica-live.jpg" alt="Holística home page, with the method title and a link to the admin." width="1440" height="860" loading="lazy" />
-          </figure>
-          <div class="card-body">
-            <p class="cat">Website</p>
-            <h3>Holística</h3>
-            <p class="blurb">A service presentation the business can keep up to date.</p>
-            <button type="button" class="btn" data-open="holistica">View project</button>
-            <details class="case-full">
-              <summary class="btn">View project</summary>
-              <p class="kicker">Website</p>
-              <h3>Holística</h3>
-              <div class="ficha-copy">
-                <p>A site that presents Holística’s offer and brings it closer to visitors. It includes an admin area for updating text and images without calling a developer for every change.</p>
-              </div>
-              <ul class="chip-row"><li>Service presentation</li><li>Text editing</li><li>Image updates</li></ul>
-              <img data-shot data-caption="Home" src="../media/holistica-live.jpg" alt="Holística page in the browser." width="1440" height="860" loading="lazy" />
-              <span hidden data-case-video="../videos/09-holistica-clip.webm" data-type="video/webm" data-poster="../media/holistica-live.jpg"></span>
-            </details>
-          </div>
-        </article>
-
-        <article class="card" data-case="alimentos" data-cats="sitios">
-          <figure class="card-media">
-            <img src="../media/alimentos-home.jpg" alt="Alimentos en Regla landing page, with a diagnostic form." width="1440" height="860" loading="lazy" />
-          </figure>
-          <div class="card-body">
-            <p class="cat">Professional site</p>
-            <h3>Alimentos en Regla</h3>
-            <p class="blurb">Clear guidance for people who need to register their food products.</p>
-            <button type="button" class="btn" data-open="alimentos">View project</button>
-            <details class="case-full">
-              <summary class="btn">View project</summary>
-              <p class="kicker">Professional site</p>
-              <h3>Alimentos en Regla</h3>
-              <p>Lic. Karina Fernández</p>
-              <div class="ficha-copy">
-                <p>A website that presents food-advisory services and answers common questions. A form guides the first inquiry so each person can explain what they need.</p>
-              </div>
-              <ul class="chip-row"><li>Services</li><li>Frequently asked questions</li><li>Guided inquiry</li></ul>
-              <img data-shot data-caption="Home" src="../media/alimentos-home.jpg" alt="Alimentos en Regla cover page." width="1440" height="860" loading="lazy" />
-              <img data-shot data-caption="Help and diagnosis" src="../media/alimentos-form.jpg" alt="FAQ blocks about RNE and RNPA registrations." width="1440" height="860" loading="lazy" />
-            </details>
-          </div>
-        </article>
-
-        <article class="card" data-case="selvora" data-cats="sitios">
-          <figure class="card-media">
-            <img src="../media/selvora-home.jpg" alt="Selvora Deco home page, with a living room and a link to the catalog." width="1440" height="860" loading="lazy" />
-          </figure>
-          <div class="card-body">
-            <p class="cat">Decor catalog</p>
-            <h3>Selvora Deco</h3>
-            <p class="blurb">Plants and decor presented to inspire a choice and make it easier.</p>
-            <button type="button" class="btn" data-open="selvora">View project</button>
-            <details class="case-full">
-              <summary class="btn">View project</summary>
-              <p class="kicker">Decor catalog</p>
-              <h3>Selvora Deco</h3>
-              <div class="ficha-copy">
-                <p>A visual catalog that organizes decor ideas by category. It brings together images, information, and contact, from inspiration through to an inquiry.</p>
-              </div>
-              <ul class="chip-row"><li>Visual catalog</li><li>Categories</li><li>Inquiries</li></ul>
-              <img data-shot data-caption="Home" src="../media/selvora-home.jpg" alt="Selvora Deco cover page." width="1440" height="860" loading="lazy" />
-              <img data-shot data-caption="Catalog" src="../media/selvora-catalogo.jpg" alt="Selvora catalog families." width="1440" height="860" loading="lazy" />
-              <span hidden data-case-video="../videos/05-selvora-clip.webm" data-type="video/webm" data-poster="../media/selvora-home.jpg"></span>
-            </details>
-          </div>
-        </article>
-
-        <article class="card" data-case="abs" data-cats="tiendas">
-          <figure class="card-media">
-            <img src="../media/abs-home.jpg" alt="AbSA perfume shop cover, with a bottle and the store title." width="1440" height="860" loading="lazy" />
-          </figure>
-          <div class="card-body">
-            <p class="cat">Online shop</p>
-            <h3>AbSA / Perfumería</h3>
-            <p class="blurb">Fragrances organized so people can discover products and build a cart.</p>
-            <button type="button" class="btn" data-open="abs">View project</button>
-            <details class="case-full">
-              <summary class="btn">View project</summary>
-              <p class="kicker">Online shop</p>
-              <h3>AbSA / Perfumería</h3>
-              <div class="ficha-copy">
-                <p>A perfume shop with categories, a detail page for each fragrance, and a cart. The path lets visitors explore the collection and gather what they want.</p>
-              </div>
-              <ul class="chip-row"><li>Categories</li><li>Fragrance details</li><li>Cart</li></ul>
-              <img data-shot data-caption="Home" src="../media/abs-home.jpg" alt="AbSA cover page." width="1440" height="860" loading="lazy" />
-              <img data-shot data-caption="Categories" src="../media/abs-productos.jpg" alt="Fragrance families at AbSA." width="1440" height="860" loading="lazy" />
-              <span hidden data-case-video="../videos/06-abs-clip.webm" data-type="video/webm" data-poster="../media/abs-home.jpg"></span>
-            </details>
-          </div>
-        </article>
-
-        <article class="card" data-case="tiger" data-cats="sitios">
-          <figure class="card-media">
-            <img src="../media/ostiger-home.jpg" alt="OS TigerLab home page, a digital evidence academy." width="1440" height="860" loading="lazy" />
-          </figure>
-          <div class="card-body">
-            <p class="cat">Education site</p>
-            <h3>OS TigerLab</h3>
-            <p class="blurb">An academy’s offer, clear from the first visit.</p>
-            <button type="button" class="btn" data-open="tiger">View project</button>
-            <details class="case-full">
-              <summary class="btn">View project</summary>
-              <p class="kicker">Education site</p>
-              <h3>OS TigerLab</h3>
-              <p><a data-ext href="https://ostigerlab.com" rel="noopener noreferrer">ostigerlab.com</a></p>
-              <div class="ficha-copy">
-                <p>A site that brings together the academy’s introduction, its method, and the training program. Visitors can understand the offer and find how to get in touch.</p>
-              </div>
-              <ul class="chip-row"><li>Institutional introduction</li><li>Training program</li><li>Contact</li></ul>
-              <img data-shot data-caption="Home" src="../media/ostiger-home.jpg" alt="OS TigerLab cover page." width="1440" height="860" loading="lazy" />
-              <img data-shot data-caption="Academy" src="../media/ostiger-cursos.jpg" alt="OS TigerLab method and practice blocks." width="1440" height="860" loading="lazy" />
-            </details>
-          </div>
-        </article>
-
-        <article class="card" data-case="capri" data-cats="sistemas">
-          <figure class="card-media">
-            <img src="../media/capri-publico.jpg" alt="Diagram of an internal report. The original screenshots are not published." width="1440" height="860" loading="lazy" />
-          </figure>
-          <div class="card-body">
-            <p class="cat">Expense organization</p>
-            <h3>Departamento Capri</h3>
-            <p class="blurb">Expenses and loans arranged so the information is easy to look up.</p>
-            <button type="button" class="btn" data-open="capri">View project</button>
-            <details class="case-full">
-              <summary class="btn">View project</summary>
-              <p class="kicker">Expense organization</p>
-              <h3>Departamento Capri</h3>
-              <div class="ficha-copy">
-                <p>A report that gathers expenses, loans, and totals, with views by person. The portfolio sample is illustrative, so private information stays private.</p>
-              </div>
-              <ul class="chip-row"><li>Expense summary</li><li>Loans</li><li>Views by person</li></ul>
-              <img data-shot data-caption="Public view" src="../media/capri-publico.jpg" alt="Diagram without personal data or amounts." width="1440" height="860" loading="lazy" />
-            </details>
-          </div>
-        </article>
-
-        <article class="card" data-case="andro" data-cats="sistemas">
-          <figure class="card-media">
-            <img src="../media/andro-home.jpg" alt="Sign-in screen for the Huevos K digital signage panel." width="1440" height="860" loading="lazy" />
-          </figure>
-          <div class="card-body">
-            <p class="cat">Digital signage</p>
-            <h3>Andro / signage</h3>
-            <p class="blurb">An admin space for the content on commercial screens.</p>
-            <button type="button" class="btn" data-open="andro">View project</button>
-            <details class="case-full">
-              <summary class="btn">View project</summary>
-              <p class="kicker">Digital signage</p>
-              <h3>Andro / signage</h3>
-              <div class="ficha-copy">
-                <p>A project for managing content on a business’s screens. The image shows the entrance to the admin area.</p>
-              </div>
-              <ul class="chip-row"><li>Commercial screens</li><li>Administration</li><li>Private access</li></ul>
-              <img data-shot data-caption="Admin sign-in" src="../media/andro-home.jpg" alt="Sign-in form for the signage panel." width="1440" height="860" loading="lazy" />
-            </details>
-          </div>
-        </article>
-
-        <article class="card" id="tiro" data-case="tiro" data-cats="propuestas">
-          <figure class="card-media">
-            <img src="../media/tiro-home.jpg" alt="Navigable commercial proposal for Tiro Federal Córdoba." width="1440" height="860" loading="lazy" />
-          </figure>
-          <div class="card-body">
-            <p class="cat">Digital proposal</p>
-            <h3>Tiro Federal Córdoba</h3>
-            <p class="blurb">A staged plan for building the institution’s digital presence.</p>
-            <button type="button" class="btn" data-open="tiro">View project</button>
-            <details class="case-full">
-              <summary class="btn">View project</summary>
-              <p class="kicker">Digital proposal</p>
-              <h3>Tiro Federal Córdoba</h3>
-              <div class="ficha-copy">
-                <p>A navigable presentation that organizes the proposal for Tiro Federal Córdoba. It explains the scope of each stage and lets people walk through the ideas clearly.</p>
-              </div>
-              <ul class="chip-row"><li>Commercial proposal</li><li>Stages</li><li>Interactive presentation</li></ul>
-              <img data-shot data-caption="Cover" src="../media/tiro-home.jpg" alt="Cover of the Tiro Federal proposal." width="1440" height="860" loading="lazy" />
-              <img data-shot data-caption="Stages" src="../media/tiro-etapas.jpg" alt="Three phases of the commercial proposal." width="1440" height="860" loading="lazy" />
-            </details>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section wrap split" id="sobre-mi" aria-labelledby="sobre-title">
-      <div>
-        <h2 id="sobre-title">About</h2>
-        <p class="prose">I’m Lautaro Demian Núñez, a developer with a cybersecurity degree, based in Córdoba, Argentina. For more than six years I have built digital tools for companies, shops, and small businesses.</p>
-        <p class="prose">I start by finding where the friction is: a process that takes too long, tools that do not talk to each other, or a website that makes the experience harder. From there I design and build a solution that fits.</p>
-      </div>
-      <div>
-        <h3>How I can help</h3>
-        <ul class="tech">
-          <li><b>Websites</b><span>Present your business and make it easy for clients to get in touch.</span></li>
-          <li><b>Shops and catalogs</b><span>Show your products and help people find what they want.</span></li>
-          <li><b>Custom systems</b><span>Keep orders, bookings, and information in one place.</span></li>
-          <li><b>Improvements</b><span>Simplify the repetitive steps that waste time today.</span></li>
+      <div class="marquee" data-marquee data-anim="marquee">
+        <ul class="marquee-track" data-marquee-track>
+          <li class="stack-group" data-layer="frente"><span class="stack-layer">What your customers see</span>
+            <ul><li>HTML</li><li>CSS</li><li>JavaScript</li><li>TypeScript</li><li>React</li><li>Next.js</li><li>Tailwind</li></ul></li>
+          <li class="stack-group" data-layer="logica"><span class="stack-layer">The logic</span>
+            <ul><li>Node.js</li><li>Express</li><li>PHP</li><li>REST APIs</li><li>Socket.io</li></ul></li>
+          <li class="stack-group" data-layer="datos"><span class="stack-layer">The data</span>
+            <ul><li>PostgreSQL</li><li>MySQL</li><li>MariaDB</li><li>Prisma</li></ul></li>
+          <li class="stack-group" data-layer="infra"><span class="stack-layer">Where it lives</span>
+            <ul><li>Linux</li><li>Git and GitHub</li><li>Hostinger</li><li>cPanel</li><li>DNS</li><li>SSL certificates</li></ul></li>
+          <li class="stack-group" data-layer="seguridad"><span class="stack-layer">Security</span>
+            <ul><li>Kali Linux</li><li>Burp Suite</li><li>Nmap</li><li>Wireshark</li><li>Metasploit</li><li>OWASP ZAP</li></ul></li>
         </ul>
       </div>
     </section>
 
-    <section class="section wrap" id="proceso" aria-labelledby="proceso-title">
-      <h2 id="proceso-title">Process</h2>
-      <p class="section-lead">From a real need to something your team can use.</p>
-      <ol class="steps">
-        <li>
-          <b>Understand the need</b>
-          Learn the business, its processes, and the problem to solve.
-        </li>
-        <li>
-          <b>Design the solution</b>
-          Organize the information and define a simple experience.
-        </li>
-        <li>
-          <b>Build and test</b>
-          Develop it and check that it works comfortably on a phone and a computer.
-        </li>
-        <li>
-          <b>Hand off and document</b>
-          Put it into use and explain how to run it.
-        </li>
-      </ol>
+    <!-- 3 · 24/7 CHATBOTS (main service · signature moment: bot demo) -->
+    <section class="scene scene--chatbots" id="chatbots" data-scene="chatbots" data-moment="bot" aria-labelledby="chatbots-title">
+      <div class="scene-bg" data-anim="parallax-depth" data-depth="-0.3" aria-hidden="true"></div>
+      <div class="scene-render" data-render="chatbots" aria-hidden="true"><picture><source media="(prefers-color-scheme: light)" srcset="../media/renders/chatbots-light.webp" /><img src="../media/renders/chatbots.webp" alt="" width="1200" height="900" loading="lazy" decoding="async" /></picture></div>
+      <div class="scene-inner">
+        <header class="scene-head">
+          <h2 id="chatbots-title" data-anim="split-lines">3 a.m. or 3 p.m., it answers the same.</h2>
+          <p class="lead" data-anim="mask-reveal">A WhatsApp chatbot trained on your business. It answers questions, takes orders and bookings, spots who’s ready to buy, and hands the chat to you when it needs a human.</p>
+        </header>
+        <p class="giant-clock" aria-hidden="true" data-anim="scramble">03:12</p>
+      </div>
+
+      <div class="scene-pin" data-anim="pin" data-pin-length="160%">
+        <figure class="bot-demo" data-bot-demo aria-labelledby="bot-demo-cap">
+          <figcaption class="bot-demo-cap" id="bot-demo-cap"><span class="bot-badge" data-bot-badge>Demo</span> This is how a bot answers. Businesses and data are made up: this demo doesn't connect to any API.</figcaption>
+
+          <div class="bot-scenarios" data-bot-scenarios role="group" aria-label="Pick an example" hidden>
+            <button type="button" data-bot-scenario="restaurante" aria-pressed="true">Restaurant</button>
+            <button type="button" data-bot-scenario="alquiler" aria-pressed="false">Rentals</button>
+            <button type="button" data-bot-scenario="tienda" aria-pressed="false">Store</button>
+          </div>
+
+          <div class="phone" data-bot-phone>
+            <div class="phone-bar" data-bot-header>
+              <span class="phone-name" data-bot-name>Restaurant · demo</span>
+              <span class="phone-status" data-bot-status data-label-typing="typing…">online</span>
+              <span class="phone-clock" data-bot-clock aria-label="Answers 24 hours a day, 7 days a week">24/7</span>
+            </div>
+
+            <ol class="thread" data-bot-thread="restaurante" data-bot-title="Restaurant · demo" aria-label="Sample conversation with a restaurant">
+              <li data-msg="in" data-time="03:12" data-status="read"><span class="visually-hidden">Customer:</span> <p>Hi, are you open for lunch tomorrow? There are 4 of us.</p> <time>03:12</time></li>
+              <li data-msg="out" data-time="03:12"><span class="visually-hidden">Bot:</span> <p>Hi! Yes, tomorrow we're open 12 to 4 p.m. The lunch menu is $14,000 per person (sample price). Want me to book a table for 4? Just tell me the time.</p> <time>03:12</time></li>
+              <li data-msg="in" data-time="03:13" data-status="read"><span class="visually-hidden">Customer:</span> <p>1:30 p.m.</p> <time>03:13</time></li>
+              <li data-msg="out" data-time="03:13"><span class="visually-hidden">Bot:</span> <p>Done: table for 4, tomorrow at 1:30 p.m. What name should I put it under?</p> <time>03:13</time></li>
+              <li data-msg="in" data-time="03:13" data-status="read"><span class="visually-hidden">Customer:</span> <p>Martina.</p> <time>03:13</time></li>
+              <li data-msg="out" data-time="03:13"><span class="visually-hidden">Bot:</span> <p>You're booked, Martina. If you need to change anything, just message me here.</p> <time>03:13</time></li>
+              <li data-msg="in" data-time="03:14" data-status="read"><span class="visually-hidden">Customer:</span> <p>Can I order a birthday cake?</p> <time>03:14</time></li>
+              <li data-msg="out" data-time="03:14"><span class="visually-hidden">Bot:</span> <p>The team handles that. I'm passing you to a person, and they'll reply as soon as they open.</p> <time>03:14</time></li>
+              <li data-msg="system" data-handoff>Handed off to a person. The booking is saved in the dashboard.</li>
+            </ol>
+
+            <ol class="thread" data-bot-thread="alquiler" data-bot-title="Vehicle rentals · demo" aria-label="Sample conversation with a vehicle rental" hidden>
+              <li data-msg="in" data-time="03:12" data-status="read"><span class="visually-hidden">Customer:</span> <p>Hi, do you have scooters for Saturday and Sunday?</p> <time>03:12</time></li>
+              <li data-msg="out" data-time="03:12"><span class="visually-hidden">Bot:</span> <p>Hi! For those dates we have scooters and e-bikes. How many people, and where are you staying?</p> <time>03:12</time></li>
+              <li data-msg="in" data-time="03:13" data-status="read"><span class="visually-hidden">Customer:</span> <p>Two people, downtown.</p> <time>03:13</time></li>
+              <li data-msg="out" data-time="03:13"><span class="visually-hidden">Bot:</span> <p>Great. I've logged your request: 2 scooters, Saturday and Sunday, delivered downtown. Your code is DEMO-4821.</p> <time>03:13</time></li>
+              <li data-msg="in" data-time="03:14" data-status="read"><span class="visually-hidden">Customer:</span> <p>How much is it?</p> <time>03:14</time></li>
+              <li data-msg="out" data-time="03:14"><span class="visually-hidden">Bot:</span> <p>Someone from the team will confirm the rate along with availability. I'm connecting you with them.</p> <time>03:14</time></li>
+              <li data-msg="system" data-handoff>Handed off to a person. Request DEMO-4821 is in the dashboard.</li>
+            </ol>
+
+            <ol class="thread" data-bot-thread="tienda" data-bot-title="Clothing store · demo" aria-label="Sample conversation with a clothing store" hidden>
+              <li data-msg="in" data-time="03:12" data-status="read"><span class="visually-hidden">Customer:</span> <p>Do you have the black jacket in size M?</p> <time>03:12</time></li>
+              <li data-msg="out" data-time="03:12"><span class="visually-hidden">Bot:</span> <p>Yes, the black jacket in M is in stock. Want me to set up the order?</p> <time>03:12</time></li>
+              <li data-msg="in" data-time="03:13" data-status="read"><span class="visually-hidden">Customer:</span> <p>Sure.</p> <time>03:13</time></li>
+              <li data-msg="out" data-time="03:13"><span class="visually-hidden">Bot:</span> <p>Done: black jacket, size M. Can you send me your postal code so I can work out shipping?</p> <time>03:13</time></li>
+              <li data-msg="in" data-time="03:13" data-status="read"><span class="visually-hidden">Customer:</span> <p>5000.</p> <time>03:13</time></li>
+              <li data-msg="out" data-time="03:14"><span class="visually-hidden">Bot:</span> <p>Thanks. I'm passing you to a person to sort out payment and shipping.</p> <time>03:14</time></li>
+              <li data-msg="system" data-handoff>Handed off to a person. The order is saved in the dashboard.</li>
+            </ol>
+          </div>
+
+          <div class="bot-controls" data-bot-controls hidden>
+            <button type="button" data-bot-control="pause" data-label-pause="Pause" data-label-play="Resume">Pause</button>
+            <button type="button" data-bot-control="replay">Replay</button>
+          </div>
+          <p class="visually-hidden" data-bot-live aria-live="polite"></p>
+
+          <ol class="bot-flow" data-bot-flow aria-label="What happens to each message">
+            <li data-flow-step="mensaje"><strong>The message arrives.</strong> Any time, on your business WhatsApp.</li>
+            <li data-flow-step="ia"><strong>The AI understands it.</strong> It answers with the information we loaded: prices, hours, catalog and rules.</li>
+            <li data-flow-step="accion"><strong>It acts or hands off.</strong> It takes the booking or the order, or passes the chat to you.</li>
+            <li data-flow-step="panel"><strong>It lands in the dashboard.</strong> You see every conversation and what the bot did.</li>
+          </ol>
+        </figure>
+
+        <dl class="feature-list" data-anim="stagger-list">
+          <div><dt>Answers</dt><dd>Prices, hours, catalog and FAQs, at any hour.</dd></div>
+          <div><dt>Sells and books</dt><dd>Takes orders and bookings while you're away from your phone.</dd></div>
+          <div><dt>Qualifies</dt><dd>Asks the right questions to find out who's ready to buy.</dd></div>
+          <div><dt>Hands off</dt><dd>When a question needs a human, it hands the chat to you.</dd></div>
+          <div><dt>Organizes</dt><dd>A dashboard with every conversation, connected to your spreadsheets, CRM, appointments or stock.</dd></div>
+        </dl>
+      </div>
+
+      <div class="scene-inner">
+        <aside class="own-bot" aria-labelledby="own-bot-title" data-anim="mask-reveal">
+          <h3 id="own-bot-title">I use it myself</h3>
+          <p>I run my own AI WhatsApp bot with a conversation dashboard.</p>
+          <p class="fine-print">For your business I only use official tools: Meta's WhatsApp Business Platform (Cloud API), with your verified number and approved message templates. Before we start, we check together what Meta's policies allow for your case.</p>
+        </aside>
+
+        <p class="actions">
+          <a class="btn btn-solid" href="#producto-04" data-shop-goto="04" data-anim="magnetic">I want my chatbot</a>
+          <a class="btn" href="#tienda">See plans and pricing</a>
+        </p>
+      </div>
     </section>
 
-    <section class="section wrap" id="contacto" aria-labelledby="contacto-title">
-      <div class="contact">
-        <h2 id="contacto-title">Your next project starts with a conversation.</h2>
-        <p class="prose">A website that represents your business better. A task that stops eating your time. Tell me what you want to improve and we will find a way to do it.</p>
-        <a class="mail" href="mailto:lautarodemiannunez32@gmail.com">lautarodemiannunez32@gmail.com</a>
-        <div class="contact-actions">
-          <button type="button" class="btn" data-copy-email>Copy email</button>
-          <a class="btn-ghost" href="mailto:lautarodemiannunez32@gmail.com">Open email</a>
-          <a class="btn-ghost" href="servicio.html">See the service</a>
+    <!-- 4 · WEB -->
+    <section class="scene scene--web" id="web" data-scene="web" aria-labelledby="web-title">
+      <div class="scene-render" data-render="web" aria-hidden="true"><picture><source media="(prefers-color-scheme: light)" srcset="../media/renders/web-light.webp" /><img src="../media/renders/web.webp" alt="" width="1200" height="900" loading="lazy" decoding="async" /></picture></div>
+      <div class="scene-inner">
+        <header class="scene-head">
+          <h2 id="web-title" data-anim="split-lines">Websites and stores that turn visits into inquiries.</h2>
+          <p class="lead" data-anim="mask-reveal">Landing pages, websites, online stores and bookings. Mobile first, fast, and with a clear path to message you or buy.</p>
+        </header>
+
+        <div class="web-stack" data-web-stack data-anim="stack-3d">
+          <figure class="web-shot" data-web-shot data-depth="0">
+            <img src="../media/opt/happy-ride-inicio.jpg" alt="The Happy Ride Tulum website home page with a date search." width="1440" height="900" loading="lazy" decoding="async" />
+            <figcaption><a href="#trabajo-happy-ride">The Happy Ride Tulum</a> · bookings in two languages</figcaption>
+          </figure>
+          <figure class="web-shot" data-web-shot data-depth="1">
+            <img src="../media/joyeria-home.jpg" alt="Joyería Acacio home page." width="1440" height="860" loading="lazy" decoding="async" />
+            <figcaption><a href="#trabajo-joyeria-acacio">Joyería Acacio</a> · store and point of sale</figcaption>
+          </figure>
+          <figure class="web-shot" data-web-shot data-depth="2">
+            <img src="../media/dar-home.jpg" alt="Dar Automotores home page." width="1440" height="860" loading="lazy" decoding="async" />
+            <figcaption><a href="#trabajo-dar-automotores">Dar Automotores</a> · inventory with filters</figcaption>
+          </figure>
+          <figure class="web-shot" data-web-shot data-depth="3">
+            <img src="../media/opt/smartgps-home-1280.webp" alt="SmartGPS home page." width="1280" height="800" loading="lazy" decoding="async" />
+            <figcaption><a href="#trabajo-smartgps">SmartGPS</a> · catalog with cart</figcaption>
+          </figure>
         </div>
-        <label class="visually-hidden" for="email-fallback">Email to copy</label>
-        <input id="email-fallback" type="text" readonly hidden value="lautarodemiannunez32@gmail.com" />
-        <p class="sr-live" id="copy-live" aria-live="polite"></p>
+
+        <ul class="kind-list" data-anim="stagger-list">
+          <li><strong>Landing pages</strong> One page that explains what you do and leads to WhatsApp or a form.</li>
+          <li><strong>Websites</strong> Your whole business, in one or two languages, easy to update.</li>
+          <li><strong>Stores</strong> Catalog, cart, online payments and a stock and orders dashboard.</li>
+          <li><strong>Bookings</strong> Requests with a tracking code that you confirm from a dashboard.</li>
+        </ul>
+
+        <p class="actions">
+          <a class="btn" href="#producto-05" data-shop-goto="05" data-anim="magnetic">I want my website</a>
+          <a class="btn btn-quiet" href="#trabajos">See the work</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- 5 · BACKEND SYSTEMS (diagram: agent 04) -->
+    <section class="scene scene--sistemas" id="sistemas" data-scene="sistemas" aria-labelledby="sistemas-title">
+      <div class="scene-bg" data-anim="parallax-depth" data-depth="-0.2" aria-hidden="true"></div>
+      <div class="scene-render" data-render="sistemas" aria-hidden="true"><picture><source media="(prefers-color-scheme: light)" srcset="../media/renders/sistemas-light.webp" /><img src="../media/renders/sistemas.webp" alt="" width="1200" height="900" loading="lazy" decoding="async" /></picture></div>
+      <div class="scene-inner">
+        <header class="scene-head">
+          <h2 id="sistemas-title" data-anim="split-lines">And the part you don't see: the system that keeps it all in order.</h2>
+          <p class="lead" data-anim="mask-reveal">APIs, dashboards, stock, databases and real time. What makes an order arrive, get saved, and reach someone who can handle it.</p>
+        </header>
+
+        <figure class="diagram" data-diagram="sistemas" data-anim="draw pin" data-pin-length="120%">
+          <svg class="diagram-svg" data-diagram-svg viewBox="0 0 970 420" role="img" aria-labelledby="diagram-t diagram-d">
+            <title id="diagram-t">How an order travels through a system</title>
+            <desc id="diagram-d">The customer sends an order to a Node or PHP API. The API uses Prisma to save it in PostgreSQL or MySQL, and the dashboard shows the data. Two branches leave the API: the WhatsApp bot and webhooks to other services.</desc>
+            <g class="diagram-links">
+              <path id="link-cliente-api" data-link="cliente-api" d="M170 210 H215" />
+              <path id="link-api-prisma" data-link="api-prisma" d="M365 210 H410" />
+              <path id="link-prisma-db" data-link="prisma-db" d="M560 210 H605" />
+              <path id="link-db-panel" data-link="db-panel" d="M755 210 H800" />
+              <path id="link-api-bot" data-link="api-bot" d="M290 180 V90" />
+              <path id="link-api-webhooks" data-link="api-webhooks" d="M290 240 V330" />
+            </g>
+            <g class="diagram-nodes" text-anchor="middle">
+              <g data-node="cliente" data-step="1"><rect x="20" y="180" width="150" height="60" rx="8" /><text x="95" y="215">Customer</text></g>
+              <g data-node="api" data-step="2"><rect x="215" y="180" width="150" height="60" rx="8" /><text x="290" y="215">Node / PHP API</text></g>
+              <g data-node="prisma" data-step="3"><rect x="410" y="180" width="150" height="60" rx="8" /><text x="485" y="215">Prisma</text></g>
+              <g data-node="db" data-step="4"><rect x="605" y="180" width="150" height="60" rx="8" /><text x="680" y="215">PostgreSQL / MySQL</text></g>
+              <g data-node="panel" data-step="5"><rect x="800" y="180" width="150" height="60" rx="8" /><text x="875" y="215">Dashboard</text></g>
+              <g data-node="bot" data-step="3"><rect x="215" y="30" width="150" height="60" rx="8" /><text x="290" y="65">WhatsApp bot</text></g>
+              <g data-node="webhooks" data-step="3"><rect x="215" y="330" width="150" height="60" rx="8" /><text x="290" y="365">Webhooks</text></g>
+            </g>
+            <g class="diagram-packets" data-diagram-packets aria-hidden="true"></g>
+          </svg>
+          <figcaption>One order, end to end: it comes in through the website or WhatsApp, goes through the API, gets saved and shows up in the dashboard.</figcaption>
+        </figure>
+
+        <dl class="feature-list" data-anim="stagger-list">
+          <div><dt>APIs</dt><dd>Node.js, Express and PHP to connect your website, your bot and your tools.</dd></div>
+          <div><dt>Dashboards</dt><dd>Admin with roles, so each person sees what's theirs.</dd></div>
+          <div><dt>Stock and orders</dt><dd>What comes in, what goes out and what's missing, in one place.</dd></div>
+          <div><dt>Data</dt><dd>PostgreSQL, MySQL and Prisma, with backups.</dd></div>
+          <div><dt>Real time</dt><dd>Socket.io so everyone sees the same thing at the same time.</dd></div>
+        </dl>
+
+        <p class="proof">I've done it for <a href="#trabajo-agrostock">AgroStock</a> (stock and orders by the liter), <a href="#trabajo-nextscene">NextScene</a> (live voting) and <a href="#trabajo-joyeria-acacio">Joyería Acacio</a> (point of sale).</p>
+
+        <p class="actions">
+          <a class="btn" href="#producto-08" data-shop-goto="08" data-anim="magnetic">I want my system</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- 6 · WORK (all 14, Happy Ride first) -->
+    <section class="scene scene--trabajos" id="trabajos" data-scene="trabajos" aria-labelledby="trabajos-title">
+      <div class="scene-inner">
+        <header class="scene-head">
+          <h2 id="trabajos-title" data-anim="split-lines">Sites and systems I've built.</h2>
+          <p data-anim="mask-reveal">Websites, stores, systems and proposals. Open any of them to see screenshots and videos.</p>
+        </header>
+
+        <div class="work-filter" data-work-filter role="group" aria-label="Filter projects" hidden>
+          <button type="button" data-filter="all" aria-pressed="true">All</button>
+          <button type="button" data-filter="sistema" aria-pressed="false">Systems</button>
+          <button type="button" data-filter="tienda" aria-pressed="false">Stores</button>
+          <button type="button" data-filter="sitio" aria-pressed="false">Websites</button>
+          <button type="button" data-filter="propuesta" aria-pressed="false">Proposals</button>
+        </div>
+        <p class="visually-hidden" data-work-live aria-live="polite" data-label-one="{filtro}: 1 project." data-label-many="{filtro}: {n} projects."></p>
+      </div>
+
+      <div class="work-track" data-work-track data-anim="pin horizontal">
+        <ol class="work-list" data-work-list>
+          <li class="work-item work-item--main" id="trabajo-happy-ride" data-name="The Happy Ride Tulum" data-cat="Bookings, own product" data-stack="HTML, CSS, JavaScript, admin dashboard" data-thumb="../media/opt/happy-ride-inicio.jpg" data-kind="sitio sistema">
+            <article class="work-entry" aria-labelledby="w-happy-ride">
+              <figure class="work-media" data-work-media data-anim="mask-reveal"><img src="../media/opt/happy-ride-inicio.jpg" alt="The Happy Ride Tulum website home page with a date search." width="1440" height="900" loading="lazy" decoding="async" /></figure>
+              <div class="work-text">
+                <p class="work-n" aria-hidden="true">01</p>
+                <h3 id="w-happy-ride">The Happy Ride Tulum</h3>
+                <p class="work-cat">Bookings · own product</p>
+                <p class="work-what">Request a scooter, ATV or e-bike in four steps, in Spanish or English, and get a tracking code. The shop confirms each request on WhatsApp. Rates say “price on request” and there is no online payment.</p>
+                <p class="work-stack">HTML, CSS, JavaScript and a custom dashboard</p>
+                <p class="work-links"><a href="../videos/01-happy-ride-recorrido.mp4" target="_blank" rel="noopener">Video walkthrough</a> <a href="../videos/03-happy-ride-admin.mp4" target="_blank" rel="noopener">Dashboard</a> <a href="../media/happy-ride-presentacion.pdf" target="_blank" rel="noopener">PDF deck (in Spanish)</a></p>
+                <button type="button" class="btn btn-sm" data-open>See screenshots</button>
+              </div>
+              <template>
+                <p>A website in Spanish and English for browsing vehicles, choosing dates and sending a booking request. The guest gets a tracking code, and the shop confirms by WhatsApp.</p>
+                <p class="links"><a href="../videos/01-happy-ride-recorrido.mp4" target="_blank" rel="noopener">Full video walkthrough</a><a href="../videos/03-happy-ride-admin.mp4" target="_blank" rel="noopener">Admin dashboard</a><a href="../media/happy-ride-presentacion.pdf" target="_blank" rel="noopener">PDF deck (in Spanish)</a></p>
+                <video data-video src="../videos/02-happy-ride-resumen.mp4" poster="../media/opt/happy-ride-inicio.jpg"></video>
+                <img data-shot data-caption="Home" src="../media/opt/happy-ride-inicio.jpg" alt="Home page with a date search." />
+                <img data-shot data-caption="Fleet" src="../media/opt/happy-ride-flota.jpg" alt="Vehicle catalog." />
+                <img data-shot data-caption="Booking" src="../media/opt/happy-ride-reserva.jpg" alt="Choosing dates for the request." />
+                <img data-shot data-caption="Tracking" src="../media/opt/happy-ride-ok.jpg" alt="Request received, with a tracking code." />
+                <img data-shot data-caption="Mobile" src="../media/opt/happy-ride-movil.jpg" alt="Home page on a phone." />
+              </template>
+            </article>
+          </li>
+
+          <li class="work-item" id="trabajo-time2trip" data-name="Time2Trip" data-cat="Tours and transfers in the Riviera Maya" data-stack="PHP, MySQL, JavaScript, Stripe" data-thumb="../media/time2trip.webp" data-kind="sitio tienda sistema">
+            <article class="work-entry" aria-labelledby="w-time2trip">
+              <figure class="work-media" data-work-media data-anim="mask-reveal"><img src="../media/time2trip.webp" alt="Time2Trip home page with an experience search over a photo of the Tulum coast." width="1440" height="900" loading="lazy" decoding="async" /></figure>
+              <div class="work-text">
+                <p class="work-n" aria-hidden="true">02</p>
+                <h3 id="w-time2trip">Time2Trip</h3>
+                <p class="work-cat">Travel · website, bookings and dashboard</p>
+                <p class="work-what">Tours, transfers and private boats in Tulum and the Riviera Maya. A website in Spanish, English and French with quotes, a cart and Stripe payments, plus a dashboard for leads, bookings, payments and drivers.</p>
+                <p class="work-stack">PHP with no framework, MySQL and JavaScript</p>
+                <p class="work-links"><a href="https://time2trip.mx" target="_blank" rel="noopener noreferrer">time2trip.mx</a></p>
+                <button type="button" class="btn btn-sm" data-open>See screenshot</button>
+              </div>
+              <template>
+                <p>The platform for a travel experiences agency in the Riviera Maya. The public site brings together tours, transfers, private boats and concierge, with a trip-planning wizard, quotes, a cart and Stripe checkout.</p>
+                <p>Behind it there's a dashboard for the team: leads on a board, quotes, bookings, payments, a calendar, driver assignment and affiliates with commissions.</p>
+                <p class="links"><a href="https://time2trip.mx" target="_blank" rel="noopener noreferrer">time2trip.mx</a></p>
+                <img data-shot data-caption="Home" src="../media/time2trip.webp" alt="Time2Trip home page with an experience search." />
+              </template>
+            </article>
+          </li>
+
+          <li class="work-item" id="trabajo-joyeria-acacio" data-name="Joyería Acacio" data-cat="Store and point of sale" data-stack="PHP, MySQL, JavaScript" data-thumb="../media/joyeria-home.jpg" data-kind="tienda sistema">
+            <article class="work-entry" aria-labelledby="w-joyeria">
+              <figure class="work-media" data-work-media data-anim="mask-reveal"><img src="../media/joyeria-home.jpg" alt="Joyería Acacio home page." width="1440" height="860" loading="lazy" decoding="async" /></figure>
+              <div class="work-text">
+                <p class="work-n" aria-hidden="true">03</p>
+                <h3 id="w-joyeria">Joyería Acacio</h3>
+                <p class="work-cat">Store and point of sale</p>
+                <p class="work-what">A jewelry storefront with inquiries per piece and a sales dashboard for the shop.</p>
+                <p class="work-stack">PHP, MySQL and JavaScript</p>
+                <p class="work-links"><a href="https://joyeriaacacio.com" target="_blank" rel="noopener noreferrer">joyeriaacacio.com</a></p>
+                <button type="button" class="btn btn-sm" data-open>See screenshots</button>
+              </div>
+              <template>
+                <p>A store that presents each piece with photos and details, so asking about it is easy. The business loads its catalog and sells from a point-of-sale dashboard.</p>
+                <p class="links"><a href="https://joyeriaacacio.com" target="_blank" rel="noopener noreferrer">joyeriaacacio.com</a></p>
+                <img data-shot data-caption="Home" src="../media/joyeria-home.jpg" alt="Joyería Acacio home page." />
+                <img data-shot data-caption="Product photo" src="../media/joyeria-pieza-2.webp" alt="Gold rings in a box." />
+              </template>
+            </article>
+          </li>
+
+          <li class="work-item" id="trabajo-nextscene" data-name="NextScene" data-cat="Real-time platform" data-stack="Next.js, Prisma, PostgreSQL, Socket.io" data-kind="sistema">
+            <article class="work-entry" aria-labelledby="w-nextscene">
+              <figure class="work-media work-media--draw" data-work-media data-anim="draw" aria-hidden="true">
+                <svg viewBox="0 0 400 250">
+                  <rect x="16" y="16" width="368" height="218" rx="6" />
+                  <circle cx="36" cy="36" r="5" class="live" /><text x="48" y="40">Live, episode 12</text>
+                  <rect x="36" y="56" width="328" height="70" rx="3" class="faint" />
+                  <text x="36" y="150" class="q">What does the lead do?</text>
+                  <rect x="36" y="164" width="328" height="24" rx="3" /><rect x="36" y="164" width="223" height="24" rx="3" class="fill" />
+                  <text x="46" y="181">Opens the door</text><text x="330" y="181">68%</text>
+                  <rect x="36" y="196" width="328" height="24" rx="3" /><rect x="36" y="196" width="105" height="24" rx="3" class="fill" />
+                  <text x="46" y="213">Calls the police</text><text x="330" y="213">32%</text>
+                </svg>
+              </figure>
+              <div class="work-text">
+                <p class="work-n" aria-hidden="true">04</p>
+                <h3 id="w-nextscene">NextScene</h3>
+                <p class="work-cat">Real-time platform</p>
+                <p class="work-what">A live drama where the audience votes and decides the next episode.</p>
+                <p class="work-stack">Next.js, Prisma, PostgreSQL and Socket.io</p>
+                <button type="button" class="btn btn-sm" data-open>See details</button>
+              </div>
+              <template>
+                <p>A live interactive drama platform. The audience watches the stream, votes in real time, and the result shapes the next episode. It includes casting, user accounts and votes synced over WebSockets.</p>
+                <p>This project has no public screenshots yet.</p>
+              </template>
+            </article>
+          </li>
+
+          <li class="work-item" id="trabajo-agrostock" data-name="AgroStock, Grupo Stelle" data-cat="Inventory management" data-stack="Node.js, Express, JavaScript" data-thumb="../media/agrostock-home.jpg" data-kind="sistema">
+            <article class="work-entry" aria-labelledby="w-agrostock">
+              <figure class="work-media" data-work-media data-anim="mask-reveal"><img src="../media/agrostock-home.jpg" alt="AgroStock catalog with products sold by the liter." width="1440" height="900" loading="lazy" decoding="async" /></figure>
+              <div class="work-text">
+                <p class="work-n" aria-hidden="true">05</p>
+                <h3 id="w-agrostock">Grupo Stelle, AgroStock</h3>
+                <p class="work-cat">Inventory management</p>
+                <p class="work-what">Agrochemical orders by the liter and a private dashboard for stock, sales and orders.</p>
+                <p class="work-stack">Node.js, Express and JavaScript</p>
+                <button type="button" class="btn btn-sm" data-open>See screenshots</button>
+              </div>
+              <template>
+                <p>A tool for choosing products, entering the liters needed and building an order. The warehouse has a private dashboard to track stock, sales and requests.</p>
+                <video data-video src="../videos/10-agrostock-clip.webm" poster="../media/agrostock-home.jpg"></video>
+                <img data-shot data-caption="Catalog" src="../media/agrostock-home.jpg" alt="AgroStock catalog." />
+                <img data-shot data-caption="Order" src="../media/agrostock-carrito.jpg" alt="Open order with liters and payment details." />
+              </template>
+            </article>
+          </li>
+
+          <li class="work-item" id="trabajo-auralv" data-name="AuraLV Store" data-cat="Clothing store" data-stack="PHP, MySQL" data-thumb="../media/opt/aura-tienda-detalle.webp" data-kind="tienda">
+            <article class="work-entry" aria-labelledby="w-aura">
+              <figure class="work-media" data-work-media data-anim="mask-reveal"><img src="../media/opt/aura-tienda-detalle.webp" alt="Grid of AuraLV Store clothing." width="1280" height="764" loading="lazy" decoding="async" /></figure>
+              <div class="work-text">
+                <p class="work-n" aria-hidden="true">06</p>
+                <h3 id="w-aura">AuraLV Store</h3>
+                <p class="work-cat">Apparel</p>
+                <p class="work-what">A catalog by category, a cart and a dashboard with sales figures.</p>
+                <p class="work-stack">PHP and MySQL</p>
+                <button type="button" class="btn btn-sm" data-open>See screenshots</button>
+              </div>
+              <template>
+                <p>A clothing store with a catalog and a cart. The business adds products and reviews its financials from a dashboard.</p>
+                <img data-shot data-caption="Catalog" src="../media/opt/aura-tienda-detalle.webp" alt="Grid of clothing." />
+                <img data-shot data-caption="Pieces" src="../media/aura-home.jpg" alt="T-shirts from the catalog." />
+              </template>
+            </article>
+          </li>
+
+          <li class="work-item" id="trabajo-smartgps" data-name="SmartGPS" data-cat="GPS tracker store" data-stack="PHP, CSS, JavaScript" data-thumb="../media/opt/smartgps-home-1280.webp" data-kind="tienda">
+            <article class="work-entry" aria-labelledby="w-smartgps">
+              <figure class="work-media" data-work-media data-anim="mask-reveal"><img src="../media/opt/smartgps-home-1280.webp" alt="SmartGPS home page." width="1280" height="800" loading="lazy" decoding="async" /></figure>
+              <div class="work-text">
+                <p class="work-n" aria-hidden="true">07</p>
+                <h3 id="w-smartgps">SmartGPS</h3>
+                <p class="work-cat">GPS tracking</p>
+                <p class="work-what">A device catalog with cart, distributors and inquiries on WhatsApp.</p>
+                <p class="work-stack">PHP, CSS and JavaScript</p>
+                <button type="button" class="btn btn-sm" data-open>See screenshots</button>
+              </div>
+              <template>
+                <p>A catalog for exploring GPS trackers, comparing them and asking on WhatsApp. It includes a cart, distributors and support.</p>
+                <video data-video src="../videos/08-smartgps-clip.webm" poster="../media/opt/smartgps-home-1280.webp"></video>
+                <img data-shot data-caption="Home" src="../media/opt/smartgps-home-1280.webp" alt="SmartGPS home page." />
+                <img data-shot data-caption="Devices" src="../media/opt/smartgps-equipos-1280.webp" alt="List of GPS devices." />
+                <img data-shot data-caption="Product page" src="../media/opt/smartgps-ficha-1280.webp" alt="Detail page for a tracker." />
+              </template>
+            </article>
+          </li>
+
+          <li class="work-item" id="trabajo-dar-automotores" data-name="Dar Automotores" data-cat="Car dealership" data-stack="HTML, CSS, JavaScript" data-thumb="../media/dar-home.jpg" data-kind="sitio">
+            <article class="work-entry" aria-labelledby="w-dar">
+              <figure class="work-media" data-work-media data-anim="mask-reveal"><img src="../media/dar-home.jpg" alt="Dar Automotores home page." width="1440" height="860" loading="lazy" decoding="async" /></figure>
+              <div class="work-text">
+                <p class="work-n" aria-hidden="true">08</p>
+                <h3 id="w-dar">Dar Automotores</h3>
+                <p class="work-cat">Car dealership</p>
+                <p class="work-what">New and used inventory with filters, a page per car and financing.</p>
+                <p class="work-stack">HTML, CSS and JavaScript</p>
+                <button type="button" class="btn btn-sm" data-open>See screenshots</button>
+              </div>
+              <template>
+                <p>A website that gathers the available vehicles and lets people filter them. Each car has its own page and a direct way to inquire.</p>
+                <video data-video src="../videos/04-dar-clip.webm" poster="../media/dar-home.jpg"></video>
+                <img data-shot data-caption="Home" src="../media/dar-home.jpg" alt="Dar Automotores home page." />
+                <img data-shot data-caption="Catalog" src="../media/opt/dar-catalogo-detalle.webp" alt="Car listing with filters." />
+              </template>
+            </article>
+          </li>
+
+          <li class="work-item" id="trabajo-absa" data-name="AbSA Perfumes" data-cat="Perfume store" data-stack="HTML, CSS, JavaScript" data-thumb="../media/abs-home.jpg" data-kind="tienda">
+            <article class="work-entry" aria-labelledby="w-absa">
+              <figure class="work-media" data-work-media data-anim="mask-reveal"><img src="../media/abs-home.jpg" alt="AbSA Perfumes home page." width="1440" height="860" loading="lazy" decoding="async" /></figure>
+              <div class="work-text">
+                <p class="work-n" aria-hidden="true">09</p>
+                <h3 id="w-absa">AbSA Perfumes</h3>
+                <p class="work-cat">Perfumery</p>
+                <p class="work-what">Imported, local and Arabic fragrances with a cart and installments.</p>
+                <p class="work-stack">HTML, CSS and JavaScript</p>
+                <button type="button" class="btn btn-sm" data-open>See screenshots</button>
+              </div>
+              <template>
+                <p>A perfume store with categories, details for each fragrance and a cart with installments.</p>
+                <video data-video src="../videos/06-abs-clip.webm" poster="../media/abs-home.jpg"></video>
+                <img data-shot data-caption="Home" src="../media/abs-home.jpg" alt="AbSA home page." />
+                <img data-shot data-caption="Categories" src="../media/abs-productos.jpg" alt="Fragrance families." />
+              </template>
+            </article>
+          </li>
+
+          <li class="work-item" id="trabajo-alimentos-en-regla" data-name="Alimentos en Regla" data-cat="Food compliance consulting" data-stack="Next.js, Tailwind" data-thumb="../media/alimentos-home.jpg" data-kind="sitio">
+            <article class="work-entry" aria-labelledby="w-alimentos">
+              <figure class="work-media" data-work-media data-anim="mask-reveal"><img src="../media/alimentos-home.jpg" alt="Alimentos en Regla home page." width="1440" height="860" loading="lazy" decoding="async" /></figure>
+              <div class="work-text">
+                <p class="work-n" aria-hidden="true">10</p>
+                <h3 id="w-alimentos">Alimentos en Regla</h3>
+                <p class="work-cat">Consulting</p>
+                <p class="work-what">Argentina’s food registrations, RNE for food businesses and RNPA for each product, plus labeling, explained clearly, with a guided inquiry.</p>
+                <p class="work-stack">Next.js and Tailwind</p>
+                <button type="button" class="btn btn-sm" data-open>See screenshots</button>
+              </div>
+              <template>
+                <p>The website of Lic. Karina Fernández: food compliance advisory services, frequently asked questions and a form that guides the first inquiry.</p>
+                <img data-shot data-caption="Home" src="../media/alimentos-home.jpg" alt="Alimentos en Regla home page." />
+                <img data-shot data-caption="FAQ" src="../media/alimentos-form.jpg" alt="FAQ about RNE and RNPA, Argentina’s registrations for food businesses and food products." />
+              </template>
+            </article>
+          </li>
+
+          <li class="work-item" id="trabajo-os-tigerlab" data-name="OS TigerLab" data-cat="Online academy" data-stack="HTML, PHP, JavaScript" data-thumb="../media/ostiger-home.jpg" data-kind="sitio">
+            <article class="work-entry" aria-labelledby="w-ostiger">
+              <figure class="work-media" data-work-media data-anim="mask-reveal"><img src="../media/ostiger-home.jpg" alt="OS TigerLab home page." width="1440" height="860" loading="lazy" decoding="async" /></figure>
+              <div class="work-text">
+                <p class="work-n" aria-hidden="true">11</p>
+                <h3 id="w-ostiger">OS TigerLab</h3>
+                <p class="work-cat">Cybercrime training</p>
+                <p class="work-what">Modular courses, events, payments and certificate verification.</p>
+                <p class="work-stack">HTML, PHP and JavaScript</p>
+                <p class="work-links"><a href="https://ostigerlab.com" target="_blank" rel="noopener noreferrer">ostigerlab.com</a></p>
+                <button type="button" class="btn btn-sm" data-open>See screenshots</button>
+              </div>
+              <template>
+                <p>The website of a cybercrime investigation academy: overview, modular courses, events, payments and public certificate verification.</p>
+                <p class="links"><a href="https://ostigerlab.com" target="_blank" rel="noopener noreferrer">ostigerlab.com</a></p>
+                <img data-shot data-caption="Home" src="../media/ostiger-home.jpg" alt="OS TigerLab home page." />
+                <img data-shot data-caption="Academy" src="../media/ostiger-cursos.jpg" alt="Methodology and practice." />
+              </template>
+            </article>
+          </li>
+
+          <li class="work-item" id="trabajo-selvora" data-name="Selvora Deco" data-cat="Decor catalog" data-stack="HTML, CSS, JavaScript" data-thumb="../media/selvora-home.jpg" data-kind="sitio">
+            <article class="work-entry" aria-labelledby="w-selvora">
+              <figure class="work-media" data-work-media data-anim="mask-reveal"><img src="../media/selvora-home.jpg" alt="Selvora Deco home page." width="1440" height="860" loading="lazy" decoding="async" /></figure>
+              <div class="work-text">
+                <p class="work-n" aria-hidden="true">12</p>
+                <h3 id="w-selvora">Selvora Deco</h3>
+                <p class="work-cat">Decor</p>
+                <p class="work-what">Artificial plants organized by room, for homes, shops and offices.</p>
+                <p class="work-stack">HTML, CSS and JavaScript</p>
+                <button type="button" class="btn btn-sm" data-open>See screenshots</button>
+              </div>
+              <template>
+                <p>A visual catalog that organizes ideas by category and takes the visitor from inspiration to an inquiry.</p>
+                <video data-video src="../videos/05-selvora-clip.webm" poster="../media/selvora-home.jpg"></video>
+                <img data-shot data-caption="Home" src="../media/selvora-home.jpg" alt="Selvora Deco home page." />
+                <img data-shot data-caption="Catalog" src="../media/selvora-catalogo.jpg" alt="Catalog families." />
+              </template>
+            </article>
+          </li>
+
+          <li class="work-item" id="trabajo-holistica" data-name="Holística" data-cat="Website with editable dashboard" data-stack="PHP, JSON" data-thumb="../media/holistica-live.jpg" data-kind="sitio">
+            <article class="work-entry" aria-labelledby="w-holistica">
+              <figure class="work-media" data-work-media data-anim="mask-reveal"><img src="../media/holistica-live.jpg" alt="Holística web page." width="1440" height="860" loading="lazy" decoding="async" /></figure>
+              <div class="work-text">
+                <p class="work-n" aria-hidden="true">13</p>
+                <h3 id="w-holistica">Holística</h3>
+                <p class="work-cat">Training</p>
+                <p class="work-what">Three home page designs and a dashboard so the client can edit everything herself.</p>
+                <p class="work-stack">PHP and JSON</p>
+                <button type="button" class="btn btn-sm" data-open>See screenshots</button>
+              </div>
+              <template>
+                <p>A website for Mesa Energética Holística training, with three home pages to choose from and a dashboard to change text and images without relying on a developer.</p>
+                <video data-video src="../videos/09-holistica-clip.webm" poster="../media/holistica-live.jpg"></video>
+                <img data-shot data-caption="Home" src="../media/holistica-live.jpg" alt="Holística web page." />
+              </template>
+            </article>
+          </li>
+
+          <li class="work-item" id="trabajo-departamento-capri" data-name="Departamento Capri" data-cat="Interactive report" data-stack="HTML, CSS, JavaScript" data-thumb="../media/capri-publico.svg" data-kind="propuesta">
+            <article class="work-entry" aria-labelledby="w-capri">
+              <figure class="work-media" data-work-media data-anim="mask-reveal"><img src="../media/capri-publico.svg" alt="Diagram of the Departamento Capri report, with no personal data." width="1440" height="860" loading="lazy" decoding="async" /></figure>
+              <div class="work-text">
+                <p class="work-n" aria-hidden="true">14</p>
+                <h3 id="w-capri">Departamento Capri</h3>
+                <p class="work-cat">Property administration</p>
+                <p class="work-what">Expenses and loans in order, with a view for each owner. The image is illustrative to protect private data.</p>
+                <p class="work-stack">HTML, CSS and JavaScript</p>
+                <button type="button" class="btn btn-sm" data-open>See details</button>
+              </div>
+              <template>
+                <p>A report with expenses, loans and totals, plus a view per person. The image is illustrative to protect private data.</p>
+                <img data-shot data-caption="Public view" src="../media/capri-publico.svg" alt="Diagram with no personal data." />
+              </template>
+            </article>
+          </li>
+
+          <li class="work-item" id="trabajo-tiro-federal" data-name="Tiro Federal Córdoba" data-cat="Digital proposal" data-stack="HTML, CSS" data-thumb="../media/tiro-home.jpg" data-kind="propuesta">
+            <article class="work-entry" aria-labelledby="w-tiro">
+              <figure class="work-media" data-work-media data-anim="mask-reveal"><img src="../media/tiro-home.jpg" alt="Cover of the proposal for Tiro Federal Córdoba." width="1440" height="860" loading="lazy" decoding="async" /></figure>
+              <div class="work-text">
+                <p class="work-n" aria-hidden="true">15</p>
+                <h3 id="w-tiro">Tiro Federal Córdoba</h3>
+                <p class="work-cat">Sports club</p>
+                <p class="work-what">A phased proposal: club website, gun shop with catalog, and support.</p>
+                <p class="work-stack">HTML and CSS</p>
+                <button type="button" class="btn btn-sm" data-open>See screenshots</button>
+              </div>
+              <template>
+                <p>A browsable presentation of the phased proposal for the club: club website, digital gun shop with catalog, and WhatsApp support.</p>
+                <img data-shot data-caption="Cover" src="../media/tiro-home.jpg" alt="Proposal cover." />
+                <img data-shot data-caption="Phases" src="../media/tiro-etapas.jpg" alt="The three phases of the proposal." />
+              </template>
+            </article>
+          </li>
+
+        </ol>
+      </div>
+      <img class="work-peek" data-work-peek alt="" aria-hidden="true" hidden />
+    </section>
+
+    <!-- 7 · STORE (signature moment: showroom · render: tienda.js by agent 08 from assets/2027/productos.js) -->
+    <section class="scene scene--tienda" id="tienda" data-scene="tienda" data-moment="showroom" aria-labelledby="tienda-title">
+      <div class="scene-render" data-render="tienda" aria-hidden="true"><picture><source media="(prefers-color-scheme: light)" srcset="../media/renders/tienda-light.webp" /><img src="../media/renders/tienda.webp" alt="" width="1200" height="900" loading="lazy" decoding="async" /></picture></div>
+      <div class="scene-inner">
+        <header class="scene-head">
+          <h2 id="tienda-title" data-anim="split-lines">Pick where to start.</h2>
+          <p class="lead" data-anim="mask-reveal">Nine services in three tiers, with prices up front. Online you only pay a deposit to get started: 50%, or 30% on plans marked “from”, which are quoted by scope.</p>
+          <p class="fine-print">You pay the balance on delivery, and any monthly fee starts once it’s delivered. Prices in US dollars. Scope is agreed in writing before we start; timelines are set case by case.</p>
+        </header>
+      </div>
+
+      <div class="shop" data-shop data-shop-lang="en" data-shop-currency="USD">
+        <div class="shop-3d" data-3d="shop" aria-hidden="true"></div>
+        <div class="shop-stage" data-shop-stage></div>
+        <noscript>
+          <div class="shop-static">
+            <section class="shop-level" aria-labelledby="nivel-1">
+              <h3 id="nivel-1">Starter <span>Get started fast.</span></h3>
+              <ul class="shop-rows">
+                <li class="shop-row" id="producto-01">
+                  <h4>Express Landing Page</h4>
+                  <p>A custom one-page site so people find you and get in touch.</p>
+                  <ul><li>Custom one-page landing</li><li>Responsive</li><li>WhatsApp button</li><li>Contact form</li><li>SSL and launch</li></ul>
+                  <p class="shop-price">USD 290 · one-time · 50% deposit to start</p>
+                  <p><a href="mailto:lautarodemiannunez32@gmail.com?subject=Question%20about%20Express%20Landing%20Page">Ask by email</a></p>
+                </li>
+                <li class="shop-row" id="producto-02">
+                  <h4>WhatsApp Bot Starter</h4>
+                  <p>Automatic 24/7 replies to the questions you get asked most.</p>
+                  <ul><li>24/7 automatic replies</li><li>Hours, prices, catalog and FAQs</li><li>1 phone number</li></ul>
+                  <p class="shop-price">USD 350 setup + USD 39/month · 50% deposit to start</p>
+                  <p><a href="mailto:lautarodemiannunez32@gmail.com?subject=Question%20about%20WhatsApp%20Bot%20Starter">Ask by email</a></p>
+                </li>
+                <li class="shop-row" id="producto-03">
+                  <h4>Website Security Check</h4>
+                  <p>Find out what's wrong with your site and what to fix first.</p>
+                  <ul><li>External review of your site: HTTPS, headers, plugins, default logins and exposed backups</li><li>Report with prioritized issues and how to fix them</li><li>No invasive attacks</li><li>Scope agreed in writing</li></ul>
+                  <p class="shop-price">USD 190 · one-time · 50% deposit to start</p>
+                  <p><a href="mailto:lautarodemiannunez32@gmail.com?subject=Question%20about%20Website%20Security%20Check">Ask by email</a></p>
+                </li>
+              </ul>
+            </section>
+            <section class="shop-level" aria-labelledby="nivel-2">
+              <h3 id="nivel-2">Growth <span>Your business, up and running.</span></h3>
+              <ul class="shop-rows">
+                <li class="shop-row shop-row--featured" id="producto-04">
+                  <h4>AI WhatsApp Chatbot Pro 24/7 <em>Recommended</em></h4>
+                  <p>An AI assistant that knows your business and sells and books on its own.</p>
+                  <ul><li>AI trained on your business information</li><li>Takes orders and bookings</li><li>Hands off to a human when needed</li><li>Conversation dashboard</li><li>Monthly report</li></ul>
+                  <p class="shop-price">USD 890 setup + USD 79/month · 50% deposit to start</p>
+                  <p><a href="mailto:lautarodemiannunez32@gmail.com?subject=Question%20about%20AI%20WhatsApp%20Chatbot%20Pro%2024%2F7">Ask by email</a></p>
+                </li>
+                <li class="shop-row" id="producto-05">
+                  <h4>Professional Website + Bookings</h4>
+                  <p>Your full site, in two languages, taking requests with a tracking code.</p>
+                  <ul><li>Up to 6 sections</li><li>Bilingual</li><li>Request system with tracking code</li><li>Admin dashboard (Happy Ride style)</li></ul>
+                  <p class="shop-price">USD 1,200 · one-time · 50% deposit to start</p>
+                  <p><a href="mailto:lautarodemiannunez32@gmail.com?subject=Question%20about%20Professional%20Website%20%2B%20Bookings">Ask by email</a></p>
+                </li>
+                <li class="shop-row" id="producto-06">
+                  <h4>Online Store</h4>
+                  <p>Sell online and manage stock and orders from one dashboard.</p>
+                  <ul><li>Catalog</li><li>Cart</li><li>Online payments</li><li>Stock and order dashboard (Acacio / AuraLV style)</li></ul>
+                  <p class="shop-price">USD 1,600 · one-time · 50% deposit to start</p>
+                  <p><a href="mailto:lautarodemiannunez32@gmail.com?subject=Question%20about%20Online%20Store">Ask by email</a></p>
+                </li>
+              </ul>
+            </section>
+            <section class="shop-level" aria-labelledby="nivel-3">
+              <h3 id="nivel-3">Premium <span>Custom-built systems.</span></h3>
+              <ul class="shop-rows">
+                <li class="shop-row" id="producto-07">
+                  <h4>WhatsApp + Web + CRM Ecosystem</h4>
+                  <p>Bot, website and dashboard, connected in one system.</p>
+                  <ul><li>AI bot</li><li>Website</li><li>Dashboard</li><li>Integrations: spreadsheets, CRM, appointments and stock</li><li>Everything in one system</li></ul>
+                  <p class="shop-price">From USD 3,500 + USD 149/month · 30% deposit to start</p>
+                  <p><a href="mailto:lautarodemiannunez32@gmail.com?subject=Question%20about%20WhatsApp%20%2B%20Web%20%2B%20CRM%20Ecosystem">Ask by email</a></p>
+                </li>
+                <li class="shop-row" id="producto-08">
+                  <h4>Custom Backend System</h4>
+                  <p>The API, database and dashboard your operation needs.</p>
+                  <ul><li>API</li><li>Database</li><li>Admin dashboard with roles</li><li>Real-time updates</li><li>Reports (AgroStock / NextScene style)</li></ul>
+                  <p class="shop-price">From USD 4,500 · 30% deposit to start</p>
+                  <p><a href="mailto:lautarodemiannunez32@gmail.com?subject=Question%20about%20Custom%20Backend%20System">Ask by email</a></p>
+                </li>
+                <li class="shop-row" id="producto-09">
+                  <h4>Enterprise Pentest + Hardening</h4>
+                  <p>We find the gaps before an attacker does, and close them.</p>
+                  <ul><li>Web/network penetration test with signed scope</li><li>Executive and technical report</li><li>Remediation</li><li>Re-test</li></ul>
+                  <p class="shop-price">From USD 2,800 · 30% deposit to start</p>
+                  <p><a href="mailto:lautarodemiannunez32@gmail.com?subject=Question%20about%20Enterprise%20Pentest%20%2B%20Hardening">Ask by email</a></p>
+                </li>
+              </ul>
+            </section>
+            <p class="shop-static-note">Online checkout needs JavaScript. Email me at <a href="mailto:lautarodemiannunez32@gmail.com">lautarodemiannunez32@gmail.com</a> and I'll send you the deposit link. The balance is due on delivery.</p>
+          </div>
+        </noscript>
+      </div>
+      <p class="visually-hidden" data-shop-live aria-live="polite"></p>
+    </section>
+
+    <!-- 8 · SECURITY AS A SEAL (interactive blueprint: classes and IDs used by assets/plano.js) -->
+    <section class="scene scene--seguridad sec" id="seguridad" data-scene="seguridad" aria-labelledby="seguridad-title">
+      <div class="scene-bg scene-bg--grid" data-anim="parallax-depth" data-depth="-0.15" aria-hidden="true"></div>
+      <div class="scene-render" data-render="seguridad" aria-hidden="true"><picture><source media="(prefers-color-scheme: light)" srcset="../media/renders/seguridad-light.webp" /><img src="../media/renders/seguridad.webp" alt="" width="1200" height="900" loading="lazy" decoding="async" /></picture></div>
+      <div class="scene-inner">
+        <header class="scene-head">
+          <h2 id="seguridad-title" data-anim="split-lines">I build systems. Then I try to break them.</h2>
+          <p class="lead" data-anim="mask-reveal">Everything I deliver goes through one question: how would someone attack this? And if you already have a website or a system, I review it the same way.</p>
+        </header>
+
+        <figure class="plan" data-plan>
+          <svg class="plan-base" viewBox="0 0 640 460" role="img" aria-labelledby="plan-t">
+            <title id="plan-t">Blueprint of a website connected to a server and a database</title>
+            <g class="ln">
+              <rect x="20" y="20" width="420" height="300" rx="6" />
+              <line x1="20" y1="44" x2="440" y2="44" />
+              <circle cx="34" cy="32" r="3.5" /><circle cx="46" cy="32" r="3.5" /><circle cx="58" cy="32" r="3.5" />
+              <rect x="76" y="25" width="250" height="14" rx="7" />
+              <rect x="36" y="56" width="388" height="14" rx="2" />
+              <line x1="36" y1="92" x2="220" y2="92" class="thick" />
+              <line x1="36" y1="106" x2="190" y2="106" />
+              <rect x="250" y="82" width="174" height="70" rx="3" />
+              <line x1="250" y1="82" x2="424" y2="152" class="faint" /><line x1="424" y1="82" x2="250" y2="152" class="faint" />
+              <rect x="36" y="120" width="150" height="88" rx="3" />
+              <rect x="48" y="146" width="126" height="13" rx="2" />
+              <rect x="48" y="165" width="126" height="13" rx="2" />
+              <rect x="48" y="186" width="58" height="13" rx="2" />
+              <rect x="36" y="220" width="120" height="80" rx="3" />
+              <rect x="168" y="220" width="120" height="80" rx="3" />
+              <rect x="300" y="220" width="124" height="80" rx="3" />
+              <path d="M440 170 C 460 170, 460 135, 480 135" />
+              <path d="M474 131 L480 135 L474 139" />
+              <rect x="480" y="60" width="128" height="150" rx="4" />
+              <line x1="492" y1="84" x2="596" y2="84" /><line x1="492" y1="104" x2="596" y2="104" /><line x1="492" y1="124" x2="596" y2="124" /><line x1="492" y1="144" x2="596" y2="144" />
+              <circle cx="586" cy="74" r="3" />
+              <line x1="544" y1="210" x2="544" y2="252" />
+              <ellipse cx="544" cy="262" rx="44" ry="11" />
+              <path d="M500 262 V 322 A 44 11 0 0 0 588 322 V 262" />
+              <path d="M500 292 A 44 11 0 0 0 588 292" class="faint" />
+              <path d="M452 352 h 34 l 10 10 v 40 h -44 z M486 352 v 10 h 10" />
+              <line x1="20" y1="350" x2="440" y2="350" /><line x1="20" y1="344" x2="20" y2="356" /><line x1="440" y1="344" x2="440" y2="356" />
+            </g>
+            <g class="tx">
+              <text x="86" y="35">http://yourshop.com</text>
+              <text x="48" y="138">Dashboard login</text>
+              <text x="56" y="196" class="sm">Sign in</text>
+              <text x="310" y="240">Plugin</text>
+              <text x="310" y="256" class="sm">version 2.3</text>
+              <text x="492" y="228">server</text>
+              <text x="452" y="160" class="sm">API</text>
+              <text x="520" y="350">database</text>
+              <text x="452" y="420">backup.zip</text>
+              <text x="196" y="366">1440 px</text>
+              <text x="20" y="446" class="sm">Sheet 1. A shop's website, as I receive it for review.</text>
+            </g>
+          </svg>
+
+          <div class="uv" aria-hidden="true">
+            <svg viewBox="0 0 640 460">
+              <g class="pen">
+                <path d="M70 24 C 110 14, 190 16, 205 31 C 214 44, 120 48, 76 42 C 58 38, 60 28, 84 22" />
+                <path d="M30 128 C 40 108, 180 106, 196 128 C 206 160, 200 214, 150 218 C 90 222, 28 214, 28 170 C 28 150, 32 136, 44 126" />
+                <path d="M296 226 C 330 204, 430 210, 432 250 C 434 292, 392 312, 352 310 C 306 308, 290 280, 294 246" />
+                <path d="M444 344 C 470 334, 512 342, 510 380 C 508 414, 452 418, 440 392 C 432 372, 438 354, 456 344" />
+                <path d="M206 168 L 196 158" /><path d="M396 330 L 384 312" /><path d="M520 404 L 506 396" />
+              </g>
+              <g class="ink">
+                <text x="214" y="36">no https</text>
+                <text x="206" y="182">user: admin</text>
+                <text x="206" y="200">pass: admin</text>
+                <text x="330" y="342">not updated since 2019</text>
+                <text x="528" y="420">up for grabs</text>
+              </g>
+              <g class="print" transform="translate(112 182)">
+                <path d="M0 8 C 0 -2, 18 -2, 18 8" /><path d="M-3 9 C -3 -6, 21 -6, 21 9" /><path d="M-6 11 C -6 -10, 24 -10, 24 11" />
+                <path d="M3 9 C 3 3, 15 3, 15 9" /><path d="M-8 14 C -10 -14, 28 -14, 26 14" />
+              </g>
+            </svg>
+          </div>
+          <span class="torch" aria-hidden="true"></span>
+          <figcaption>
+            <span class="hint">Move your cursor over the blueprint to see what an audit finds.</span>
+            <button type="button" class="reveal-all" aria-pressed="false" data-label-show="Show all the flaws" data-label-hide="Hide the flaws">Show all the flaws</button>
+          </figcaption>
+          <ul class="visually-hidden">
+            <li>The site doesn't use https.</li>
+            <li>The dashboard accepts “admin” as both username and password.</li>
+            <li>A plugin hasn't been updated since 2019.</li>
+            <li>The backup can be downloaded from the internet.</li>
+          </ul>
+        </figure>
+
+        <div class="sec-grid">
+          <div class="sec-copy">
+            <h3 data-anim="mask-reveal">I review companies the way someone trying to get in would.</h3>
+            <p>I have a degree in cybersecurity and specialize in cybercrime. With signed authorization, I test a company's websites, servers and networks to find the flaws before an attacker does. Then we fix them together. And if the system is old, I modernize it in stages without stopping day-to-day work.</p>
+            <dl class="services" data-anim="stagger-list">
+              <div><dt>Penetration testing</dt><dd>Controlled attacks on websites, networks and applications, with the scope agreed in writing.</dd></div>
+              <div><dt>Hardening</dt><dd>Permissions, encryption, two-factor authentication, backups and monitoring on servers and dashboards.</dd></div>
+              <div><dt>Modernization</dt><dd>I move legacy systems to a current stack, piece by piece and without losing data.</dd></div>
+              <div><dt>Incidents</dt><dd>If something already happened, I investigate what occurred and preserve the digital evidence.</dd></div>
+              <div><dt>People</dt><dd>Phishing drills and talks so the team becomes a barrier too.</dd></div>
+            </dl>
+            <p class="actions">
+              <a class="btn" href="#producto-03" data-shop-goto="03" data-anim="magnetic">Review my site</a>
+            </p>
+          </div>
+
+          <article class="report" data-report aria-labelledby="report-title">
+            <header class="report-head">
+              <h3 id="report-title">Audit report</h3>
+              <p>Sample company. All data is made up.</p>
+              <p>Reviewed by: Lautaro Núñez</p>
+            </header>
+            <table>
+              <thead><tr><th scope="col">Finding</th><th scope="col">Risk</th></tr></thead>
+              <tbody>
+                <tr><td><mark>Backups downloadable from the internet</mark></td><td>Critical</td></tr>
+                <tr><td><mark>Dashboard with factory username and password</mark></td><td>High</td></tr>
+                <tr><td>Content manager not updated since 2019</td><td>High</td></tr>
+                <tr><td>Form with no protection against automated submissions</td><td>Medium</td></tr>
+                <tr><td>Expired certificate on a subdomain</td><td>Medium</td></tr>
+              </tbody>
+            </table>
+            <p class="note note-1" aria-hidden="true">anyone can see this from a browser</p>
+            <p class="note note-2" aria-hidden="true">fix first</p>
+            <svg class="scribble" viewBox="0 0 200 120" aria-hidden="true"><path d="M8 100 C 40 90, 70 60, 120 30 M110 26 L 124 28 L 118 40" /></svg>
+            <p class="stamp">Fixed</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9 · PROCESS (6 steps) -->
+    <section class="scene scene--proceso process" id="proceso" data-scene="proceso" aria-labelledby="proceso-title">
+      <div class="scene-inner">
+        <header class="scene-head">
+          <h2 id="proceso-title" data-anim="split-lines">How we work</h2>
+          <p data-anim="mask-reveal">Six steps, from the first chat to the day you run it on your own.</p>
+        </header>
+        <div class="steps-wrap">
+          <svg class="process-line" data-process-line data-anim="draw" viewBox="0 0 10 600" preserveAspectRatio="none" aria-hidden="true"><path d="M5 0 V600" /></svg>
+          <ol class="steps" data-anim="stagger-list">
+            <li data-step="1"><span class="step-n" aria-hidden="true" data-anim="count" data-count-to="1" data-count-pad="2">01</span><h3>Talk</h3><p>You tell me how your business works and what's holding it back.</p></li>
+            <li data-step="2"><span class="step-n" aria-hidden="true" data-anim="count" data-count-to="2" data-count-pad="2">02</span><h3>Blueprint</h3><p>I show you the structure, the design or the bot's script before writing code.</p></li>
+            <li data-step="3"><span class="step-n" aria-hidden="true" data-anim="count" data-count-to="3" data-count-pad="2">03</span><h3>Build</h3><p>I build the website, the bot or the system, and you see progress along the way.</p></li>
+            <li data-step="4"><span class="step-n" aria-hidden="true" data-anim="count" data-count-to="4" data-count-pad="2">04</span><h3>Testing</h3><p>I test it on phone and desktop, and run a security review.</p></li>
+            <li data-step="5"><span class="step-n" aria-hidden="true" data-anim="count" data-count-to="5" data-count-pad="2">05</span><h3>Launch</h3><p>I put it online with a domain, a certificate and backups.</p></li>
+            <li data-step="6"><span class="step-n" aria-hidden="true" data-anim="count" data-count-to="6" data-count-pad="2">06</span><h3>Follow-up</h3><p>I show you how to use it and stay available for changes.</p></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10 · ABOUT -->
+    <section class="scene scene--sobre about" id="sobre-mi" data-scene="sobre" aria-labelledby="sobre-title">
+      <div class="scene-inner about-grid">
+        <div class="about-copy">
+          <h2 id="sobre-title" data-anim="split-lines">About me</h2>
+          <p data-anim="mask-reveal">I'm Lautaro Núñez. I've been building websites and systems for businesses for more than six years. Today I build complete projects: the part your customers see, the part that processes orders, the bot that answers, and the server where it all lives.</p>
+          <p data-anim="mask-reveal">I also have a degree in cybersecurity and work on the offensive side. That changes how I build: before I deliver anything, I’ve already asked how someone would attack it.</p>
+          <p data-anim="mask-reveal">I sign my work as LautaroDev.</p>
+        </div>
+        <dl class="ficha" data-anim="stagger-list">
+          <div><dt>I do</dt><dd>WhatsApp chatbots, websites and systems</dd></div>
+          <div><dt>I studied</dt><dd>Degree in Cybersecurity</dd></div>
+          <div><dt>Specialty</dt><dd>Cybercrime and penetration testing</dd></div>
+          <div><dt>Experience</dt><dd>6+ years</dd></div>
+          <div><dt>Based in</dt><dd>Córdoba, Argentina. I also work from Tulum, Mexico</dd></div>
+          <div><dt>Languages</dt><dd>Spanish and English</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- 11 · GIANT FINAL CTA + CONTACT (signature moment: cta) -->
+    <section class="scene scene--cta contact" id="contacto" data-scene="cta" data-moment="cta" aria-labelledby="contacto-title">
+      <div class="scene-bg" data-anim="parallax-depth" data-depth="-0.4" aria-hidden="true"></div>
+      <div class="scene-render" data-render="cta" aria-hidden="true"><picture><source media="(prefers-color-scheme: light)" srcset="../media/renders/cta-light.webp" /><img src="../media/renders/cta.webp" alt="" width="1200" height="900" loading="lazy" decoding="async" /></picture></div>
+      <div class="scene-inner">
+        <h2 id="contacto-title" class="cta-giant" data-anim="scale-text split-chars">Your business, always answering.</h2>
+        <p class="contact-lead" data-anim="mask-reveal">Pick your plan and get started with the deposit. Questions? You’ll hear back from me, not a bot.</p>
+        <p class="actions">
+          <a class="btn btn-solid btn-xl" href="#producto-04" data-shop-goto="04" data-anim="magnetic">I want my chatbot</a>
+        </p>
+        <p class="contact-alt">Rather talk first? <a href="mailto:lautarodemiannunez32@gmail.com" data-contact="general"><span data-contact-label data-label-whatsapp="Message me on WhatsApp" data-label-mail="Email me">Email me</span></a> <button type="button" class="btn btn-quiet btn-sm" data-copy-email data-label-copy="Copy email" data-label-copied="Email copied">Copy email</button></p>
+        <dl class="titleblock" data-anim="stagger-list">
+          <div class="tb-proj"><dt>Project</dt><dd>Yours, whenever you want to start</dd></div>
+          <div><dt>Drawn by</dt><dd>Lautaro Núñez</dd></div>
+          <div><dt>Security reviewed by</dt><dd>Lautaro Núñez</dd></div>
+          <div class="tb-mail"><dt>Email</dt><dd><a href="mailto:lautarodemiannunez32@gmail.com">lautarodemiannunez32@gmail.com</a></dd></div>
+          <div><dt>Code</dt><dd><a href="https://github.com/Ositojur" rel="me noopener" target="_blank">github.com/Ositojur</a></dd></div>
+          <div><dt>Location</dt><dd>Córdoba, Argentina · remote</dd></div>
+          <div><dt>Sheet</dt><dd>1 of 1</dd></div>
+        </dl>
+        <p class="contact-more"><a href="servicio.html">The service at a glance, for a meeting</a></p>
+        <p class="visually-hidden" id="copy-live" aria-live="polite"></p>
       </div>
     </section>
   </main>
 
-  <footer class="wrap site-foot">Lautaro Demian Núñez · Córdoba, Argentina · <a class="profile-link" rel="me" href="https://github.com/Ositojur">GitHub</a></footer>
+  <footer class="foot">
+    <div class="foot-in">
+      <p>Lautaro Núñez · LautaroDev · Córdoba, Argentina.</p>
+      <p>I built this site too. No templates.</p>
+      <p><a href="../index.html" hreflang="es" lang="es">Versión en español</a></p>
+      <p class="foot-alt">Rather talk first? <a href="mailto:lautarodemiannunez32@gmail.com" data-contact="general">Email me</a></p>
+    </div>
+  </footer>
 
-  <dialog id="ficha" closedby="any" aria-labelledby="ficha-title">
-    <form method="dialog" class="ficha-bar">
-      <button class="btn-ghost close" value="close">Close</button>
-    </form>
-    <div class="ficha-body" id="ficha-body"></div>
+  <dialog id="ficha" aria-labelledby="ficha-title">
+    <div class="modal">
+      <form method="dialog" class="modal-close"><button value="close">Close</button></form>
+      <div id="ficha-body"></div>
+    </div>
   </dialog>
 
-  <script src="../assets/app.js" defer></script>
+  <script src="../assets/2027/config.js" defer></script>
+  <script src="../assets/2027/productos.js" defer></script>
+  <script src="../assets/vendor/gsap/gsap.min.js" defer></script>
+  <script src="../assets/vendor/gsap/ScrollTrigger.min.js" defer></script>
+  <script src="../assets/vendor/gsap/SplitText.min.js" defer></script>
+  <script src="../assets/vendor/gsap/Flip.min.js" defer></script>
+  <script src="../assets/vendor/gsap/DrawSVGPlugin.min.js" defer></script>
+  <script src="../assets/vendor/gsap/MotionPathPlugin.min.js" defer></script>
+  <script src="../assets/vendor/gsap/CustomEase.min.js" defer></script>
+  <script src="../assets/vendor/gsap/ScrambleTextPlugin.min.js" defer></script>
+  <script src="../assets/2027/motion.js" defer></script>
+  <script src="../assets/2027/hero3d.js" defer></script>
+  <script src="../assets/2027/chatbot-guiones.js" defer></script>
+  <script src="../assets/2027/chatbot-demo.js" defer></script>
+  <script src="../assets/2027/ui.js" defer></script>
+  <script src="../assets/2027/tienda.js" defer></script>
+  <script src="../assets/plano.js" defer></script>
 </body>
 </html>

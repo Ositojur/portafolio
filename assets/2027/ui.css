@@ -1,0 +1,471 @@
+/* LautaroDev 2027 · ui.css (dueño: agente 07 · interacciones, tema y transiciones)
+   Lo que vive acá: foco visible, targets de 44 px, press feedback, hover con intención (solo puntero fino),
+   toggle de tema y su View Transition, barra de progreso, indicador del nav, spotlight, botones magnéticos,
+   filtros de trabajos, vista previa que sigue al cursor y la transición del diálogo #ficha.
+   Reglas: sin hex (todo sale de tokens.css), sin `transition: all`, solo transform/opacity/clip-path
+   (y las propiedades individuales translate/scale, que componen con el transform que pone GSAP).
+   Con prefers-reduced-motion todo queda quieto y en su estado final. */
+
+@layer tokens, reset, base, scenes, components, motion, ui, shop, utilities;
+
+/* Registradas para poder animar el ícono del toggle (luna ↔ sol) con una transición de CSS. */
+@property --ui-bite-x { syntax: "<percentage>"; inherits: false; initial-value: 72%; }
+@property --ui-bite-y { syntax: "<percentage>"; inherits: false; initial-value: 28%; }
+@property --ui-bite-r { syntax: "<percentage>"; inherits: false; initial-value: 46%; }
+
+@layer ui {
+
+  /* ───────────────────────── 1 · Base táctil ───────────────────────── */
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  :where(a, button, [role="button"], summary, label[for]) {
+    touch-action: manipulation;
+  }
+
+  :where(button, .btn) {
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  /* ───────────────────────── 2 · Foco visible verde agua ───────────────────────── */
+  :where(a, button, input, select, textarea, summary, [tabindex], [contenteditable]):focus-visible {
+    outline: var(--focus-width) solid var(--focus);
+    outline-offset: var(--focus-offset);
+  }
+
+  :where(a, button, input, select, textarea, summary, [tabindex]):focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  /* Los botones pill llevan el anillo con su misma curva (outline sigue el border-radius). */
+  :where(.btn, .theme-toggle, .work-filter button):focus-visible {
+    outline-offset: var(--focus-offset);
+  }
+
+  /* El skip link aparece arriba de todo al recibir foco. */
+  .skip:focus-visible {
+    z-index: calc(var(--z-nav) + 1);
+  }
+
+  /* ───────────────────────── 3 · Targets ≥ 44 px ───────────────────────── */
+  /* .btn ya trae min-block-size: var(--tap) en la capa base de 03 (y .btn-xl más): no se pisa acá. */
+  :where(.menu-btn, .theme-toggle, .work-filter button, .modal-close button, .f-thumbs button, .reveal-all, [data-copy-email]) {
+    min-block-size: 44px;
+    min-inline-size: 44px;
+  }
+
+  /* Marca del nav (ítem flex de .top-in) y links sueltos que no son texto corrido (auditoría 07x). */
+  :where(.top .name) {
+    min-block-size: 44px;
+    align-content: center;
+  }
+
+  :where(.work-links a, .ficha dd a, .contact-more a, .foot a) {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-block-size: 44px;
+    min-inline-size: 44px;
+  }
+
+  /* Son ítems flex del menú: el mínimo aplica sin tocar su display (que es de 03). */
+  :where(.menu a, .lang a) {
+    min-block-size: 44px;
+    min-inline-size: 44px;
+    align-content: center;
+    text-align: center;
+  }
+
+  :where(.menu > a) {
+    text-align: start;
+  }
+
+  @media (min-width: 64rem) {
+    :where(.menu > a) {
+      text-align: center;
+    }
+  }
+
+  /* ───────────────────────── 4 · Press feedback ─────────────────────────
+     `scale` es una propiedad individual: no pisa el transform de GSAP ni el translate magnético. */
+  :where(.btn, .menu-btn, .theme-toggle, .work-filter button, .modal-close button, .f-thumbs button, .reveal-all, [data-copy-email], [data-bot-scenario], [data-bot-control]) {
+    transition-property: scale, translate, background-color, border-color, color, box-shadow;
+    transition-duration: var(--dur-instant), var(--dur-base), var(--dur-fast), var(--dur-fast), var(--dur-fast), var(--dur-fast);
+    transition-timing-function: var(--ease-out-quart);
+  }
+
+  :where(.btn, .menu-btn, .theme-toggle, .work-filter button, .modal-close button, .f-thumbs button, .reveal-all, [data-copy-email], [data-bot-scenario], [data-bot-control]):active {
+    scale: 0.96;
+  }
+
+  /* ───────────────────────── 5 · Hover con intención (solo puntero fino) ───────────────────────── */
+  @media (hover: hover) and (pointer: fine) {
+
+    /* Una luz chica dentro del botón sigue al cursor (--lx/--ly los escribe ui.js en el propio botón). */
+    .btn:hover {
+      background-image: radial-gradient(
+        circle at var(--lx, 50%) var(--ly, 50%),
+        color-mix(in oklab, currentColor 16%, transparent) 0%,
+        transparent 62%
+      );
+    }
+
+    /* Los no magnéticos suben un pelo; los magnéticos ya se mueven con el puntero. */
+    .btn:not([data-anim~="magnetic"]):hover {
+      translate: 0 -1px;
+    }
+
+    .btn:not([data-anim~="magnetic"]):active {
+      translate: 0 0;
+    }
+
+    /* Links dentro de texto: el subrayado se acerca, engorda y toma la señal. */
+    :where(main p, main figcaption, main li, .foot) a:not(.btn):hover {
+      color: var(--link-hover);
+      text-decoration-color: currentColor;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 0.3em;
+    }
+  }
+
+  :where(main p, main figcaption, main li, .foot) a:not(.btn) {
+    transition-property: color, text-decoration-color, text-underline-offset, text-decoration-thickness;
+    transition-duration: var(--dur-fast);
+    transition-timing-function: var(--ease-out-quart);
+  }
+
+  /* Al tocar en mobile, el link responde al instante (no hay hover). */
+  :where(main p, main figcaption, main li, .foot) a:not(.btn):active {
+    color: var(--link-hover);
+  }
+
+  /* ───────────────────────── 6 · Botones magnéticos ─────────────────────────
+     ui.js escribe `translate` inline mientras el puntero está cerca. Al salir vuelve con un spring. */
+  [data-anim~="magnetic"] {
+    transition-property: scale, translate, background-color, border-color, color, box-shadow;
+    transition-duration: var(--dur-instant), var(--dur-slow), var(--dur-fast), var(--dur-fast), var(--dur-fast), var(--dur-fast);
+    transition-timing-function: var(--ease-out-quart), var(--ease-spring), var(--ease-out-quart), var(--ease-out-quart), var(--ease-out-quart), var(--ease-out-quart);
+  }
+
+  [data-anim~="magnetic"].is-magnet {
+    transition-duration: var(--dur-instant), var(--dur-fast), var(--dur-fast), var(--dur-fast), var(--dur-fast), var(--dur-fast);
+    transition-timing-function: var(--ease-out-quart);
+  }
+
+  /* ───────────────────────── 7 · Toggle de tema ───────────────────────── */
+  .theme-toggle {
+    position: relative;
+    display: inline-grid;
+    place-items: center;
+    block-size: 44px;
+    inline-size: 44px;
+    padding: 0;
+    border: var(--hairline) solid var(--nav-border);
+    border-radius: var(--radius-pill);
+    background: transparent;
+    color: var(--text);
+    cursor: pointer;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .theme-toggle:hover {
+      border-color: var(--btn2-border-hover);
+      color: var(--aqua-text);
+    }
+  }
+
+  /* Luna en oscuro, sol en claro: un solo disco con un "mordisco" que se corre y rayos que aparecen. */
+  .theme-toggle-icon {
+    position: relative;
+    display: block;
+    inline-size: 18px;
+    block-size: 18px;
+    border-radius: 50%;
+    background: currentColor;
+    -webkit-mask: radial-gradient(circle at var(--ui-bite-x) var(--ui-bite-y), transparent var(--ui-bite-r), currentColor calc(var(--ui-bite-r) + 1%));
+    mask: radial-gradient(circle at var(--ui-bite-x) var(--ui-bite-y), transparent var(--ui-bite-r), currentColor calc(var(--ui-bite-r) + 1%));
+    transition-property: --ui-bite-x, --ui-bite-y, --ui-bite-r, scale, rotate;
+    transition-duration: var(--dur-slow);
+    transition-timing-function: var(--ease-spring-soft);
+  }
+
+  .theme-toggle::after {
+    content: "";
+    position: absolute;
+    inline-size: 26px;
+    block-size: 26px;
+    border-radius: 50%;
+    background: repeating-conic-gradient(currentColor 0deg 9deg, transparent 9deg 45deg);
+    -webkit-mask: radial-gradient(circle, transparent 54%, currentColor 56%, currentColor 70%, transparent 72%);
+    mask: radial-gradient(circle, transparent 54%, currentColor 56%, currentColor 70%, transparent 72%);
+    opacity: 0;
+    scale: 0.6;
+    rotate: -45deg;
+    pointer-events: none;
+    transition-property: opacity, scale, rotate;
+    transition-duration: var(--dur-base), var(--dur-slow), var(--dur-slow);
+    transition-timing-function: var(--ease-out-quart), var(--ease-spring), var(--ease-spring);
+  }
+
+  /* Estado claro: explícito o por preferencia del sistema sin elección guardada. */
+  :root[data-theme="light"] .theme-toggle-icon {
+    --ui-bite-x: 130%;
+    --ui-bite-y: -30%;
+    --ui-bite-r: 30%;
+    scale: 0.62;
+  }
+
+  :root[data-theme="light"] .theme-toggle::after {
+    opacity: 1;
+    scale: 1;
+    rotate: 0deg;
+  }
+
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme]) .theme-toggle-icon {
+      --ui-bite-x: 130%;
+      --ui-bite-y: -30%;
+      --ui-bite-r: 30%;
+      scale: 0.62;
+    }
+
+    :root:not([data-theme]) .theme-toggle::after {
+      opacity: 1;
+      scale: 1;
+      rotate: 0deg;
+    }
+  }
+
+  /* View Transition circular: el JS anima ::view-transition-new(root) con clip-path desde el botón. */
+  :root.ui-theme-vt::view-transition-old(root),
+  :root.ui-theme-vt::view-transition-new(root) {
+    animation: none;
+    mix-blend-mode: normal;
+  }
+
+  :root.ui-theme-vt::view-transition-old(root) {
+    z-index: 1;
+  }
+
+  :root.ui-theme-vt::view-transition-new(root) {
+    z-index: 2;
+  }
+
+  /* Fallback sin View Transitions: crossfade de color en las superficies durante el cambio. */
+  :root.ui-theme-fade,
+  :root.ui-theme-fade :where(body, header, main, section, footer, div, nav, a, button, p, h1, h2, h3, h4, li, span, figure, figcaption, dialog) {
+    transition-property: background-color, color, border-color, fill, stroke, box-shadow;
+    transition-duration: var(--dur-theme);
+    transition-timing-function: var(--ease-in-out-quint);
+  }
+
+  /* ───────────────────────── 8 · Barra de progreso de scroll ───────────────────────── */
+  .scroll-progress,
+  [data-scroll-progress] {
+    position: fixed;
+    inset: 0 0 auto 0;
+    z-index: var(--z-progress);
+    block-size: 2px;
+    background: var(--aqua);
+    transform-origin: 0 50%;
+    transform: scaleX(var(--ui-progress, 0));
+    pointer-events: none;
+  }
+
+  /* Scroll-driven: el compositor la mueve solo. ui.js no escucha el scroll si esto está soportado. */
+  @supports (animation-timeline: scroll()) {
+    [data-scroll-progress].is-css-driven {
+      transform: scaleX(0);
+      animation: ui-progress linear both;
+      animation-timeline: scroll(root block);
+    }
+  }
+
+  @keyframes ui-progress {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+  }
+
+  /* ───────────────────────── 9 · Nav: estado scrolleado e indicador ───────────────────────── */
+  [data-nav] {
+    transition-property: background-color, border-color, box-shadow, translate;
+    transition-duration: var(--dur-base);
+    transition-timing-function: var(--ease-out-quart);
+  }
+
+  [data-nav][data-scrolled] {
+    box-shadow: var(--shadow-1);
+  }
+
+  /* .menu ya es position: relative (desktop) o absolute (panel mobile) en scenes.css: el indicador se ubica adentro. */
+  .menu a[href^="#"] {
+    position: relative;
+    z-index: 1;
+  }
+
+  .menu a[href^="#"][aria-current="location"] {
+    color: var(--aqua-text);
+  }
+
+  /* Pastilla que se desliza a la sección activa y "espía" el link con hover. */
+  .ui-nav-indicator {
+    position: absolute;
+    inset-block-start: 0;
+    inset-inline-start: 0;
+    z-index: 0;
+    inline-size: var(--ui-ind-w, 0px);
+    block-size: var(--ui-ind-h, 0px);
+    border-radius: var(--radius-pill);
+    background: color-mix(in oklab, var(--aqua) 14%, transparent);
+    box-shadow: inset 0 0 0 var(--hairline) color-mix(in oklab, var(--aqua) 30%, transparent);
+    translate: var(--ui-ind-x, 0px) var(--ui-ind-y, 0px);
+    opacity: 0;
+    pointer-events: none;
+    transition-property: translate, inline-size, block-size, opacity;
+    transition-duration: var(--dur-slow), var(--dur-slow), var(--dur-slow), var(--dur-base);
+    transition-timing-function: var(--ease-spring-soft), var(--ease-spring-soft), var(--ease-spring-soft), var(--ease-out-quart);
+  }
+
+  .ui-nav-indicator.is-on {
+    opacity: 1;
+  }
+
+  .ui-nav-indicator.is-peek {
+    background: color-mix(in oklab, var(--aqua) 9%, transparent);
+  }
+
+  /* Primera ubicación sin animación (no "vuela" desde la esquina al cargar). */
+  .ui-nav-indicator.is-instant {
+    transition: none;
+  }
+
+  /* ───────────────────────── 10 · Spotlight que sigue al cursor ───────────────────────── */
+  .ui-spotlight {
+    position: fixed;
+    inset-block-start: 0;
+    inset-inline-start: 0;
+    z-index: calc(var(--z-progress) - 1);
+    inline-size: var(--spotlight-size);
+    block-size: var(--spotlight-size);
+    margin-block-start: calc(var(--spotlight-size) / -2);
+    margin-inline-start: calc(var(--spotlight-size) / -2);
+    border-radius: 50%;
+    background: radial-gradient(circle closest-side, var(--spotlight) 0%, transparent 100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--dur-slow) var(--ease-out-quart);
+    will-change: transform;
+  }
+
+  .ui-spotlight.is-on {
+    opacity: 1;
+  }
+
+  /* ───────────────────────── 11 · Filtros de trabajos ───────────────────────── */
+  .work-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+  }
+
+  .work-filter[hidden] {
+    display: none;
+  }
+
+  .work-filter button {
+    display: inline-flex;
+    align-items: center;
+    padding-inline: 1.1em;
+    border: var(--hairline) solid var(--chip-border);
+    border-radius: var(--radius-pill);
+    background: var(--chip-bg);
+    color: var(--chip-text);
+    font: inherit;
+    cursor: pointer;
+  }
+
+  .work-filter button[aria-pressed="true"] {
+    border-color: var(--chip-active-bg);
+    background: var(--chip-active-bg);
+    color: var(--chip-active-text);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .work-filter button[aria-pressed="false"]:hover {
+      border-color: var(--btn2-border-hover);
+      color: var(--aqua-text);
+    }
+  }
+
+  /* Un .work-item filtrado sale del flujo (ui gana sobre scenes: no hace falta !important). */
+  .work-item[hidden] {
+    display: none;
+  }
+
+  /* ───────────────────────── 12 · Vista previa que sigue al cursor ───────────────────────── */
+  .work-peek {
+    position: fixed;
+    inset-block-start: 0;
+    inset-inline-start: 0;
+    z-index: var(--z-preview);
+    inline-size: clamp(14rem, 22vw, 22rem);
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-2);
+    outline: var(--hairline) solid color-mix(in oklab, var(--text) 10%, transparent);
+    outline-offset: calc(var(--hairline) * -1);
+    pointer-events: none;
+    opacity: 0;
+    scale: 0.94;
+    clip-path: inset(8% 8% 8% 8% round var(--radius-md));
+    transition-property: opacity, scale, clip-path;
+    transition-duration: var(--dur-base), var(--dur-slow), var(--dur-slow);
+    transition-timing-function: var(--ease-out-quart), var(--ease-out-expo), var(--ease-out-expo);
+    will-change: transform;
+  }
+
+  .work-peek[hidden] {
+    display: none;
+  }
+
+  .work-peek.is-on {
+    opacity: 1;
+    scale: 1;
+    clip-path: inset(0 0 0 0 round var(--radius-md));
+  }
+
+  /* ───────────────────────── 13 · Diálogo #ficha ─────────────────────────
+     La transición compartida la hace ui.js con WAAPI (desde la .work-media del trabajo). */
+  #ficha .modal {
+    transform-origin: 50% 50%;
+  }
+
+  /* ───────────────────────── 14 · Reduced motion: todo quieto ───────────────────────── */
+  @media (prefers-reduced-motion: reduce) {
+    :where(.btn, .menu-btn, .theme-toggle, .work-filter button, .modal-close button, .f-thumbs button, .reveal-all, [data-copy-email], [data-bot-scenario], [data-bot-control], [data-anim~="magnetic"]):active,
+    .btn:not([data-anim~="magnetic"]):hover {
+      scale: none;
+      translate: none;
+    }
+
+    [data-anim~="magnetic"],
+    [data-anim~="magnetic"].is-magnet {
+      translate: none !important;
+    }
+
+    .theme-toggle-icon,
+    .theme-toggle::after,
+    .ui-nav-indicator,
+    .work-peek {
+      transition-duration: 1ms;
+    }
+
+    .ui-spotlight,
+    .work-peek {
+      display: none;
+    }
+  }
+}

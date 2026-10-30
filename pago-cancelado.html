@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex" />
+  <meta name="color-scheme" content="dark light" />
+  <title>El pago no se completó · LautaroDev</title>
+  <link rel="icon" href="media/favicon.svg" type="image/svg+xml" />
+  <script>(function (d) { d.classList.add("js"); try { var t = localStorage.getItem("ld-theme"); if (t === "dark" || t === "light") d.setAttribute("data-theme", t); } catch (e) {} })(document.documentElement);</script>
+  <link rel="stylesheet" href="assets/2027/tokens.css" />
+  <link rel="stylesheet" href="assets/2027/scenes.css" />
+  <link rel="stylesheet" href="assets/2027/ui.css" />
+  <link rel="stylesheet" href="assets/2027/tienda.css" />
+  <!-- Los bloques [data-pay-if-*] usan hidden; .shop-btn y .pay-summary div fijan display y lo pisarían. -->
+</head>
+<body class="pay-page" data-pay-page="cancelado">
+  <header class="pay-top">
+    <a class="pay-brand" href="index.html">LautaroDev</a>
+    <a href="index.html">Volver al sitio</a>
+    <a href="en/pago-cancelado.html" hreflang="en" lang="en" data-pay-keep-query>English</a>
+  </header>
+
+  <main class="pay-main">
+    <div class="pay-aurora lt-aurora-live" aria-hidden="true"></div>
+    <div class="pay-signal" aria-hidden="true"><i></i><i></i><i></i><b></b></div>
+
+    <h1 class="pay-title">El pago no se completó.</h1>
+    <p class="pay-lead" data-pay-if-generic><strong>No se te cobró nada.</strong> Podés intentarlo de nuevo desde la tienda o escribirme si algo no funcionó.</p>
+    <p class="pay-lead" data-pay-if-product hidden><strong>No se te cobró nada.</strong> El anticipo de <strong data-pay-product></strong> sigue pendiente: podés reintentar el pago o escribirme si algo no funcionó.</p>
+
+    <div class="pay-grid">
+      <dl class="pay-summary">
+        <div data-pay-if-product hidden>
+          <dt>Servicio</dt>
+          <dd data-pay-product></dd>
+        </div>
+        <div data-pay-if-product hidden>
+          <dt>Anticipo</dt>
+          <dd class="pay-amount" data-pay-amount></dd>
+        </div>
+        <div data-pay-if-product hidden>
+          <dt>Precio</dt>
+          <dd data-pay-price></dd>
+        </div>
+        <div>
+          <dt>Cobro</dt>
+          <dd>Ninguno. El pago quedó sin completar.</dd>
+        </div>
+      </dl>
+
+      <div>
+        <h2 class="pay-steps-title">Cómo seguir</h2>
+        <ol class="pay-steps">
+          <li><span><strong>Reintentá el pago.</strong> Revisá los datos de la tarjeta. Si el banco lo rechaza, probá con otra o consultale si tenés habilitados los pagos en dólares.</span></li>
+          <li><span><strong>Consultame.</strong> Si tenés dudas sobre el servicio o el pago, escribime y lo vemos antes de pagar.</span></li>
+          <li><span><strong>Mirá la tienda con calma.</strong> Podés comparar los otros servicios antes de decidir.</span></li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="pay-actions">
+      <a class="shop-btn shop-btn--pay" href="index.html#tienda" data-pay-retry><span data-pay-if-product hidden>Reintentar el pago</span><span data-pay-if-generic>Ir a la tienda</span></a>
+      <a class="shop-btn shop-btn--ghost"
+         href="mailto:lautarodemiannunez32@gmail.com?subject=Pago%20no%20completado&amp;body=Hola%20Lautaro%2C%20intent%C3%A9%20pagar%20un%20anticipo%20desde%20tu%20portafolio%20y%20el%20pago%20no%20se%20complet%C3%B3.%20Te%20cuento%3A"
+         data-pay-contact
+         data-pay-msg="Hola Lautaro, intenté pagar el anticipo de &quot;{producto}&quot; y el pago no se completó. Te cuento:"
+         data-pay-msg-generic="Hola Lautaro, intenté pagar un anticipo desde tu portafolio y el pago no se completó. Te cuento:"
+         data-pay-subject="Pago no completado · {producto}"><span data-contact-label data-label-mail="Consultar por mail" data-label-whatsapp="Consultar por WhatsApp">Consultar por mail</span></a>
+      <a class="shop-btn shop-btn--ghost" href="index.html#tienda" data-pay-back data-pay-if-product hidden>Volver a la tienda</a>
+    </div>
+
+    <p class="pay-note">Si igual te llegó un comprobante de Stripe al mail, escribime y lo revisamos juntos.</p>
+  </main>
+
+  <footer class="pay-foot">© LautaroDev · Córdoba, Argentina</footer>
+
+  <script src="assets/2027/config.js" defer></script>
+  <script src="assets/2027/productos.js" defer></script>
+  <script src="assets/2027/tienda.js" defer></script>
+</body>
+</html>

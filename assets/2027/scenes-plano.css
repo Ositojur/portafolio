@@ -1,0 +1,609 @@
+/* LautaroDev · Portafolio 2027 · scenes-plano.css · dueño: agente 03x (asistente de escenas)
+   Port de assets/plano.css: plano interactivo (linterna UV), informe de auditoría, .services y la ficha (#ficha).
+   Entra en la capa "scenes" vía scenes.css:  @import url("scenes-plano.css") layer(scenes);
+   Por eso NO declara @layer. Sin hex/rgb/hsl ni font-family literales: solo tokens y color-mix() de tokens.
+   Todo visible sin JS: los estados ocultos viven solo bajo html.js. Reduced motion = estado final visible.
+   Contraste (calculado en oklab → sRGB, WCAG 2.x):
+     Informe: tokens de 01 (--paper, --paper-rule, --ink, --ink-muted, --pen, --highlight), AA verificado por 01 en los dos temas.
+
+/* ─────────────────────────────────────────────────────────────
+   TOKENS PROPIOS (prefijo sp-) · animaciones listas, apagadas con reduced motion
+   ───────────────────────────────────────────────────────────── */
+@keyframes sp-draw {
+  from { stroke-dasharray: 1600; stroke-dashoffset: 1600; }
+  to   { stroke-dasharray: 1600; stroke-dashoffset: 0; }
+}
+@keyframes sp-show {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes sp-stamp {
+  from { opacity: 0; transform: rotate(-11deg) scale(1.8); }
+  to   { opacity: 1; transform: rotate(-11deg) scale(1); }
+}
+
+:root {
+  --anim-sp-draw: sp-draw var(--dur-cinematic) var(--ease-in-out-quint) both;
+  --anim-sp-show: sp-show var(--dur-slow) var(--ease-out-quart) both;
+  --anim-sp-stamp: sp-stamp 280ms var(--ease-spring) calc(var(--stagger-blocks) * 9.5) both;
+
+  /* Colores derivados (todos de tokens; cambian solos con el tema) */
+  --sp-uv-tint: color-mix(in oklab, var(--aqua) 60%, var(--aqua-deep));         /* luz de la linterna */
+  --sp-uv-core: color-mix(in oklab, var(--sp-uv-tint) 30%, transparent);
+  --sp-uv-edge: color-mix(in oklab, var(--sp-uv-tint) 14%, transparent);
+  --sp-uv-all: color-mix(in oklab, var(--sp-uv-tint) 10%, transparent);
+  --sp-torch-halo: color-mix(in oklab, var(--aqua) 14%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --anim-sp-draw: none;
+    --anim-sp-show: none;
+    --anim-sp-stamp: none;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   1 · PLANO INTERACTIVO (linterna UV)
+   ───────────────────────────────────────────────────────────── */
+.plan {
+  --x: -400px;
+  --y: -400px;
+  --r: 100px;
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  margin: 0;
+  min-width: 0;
+  overflow: clip;
+  touch-action: pan-y;
+  -webkit-user-select: none;
+  user-select: none;
+  view-timeline: --sp-plan block;
+}
+@media (hover: hover) and (pointer: fine) {
+  .plan { cursor: crosshair; }
+}
+
+.plan-base,
+.uv {
+  grid-area: 1 / 1;
+  width: 100%;
+  min-width: 0;
+}
+
+.uv {
+  position: relative;
+  pointer-events: none;
+  border-radius: var(--radius-xs);
+  background: radial-gradient(circle var(--r) at var(--x) var(--y),
+    var(--sp-uv-core), var(--sp-uv-edge) 70%, transparent 100%);
+  /* la máscara solo lee alfa: --text es opaco en los dos temas */
+  -webkit-mask-image: radial-gradient(circle var(--r) at var(--x) var(--y), var(--text) 60%, transparent 100%);
+  mask-image: radial-gradient(circle var(--r) at var(--x) var(--y), var(--text) 60%, transparent 100%);
+}
+.uv svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Lo que encuentra la auditoría */
+.pen path {
+  fill: none;
+  stroke: var(--note);
+  stroke-width: 2.6;
+  stroke-linecap: round;
+}
+.ink text {
+  fill: var(--warn);
+  font: 700 17px var(--font-note);
+}
+.print path {
+  fill: none;
+  stroke: var(--aqua-soft);
+  stroke-width: 1.1;
+  opacity: 0.85;
+}
+
+/* Dibujo del plano */
+.ln {
+  fill: none;
+  stroke: var(--line-strong);
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.ln .thick { stroke-width: 3.5; }
+.ln .faint { opacity: 0.35; }
+.tx text {
+  fill: var(--text-muted);
+  font: 400 14px var(--font-body);
+}
+.tx .sm { font-size: 11.5px; }
+
+/* Entrada: el plano se dibuja (por tiempo). El estado final es el visible: sin animación queda dibujado. */
+html.js:not(.ld-motion) .ln > * {
+  animation: var(--anim-sp-draw);
+  animation-delay: calc(min(var(--i, 0), 30) * 28ms);
+}
+html.js:not(.ld-motion) .tx {
+  animation: var(--anim-sp-show);
+  animation-delay: var(--dur-slower);
+}
+
+/* Donde hay scroll-driven animations, el dibujo va atado a la entrada del plano en pantalla. */
+@supports ((animation-timeline: view()) and (animation-range: entry)) {
+  html.js:not(.ld-motion) .ln > * {
+    animation: var(--anim-sp-draw);
+    animation-duration: auto;
+    animation-delay: 0s;
+    animation-timeline: --sp-plan;
+    animation-range-start: entry calc(10% + min(var(--i, 0), 30) * 1.2%);
+    animation-range-end: cover 45%;
+  }
+  html.js:not(.ld-motion) .tx {
+    animation: var(--anim-sp-show);
+    animation-duration: auto;
+    animation-delay: 0s;
+    animation-timeline: --sp-plan;
+    animation-range: entry 60% cover 50%;
+  }
+}
+
+/* Aro de la linterna */
+.torch {
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  width: calc(var(--r) * 2);
+  aspect-ratio: 1;
+  margin: calc(var(--r) * -1) 0 0 calc(var(--r) * -1);
+  border: var(--border-strong) solid var(--aqua);
+  border-radius: 50%;
+  box-shadow: 0 0 0 7px var(--sp-torch-halo), var(--glow-md);
+  pointer-events: none;
+  transform: translate(var(--x), var(--y));
+  transition: opacity var(--dur-base) var(--ease-out-quart);
+}
+.js .torch { opacity: 0; }
+.plan.is-lit .torch,
+.plan.is-sweeping .torch { opacity: 1; }
+/* Sin JS no hay linterna: el plano muestra todas las fallas y el aro no se dibuja. */
+html:not(.js) .torch { display: none; }
+html:not(.js) .plan .uv { -webkit-mask-image: none; mask-image: none; background: var(--sp-uv-all); }
+
+/* Mostrar todas las fallas */
+.plan.is-all .uv {
+  -webkit-mask-image: none;
+  mask-image: none;
+  background: var(--sp-uv-all);
+}
+.plan.is-all .torch { opacity: 0; }
+
+/* Franja de escaneo (la crea 04 en runtime; la anima con GSAP). grid-area la limita al dibujo, no al pie. */
+.plan > .ld-scan {
+  position: absolute;
+  grid-area: 1 / 1;
+  inset-inline: 0;
+  top: 0;
+  height: 100%;
+  background: var(--scan-line);
+  pointer-events: none;
+}
+html:not(.ld-motion) .plan > .ld-scan { animation: var(--anim-scan); }
+.plan.is-all > .ld-scan { opacity: 0; }
+
+.plan figcaption {
+  grid-row: 2;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2xs) var(--space-lg);
+  margin-block-start: var(--space-sm);
+  color: var(--text-muted);
+  font-size: var(--fs-sm);
+  line-height: var(--lh-snug);
+}
+.plan .hint { min-width: 0; }
+
+.reveal-all {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tap);
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--link);
+  font: inherit;
+  font-weight: var(--weight-strong);
+  text-decoration: underline;
+  text-decoration-color: var(--link-underline);
+  text-decoration-thickness: var(--hairline);
+  text-underline-offset: 0.2em;
+  cursor: pointer;
+  transition: color var(--dur-fast) var(--ease-out-quart), text-decoration-color var(--dur-fast) var(--ease-out-quart);
+}
+.reveal-all:hover {
+  color: var(--link-hover);
+  text-decoration-color: currentColor;
+}
+.reveal-all:focus-visible,
+.modal-close button:focus-visible,
+.f-thumbs button:focus-visible {
+  outline: var(--focus-width) solid var(--focus);
+  outline-offset: var(--focus-offset);
+  transition: none;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   2 · INFORME (papel, birome, resaltador, sello) · mobile first
+   ───────────────────────────────────────────────────────────── */
+.report {
+  position: relative;
+  align-self: start;   /* en una grilla no se estira al alto de la columna vecina */
+  min-width: 0;
+  margin-block-start: var(--space-sm);
+  padding: var(--space-xl) var(--space-lg) 8.75rem;
+  background: var(--paper);
+  color: var(--ink);
+  border-radius: var(--radius-xs);
+  box-shadow: var(--shadow-2);
+}
+:root[data-theme="light"] .report { border: var(--hairline) solid var(--line); }
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) .report { border: var(--hairline) solid var(--line); }
+}
+
+.report-head {
+  padding-block-end: var(--space-sm);
+  border-block-end: 2px solid var(--ink);
+}
+.report-head h3 {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: var(--fs-xl);
+  font-weight: var(--weight-display);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tracking-heading);
+  overflow-wrap: break-word;
+}
+.report-head p {
+  margin: var(--space-2xs) 0 0;
+  color: var(--ink-muted);
+  font-size: var(--fs-xs);
+}
+
+.report table {
+  width: 100%;
+  margin-block-start: var(--space-xs);
+  border-collapse: collapse;
+  font-size: var(--fs-sm);
+  line-height: var(--lh-snug);
+}
+.report th {
+  padding: var(--space-sm) 0 var(--space-2xs);
+  color: var(--ink-muted);
+  font-size: var(--fs-2xs);
+  font-weight: var(--weight-body);
+  text-align: start;
+}
+.report td {
+  padding: var(--space-sm) 0;
+  border-block-start: var(--hairline) solid var(--paper-rule);
+  vertical-align: baseline;
+}
+.report th:last-child,
+.report td:last-child {
+  padding-inline-start: var(--space-sm);
+  text-align: end;
+  white-space: nowrap;
+}
+.report td:last-child { font-weight: var(--weight-strong); }
+
+.report mark {
+  color: inherit;
+  background: linear-gradient(transparent 18%, var(--highlight) 18%, var(--highlight) 88%, transparent 88%)
+    no-repeat 0 0 / 100% 100%;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+/* Anotaciones en birome: en mobile van debajo de la tabla, sin scribble */
+.note {
+  margin: var(--space-sm) 0 0;
+  color: var(--pen);
+  font: 700 var(--fs-md) / 1.2 var(--font-note);
+  transform: rotate(-2deg);
+}
+.scribble {
+  display: none;
+  fill: none;
+  stroke: var(--pen);
+  stroke-width: 2.4;
+  stroke-linecap: round;
+}
+
+/* Sello "Corregido": tipografía normal (sin mayúsculas trackeadas), birome */
+.stamp {
+  position: absolute;
+  inset-block-end: var(--space-xl);
+  inset-inline-end: var(--space-lg);
+  margin: 0;
+  padding: var(--space-3xs) var(--space-md);
+  border: 3px solid var(--pen);
+  border-radius: var(--radius-sm);
+  color: var(--pen);
+  font-family: var(--font-display);
+  font-size: var(--fs-xl);
+  font-weight: var(--weight-display-x);
+  line-height: 1.1;
+  transform: rotate(-11deg);
+  mix-blend-mode: multiply;
+}
+
+@media (min-width: 600px) {
+  .report {
+    padding: 2.25rem var(--space-xl) 7.5rem;
+    transform: rotate(0.6deg);
+  }
+  .note { position: absolute; margin: 0; }
+  .note-1 {
+    inset-inline-start: 1.875rem;
+    inset-block-end: 3.375rem;
+    max-width: 13em;
+    transform: rotate(-3deg);
+  }
+  .note-2 {
+    inset-inline-end: 1.625rem;
+    inset-block-start: 6.25rem;   /* al costado de la bajada, sin pisar el título */
+    transform: rotate(5deg);
+  }
+  .scribble {
+    display: block;
+    position: absolute;
+    inset-inline-start: 9.375rem;
+    inset-block-end: 4.625rem;
+    width: 9.375rem;
+  }
+  .stamp {
+    inset-block-end: 1.875rem;
+    inset-inline-end: 1.75rem;
+  }
+}
+@media (min-width: 980px) {
+  .report { transform: rotate(1.2deg); }
+}
+
+/* Estados con JS: se marca al entrar en pantalla (plano.js agrega .is-marked) */
+.js .report mark {
+  background-size: 0% 100%;
+  transition: background-size var(--dur-slower) var(--ease-in-out-quint);
+}
+.js .report tr:nth-child(2) mark { transition-delay: calc(var(--stagger-blocks) * 2.5); }
+.js .report .note,
+.js .report .scribble {
+  opacity: 0;
+  transition: opacity var(--dur-slow) var(--ease-out-quart);
+}
+.js .report .note-1,
+.js .report .scribble { transition-delay: calc(var(--stagger-blocks) * 5.5); }
+.js .report .note-2 { transition-delay: calc(var(--stagger-blocks) * 4.5); }
+.js .report .scribble path {
+  stroke-dasharray: 220;
+  stroke-dashoffset: 220;
+  transition: stroke-dashoffset var(--dur-slower) var(--ease-out-quart) calc(var(--stagger-blocks) * 6);
+}
+.js .report .stamp {
+  opacity: 0;
+  transform: rotate(-11deg) scale(1.8);
+}
+
+.report.is-marked mark { background-size: 100% 100%; }
+.report.is-marked .note,
+.report.is-marked .scribble { opacity: 1; }
+.report.is-marked .scribble path { stroke-dashoffset: 0; }
+/* El estado final es el declarado; la animación (fill both) solo lo recorre. Sin ella, el sello aparece. */
+.js .report.is-marked .stamp {
+  opacity: 1;
+  transform: rotate(-11deg);
+  animation: var(--anim-sp-stamp);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   3 · SERVICIOS (lista editorial, no tarjetas)
+   ───────────────────────────────────────────────────────────── */
+.services { margin: var(--space-xl) 0 0; }
+.services > div {
+  padding-block: var(--space-md);
+  border-block-start: var(--hairline) solid var(--line);
+}
+.services dt {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  font-weight: var(--weight-heading);
+  line-height: var(--lh-heading);
+  letter-spacing: var(--tracking-heading);
+  overflow-wrap: break-word;
+}
+.services dd {
+  margin: var(--space-2xs) 0 0;
+  max-width: var(--measure);
+  color: var(--text-muted);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   4 · FICHA DE PROYECTO (dialog#ficha) · va al top layer, no necesita z-index
+   ───────────────────────────────────────────────────────────── */
+dialog#ficha {
+  width: min(70rem, 100% - 2 * var(--gutter));
+  max-width: none;
+  max-height: calc(100dvh - 2rem);
+  margin: auto;
+  padding: 0;
+  overflow: auto;
+  overscroll-behavior: contain;
+  border: var(--hairline) solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: var(--shadow-2);
+  transition:
+    opacity var(--dur-slow) var(--ease-out-expo),
+    translate var(--dur-slow) var(--ease-out-expo);
+}
+dialog#ficha::backdrop {
+  background: var(--scrim);
+  transition: opacity var(--dur-slow) var(--ease-out-expo);
+}
+/* Entrada: se anima el propio dialog (translate/opacity). .modal queda libre para la WAAPI de 07. */
+@starting-style {
+  dialog#ficha[open] {
+    opacity: 0;
+    translate: 0 var(--reveal-y-sm);
+  }
+  dialog#ficha[open]::backdrop { opacity: 0; }
+}
+
+.modal {
+  position: relative;
+  padding: max(var(--space-lg), var(--gutter));
+}
+.modal-close {
+  position: absolute;
+  inset-block-start: max(var(--space-md), calc(var(--gutter) * 0.8));
+  inset-inline-end: max(var(--space-md), calc(var(--gutter) * 0.8));
+  margin: 0;
+}
+.modal-close button {
+  min-height: var(--tap);
+  min-width: var(--tap);
+  padding: 0 var(--space-md);
+  border: var(--border-strong) solid var(--line-strong);
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  font-weight: var(--weight-strong);
+  cursor: pointer;
+  transition: border-color var(--dur-fast) var(--ease-out-quart), background-color var(--dur-fast) var(--ease-out-quart);
+}
+.modal-close button:hover {
+  border-color: var(--aqua);
+  background: var(--surface-2);
+}
+
+.f-head {
+  min-width: 0;
+  margin-block-start: calc(var(--tap) + var(--space-xs));
+}
+.f-head h3 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--fs-2xl);
+  font-weight: var(--weight-heading);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tracking-heading);
+  overflow-wrap: break-word;
+  min-width: 0;
+}
+.f-head p {
+  margin: var(--space-xs) 0 0;
+  color: var(--text-muted);
+}
+
+.f-text {
+  margin-block-start: var(--space-md);
+  max-width: var(--measure);
+}
+.f-text p { margin: 0; }
+.f-text p + p { margin-block-start: var(--space-sm); }
+.f-text .links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2xs) var(--space-lg);
+}
+.f-text .links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tap);
+  color: var(--link);
+  text-decoration-color: var(--link-underline);
+  text-underline-offset: 0.2em;
+  overflow-wrap: anywhere;
+  transition: color var(--dur-fast) var(--ease-out-quart);
+}
+.f-text .links a:hover { color: var(--link-hover); }
+
+.f-main {
+  margin: var(--space-lg) 0 var(--space-sm);
+  overflow: clip;
+  border: var(--hairline) solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--bg-2);
+}
+.f-main img,
+.f-main video {
+  display: block;
+  width: 100%;
+  max-height: 54vh;
+  object-fit: contain;
+}
+
+.f-thumbs {
+  display: flex;
+  gap: var(--space-sm);
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x proximity;
+  padding-block-end: var(--space-xs);
+  scrollbar-color: var(--scrollbar-thumb) transparent;
+}
+.f-thumbs button {
+  flex: none;
+  width: 8rem;
+  padding: 0;
+  overflow: clip;
+  border: var(--border-strong) solid transparent;
+  border-radius: var(--radius-sm);
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: start;
+  cursor: pointer;
+  scroll-snap-align: start;
+  transition: border-color var(--dur-fast) var(--ease-out-quart);
+}
+.f-thumbs button:hover { border-color: var(--line-strong); }
+.f-thumbs button[aria-current="true"] { border-color: var(--aqua); }
+.f-thumbs img,
+.f-thumbs .vid {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: top;
+}
+.f-thumbs .vid {
+  display: grid;
+  place-items: center;
+  background: var(--surface-2);
+  font-size: var(--fs-xs);
+  font-weight: var(--weight-strong);
+}
+.f-thumbs small {
+  display: block;
+  padding: var(--space-2xs) var(--space-3xs);
+  color: var(--text-muted);
+  font-size: var(--fs-2xs);
+  line-height: var(--lh-snug);
+}
+
+@media (min-width: 600px) {
+  .f-head {
+    margin-block-start: 0;
+    padding-inline-end: 6rem;
+  }
+}

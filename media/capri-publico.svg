@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 860" width="1440" height="860" role="img" aria-labelledby="capriTitle capriDesc">
+  <title id="capriTitle">Departamento Capri  vista p�blica</title>
+  <desc id="capriDesc">Esquema de un informe interno. Las capturas originales no se publican porque muestran nombres y montos.</desc>
+  <rect width="1440" height="860" fill="#16191d"/>
+  <rect x="72" y="72" width="1296" height="716" rx="18" fill="#1B1E22" stroke="#2E343B"/>
+  <rect x="104" y="108" width="220" height="14" rx="7" fill="#FF9A62"/>
+  <rect x="104" y="148" width="520" height="36" rx="8" fill="#F5F4F0" opacity=".88"/>
+  <rect x="104" y="204" width="380" height="16" rx="8" fill="#B6BDC5" opacity=".45"/>
+  <g fill="#23272C">
+    <rect x="104" y="280" width="292" height="140" rx="12"/>
+    <rect x="416" y="280" width="292" height="140" rx="12"/>
+    <rect x="728" y="280" width="292" height="140" rx="12"/>
+    <rect x="1040" y="280" width="292" height="140" rx="12"/>
+    <rect x="104" y="448" width="1228" height="280" rx="12"/>
+  </g>
+  <text x="720" y="590" text-anchor="middle" fill="#F5F4F0" font-family="Georgia, serif" font-size="34">Capturas omitidas a prop�sito</text>
+  <text x="720" y="640" text-anchor="middle" fill="#B6BDC5" font-family="system-ui, sans-serif" font-size="22">El informe original incluye nombres y montos de un caso interno.</text>
+</svg>
